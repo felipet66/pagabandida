@@ -1,0 +1,385 @@
+<!DOCTYPE html>
+<html lang="pt-BR"><head>
+<meta charset="utf-8">
+<title>Gamificação · mobile</title>
+<script src="a4f6e141-becf-43c8-9543-3a2777cfd64f"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<style></style>
+<style>
+body{margin:0;background:#050309}
+*{box-sizing:border-box}
+.t-dark{--bg:#07050D;--surface:rgba(22,15,42,.66);--surface-solid:#140E26;--surface-2:#1C1535;--surface-3:#261C47;--border:rgba(167,139,250,.16);--border-strong:rgba(167,139,250,.36);--text:#F4F1FF;--text-2:#BDB4DA;--text-3:#8F86B2;--primary:#7C3AED;--primary-text:#B79BFF;--primary-soft:rgba(124,58,237,.18);--glow:rgba(139,92,246,.55);--glow-soft:rgba(139,92,246,.22);--pink:#FF5FD2;--pink-soft:rgba(255,95,210,.16);--gold:#F2B84B;--success:#34D399;--warning:#FBBF24;--danger:#F87171;--shadow-card:0 1px 0 rgba(255,255,255,.04) inset,0 12px 40px rgba(0,0,0,.55);--shadow-glow:0 0 0 1px rgba(167,139,250,.35),0 0 28px -6px rgba(139,92,246,.6);--grid-line:rgba(167,139,250,.07);--track:rgba(167,139,250,.14);--edge-a:rgba(183,155,255,.75);--edge-b:rgba(255,95,210,.45);--bar-bg:rgba(13,9,25,.82);--skel-a:#1C1535;--skel-b:#2B2150;--scrim:rgba(4,2,10,.72);color-scheme:dark}
+.t-light{--bg:#F7F5FF;--surface:rgba(255,255,255,.80);--surface-solid:#FFFFFF;--surface-2:#F3EFFF;--surface-3:#E9E2FF;--border:rgba(76,29,149,.12);--border-strong:rgba(76,29,149,.28);--text:#120B24;--text-2:#463D63;--text-3:#615880;--primary:#7C3AED;--primary-text:#6D28D9;--primary-soft:rgba(124,58,237,.10);--glow:rgba(124,58,237,.28);--glow-soft:rgba(124,58,237,.12);--pink:#C0178E;--pink-soft:rgba(192,23,142,.10);--gold:#9A6206;--success:#047857;--warning:#B45309;--danger:#B91C1C;--shadow-card:0 1px 2px rgba(18,11,36,.06),0 10px 30px rgba(91,33,182,.10);--shadow-glow:0 0 0 1px rgba(124,58,237,.35),0 8px 24px -6px rgba(124,58,237,.35);--grid-line:rgba(91,33,182,.06);--track:rgba(91,33,182,.12);--edge-a:rgba(124,58,237,.45);--edge-b:rgba(192,23,142,.25);--bar-bg:rgba(255,255,255,.86);--skel-a:#ECE6FF;--skel-b:#F7F4FF;--scrim:rgba(18,11,36,.55);color-scheme:light}
+.app{font-family:'Sora',system-ui,sans-serif;color:var(--text);background-color:var(--bg);-webkit-font-smoothing:antialiased}
+.fx{background-image:radial-gradient(420px 300px at 100% -5%,var(--glow-soft),transparent 70%),radial-gradient(360px 260px at -20% 30%,var(--primary-soft),transparent 70%),linear-gradient(var(--grid-line) 1px,transparent 1px),linear-gradient(90deg,var(--grid-line) 1px,transparent 1px);background-size:auto,auto,24px 24px,24px 24px}
+.glass{background:var(--surface);-webkit-backdrop-filter:blur(16px) saturate(140%);backdrop-filter:blur(16px) saturate(140%);border:1px solid var(--border);box-shadow:var(--shadow-card)}
+.edge{position:relative}
+.edge::after{content:"";position:absolute;inset:0;border-radius:inherit;padding:1px;background:linear-gradient(140deg,var(--edge-a),transparent 38%,transparent 62%,var(--edge-b));-webkit-mask:linear-gradient(#000 0 0) content-box,linear-gradient(#000 0 0);-webkit-mask-composite:xor;mask-composite:exclude;pointer-events:none}
+.disp{font-family:'Chakra Petch',sans-serif;letter-spacing:.01em}
+.mono{font-family:'JetBrains Mono',ui-monospace,monospace;font-variant-numeric:tabular-nums}
+.ic{fill:none;stroke:currentColor;stroke-width:1.75;stroke-linecap:round;stroke-linejoin:round;flex-shrink:0}
+.lbl{font-size:11.5px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--text-3)}
+.phone{width:390px;border-radius:32px;overflow:hidden;position:relative;border:1px solid var(--border);display:flex;flex-direction:column;box-shadow:0 30px 80px -30px rgba(0,0,0,.6)}
+.topbar{height:60px;flex-shrink:0;display:flex;align-items:center;justify-content:space-between;padding:0 6px 0 16px;background:var(--bar-bg);-webkit-backdrop-filter:blur(14px);backdrop-filter:blur(14px);border-bottom:1px solid var(--border)}
+.content{flex:1;padding:18px 16px 104px;display:flex;flex-direction:column;gap:16px}
+.botnav{position:absolute;left:0;right:0;bottom:0;height:84px;padding:12px 4px 8px;background:var(--bar-bg);-webkit-backdrop-filter:blur(14px);backdrop-filter:blur(14px);border-top:1px solid var(--border);display:grid;grid-template-columns:1fr 1fr 1.35fr 1fr 1fr;align-items:center}
+.icon-btn{appearance:none;border:0;background:transparent;color:var(--text-2);width:44px;height:44px;border-radius:12px;display:inline-flex;align-items:center;justify-content:center;position:relative;cursor:pointer}
+.count{position:absolute;top:6px;right:5px;min-width:18px;height:18px;padding:0 5px;border-radius:999px;background:#FF5FD2;color:#1A0614;font-size:11px;font-weight:700;display:flex;align-items:center;justify-content:center;box-shadow:0 0 0 2px var(--bg)}
+.t-light .count{background:#C0178E;color:#fff}
+.tab{display:flex;flex-direction:column;align-items:center;justify-content:center;gap:3px;min-height:56px;color:var(--text-3);text-decoration:none;font-size:11px;font-weight:600}
+.tab.on{color:var(--primary-text)}
+.tab-ic{width:48px;height:28px;border-radius:999px;display:flex;align-items:center;justify-content:center}
+.tab.on .tab-ic{background:var(--primary-soft);box-shadow:inset 0 0 0 1px var(--border-strong)}
+.fab{width:52px;height:52px;margin-top:-30px;border-radius:18px;display:flex;align-items:center;justify-content:center;color:var(--primary-text);background:var(--surface-solid);box-shadow:0 0 0 4px var(--bg),inset 0 0 0 1px var(--border-strong)}
+.btn{appearance:none;border:0;cursor:pointer;font:inherit;display:inline-flex;align-items:center;justify-content:center;gap:10px;min-height:52px;padding:0 20px;border-radius:16px;font-weight:600;font-size:16px;width:100%;text-decoration:none}
+.btn-primary{color:#fff;background:linear-gradient(180deg,#9466FF 0%,#7C3AED 55%,#6D28D9 100%);box-shadow:var(--shadow-glow)}
+.btn-ghost{color:var(--text-2);background:transparent;border:1px solid var(--border-strong)}
+.bar{height:10px;border-radius:999px;background:var(--track);overflow:hidden}
+.bar i{display:block;height:100%;border-radius:inherit;background:linear-gradient(90deg,#7C3AED,#B79BFF);box-shadow:0 0 12px var(--glow)}
+.bar.thin{height:6px}
+.ach{border-radius:18px;padding:14px;display:flex;flex-direction:column;gap:10px;min-height:150px}
+.ach-ic{width:44px;height:44px;border-radius:13px;display:flex;align-items:center;justify-content:center}
+.ach.on .ach-ic{color:#fff;background:linear-gradient(150deg,#9B6BFF,#6D28D9);box-shadow:0 6px 18px -6px var(--glow)}
+.ach.off{background:var(--surface-2);border:1px dashed var(--border-strong);box-shadow:none}
+.ach.off .ach-ic{color:var(--text-3);background:var(--surface-3)}
+.feed-row{display:flex;align-items:center;gap:12px;min-height:58px;border-bottom:1px solid var(--border)}
+.rk{display:flex;align-items:center;gap:12px;min-height:50px;padding:0 12px;border-radius:12px}
+.medal{width:28px;height:28px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-family:'JetBrains Mono',monospace;font-size:12px;font-weight:700;flex-shrink:0}
+.seg{display:grid;grid-template-columns:1fr 1fr;gap:4px;padding:4px;border-radius:12px;background:var(--surface-2)}
+.seg button{appearance:none;border:0;font:inherit;min-height:40px;border-radius:9px;font-size:13px;font-weight:600;color:var(--text-2);background:transparent;cursor:pointer}
+.seg button.on{background:var(--primary);color:#fff}
+.skel{border-radius:10px;background:linear-gradient(100deg,var(--skel-a) 30%,var(--skel-b) 50%,var(--skel-a) 70%);background-size:300% 100%}
+.scrim{position:absolute;inset:0;background:var(--scrim);-webkit-backdrop-filter:blur(3px);backdrop-filter:blur(3px)}
+.cap{font-size:13px;line-height:1.5;color:#BDB4DA}
+.tech{display:inline-flex;align-items:center;height:22px;padding:0 8px;border-radius:999px;font-size:11px;font-weight:700}
+.k-css{color:#B79BFF;background:rgba(124,58,237,.18)}
+.k-rem{color:#FF5FD2;background:rgba(255,95,210,.14)}
+.k-js{color:#FDE047;background:rgba(253,224,71,.12)}
+.k-api{color:#4ADE80;background:rgba(74,222,128,.12)}
+a{color:var(--primary-text)}a:hover{color:var(--text)}
+</style>
+</helmet>
+<div class="app t-dark" style="width: 2676px; min-height: 4660px; padding: 56px; display: flex; flex-direction: column; gap: 40px; background-color: #050309">
+  <header style="display: flex; justify-content: space-between; align-items: flex-end">
+    <div style="display: flex; flex-direction: column; gap: 8px">
+      <span class="lbl">06 · Gamificação · mobile 390 px</span>
+      <h1 class="disp" style="margin: 0; font-size: 44px; font-weight: 700">Progresso que puxa a volta, sem premiar aposta</h1>
+    </div>
+    <span class="cap" style="max-width: 640px; text-align: right">A primeira tela mostra a rolagem inteira. Celebrações aparecem uma por vez, em fila: toast para XP, modal para nível, folha para conquista.</span>
+  </header>
+
+  <sc-for list="{{rows}}" as="row" hint-placeholder-count="2">
+    <div style="display: flex; flex-direction: column; gap: 16px">
+      <span class="lbl" style="color: #BDB4DA">{{row.label}}</span>
+      <div style="display: flex; gap: 44px; align-items: flex-start">
+        <sc-for list="{{row.phones}}" as="ph" hint-placeholder-count="6">
+          <div style="width: 390px; display: flex; flex-direction: column; gap: 16px">
+            <sc-if value="{{ph.showCap}}" hint-placeholder-val="{{true}}">
+              <div style="display: flex; flex-direction: column; gap: 8px; padding: 0 4px; min-height: 118px">
+                <div style="display: flex; align-items: baseline; gap: 10px"><span class="mono" style="font-size: 13px; color: #B79BFF">{{ph.num}}</span><span class="disp" style="font-size: 20px; font-weight: 700; color: #F4F1FF">{{ph.title}}</span></div>
+                <span class="cap">{{ph.desc}}</span>
+                <div style="display: flex; gap: 6px; flex-wrap: wrap"><sc-for list="{{ph.tags}}" as="tg" hint-placeholder-count="2"><span class="tech {{tg.k}}">{{tg.t}}</span></sc-for></div>
+              </div>
+            </sc-if>
+            <div class="app fx phone {{ph.cls}}" style="height: {{ph.h}}">
+              <div class="topbar">
+                <div style="display: flex; align-items: center; gap: 8px"><svg width="24" height="24" sc-camel-view-box="0 0 34 34" aria-hidden="true"><path d="M17 2 30 9.5v15L17 32 4 24.5v-15z" style="fill: none; stroke: #8B5CF6; stroke-width: 2"></path><path d="M12.5 10h6a4 4 0 0 1 1 7.9 4.2 4.2 0 0 1-1 8.1h-6z" style="fill: #7C3AED"></path></svg><span class="disp" style="font-size: 18px; font-weight: 700">betuxo</span></div>
+                <div style="display: flex; align-items: center">
+                  <button class="icon-btn" aria-label="Avisos da equipe, 2 não lidos"><svg class="ic" width="22" height="22" sc-camel-view-box="0 0 24 24" aria-hidden="true"><path d="M6 16V11a6 6 0 0 1 12 0v5l1.5 2h-15z"></path><path d="M10 20.5a2 2 0 0 0 4 0"></path></svg><span class="count">2</span></button>
+                  <button class="icon-btn" aria-label="Perfil"><span style="width: 32px; height: 32px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 13px; font-weight: 700; color: #fff; background: linear-gradient(140deg,#8B5CF6,#C0178E)">MA</span></button>
+                </div>
+              </div>
+
+              <div class="content">
+                <div style="display: flex; flex-direction: column; gap: 6px">
+                  <h1 class="disp" style="margin: 0; font-size: 28px; line-height: 1.1; font-weight: 700">Gamificação</h1>
+                  <p style="margin: 0; font-size: 14px; line-height: 1.45; color: var(--text-2)">Seu progresso na comunidade. XP vem de hábito e aprendizado.</p>
+                </div>
+
+                <sc-if value="{{ph.full}}" hint-placeholder-val="{{true}}">
+                  <div class="glass edge" style="border-radius: 22px; padding: 18px; display: flex; flex-direction: column; gap: 14px">
+                    <div style="display: flex; align-items: center; gap: 14px">
+                      <span style="position: relative; width: 64px; height: 72px; display: flex; align-items: center; justify-content: center; flex-shrink: 0">
+                        <svg width="64" height="72" sc-camel-view-box="0 0 56 62" aria-hidden="true" style="position: absolute; inset: 0"><path d="M28 2 53 16v30L28 60 3 46V16z" style="fill: #7C3AED; stroke: #C4B0FF; stroke-width: 2"></path><path d="M28 9 47 20v22L28 53 9 42V20z" style="fill: none; stroke: rgba(255,255,255,.25); stroke-width: 1"></path></svg>
+                        <span class="disp" style="position: relative; color: #fff; font-weight: 700; font-size: 24px">7</span>
+                      </span>
+                      <div style="display: flex; flex-direction: column; gap: 2px; flex: 1">
+                        <span class="lbl">Nível 7</span>
+                        <span class="disp" style="font-size: 22px; font-weight: 700">Piloto Sênior</span>
+                      </div>
+                    </div>
+                    <div style="display: flex; flex-direction: column; gap: 8px">
+                      <div style="display: flex; justify-content: space-between; font-size: 13px"><span style="color: var(--text-2)">XP do nível</span><span class="mono"><b>2.340</b> <span style="color: var(--text-3)">/ 3.000 XP</span></span></div>
+                      <div class="bar" role="progressbar" aria-valuenow="2340" aria-valuemin="1800" aria-valuemax="3000" aria-label="XP do nível 7"><i style="width: 45%"></i></div>
+                      <span style="font-size: 12.5px; color: var(--text-3)">Faltam <span class="mono">660 XP</span> para o nível 8 · Comandante</span>
+                    </div>
+                  </div>
+
+                  <div class="glass" style="border-radius: 22px; padding: 16px 18px; display: flex; flex-direction: column; gap: 14px">
+                    <div style="display: flex; align-items: center; gap: 14px">
+                      <span style="width: 48px; height: 48px; border-radius: 14px; display: flex; align-items: center; justify-content: center; color: #fff; background: linear-gradient(150deg,#FF8A3D,#C0178E); box-shadow: 0 6px 18px -6px rgba(255,95,210,.6)"><svg class="ic" width="24" height="24" sc-camel-view-box="0 0 24 24" aria-hidden="true"><path d="M12 21a6.5 6.5 0 0 0 6.5-6.5c0-4-3.5-5.5-4-10-2.5 1.5-4.5 4.5-4 7.5-1.5-.5-2.5-2-2.5-3.5-1.5 1.5-2.5 3.5-2.5 6A6.5 6.5 0 0 0 12 21z"></path></svg></span>
+                      <div style="display: flex; flex-direction: column; gap: 2px"><span class="disp" style="font-size: 20px; font-weight: 700"><span class="mono">12</span> dias seguidos</span><span style="font-size: 13px; color: var(--text-2)">Recorde: 19. Volte amanhã para chegar a 13.</span></div>
+                    </div>
+                    <div style="display: grid; grid-template-columns: repeat(7, minmax(0, 1fr)); gap: 6px">
+                      <sc-for list="{{week}}" as="d" hint-placeholder-count="7">
+                        <div style="display: flex; flex-direction: column; align-items: center; gap: 6px">
+                          <span style="width: 34px; height: 34px; border-radius: 10px; display: flex; align-items: center; justify-content: center; {{d.sty}}"><sc-if value="{{d.done}}" hint-placeholder-val="{{true}}"><svg class="ic" width="16" height="16" sc-camel-view-box="0 0 24 24" aria-hidden="true" style="stroke-width: 2.5"><path d="M5 12.5l4.5 4.5L19 7.5"></path></svg></sc-if></span>
+                          <span style="font-size: 11px; font-weight: 600; color: var(--text-3)">{{d.l}}</span>
+                        </div>
+                      </sc-for>
+                    </div>
+                  </div>
+                </sc-if>
+
+                <sc-if value="{{ph.normal}}" hint-placeholder-val="{{true}}">
+                  <div style="display: flex; justify-content: space-between; align-items: baseline; margin-top: 6px"><h2 class="disp" style="margin: 0; font-size: 20px; font-weight: 700">Conquistas</h2><span class="mono" style="font-size: 14px; color: var(--text-2)"><b style="color: var(--text)">9</b>/16</span></div>
+                  <div style="display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 10px">
+                    <sc-for list="{{ach}}" as="a" hint-placeholder-count="8">
+                      <div class="ach glass {{a.cls}}">
+                        <div style="display: flex; justify-content: space-between; align-items: flex-start">
+                          <span class="ach-ic"><svg class="ic" width="22" height="22" sc-camel-view-box="0 0 24 24" aria-hidden="true"><path d="{{a.icon}}"></path></svg></span>
+                          <sc-if value="{{a.locked}}" hint-placeholder-val="{{false}}"><span style="display: flex; align-items: center; gap: 4px; font-size: 11px; font-weight: 600; color: var(--text-3)"><svg class="ic" width="14" height="14" sc-camel-view-box="0 0 24 24" aria-hidden="true"><rect x="5" y="10.5" width="14" height="10" rx="2.5"></rect><path d="M8 10.5V8a4 4 0 0 1 8 0v2.5"></path></svg>Bloqueada</span></sc-if>
+                          <sc-if value="{{a.unlocked}}" hint-placeholder-val="{{true}}"><span style="display: flex; align-items: center; gap: 4px; font-size: 11px; font-weight: 600; color: var(--success)"><svg class="ic" width="14" height="14" sc-camel-view-box="0 0 24 24" aria-hidden="true" style="stroke-width: 2.4"><path d="M5 12.5l4.5 4.5L19 7.5"></path></svg>{{a.when}}</span></sc-if>
+                        </div>
+                        <div style="display: flex; flex-direction: column; gap: 3px"><span style="font-size: 14px; font-weight: 600; color: {{a.nameColor}}">{{a.name}}</span><span style="font-size: 12px; line-height: 1.4; color: var(--text-3)">{{a.desc}}</span></div>
+                        <sc-if value="{{a.locked}}" hint-placeholder-val="{{false}}"><div style="display: flex; align-items: center; gap: 8px"><div class="bar thin" style="flex: 1"><i style="width: {{a.pct}}; background: var(--text-3); box-shadow: none"></i></div><span class="mono" style="font-size: 11px; color: var(--text-3)">{{a.prog}}</span></div></sc-if>
+                      </div>
+                    </sc-for>
+                  </div>
+                  <a href="#" style="display: flex; align-items: center; justify-content: center; min-height: 44px; font-size: 14px; font-weight: 600; text-decoration: none">Ver todas as 16 conquistas</a>
+
+                  <h2 class="disp" style="margin: 4px 0 0; font-size: 20px; font-weight: 700">Histórico de XP</h2>
+                  <div class="glass" style="border-radius: 20px; padding: 2px 16px">
+                    <sc-for list="{{feed}}" as="f" hint-placeholder-count="6">
+                      <div class="feed-row" style="border-bottom-color: {{f.line}}">
+                        <span style="width: 36px; height: 36px; border-radius: 11px; display: flex; align-items: center; justify-content: center; color: var(--primary-text); background: var(--primary-soft); flex-shrink: 0"><svg class="ic" width="18" height="18" sc-camel-view-box="0 0 24 24" aria-hidden="true"><path d="{{f.icon}}"></path></svg></span>
+                        <div style="flex: 1; min-width: 0; display: flex; flex-direction: column; gap: 2px"><span style="font-size: 14px; font-weight: 500">{{f.acao}}</span><span style="font-size: 12px; color: var(--text-3)">{{f.quando}}</span></div>
+                        <span class="mono" style="font-size: 14px; font-weight: 700; color: var(--success)">+{{f.xp}} XP</span>
+                      </div>
+                    </sc-for>
+                  </div>
+
+                  <div style="display: flex; justify-content: space-between; align-items: center; margin-top: 4px"><h2 class="disp" style="margin: 0; font-size: 20px; font-weight: 700">Ranking</h2><span style="font-size: 12px; color: var(--text-3)">fecha dom. 23:59</span></div>
+                  <div class="seg" role="tablist" aria-label="Período do ranking"><button class="on" role="tab" aria-selected="true">Semana</button><button role="tab" aria-selected="false">Mês</button></div>
+                  <div class="glass" style="border-radius: 20px; padding: 8px; display: flex; flex-direction: column; gap: 2px">
+                    <sc-for list="{{rank}}" as="r" hint-placeholder-count="10">
+                      <div class="rk">
+                        <span class="medal" style="{{r.medal}}">{{r.pos}}</span>
+                        <span style="width: 32px; height: 32px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 12px; font-weight: 700; color: #fff; background: {{r.av}}">{{r.ini}}</span>
+                        <span style="flex: 1; font-size: 14px; font-weight: 500">{{r.nome}}</span>
+                        <span class="mono" style="font-size: 13.5px; color: var(--text-2)">{{r.xp}}</span>
+                      </div>
+                    </sc-for>
+                    <div style="display: flex; align-items: center; gap: 8px; padding: 6px 12px; font-size: 12px; color: var(--text-3)"><span style="flex: 1; height: 1px; background: var(--border)"></span>sua posição<span style="flex: 1; height: 1px; background: var(--border)"></span></div>
+                    <div class="rk" style="background: var(--primary-soft); box-shadow: inset 0 0 0 1px var(--primary-text)">
+                      <span class="medal" style="color: var(--primary-text); background: var(--surface-solid)">23</span>
+                      <span style="width: 32px; height: 32px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 12px; font-weight: 700; color: #fff; background: linear-gradient(140deg,#8B5CF6,#C0178E)">MA</span>
+                      <span style="flex: 1; font-size: 14px; font-weight: 600">Você · Marcos</span>
+                      <span class="mono" style="font-size: 13.5px; font-weight: 700">1.180</span>
+                    </div>
+                    <span style="font-size: 12px; color: var(--text-3); padding: 6px 12px 8px">Faltam <span class="mono">1.230 XP</span> para entrar no top 10. Só aparecem apelidos.</span>
+                  </div>
+                </sc-if>
+
+                <sc-if value="{{ph.loading}}" hint-placeholder-val="{{false}}">
+                  <div class="glass" role="status" aria-label="Carregando seu progresso" style="border-radius: 22px; padding: 18px; display: flex; flex-direction: column; gap: 14px">
+                    <div style="display: flex; align-items: center; gap: 14px"><span class="skel" style="width: 64px; height: 72px; border-radius: 16px"></span><div style="flex: 1; display: flex; flex-direction: column; gap: 8px"><span class="skel" style="height: 12px; width: 40%"></span><span class="skel" style="height: 20px; width: 70%"></span></div></div>
+                    <span class="skel" style="height: 10px; width: 100%; border-radius: 999px"></span>
+                    <span class="skel" style="height: 12px; width: 60%"></span>
+                  </div>
+                  <div class="glass" style="border-radius: 22px; padding: 16px 18px; display: flex; flex-direction: column; gap: 14px">
+                    <div style="display: flex; align-items: center; gap: 14px"><span class="skel" style="width: 48px; height: 48px; border-radius: 14px"></span><div style="flex: 1; display: flex; flex-direction: column; gap: 8px"><span class="skel" style="height: 18px; width: 55%"></span><span class="skel" style="height: 12px; width: 80%"></span></div></div>
+                    <div style="display: grid; grid-template-columns: repeat(7, minmax(0, 1fr)); gap: 6px"><span class="skel" style="height: 34px"></span><span class="skel" style="height: 34px"></span><span class="skel" style="height: 34px"></span><span class="skel" style="height: 34px"></span><span class="skel" style="height: 34px"></span><span class="skel" style="height: 34px"></span><span class="skel" style="height: 34px"></span></div>
+                  </div>
+                  <span class="skel" style="height: 20px; width: 40%; margin-top: 6px"></span>
+                  <div style="display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 10px">
+                    <span class="skel" style="height: 150px; border-radius: 18px"></span><span class="skel" style="height: 150px; border-radius: 18px"></span><span class="skel" style="height: 150px; border-radius: 18px"></span><span class="skel" style="height: 150px; border-radius: 18px"></span>
+                  </div>
+                </sc-if>
+
+                <sc-if value="{{ph.empty}}" hint-placeholder-val="{{false}}">
+                  <div class="glass edge" style="border-radius: 22px; padding: 18px; display: flex; flex-direction: column; gap: 14px">
+                    <div style="display: flex; align-items: center; gap: 14px">
+                      <span style="position: relative; width: 64px; height: 72px; display: flex; align-items: center; justify-content: center; flex-shrink: 0"><svg width="64" height="72" sc-camel-view-box="0 0 56 62" aria-hidden="true" style="position: absolute; inset: 0"><path d="M28 2 53 16v30L28 60 3 46V16z" style="fill: #7C3AED; stroke: #C4B0FF; stroke-width: 2"></path></svg><span class="disp" style="position: relative; color: #fff; font-weight: 700; font-size: 24px">1</span></span>
+                      <div style="display: flex; flex-direction: column; gap: 2px"><span class="lbl">Nível 1</span><span class="disp" style="font-size: 22px; font-weight: 700">Cadete</span></div>
+                    </div>
+                    <div style="display: flex; flex-direction: column; gap: 8px">
+                      <div style="display: flex; justify-content: space-between; font-size: 13px"><span style="color: var(--text-2)">XP do nível</span><span class="mono"><b>0</b> <span style="color: var(--text-3)">/ 100 XP</span></span></div>
+                      <div class="bar" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100" aria-label="XP do nível 1"><i style="width: 0%"></i></div>
+                      <span style="font-size: 12.5px; color: var(--text-3)">Bem-vindo! Cada login, aula e alerta configurado vale XP.</span>
+                    </div>
+                  </div>
+                  <div class="glass" style="border-radius: 22px; padding: 16px 18px; display: flex; align-items: center; gap: 14px">
+                    <span style="width: 48px; height: 48px; border-radius: 14px; display: flex; align-items: center; justify-content: center; color: var(--text-3); background: var(--surface-3)"><svg class="ic" width="24" height="24" sc-camel-view-box="0 0 24 24" aria-hidden="true"><path d="M12 21a6.5 6.5 0 0 0 6.5-6.5c0-4-3.5-5.5-4-10-2.5 1.5-4.5 4.5-4 7.5-1.5-.5-2.5-2-2.5-3.5-1.5 1.5-2.5 3.5-2.5 6A6.5 6.5 0 0 0 12 21z"></path></svg></span>
+                    <div style="display: flex; flex-direction: column; gap: 2px"><span class="disp" style="font-size: 18px; font-weight: 700">Nenhuma sequência ainda</span><span style="font-size: 13px; color: var(--text-2)">Faça login amanhã para começar.</span></div>
+                  </div>
+                  <div style="display: flex; justify-content: space-between; align-items: baseline; margin-top: 6px"><h2 class="disp" style="margin: 0; font-size: 20px; font-weight: 700">Conquistas</h2><span class="mono" style="font-size: 14px; color: var(--text-2)"><b style="color: var(--text)">0</b>/16</span></div>
+                  <div style="display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 10px">
+                    <sc-for list="{{achEmpty}}" as="a" hint-placeholder-count="4">
+                      <div class="ach off">
+                        <div style="display: flex; justify-content: space-between; align-items: flex-start"><span class="ach-ic"><svg class="ic" width="22" height="22" sc-camel-view-box="0 0 24 24" aria-hidden="true"><path d="{{a.icon}}"></path></svg></span><span style="display: flex; align-items: center; gap: 4px; font-size: 11px; font-weight: 600; color: var(--text-3)"><svg class="ic" width="14" height="14" sc-camel-view-box="0 0 24 24" aria-hidden="true"><rect x="5" y="10.5" width="14" height="10" rx="2.5"></rect><path d="M8 10.5V8a4 4 0 0 1 8 0v2.5"></path></svg>Bloqueada</span></div>
+                        <div style="display: flex; flex-direction: column; gap: 3px"><span style="font-size: 14px; font-weight: 600; color: var(--text-2)">{{a.name}}</span><span style="font-size: 12px; line-height: 1.4; color: var(--text-3)">{{a.desc}}</span></div>
+                      </div>
+                    </sc-for>
+                  </div>
+                  <div class="glass" style="border-radius: 20px; padding: 20px; display: flex; flex-direction: column; align-items: center; gap: 8px; text-align: center">
+                    <svg class="ic" width="28" height="28" sc-camel-view-box="0 0 24 24" aria-hidden="true" style="color: var(--text-3)"><path d="M4 6h16M4 12h10M4 18h7"></path></svg>
+                    <span style="font-size: 14px; font-weight: 600">Seu primeiro XP aparece aqui</span>
+                    <span style="font-size: 13px; line-height: 1.5; color: var(--text-2)">Conclua uma aula ou configure um alerta para ganhar os primeiros pontos hoje.</span>
+                    <a href="#" style="min-height: 44px; display: flex; align-items: center; font-size: 14px; font-weight: 600; text-decoration: none">Ir para as aulas</a>
+                  </div>
+                </sc-if>
+              </div>
+
+              <sc-if value="{{ph.toast}}" hint-placeholder-val="{{false}}">
+                <div role="status" style="position: absolute; left: 16px; right: 16px; top: 72px; display: flex; align-items: center; gap: 12px; padding: 12px 14px 12px 12px; border-radius: 18px; background: var(--surface-solid); box-shadow: var(--shadow-glow), 0 20px 40px -12px rgba(0,0,0,.5)">
+                  <span class="mono" style="height: 40px; padding: 0 12px; border-radius: 12px; display: flex; align-items: center; font-weight: 700; font-size: 15px; color: #fff; background: linear-gradient(160deg,#9B6BFF,#6D28D9)">+20 XP</span>
+                  <div style="flex: 1; display: flex; flex-direction: column; gap: 2px"><span style="font-size: 14px; font-weight: 600">Login diário</span><span style="font-size: 12px; color: var(--text-2)">Sequência de 12 dias · +30 XP de bônus</span></div>
+                  <button class="icon-btn" aria-label="Fechar aviso" style="width: 40px; height: 40px"><svg class="ic" width="18" height="18" sc-camel-view-box="0 0 24 24" aria-hidden="true"><path d="M6 6l12 12M18 6 6 18"></path></svg></button>
+                  <span style="position: absolute; left: 14px; right: 14px; bottom: 0; height: 3px; border-radius: 3px; background: linear-gradient(90deg,#7C3AED 60%,transparent 60%)"></span>
+                </div>
+              </sc-if>
+
+              <sc-if value="{{ph.levelup}}" hint-placeholder-val="{{false}}">
+                <div class="scrim"></div>
+                <div role="dialog" aria-modal="true" aria-labelledby="lvl-t" style="position: absolute; left: 20px; right: 20px; top: 120px; border-radius: 28px; overflow: hidden; background: linear-gradient(170deg,#1A0F33 0%,#2A1260 60%,#4C1D95 100%); color: #fff; box-shadow: 0 0 0 1px rgba(196,176,255,.45), 0 30px 80px -20px rgba(124,58,237,.8)">
+                  <div style="position: relative; height: 270px; display: flex; align-items: center; justify-content: center">
+                    <svg width="350" height="270" sc-camel-view-box="0 0 350 270" aria-hidden="true" style="position: absolute; inset: 0">
+                      <g style="fill: none; stroke-width: 1.5"><circle cx="175" cy="135" r="62" style="stroke: rgba(196,176,255,.6)"></circle><circle cx="175" cy="135" r="88" style="stroke: rgba(196,176,255,.35); stroke-dasharray: 4 8"></circle><circle cx="175" cy="135" r="116" style="stroke: rgba(255,95,210,.28)"></circle></g>
+                      <g style="fill: #E9E2FF"><circle cx="60" cy="60" r="2"></circle><circle cx="290" cy="50" r="2.4"></circle><circle cx="300" cy="200" r="1.6"></circle><circle cx="48" cy="210" r="2.2"></circle><circle cx="110" cy="30" r="1.4"></circle><circle cx="250" cy="240" r="1.8"></circle></g>
+                      <g style="fill: #FF5FD2"><circle cx="80" cy="140" r="2"></circle><circle cx="276" cy="120" r="2.2"></circle><circle cx="175" cy="20" r="1.8"></circle></g>
+                    </svg>
+                    <span style="position: relative; width: 112px; height: 124px; display: flex; align-items: center; justify-content: center">
+                      <svg width="112" height="124" sc-camel-view-box="0 0 56 62" aria-hidden="true" style="position: absolute; inset: 0; filter: drop-shadow(0 0 18px rgba(183,155,255,.9))"><path d="M28 2 53 16v30L28 60 3 46V16z" style="fill: #7C3AED; stroke: #E9E2FF; stroke-width: 1.6"></path><path d="M28 9 47 20v22L28 53 9 42V20z" style="fill: none; stroke: rgba(255,255,255,.3); stroke-width: .8"></path></svg>
+                      <span class="disp" style="position: relative; font-weight: 700; font-size: 46px">8</span>
+                    </span>
+                    <span style="position: absolute; left: 12px; top: 12px; font-size: 10.5px; font-weight: 700; letter-spacing: .06em; padding: 4px 8px; border-radius: 999px; color: #FF5FD2; background: rgba(7,5,13,.6)">REMOTION · 2,4 s · DOM POR CIMA</span>
+                  </div>
+                  <div style="padding: 0 22px 22px; display: flex; flex-direction: column; align-items: center; gap: 8px; text-align: center">
+                    <span style="font-size: 12px; font-weight: 600; letter-spacing: .12em; color: #C4B0FF">VOCÊ SUBIU DE NÍVEL</span>
+                    <span id="lvl-t" class="disp" style="font-size: 30px; font-weight: 700">Comandante</span>
+                    <span style="font-size: 14px; line-height: 1.5; color: #D9CCFF">Nível 8 desbloqueado. Próximo: nível 9 com <span class="mono">4.200 XP</span>.</span>
+                    <button class="btn" style="margin-top: 10px; color: #1A0F33; background: #fff">Continuar</button>
+                  </div>
+                </div>
+              </sc-if>
+
+              <sc-if value="{{ph.conquista}}" hint-placeholder-val="{{false}}">
+                <div class="scrim"></div>
+                <div role="dialog" aria-modal="true" aria-labelledby="ach-t" style="position: absolute; left: 0; right: 0; bottom: 0; border-radius: 28px 28px 0 0; padding: 10px 20px 28px; background: var(--surface-solid); box-shadow: 0 -20px 60px -10px rgba(124,58,237,.5); display: flex; flex-direction: column; align-items: center; gap: 12px; text-align: center">
+                  <span style="width: 40px; height: 5px; border-radius: 999px; background: var(--border-strong)"></span>
+                  <div style="position: relative; width: 190px; height: 170px; display: flex; align-items: center; justify-content: center">
+                    <svg width="190" height="170" sc-camel-view-box="0 0 190 170" aria-hidden="true" style="position: absolute; inset: 0"><g style="fill: none; stroke: #8B5CF6; stroke-width: 1.5; opacity: .5"><path d="M95 8 165 48v74L95 162 25 122V48z"></path></g><g style="stroke: #B79BFF; stroke-width: 2; stroke-linecap: round"><path d="M95 4v-0M20 40l-8-5M170 40l8-5M20 130l-8 5M170 130l8 5"></path></g><g style="fill: #FF5FD2"><circle cx="30" cy="85" r="2.4"></circle><circle cx="160" cy="85" r="2.4"></circle><circle cx="95" cy="166" r="2"></circle></g></svg>
+                    <span style="position: relative; width: 92px; height: 92px; border-radius: 26px; display: flex; align-items: center; justify-content: center; color: #fff; background: linear-gradient(150deg,#9B6BFF,#6D28D9); box-shadow: 0 0 0 6px var(--primary-soft), 0 16px 40px -10px var(--glow)"><svg class="ic" width="44" height="44" sc-camel-view-box="0 0 24 24" aria-hidden="true"><rect x="3.5" y="5" width="17" height="15" rx="2.5"></rect><path d="M3.5 9.5h17M8 3v4M16 3v4M8.5 14l2.5 2.5 4.5-4.5"></path></svg></span>
+                    <span style="position: absolute; left: -40px; top: 0; font-size: 10.5px; font-weight: 700; letter-spacing: .06em; padding: 4px 8px; border-radius: 999px; color: var(--pink); background: var(--pink-soft)">REMOTION · 1,6 s</span>
+                  </div>
+                  <span class="lbl" style="color: var(--primary-text)">Conquista desbloqueada</span>
+                  <span id="ach-t" class="disp" style="font-size: 26px; font-weight: 700">Semana cheia</span>
+                  <span style="font-size: 14px; line-height: 1.5; color: var(--text-2)">7 dias seguidos de login. Hábito formado.</span>
+                  <span class="mono" style="font-size: 15px; font-weight: 700; color: var(--success)">+100 XP</span>
+                  <div style="display: flex; flex-direction: column; gap: 10px; width: 100%; margin-top: 6px"><button class="btn btn-primary">Ver conquistas</button><button class="btn btn-ghost">Fechar</button></div>
+                </div>
+              </sc-if>
+
+              <nav class="botnav" aria-label="Navegação principal">
+                <a href="#" class="tab"><span class="tab-ic"><svg class="ic" width="22" height="22" sc-camel-view-box="0 0 24 24" aria-hidden="true"><path d="M3 10.5 12 3l9 7.5"></path><path d="M5 9.5V20h14V9.5"></path><path d="M10 20v-6h4v6"></path></svg></span>Início</a>
+                <a href="#" class="tab"><span class="tab-ic"><svg class="ic" width="22" height="22" sc-camel-view-box="0 0 24 24" aria-hidden="true"><rect x="2.5" y="7" width="19" height="11" rx="5.5"></rect><path d="M7 11v3M5.5 12.5h3"></path><circle cx="16" cy="11.5" r="1"></circle><circle cx="18" cy="13.5" r="1"></circle></svg></span>Jogos</a>
+                <a href="#" class="tab"><span class="fab"><svg class="ic" width="26" height="26" sc-camel-view-box="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"></circle><circle cx="12" cy="12" r="5"></circle><path d="M12 12l6-6"></path></svg></span>Probabilidades</a>
+                <a href="#" class="tab on" aria-current="page"><span class="tab-ic"><svg class="ic" width="22" height="22" sc-camel-view-box="0 0 24 24" aria-hidden="true"><path d="M8 4h8v5a4 4 0 0 1-8 0V4z"></path><path d="M16 5h3v2a3 3 0 0 1-3 3M8 5H5v2a3 3 0 0 0 3 3"></path><path d="M12 13v4M8.5 20h7"></path></svg></span>Conquistas</a>
+                <a href="#" class="tab"><span class="tab-ic"><svg class="ic" width="22" height="22" sc-camel-view-box="0 0 24 24" aria-hidden="true"><rect x="4" y="4" width="6.5" height="6.5" rx="1.5"></rect><rect x="13.5" y="4" width="6.5" height="6.5" rx="1.5"></rect><rect x="4" y="13.5" width="6.5" height="6.5" rx="1.5"></rect><rect x="13.5" y="13.5" width="6.5" height="6.5" rx="1.5"></rect></svg></span>Mais</a>
+              </nav>
+            </div>
+          </div>
+        </sc-for>
+      </div>
+    </div>
+  </sc-for>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script="" data-props="{&quot;$preview&quot;:{&quot;width&quot;:2676,&quot;height&quot;:4660}}">
+class Component extends DCLogic {
+  renderVals() {
+    var I = {
+      plane: 'M3 17 C 9 16.5, 14 14, 19 6M16 5.5 20.5 5 20 9.5',
+      cal: 'M3.5 5h17v15h-17zM3.5 9.5h17M8 3v4M16 3v4M8.5 14l2.5 2.5 4.5-4.5',
+      book: 'M5 4h11a3 3 0 0 1 3 3v13H8a3 3 0 0 1-3-3zM5 17a3 3 0 0 1 3-3h11',
+      bell: 'M6 16V11a6 6 0 0 1 12 0v5l1.5 2h-15zM10 20.5a2 2 0 0 0 4 0',
+      wallet: 'M3 7.5A2.5 2.5 0 0 1 5.5 5H18v3M3 7.5h18v12H3zM16 13.5h2',
+      moon: 'M20 14.5A8 8 0 0 1 9.5 4a8 8 0 1 0 10.5 10.5z',
+      crown: 'M3.5 8 7.5 12 12 5l4.5 7 4-4-2 11h-13z',
+      cap: 'M2.5 9 12 4.5 21.5 9 12 13.5zM6.5 11v4.5c0 1.5 2.5 3 5.5 3s5.5-1.5 5.5-3V11',
+      pause: 'M12 3a9 9 0 1 0 0 18 9 9 0 0 0 0-18zM10 9v6M14 9v6',
+      star: 'M12 3.5l2.6 5.3 5.9.9-4.3 4.1 1 5.8-5.2-2.7-5.2 2.7 1-5.8L3.5 9.7l5.9-.9z',
+      login: 'M14 4h4a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2h-4M10 16l4-4-4-4M14 12H4',
+      flame: 'M12 21a6.5 6.5 0 0 0 6.5-6.5c0-4-3.5-5.5-4-10-2.5 1.5-4.5 4.5-4 7.5-1.5-.5-2.5-2-2.5-3.5-1.5 1.5-2.5 3.5-2.5 6A6.5 6.5 0 0 0 12 21z',
+      down: 'M12 3v11M7.5 9.5 12 14l4.5-4.5M4 15v3a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-3'
+    };
+    function on(n, d, icon, when) { return { cls: 'on edge', locked: false, unlocked: true, name: n, desc: d, icon: icon, when: when, nameColor: 'var(--text)' }; }
+    function off(n, d, icon, a, b) { return { cls: 'off', locked: true, unlocked: false, name: n, desc: d, icon: icon, prog: a + '/' + b, pct: Math.round(100 * a / b) + '%', nameColor: 'var(--text-2)' }; }
+    var ach = [
+      on('Primeiro voo', 'Entrou no app pela primeira vez.', I.plane, '02/09'),
+      on('Semana cheia', '7 dias seguidos de login.', I.cal, '08/10'),
+      on('Aluno dedicado', 'Concluiu 5 aulas.', I.book, '29/09'),
+      on('Radar ligado', 'Configurou 3 tipos de alerta.', I.bell, '15/09'),
+      on('Banca organizada', 'Definiu um limite diário na gestão de banca.', I.wallet, '03/09'),
+      on('Pausa consciente', 'Usou a pausa de 24 h pela primeira vez.', I.pause, '21/09'),
+      off('Mês de ouro', '30 dias seguidos de login.', I.crown, 12, 30),
+      off('Formado', 'Concluiu todas as 20 aulas.', I.cap, 9, 20)
+    ];
+    var achEmpty = [
+      { name: 'Primeiro voo', desc: 'Entre no app pela primeira vez amanhã.', icon: I.plane },
+      { name: 'Semana cheia', desc: '7 dias seguidos de login.', icon: I.cal },
+      { name: 'Aluno dedicado', desc: 'Conclua 5 aulas.', icon: I.book },
+      { name: 'Radar ligado', desc: 'Configure 3 tipos de alerta.', icon: I.bell }
+    ];
+    var feed = [
+      { acao: 'Login diário', quando: 'Hoje, 20:12', xp: 20, icon: I.login },
+      { acao: 'Bônus de sequência · 12 dias', quando: 'Hoje, 20:12', xp: 30, icon: I.flame },
+      { acao: 'Aula concluída: Gestão de banca 2', quando: 'Hoje, 19:40', xp: 50, icon: I.book },
+      { acao: 'Depósito confirmado', quando: 'Ontem, 21:05', xp: 40, icon: I.down },
+      { acao: 'Alerta configurado: Minuto quente', quando: 'Ontem, 18:22', xp: 15, icon: I.bell },
+      { acao: 'Login diário', quando: 'Ontem, 08:03', xp: 20, icon: I.login }
+    ].map(function (f, i, arr) { f.line = i === arr.length - 1 ? 'transparent' : 'var(--border)'; return f; });
+    var names = [['Rafa', '4.820'], ['Bia', '4.410'], ['Thiago', '3.980'], ['Juh', '3.640'], ['Leo', '3.300'], ['Gabi', '3.120'], ['Dudu', '2.870'], ['Nanda', '2.700'], ['Caio', '2.560'], ['Pri', '2.410']];
+    var avs = ['#7C3AED', '#C0178E', '#0369A1', '#15803D', '#B84A00', '#6D28D9', '#9A6206', '#BE1A8A', '#1D4ED8', '#5B21B6'];
+    var medals = ['color:#1A1205;background:#F2B84B', 'color:#14121C;background:#C9C4D9', 'color:#1C0F05;background:#D58A4E'];
+    var rank = names.map(function (n, i) {
+      return { pos: i + 1, nome: n[0], xp: n[1], ini: n[0].slice(0, 2).toUpperCase(), av: avs[i], medal: i < 3 ? medals[i] : 'color:var(--text-2);background:var(--surface-2)' };
+    });
+    var wk = ['S', 'T', 'Q', 'Q', 'S', 'S', 'D'];
+    var week = wk.map(function (l, i) {
+      var done = i < 6;
+      var today = i === 6;
+      return { l: l, done: done, sty: done ? 'color:#fff;background:linear-gradient(150deg,#9B6BFF,#6D28D9)' : (today ? 'border:2px dashed var(--primary-text);background:transparent' : '') };
+    });
+    var defs = [
+      { key: 'normal', h: '2050px', num: '01', title: 'Normal', desc: 'Nível, sequência, conquistas 2 colunas, histórico de XP e ranking com a posição do usuário fixada no fim. Rolagem inteira.', tags: [{ t: 'CSS', k: 'k-css' }, { t: 'Dados', k: 'k-api' }] },
+      { key: 'loading', h: '960px', num: '02', title: 'Carregando', desc: 'Skeleton com as mesmas medidas do conteúdo, para nada pular quando os dados chegam. Brilho de 1,4 s; parado com reduzir movimento.', tags: [{ t: 'CSS', k: 'k-css' }] },
+      { key: 'empty', h: '1240px', num: '03', title: 'Vazio · primeira visita', desc: 'Nível 1, nenhuma sequência (“Faça login amanhã para começar”), conquistas bloqueadas e um caminho para o primeiro XP.', tags: [{ t: 'Dados', k: 'k-api' }] },
+      { key: 'toast', h: '960px', num: '04', title: 'Celebração · XP', desc: 'Toast no topo, 4 s, com barra de tempo. Não bloqueia a tela. role="status".', tags: [{ t: 'CSS', k: 'k-css' }, { t: 'JS', k: 'k-js' }] },
+      { key: 'levelup', h: '960px', num: '05', title: 'Celebração · subir de nível', desc: 'Modal com vídeo Remotion sem texto (anéis e partículas); número e nome do nível em DOM. Alternativa: badge estático com halo.', tags: [{ t: 'Remotion', k: 'k-rem' }, { t: 'CSS', k: 'k-css' }] },
+      { key: 'conquista', h: '960px', num: '06', title: 'Celebração · conquista', desc: 'Folha inferior com abertura do hexágono (Remotion 1,6 s) e o ícone da conquista em DOM por cima.', tags: [{ t: 'Remotion', k: 'k-rem' }] }
+    ];
+    var rows = [{ cls: 't-dark', label: 'Modo escuro', cap: true }, { cls: 't-light', label: 'Modo claro', cap: false }].map(function (th) {
+      return {
+        label: th.label,
+        phones: defs.map(function (d) {
+          return {
+            cls: th.cls, showCap: th.cap, h: d.h, num: d.num, title: d.title, desc: d.desc, tags: d.tags,
+            normal: d.key === 'normal', loading: d.key === 'loading', empty: d.key === 'empty',
+            toast: d.key === 'toast', levelup: d.key === 'levelup', conquista: d.key === 'conquista',
+            full: d.key === 'normal' || d.key === 'toast' || d.key === 'levelup' || d.key === 'conquista'
+          };
+        })
+      };
+    });
+    return { rows: rows, ach: ach, achEmpty: achEmpty, feed: feed, rank: rank, week: week };
+  }
+}
+</script>
+
+
+</body></html>

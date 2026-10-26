@@ -1,0 +1,10 @@
+Mode: built-in image_gen
+
+Use case: text-localization / precise text edit. Image 1 is the EDIT TARGET: the Paga Bandida green ranking banner. Image 2 is ONLY the prize typography/hierarchy reference. Edit image 1, preserving its exact man's identity, yellow cap, sunglasses, ochre shirt, crossed-arms pose, silver trophy, Paga Bandida emblem, airplane, lime #B6FF00 and forest #14220D palette, background and wide 16:9 aspect ratio. Never use the face, purple palette, Teleco brand, or R$3.000,00 value from image 2.
+Main requested change: replace the current large "RANKING DE PLAYERS" and "Confira os destaques do mês" text block with the following prize message, with the same visual hierarchy as image 2 but all green/silver:
+Largest dominant line, exact: "R$10.000,00"
+Next large line, exact: "EM PRÊMIOS"
+Then two smaller readable lines, exact: "PARA OS TOP DEPOSITANTES" / "DO MÊS".
+Retain a smaller "RANKING DE PLAYERS" label above the prize if space allows, keep the Paga Bandida emblem above and the existing "VER RANKING" CTA below.
+Make R$10.000,00 the unambiguous focal text with metallic silver-white dimensional lettering and lime edge light. Spell the amount exactly including the dot and comma. Keep all text comfortably inset from the edges, visually balanced with the portrait at left and trophy at upper right. No other amounts, terms, bonus offers, logos, people or text. No crop, no watermark. Change only the ranking/prize lettering and the minimum spacing needed to fit it, preserve everything else.
+

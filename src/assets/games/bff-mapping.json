@@ -1,0 +1,394 @@
+{
+  "source": "BFF Betuxo api/games/catalog",
+  "games": [
+    {
+      "launchSlug": "spribe/aviator-vip",
+      "slug": "aviator-vip",
+      "name": "Aviator VIP",
+      "vendorSlug": "spribe",
+      "imageFile": "aviator.png"
+    },
+    {
+      "launchSlug": "evolution/bac-bo",
+      "slug": "bac-bo",
+      "name": "Bac Bo",
+      "vendorSlug": "evolution",
+      "imageFile": "bac-bo.avif"
+    },
+    {
+      "launchSlug": "playtech/roleta-brasileira",
+      "slug": "roleta-brasileira",
+      "name": "Roleta Brasileira",
+      "vendorSlug": "playtech",
+      "imageFile": "roleta-brasileira.avif"
+    },
+    {
+      "launchSlug": "spribe/aviator",
+      "slug": "aviator",
+      "name": "Aviator",
+      "vendorSlug": "spribe",
+      "imageFile": "aviator.png"
+    },
+    {
+      "launchSlug": "pragmatic-play/auto-roulette",
+      "slug": "auto-roulette",
+      "name": "Auto Roulette",
+      "vendorSlug": "pragmatic-play",
+      "imageFile": "auto-roulette.webp"
+    },
+    {
+      "launchSlug": "evolution/auto-roulette",
+      "slug": "auto-roulette",
+      "name": "Auto-Roulette",
+      "vendorSlug": "evolution",
+      "imageFile": "auto-roulette.webp"
+    },
+    {
+      "launchSlug": "ezugi/auto-roulette",
+      "slug": "auto-roulette",
+      "name": "Auto Roulette",
+      "vendorSlug": "ezugi",
+      "imageFile": "auto-roulette.webp"
+    },
+    {
+      "launchSlug": "pragmatic-play/brazilian-roulette",
+      "slug": "brazilian-roulette",
+      "name": "Brazilian Roulette",
+      "vendorSlug": "pragmatic-play",
+      "imageFile": "brazilian-roulette.png"
+    },
+    {
+      "launchSlug": "pgsoft/fortune-tiger",
+      "slug": "fortune-tiger",
+      "name": "Fortune Tiger",
+      "vendorSlug": "pgsoft",
+      "imageFile": "fortune-tiger.jpg"
+    },
+    {
+      "launchSlug": "evolution/football-studio",
+      "slug": "football-studio",
+      "name": "Football Studio",
+      "vendorSlug": "evolution",
+      "imageFile": "football-studio.avif"
+    },
+    {
+      "launchSlug": "pragmatic-play/gates-of-olympus",
+      "slug": "gates-of-olympus",
+      "name": "Gates of Olympus",
+      "vendorSlug": "pragmatic-play",
+      "imageFile": "gates-of-olympus.jpg"
+    },
+    {
+      "launchSlug": "evolution/immersive-roulette",
+      "slug": "immersive-roulette",
+      "name": "Immersive Roulette",
+      "vendorSlug": "evolution",
+      "imageFile": "immersive-roulette.png"
+    },
+    {
+      "launchSlug": "pragmatic-play/roulette-azure",
+      "slug": "roulette-azure",
+      "name": "Roulette Azure",
+      "vendorSlug": "pragmatic-play",
+      "imageFile": "roulette-azure.jpg"
+    },
+    {
+      "launchSlug": "pgsoft/fortune-rabbit",
+      "slug": "fortune-rabbit",
+      "name": "Fortune Rabbit",
+      "vendorSlug": "pgsoft",
+      "imageFile": "fortune-rabbit.jpg"
+    },
+    {
+      "launchSlug": "pgsoft/fortune-dragon",
+      "slug": "fortune-dragon",
+      "name": "Fortune Dragon",
+      "vendorSlug": "pgsoft",
+      "imageFile": "fortune-dragon.avif"
+    },
+    {
+      "launchSlug": "pgsoft/fortune-mouse",
+      "slug": "fortune-mouse",
+      "name": "Fortune Mouse",
+      "vendorSlug": "pgsoft",
+      "imageFile": "fortune-mouse.jpg"
+    },
+    {
+      "launchSlug": "pgsoft/cash-mania",
+      "slug": "cash-mania",
+      "name": "Cash Mania",
+      "vendorSlug": "pgsoft",
+      "imageFile": "cash-mania.avif"
+    },
+    {
+      "launchSlug": "pragmatic-play/big-bass-bonanza-1000",
+      "slug": "big-bass-bonanza-1000",
+      "name": "Big Bass Bonanza 1000",
+      "vendorSlug": "pragmatic-play",
+      "imageFile": "big-bass-bonanza-1000.webp"
+    },
+    {
+      "launchSlug": "pgsoft/pinata-wins",
+      "slug": "pinata-wins",
+      "name": "Pinata Wins",
+      "vendorSlug": "pgsoft",
+      "imageFile": "pinata-wins.avif"
+    },
+    {
+      "launchSlug": "pragmatic-play/auto-mega-roulette",
+      "slug": "auto-mega-roulette",
+      "name": "Auto Mega Roulette",
+      "vendorSlug": "pragmatic-play",
+      "imageFile": "auto-mega-roulette.webp"
+    },
+    {
+      "launchSlug": "pragmatic-play/christmas-big-bass-bonanza",
+      "slug": "christmas-big-bass-bonanza",
+      "name": "Christmas Big Bass Bonanza",
+      "vendorSlug": "pragmatic-play",
+      "imageFile": "christmas-big-bass-bonanza.webp"
+    },
+    {
+      "launchSlug": "pgsoft/wild-bandito",
+      "slug": "wild-bandito",
+      "name": "Wild Bandito",
+      "vendorSlug": "pgsoft",
+      "imageFile": "wild-bandito.jpg"
+    },
+    {
+      "launchSlug": "pgsoft/double-fortune",
+      "slug": "double-fortune",
+      "name": "Double Fortune",
+      "vendorSlug": "pgsoft",
+      "imageFile": "double-fortune.jpg"
+    },
+    {
+      "launchSlug": "pragmatic-play/starlight-princess-super-scatter",
+      "slug": "starlight-princess-super-scatter",
+      "name": "Starlight Princess Super Scatter",
+      "vendorSlug": "pragmatic-play",
+      "imageFile": "starlight-princess-super-scatter.webp"
+    },
+    {
+      "launchSlug": "pgsoft/midas-fortune",
+      "slug": "midas-fortune",
+      "name": "Midas Fortune",
+      "vendorSlug": "pgsoft",
+      "imageFile": "midas-fortune.jpg"
+    },
+    {
+      "launchSlug": "ezugi/speed-roulette",
+      "slug": "speed-roulette",
+      "name": "Speed Roulette",
+      "vendorSlug": "ezugi",
+      "imageFile": "speed-roulette.png"
+    },
+    {
+      "launchSlug": "pragmatic-play/sugar-rush",
+      "slug": "sugar-rush",
+      "name": "Sugar Rush",
+      "vendorSlug": "pragmatic-play",
+      "imageFile": "sugar-rush.jpg"
+    },
+    {
+      "launchSlug": "evolution/speed-roulette",
+      "slug": "speed-roulette",
+      "name": "Speed Roulette",
+      "vendorSlug": "evolution",
+      "imageFile": "speed-roulette.png"
+    },
+    {
+      "launchSlug": "pgsoft/lucky-neko",
+      "slug": "lucky-neko",
+      "name": "Lucky Neko",
+      "vendorSlug": "pgsoft",
+      "imageFile": "lucky-neko.webp"
+    },
+    {
+      "launchSlug": "tada/fortune-gems-500",
+      "slug": "fortune-gems-500",
+      "name": "Fortune Gems 500",
+      "vendorSlug": "tada",
+      "imageFile": "fortune-gems-500.jpg"
+    },
+    {
+      "launchSlug": "pgsoft/prosperity-fortune-tree",
+      "slug": "prosperity-fortune-tree",
+      "name": "Prosperity Fortune Tree",
+      "vendorSlug": "pgsoft",
+      "imageFile": "prosperity-fortune-tree.webp"
+    },
+    {
+      "launchSlug": "pragmatic-play/big-bass-splash",
+      "slug": "big-bass-splash",
+      "name": "Big Bass Splash",
+      "vendorSlug": "pragmatic-play",
+      "imageFile": "big-bass-splash.webp"
+    },
+    {
+      "launchSlug": "pragmatic-play/big-bass-bonanza-3-reeler",
+      "slug": "big-bass-bonanza-3-reeler",
+      "name": "Big Bass Bonanza 3 Reeler",
+      "vendorSlug": "pragmatic-play",
+      "imageFile": "big-bass-bonanza-3-reeler.webp"
+    },
+    {
+      "launchSlug": "pgsoft/ganesha-fortune",
+      "slug": "ganesha-fortune",
+      "name": "Ganesha Fortune",
+      "vendorSlug": "pgsoft",
+      "imageFile": "ganesha-fortune-a6b4dc3d.png"
+    },
+    {
+      "launchSlug": "pragmatic-play/gates-of-olympus-1000-dice",
+      "slug": "gates-of-olympus-1000-dice",
+      "name": "Gates of Olympus 1000 Dice",
+      "vendorSlug": "pragmatic-play",
+      "imageFile": "gates-of-olympus-1000-dice.webp"
+    },
+    {
+      "launchSlug": "pragmatic-play/sweet-bonanza",
+      "slug": "sweet-bonanza",
+      "name": "Sweet Bonanza",
+      "vendorSlug": "pragmatic-play",
+      "imageFile": "sweet-bonanza.webp"
+    },
+    {
+      "launchSlug": "pragmatic-play/gold-party",
+      "slug": "gold-party",
+      "name": "Gold Party",
+      "vendorSlug": "pragmatic-play",
+      "imageFile": "gold-party.avif"
+    },
+    {
+      "launchSlug": "pgsoft/wild-ape-3258",
+      "slug": "wild-ape-3258",
+      "name": "Wild Ape #3258",
+      "vendorSlug": "pgsoft",
+      "imageFile": "wild-ape-3258.webp"
+    },
+    {
+      "launchSlug": "pgsoft/tree-of-fortune",
+      "slug": "tree-of-fortune",
+      "name": "Tree of Fortune",
+      "vendorSlug": "pgsoft",
+      "imageFile": "tree-of-fortune.jpg"
+    },
+    {
+      "launchSlug": "evolution/lightning-roulette",
+      "slug": "lightning-roulette",
+      "name": "Lightning Roulette",
+      "vendorSlug": "evolution",
+      "imageFile": "lightning-roulette.png"
+    },
+    {
+      "launchSlug": "pragmatic-play/aztec-gems-deluxe",
+      "slug": "aztec-gems-deluxe",
+      "name": "Aztec Gems Deluxe",
+      "vendorSlug": "pragmatic-play",
+      "imageFile": "aztec-gems-deluxe.webp"
+    },
+    {
+      "launchSlug": "pragmatic-play/wild-wild-riches-megaways",
+      "slug": "wild-wild-riches-megaways",
+      "name": "Wild Wild Riches Megaways",
+      "vendorSlug": "pragmatic-play",
+      "imageFile": "wild-wild-riches-megawaystm.gif"
+    },
+    {
+      "launchSlug": "pragmatic-play/big-bass-bonanza-megaways",
+      "slug": "big-bass-bonanza-megaways",
+      "name": "Big Bass Bonanza Megaways",
+      "vendorSlug": "pragmatic-play",
+      "imageFile": "big-bass-bonanza-megaways.webp"
+    },
+    {
+      "launchSlug": "pragmatic-play/buffalo-king-megaways",
+      "slug": "buffalo-king-megaways",
+      "name": "Buffalo King Megaways",
+      "vendorSlug": "pragmatic-play",
+      "imageFile": "buffalo-king-megawaystm.webp"
+    },
+    {
+      "launchSlug": "pragmatic-play/gold-party-2-after-hours",
+      "slug": "gold-party-2-after-hours",
+      "name": "Gold Party 2 ÔÇô After Hours",
+      "vendorSlug": "pragmatic-play",
+      "imageFile": "gold-party-2-after-hours.webp"
+    },
+    {
+      "launchSlug": "pragmatic-play/dragon-kingdom",
+      "slug": "dragon-kingdom",
+      "name": "Dragon Kingdom",
+      "vendorSlug": "pragmatic-play",
+      "imageFile": "dragon-kingdom.webp"
+    },
+    {
+      "launchSlug": "pragmatic-play/great-rhino-megaways",
+      "slug": "great-rhino-megaways",
+      "name": "Great Rhino Megaways",
+      "vendorSlug": "pragmatic-play",
+      "imageFile": "great-rhino-megawaystm.webp"
+    },
+    {
+      "launchSlug": "pragmatic-play/madame-destiny-megaways",
+      "slug": "madame-destiny-megaways",
+      "name": "Madame Destiny Megaways",
+      "vendorSlug": "pragmatic-play",
+      "imageFile": "madame-destiny-megawaystm.webp"
+    },
+    {
+      "launchSlug": "pragmatic-play/dragon-king-hot-pots",
+      "slug": "dragon-king-hot-pots",
+      "name": "Dragon King Hot Pots",
+      "vendorSlug": "pragmatic-play",
+      "imageFile": "dragon-king-hot-pots.webp"
+    },
+    {
+      "launchSlug": "pragmatic-play/sweet-bonanza-xmas",
+      "slug": "sweet-bonanza-xmas",
+      "name": "Sweet Bonanza Xmas",
+      "vendorSlug": "pragmatic-play",
+      "imageFile": "sweet-bonanza-xmas.webp"
+    },
+    {
+      "launchSlug": "pragmatic-play/sweet-bonanza-1000-dice",
+      "slug": "sweet-bonanza-1000-dice",
+      "name": "Sweet Bonanza 1000 Dice",
+      "vendorSlug": "pragmatic-play",
+      "imageFile": "sweet-bonanza-1000-dice.webp"
+    },
+    {
+      "launchSlug": "pragmatic-play/big-bass-bonanza-keeping-it-reel",
+      "slug": "big-bass-bonanza-keeping-it-reel",
+      "name": "Big Bass Bonanza - Keeping it Reel",
+      "vendorSlug": "pragmatic-play",
+      "imageFile": "big-bass-bonanza-keeping-it-reel.webp"
+    },
+    {
+      "launchSlug": "pragmatic-play/aladdin-and-the-sorcerer",
+      "slug": "aladdin-and-the-sorcerer",
+      "name": "Aladdin and the Sorcerer",
+      "vendorSlug": "pragmatic-play",
+      "imageFile": "aladdin-and-the-sorcerer.png"
+    },
+    {
+      "launchSlug": "pragmatic-play/5-lions-megaways",
+      "slug": "5-lions-megaways",
+      "name": "5 Lions Megaways",
+      "vendorSlug": "pragmatic-play",
+      "imageFile": "5-lions-megawaystm.png"
+    }
+  ],
+  "unmatchedImageNames": [
+    "brazilian-lightning-roulette",
+    "ocean-gems-bonanza",
+    "wolf-gold-1-000-000",
+    "fruit-party-dice",
+    "fortune-dragon-queen-exotic-wilds",
+    "fortune-rabbit-lock-2-spin",
+    "sugar-rush-super-scatter",
+    "crazy-time-brasil",
+    "xxxtreme-lightning"
+  ]
+}

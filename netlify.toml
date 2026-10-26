@@ -1,0 +1,7 @@
+[build]
+  publish = "build"
+  # Serve assets and PWA metadata from the origin being visited, including previews.
+  command = "PUBLIC_URL=/ CI= npm run build"
+
+[build.environment]
+  NODE_VERSION = "20"

@@ -1,0 +1,24 @@
+/* Tool cards share the catalog surfaces; only two cards need artwork. */
+.catalog-tools__grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: var(--space-3); }
+.catalog-tool { text-decoration: none; height: 100%; }
+:root[data-theme] .catalog-tool:hover { color: var(--text); text-decoration: none; }
+.catalog-tool__art { display: flex; position: relative; flex-direction: column; align-items: center; justify-content: center; gap: var(--space-4); width: 100%; aspect-ratio: 1; overflow: hidden; background: var(--surface-2); }
+.catalog-tool__art img { display: block; width: 100%; height: 100%; object-fit: cover; }
+.catalog-tool__brand { position: absolute; left: var(--space-3); top: var(--space-3); color: var(--text-2); font-size: var(--type-caption); font-weight: 600; }
+.catalog-tool__icon { color: var(--primary-text); }
+.catalog-tool__label { color: var(--text); font-size: var(--type-h2); font-family: var(--font-heading); font-weight: 600; }
+.catalog-tool__plane { position: absolute; bottom: var(--space-3); right: var(--space-3); color: var(--primary-text); }
+.catalog-tool__details { display: flex; flex: 1; flex-direction: column; gap: var(--space-2); padding: var(--space-4); }
+.catalog-tool__details > strong { color: var(--text); font-size: var(--type-body-sm); font-weight: 600; line-height: var(--line-body-sm); }
+.catalog-tool__details > span { color: var(--text-2); font-size: var(--type-caption); line-height: var(--line-caption); }
+.catalog-tool__details .catalog-tool__action { display: flex; align-items: center; justify-content: space-between; min-height: var(--touch-target); color: var(--primary-text); font-size: var(--type-caption); font-weight: 600; margin-top: auto; }
+@media (max-width: 600px) { .catalog-tool__details { padding: var(--space-3); } }
+.catalog-tools__realtime { display: flex; align-items: center; gap: 12px; margin-top: 12px; padding: 16px; border: 1px solid var(--border-strong); border-radius: 14px; background: var(--surface-solid); color: var(--text); }
+.catalog-tools__realtime-icon { display: grid; place-items: center; flex: 0 0 40px; height: 40px; border-radius: 10px; background: var(--primary-soft); color: var(--primary-text); }
+.catalog-tools__realtime > span:nth-child(2) { flex: 1; min-width: 0; }
+:root[data-theme] .catalog-tools__realtime strong { display: block; color: var(--text); font-size: 12px; line-height: 1.5; }
+.catalog-tools__realtime small { display: inline-block; margin-left: 4px; color: var(--primary-text); font-size: 8px; }
+.catalog-tools__realtime small.catalog-tools__new { padding: 3px 5px; border-radius: 5px; background: var(--a-quente-soft); color: var(--a-quente); font: 700 8px/1.3 var(--font-body); letter-spacing: .04em; vertical-align: middle; }
+.catalog-tools__realtime > span > span { display: block; margin-top: 4px; color: var(--text-2); font-size: 10px; line-height: 1.5; }
+.catalog-tools__realtime > svg { flex-shrink: 0; color: var(--primary-text); }
+.catalog-tools__realtime:hover { border-color: var(--primary-text); text-decoration: none; }

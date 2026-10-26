@@ -1,0 +1,432 @@
+{
+  "source": "https://blackpro.app/",
+  "images": [
+    {
+      "name": "Brazilian Roulette",
+      "sourceUrl": "https://backoffice.aurabet.pro/images/games/captura-de-tela-2026-09-30-100256-20260930-100800.png",
+      "file": "brazilian-roulette.png",
+      "bytes": 203265,
+      "sha256": "f7be3f84b3d401d03923f23c5f00111b72a5734f998d9ab0e0cc994bfbaceaba"
+    },
+    {
+      "name": "Roleta Brasileira",
+      "sourceUrl": "https://imagedelivery.net/TjsK7FMOjGj8BrLfedhFqw/6801c7e0-a10c-4cd8-b9b4-9b3bed2c1300/public",
+      "file": "roleta-brasileira.avif",
+      "bytes": 19584,
+      "sha256": "f5096170a07ac06f217d5764108e9578ca508be3bbf9299f4d21c46900991ccb"
+    },
+    {
+      "name": "Aviator",
+      "sourceUrl": "https://api.spacebet.app/uploads/092a9d35-0457-4fa6-9a78-9245a2250bcc.png",
+      "file": "aviator.png",
+      "bytes": 57172,
+      "sha256": "92637e8776255be86a85c264dc53d91f438f90c124e6a8c45841303dbbdc4117"
+    },
+    {
+      "name": "Football Studio",
+      "sourceUrl": "https://imagedelivery.net/TjsK7FMOjGj8BrLfedhFqw/faceb388-c489-4fe9-282e-0bd14be99400/public",
+      "file": "football-studio.avif",
+      "bytes": 21426,
+      "sha256": "21561440fde91fe4c810977931842531b9002bc284c2164b4a3d036fc83bf2f2"
+    },
+    {
+      "name": "Brazilian Lightning Roulette",
+      "sourceUrl": "https://api.spacebet.app/uploads/f61ea97b-79b1-4f19-8149-0609d385625f.webp",
+      "file": "brazilian-lightning-roulette.webp",
+      "bytes": 25606,
+      "sha256": "ab8afcd6ada88651a257af5488ff16ab1fd1e6a3e955c235f74e01e6ba351b94"
+    },
+    {
+      "name": "Speed Roulette",
+      "sourceUrl": "https://api.spacebet.app/uploads/1a6a637a-e59a-402b-9f70-75780849375c.png",
+      "file": "speed-roulette.png",
+      "bytes": 158858,
+      "sha256": "fa410151ff6d07a0a87a53e7bf536efae064d96fd9b30282d7f953ca5d2ac4ae"
+    },
+    {
+      "name": "Immersive Roulette",
+      "sourceUrl": "https://api.spacebet.app/uploads/e64e2d4f-4429-4cc6-931f-336334ac1d72.jpeg",
+      "file": "immersive-roulette.png",
+      "bytes": 167485,
+      "sha256": "17d78185e71d618c97eb649ced3cf524179f0b8cb355eeee680bfdfca3c29acb"
+    },
+    {
+      "name": "Auto-Roulette",
+      "sourceUrl": "https://api.spacebet.app/uploads/a8c023ac-2423-4c98-9219-7def83745110.webp",
+      "file": "auto-roulette.webp",
+      "bytes": 21794,
+      "sha256": "ec840183744bcf52273fa2a2954aca18bc74dbafa7e75d3e5f1ab806374ebacf"
+    },
+    {
+      "name": "Auto Mega Roulette",
+      "sourceUrl": "https://api.spacebet.app/uploads/4e326ff5-cd85-4eeb-921f-f8f5c6427e2e.webp",
+      "file": "auto-mega-roulette.webp",
+      "bytes": 18112,
+      "sha256": "db77aeaef33f08590db59d6015cc93ca697d1e4be3aa14583822b460ba3c4dab"
+    },
+    {
+      "name": "Lightning Roulette",
+      "sourceUrl": "https://api.spacebet.app/uploads/5db779cd-b392-44b7-ab7a-cd3c22ea0808.png",
+      "file": "lightning-roulette.png",
+      "bytes": 232905,
+      "sha256": "bb044a47be7c5eaad354c46937c70cfece1389b6216435663844dbacc9b97a43"
+    },
+    {
+      "name": "Big Bass Bonanza - Keeping it Reel",
+      "sourceUrl": "https://media.pl-01.cdn-platform.com/games/vs10bbkir_pragmatic_desktop_mobile_icon_1695743044969.jpg",
+      "file": "big-bass-bonanza-keeping-it-reel.webp",
+      "bytes": 24150,
+      "sha256": "f3fbad6abdfbe0e50bd3a0b0a495b03dff86878ac38f8a2a5df14f76bc361556"
+    },
+    {
+      "name": "Big Bass Bonanza 3 Reeler",
+      "sourceUrl": "https://imagensfivers.com/Games/Pragmatic-Play/PP_vs5bb3reeler.webp",
+      "file": "big-bass-bonanza-3-reeler.webp",
+      "bytes": 98930,
+      "sha256": "a00ddfc4b99eaa9ece66d3b616a6bf5b3bcdfafcf42abfee8a237228ca27915f"
+    },
+    {
+      "name": "Gates of Olympus 1000 Dice",
+      "sourceUrl": "https://imagensfivers.com/Games/Pragmatic-Play/PP_vs20dicegatex.webp",
+      "file": "gates-of-olympus-1000-dice.webp",
+      "bytes": 116662,
+      "sha256": "3e778264750159f9ebbbd693acd656c7ea25392362eb8eed2261c4e0b5547288"
+    },
+    {
+      "name": "Aladdin and the Sorcerer",
+      "sourceUrl": "https://gis-static.com/games/PragmaticPlay/c5f0407a7a924899a73702e0ae697767.png",
+      "file": "aladdin-and-the-sorcerer.png",
+      "bytes": 26538,
+      "sha256": "a91711be6b01c7a73408b5eb5416094f4efb1d8c6d65dda77d9ffcbcb6755f24"
+    },
+    {
+      "name": "5 Lions Megaways™",
+      "sourceUrl": "https://media.ttfileserver.com/376/pragmatic/300x300/23006.png",
+      "file": "5-lions-megawaystm.png",
+      "bytes": 212606,
+      "sha256": "47bcb4d5482df532ed5418b5be2d4d75c8751562d148d229e39c9011034d061f"
+    },
+    {
+      "name": "Madame Destiny Megaways™",
+      "sourceUrl": "https://cmsbetconstruct.com/content/images/casino/mobile/b6519595ef25e946996909b8c004bbd5_casinoGameIcon1.webp",
+      "file": "madame-destiny-megawaystm.webp",
+      "bytes": 15508,
+      "sha256": "825c058d1a62748d7d0460e3180c1f0c1c2df191fd594f9a9365c85457bd600d"
+    },
+    {
+      "name": "Ocean Gems Bonanza",
+      "sourceUrl": "https://casb7k.s3.sa-east-1.amazonaws.com/uploads/storage/thumbnail_01/ocean-gems-bonanza.webp",
+      "file": "ocean-gems-bonanza.webp",
+      "bytes": 44182,
+      "sha256": "f015e3b70e631bad8241f9b674acd0701022e0b8cc5f8680100c092e32334e9e"
+    },
+    {
+      "name": "Great Rhino Megaways™",
+      "sourceUrl": "https://cmsbetconstruct.com/content/images/casino/mobile/97fa2a7e4527b74c81edc1da6dbfe45d_casinoGameIcon1.webp",
+      "file": "great-rhino-megawaystm.webp",
+      "bytes": 15366,
+      "sha256": "6469689c598e45210f9cdaeeccc0da7110a3826c24f04e817fe7b74a7ad35d5a"
+    },
+    {
+      "name": "Wild Wild Riches Megaways™",
+      "sourceUrl": "https://cmsbetconstruct.com/content/images/casino/mobile/d687c186808fd62944a48c4f5035fc42_casinoGameIcon1.gif",
+      "file": "wild-wild-riches-megawaystm.gif",
+      "bytes": 1037434,
+      "sha256": "d6dc418bf2e9bbc6697d45621350e7e62c3220ee7ac55b0d83105e58c5b264b5"
+    },
+    {
+      "name": "Wolf Gold 1,000,000",
+      "sourceUrl": "https://casb7k.s3.sa-east-1.amazonaws.com/uploads/storage/timeless/pragmatic-live-wolf-gold-1000000.webp",
+      "file": "wolf-gold-1-000-000.webp",
+      "bytes": 17044,
+      "sha256": "6a60d0e85559d35c941f0075a71c1c05e252da3d17d782f3065f5f4c8f9f08b5"
+    },
+    {
+      "name": "Buffalo King Megaways™",
+      "sourceUrl": "https://cmsbetconstruct.com/content/images/casino/mobile/4710a49c278f9d355752c540f0cac98b_casinoGameIcon1.webp",
+      "file": "buffalo-king-megawaystm.webp",
+      "bytes": 11772,
+      "sha256": "914ec8680caf730231225e5deb3dcf2eab884b44dd7f12c6358c5e28c43c8226"
+    },
+    {
+      "name": "Gold Party™",
+      "sourceUrl": "https://casb7k.s3.sa-east-1.amazonaws.com/uploads/storage/thumbnail_v/pragmatic-play-gold-party.webp",
+      "file": "gold-partytm.webp",
+      "bytes": 13106,
+      "sha256": "13c64afde88482a16b434342cd2fe947d78bb878b472d1bd9fe0385d37c84c7a"
+    },
+    {
+      "name": "Fruit Party Dice",
+      "sourceUrl": "https://casb7k.s3.sa-east-1.amazonaws.com/uploads/storage/timeless/fruit-party-dice.webp",
+      "file": "fruit-party-dice.webp",
+      "bytes": 18774,
+      "sha256": "ba7a4bee11160a2eba2924a555763febd4fd847ea5c6c60437264547e587571b"
+    },
+    {
+      "name": "Fortune Dragon Queen Exotic Wilds",
+      "sourceUrl": "https://casb7k.s3.sa-east-1.amazonaws.com/uploads/storage/thumbnail/50090.webp",
+      "file": "fortune-dragon-queen-exotic-wilds.webp",
+      "bytes": 17918,
+      "sha256": "dac718dbc041a7de2eae34d8a4344272c1c991ce1dc619bf95e41899d31fd968"
+    },
+    {
+      "name": "Fortune Rabbit Lock 2 Spin",
+      "sourceUrl": "https://casb7k.s3.sa-east-1.amazonaws.com/uploads/storage/timeless/fortune-rabbit-lock-2-spin.webp",
+      "file": "fortune-rabbit-lock-2-spin.webp",
+      "bytes": 17974,
+      "sha256": "45c892a2ead002cb7aac139c6658da411ab3b197c81f2b24311c2b7449ba6421"
+    },
+    {
+      "name": "Ganesha Fortune",
+      "sourceUrl": "https://casb7k.s3.sa-east-1.amazonaws.com/uploads/storage/thumbnail_v/ganesha-fortune.webp",
+      "file": "ganesha-fortune-24d26627.webp",
+      "bytes": 12482,
+      "sha256": "0e7e4b1ff5312980e1e60b896a4f68fee95270ccb52f6a22c4924efd6038104f"
+    },
+    {
+      "name": "Sugar Rush Super Scatter",
+      "sourceUrl": "https://casb7k.s3.sa-east-1.amazonaws.com/uploads/storage/timeless/sugar-rush-super-scatter.webp",
+      "file": "sugar-rush-super-scatter.webp",
+      "bytes": 20646,
+      "sha256": "32b09de084216727ba1997bf248d7ddc4b175749942f04453746d4390bd8e08f"
+    },
+    {
+      "name": "Sweet Bonanza Xmas",
+      "sourceUrl": "https://imagensfivers.com/Games/Pragmatic-Play/PP_vs20sbxmas.webp",
+      "file": "sweet-bonanza-xmas.webp",
+      "bytes": 100128,
+      "sha256": "b556f3851293454efd80d132025b633edce18d7ac1d505b9edfd13d6b7bb6b1d"
+    },
+    {
+      "name": "Dragon Kingdom",
+      "sourceUrl": "https://imagensfivers.com/Games/Pragmatic-Play/PP_vs25dragonkingdom.webp",
+      "file": "dragon-kingdom.webp",
+      "bytes": 123032,
+      "sha256": "43e2dfb0d37e95766695e908f5bfa0bcfcda838b9b9b8c38cfeca5ef1172b016"
+    },
+    {
+      "name": "Fortune Gems 500",
+      "sourceUrl": "https://images.cometagaming.com/90fc9d18-25c3-4290-a3f3-2183ce3cce00/mobile",
+      "file": "fortune-gems-500.jpg",
+      "bytes": 13165,
+      "sha256": "10ec9f68e9e814f23fe79973429511f4d0fc9c6e0c31e058336473ab79d2af11"
+    },
+    {
+      "name": "Lucky Neko",
+      "sourceUrl": "https://imagensfivers.com/Games/PG-Soft/PGS_89.webp",
+      "file": "lucky-neko.webp",
+      "bytes": 189974,
+      "sha256": "5d40135999f2cb0e51a2c3284bc69daa6d3a9abb064dc8dfa1b373bafce73804"
+    },
+    {
+      "name": "Starlight Princess Super Scatter",
+      "sourceUrl": "https://media.pl-01.cdn-platform.com/games/vs20starprss_pragmatic_desktop_mobile_icon_1761922604689.webp",
+      "file": "starlight-princess-super-scatter.webp",
+      "bytes": 47310,
+      "sha256": "0a583b32840ccdea950d76212531d3822d9a9cdc8f7f81cd9eabf0c6659e227e"
+    },
+    {
+      "name": "Dragon King Hot Pots",
+      "sourceUrl": "https://imagensfivers.com/Games/Pragmatic-Play/PP_vs10dkinghp.webp",
+      "file": "dragon-king-hot-pots.webp",
+      "bytes": 118888,
+      "sha256": "9668fc4fb4cceb5f218c8f4cbd646dae17a5dcca769ad6cc5981f6385211ba48"
+    },
+    {
+      "name": "Prosperity Fortune Tree",
+      "sourceUrl": "https://imagensfivers.com/Games/PG-Soft/PGS_1312883.webp",
+      "file": "prosperity-fortune-tree.webp",
+      "bytes": 217850,
+      "sha256": "8b8087d208d19b041419ca75b48ec354adc89049b8a4450008dc85ce6d18a07b"
+    },
+    {
+      "name": "Wild Ape #3258",
+      "sourceUrl": "https://imagensfivers.com/Games/PG-Soft/PGS_1508783.webp",
+      "file": "wild-ape-3258.webp",
+      "bytes": 174168,
+      "sha256": "96d991be337d881708a7efd466cd8af6d30bcabff17857e05cdfaba65e02d57c"
+    },
+    {
+      "name": "Aztec Gems Deluxe",
+      "sourceUrl": "https://imagensfivers.com/Games/Pragmatic-Play/PP_vs9aztecgemsdx.webp",
+      "file": "aztec-gems-deluxe.webp",
+      "bytes": 157588,
+      "sha256": "141d6689a776059ccc1815dda8384eaa65b26a43a25486535625915217af49a9"
+    },
+    {
+      "name": "Sweet Bonanza 1000 Dice",
+      "sourceUrl": "https://imagensfivers.com/Games/Pragmatic-Play/PP_vs20swdicex.webp",
+      "file": "sweet-bonanza-1000-dice.webp",
+      "bytes": 102740,
+      "sha256": "74920236b33bfe0beda6a57813a0194e91369a718c59265e651148b3c647a56a"
+    },
+    {
+      "name": "Gold Party 2 - After Hours",
+      "sourceUrl": "https://media.pl-01.cdn-platform.com/games/vs25goldpartya_pragmatic_desktop_mobile_icon_1751030256229.webp",
+      "file": "gold-party-2-after-hours.webp",
+      "bytes": 30378,
+      "sha256": "040423b195cf4e71bc0bf36c46f74cd5bfe3e4fa598f2b8dee5950241ae3bbf8"
+    },
+    {
+      "name": "Christmas Big Bass Bonanza",
+      "sourceUrl": "https://media.pl-01.cdn-platform.com/games/vs10bxmasbnza_pragmatic_desktop_mobile_icon_1745360816715.webp",
+      "file": "christmas-big-bass-bonanza.webp",
+      "bytes": 16316,
+      "sha256": "dae1da6df69e83d26e67e6f941c262017a35055ab05166d069110aaabd9afef4"
+    },
+    {
+      "name": "Fortune Mouse",
+      "sourceUrl": "https://api.spacebet.app/uploads/f21d30d9-834c-4404-981a-8f28706eb3cd.jpeg",
+      "file": "fortune-mouse.jpg",
+      "bytes": 222644,
+      "sha256": "f2ea612f5401200d2bc7bfa99c1c49ed685ead6bc8cd455453470b596440396b"
+    },
+    {
+      "name": "Fortune Tiger",
+      "sourceUrl": "https://api.spacebet.app/uploads/4fee2383-b496-448d-abc7-057bf60099d6.jpeg",
+      "file": "fortune-tiger.jpg",
+      "bytes": 89687,
+      "sha256": "8a372e76871714d9104bafc6816315e94a8d2566511118f3bd6119673bb7479d"
+    },
+    {
+      "name": "Midas Fortune",
+      "sourceUrl": "https://api.spacebet.app/uploads/c0dafb82-c96a-44bb-a6f1-3bebde50a5d7.jpeg",
+      "file": "midas-fortune.jpg",
+      "bytes": 128158,
+      "sha256": "7e2eff0a7ec6b90a8fe0836db5745fab66cd7693ecc24c2b2c0692864da75961"
+    },
+    {
+      "name": "Tree of Fortune",
+      "sourceUrl": "https://api.spacebet.app/uploads/aa59cf4c-8a13-46f1-a8e1-1ac8f46c9803.jpeg",
+      "file": "tree-of-fortune.jpg",
+      "bytes": 115498,
+      "sha256": "6a037cde177f29344c3f865d962c6a505705665c2c54c41747727b4f28a0c570"
+    },
+    {
+      "name": "Wild Bandito",
+      "sourceUrl": "https://api.spacebet.app/uploads/b1fcbaad-cd9a-4fc4-884f-4a98ea7a98e4.jpeg",
+      "file": "wild-bandito.jpg",
+      "bytes": 65150,
+      "sha256": "37c10b0960f7ce58a07850e198c080671695c5f113bd8454167806d7c7e18c35"
+    },
+    {
+      "name": "Big Bass Bonanza Megaways",
+      "sourceUrl": "https://media.pl-01.cdn-platform.com/games/vswaysbbb_pragmatic_desktop_mobile_icon_1745958921039.webp",
+      "file": "big-bass-bonanza-megaways.webp",
+      "bytes": 21616,
+      "sha256": "a145cf854759eda77c2a9e08c0c0947213968023936c382aa7f3a399420d8281"
+    },
+    {
+      "name": "Crazy Time Brasil",
+      "sourceUrl": "https://casb7k.s3.sa-east-1.amazonaws.com/uploads/storage/timeless/crazy-time-brasil.webp",
+      "file": "crazy-time-brasil.webp",
+      "bytes": 35738,
+      "sha256": "5ec18ea40f0c65d54d6c94932e0e6d9dd7d45559aed2330c59b356cfd007c575"
+    },
+    {
+      "name": "Cash Mania",
+      "sourceUrl": "https://api.spacebet.app/uploads/9e3e6a97-4801-4ab1-bd6e-4e40755494aa.avif",
+      "file": "cash-mania.avif",
+      "bytes": 51016,
+      "sha256": "1921fd9dfaa6a39dc02072d2ef433d77ed0c806d2ac8b25d8d3cd8424166a020"
+    },
+    {
+      "name": "Double Fortune",
+      "sourceUrl": "https://api.spacebet.app/uploads/0a7a5969-2fd5-4471-9430-e89a64a9c3ec.jpeg",
+      "file": "double-fortune.jpg",
+      "bytes": 195774,
+      "sha256": "0bcca1d267b55b2b12ffc05dca0fa5d6dbf069d80ed751d3754f1771e75fbceb"
+    },
+    {
+      "name": "Fortune Dragon",
+      "sourceUrl": "https://api.spacebet.app/uploads/29cc1f97-de03-4b1e-b3a5-6b47ebc2a448.avif",
+      "file": "fortune-dragon.avif",
+      "bytes": 34327,
+      "sha256": "69c9c9c3ac02d5bd4824364476b812ec2f498ae3da1f2c709f60d866bf1fa618"
+    },
+    {
+      "name": "Big Bass Bonanza 1000",
+      "sourceUrl": "https://media.pl-01.cdn-platform.com/games/vs10bbbnz1000_pragmatic_desktop_mobile_icon_1749832070996.webp",
+      "file": "big-bass-bonanza-1000.webp",
+      "bytes": 7452,
+      "sha256": "5ba5d0b466285e561078ea29623a5a013aa3b7991313060bfb26323036e4cdcc"
+    },
+    {
+      "name": "Gold Party",
+      "sourceUrl": "https://api.spacebet.app/uploads/1acc2c84-1013-46b0-a3ae-0216e7ed4b69.avif",
+      "file": "gold-party.avif",
+      "bytes": 39865,
+      "sha256": "3df849908af57c3baf2b906c0f16d4f928f91b6e86b563c3b373218c7f1f4169"
+    },
+    {
+      "name": "Gates Of Olympus",
+      "sourceUrl": "https://api.spacebet.app/uploads/26c15a73-e426-407c-809c-0c8adaa91d28.jpeg",
+      "file": "gates-of-olympus.jpg",
+      "bytes": 59839,
+      "sha256": "65a312b5abfa4a19df1d0a111967b0aef1e4150e395b3ddda785b349ccedd0c3"
+    },
+    {
+      "name": "Fortune Rabbit",
+      "sourceUrl": "https://api.spacebet.app/uploads/a9c312eb-054e-491a-b6e8-79b4c6feba32.jpeg",
+      "file": "fortune-rabbit.jpg",
+      "bytes": 197121,
+      "sha256": "cb1730b02ef7a0dfd84f34cce90175a9c5a6ef6e5396f2cd022e9b5cceb49442"
+    },
+    {
+      "name": "Sugar Rush",
+      "sourceUrl": "https://api.spacebet.app/uploads/400fa462-35a5-48d0-80dd-08ad6bfcfaa3.jpeg",
+      "file": "sugar-rush.jpg",
+      "bytes": 59584,
+      "sha256": "d0600edf7ac743b9b8150f779938e173628d3d3a245f31b53b2aa075683a63ec"
+    },
+    {
+      "name": "Ganesha fortune",
+      "sourceUrl": "https://api.spacebet.app/uploads/a3fec437-f9d0-4098-b288-d54421c724b6.png",
+      "file": "ganesha-fortune-a6b4dc3d.png",
+      "bytes": 371084,
+      "sha256": "1663801e30484b58dd67ea075ae766eb74bb0943f5bae1ea4d5e6c7ac112fb4c"
+    },
+    {
+      "name": "Big Bass Splash",
+      "sourceUrl": "https://api.spacebet.app/uploads/341eff58-9c42-4c76-887e-3146cfd1aa89.webp",
+      "file": "big-bass-splash.webp",
+      "bytes": 17152,
+      "sha256": "0ed6944164ad9fb3811c19b85c762d26b0a8f291842c0f18ba92b162907608bf"
+    },
+    {
+      "name": "Pinata Wins",
+      "sourceUrl": "https://api.spacebet.app/uploads/2ffea802-d053-40b3-a4dd-02ddbfdd81c3.avif",
+      "file": "pinata-wins.avif",
+      "bytes": 48641,
+      "sha256": "2e48bd97d7ac6ead7fdcb2256381031f6ea4ca549cfdf15c72869d852e9d9f7e"
+    },
+    {
+      "name": "Sweet Bonanza",
+      "sourceUrl": "https://api.spacebet.app/uploads/3086e46f-676c-4d7a-b984-3cd745d1213c.webp",
+      "file": "sweet-bonanza.webp",
+      "bytes": 198718,
+      "sha256": "341bd2191a18dc5d15c783143077ee96db4c1afd0c850528cf795ca1a98233c4"
+    },
+    {
+      "name": "Bac Bo",
+      "sourceUrl": "https://imagedelivery.net/TjsK7FMOjGj8BrLfedhFqw/38979258-0fd4-4c14-f7a1-182938ce3300/public",
+      "file": "bac-bo.avif",
+      "bytes": 21351,
+      "sha256": "28ea85a393d78cc37fa70eafb4b86a0bb9f8c8cd09e4023973a7265fb6218125"
+    },
+    {
+      "name": "Roulette Azure",
+      "sourceUrl": "https://api.spacebet.app/uploads/08cb899e-b2b8-407e-9ccb-0f158bb9bda2.jpeg",
+      "file": "roulette-azure.jpg",
+      "bytes": 31057,
+      "sha256": "10bc6c4a52ab20513b6090a651dd37ab2394f941026fbb0af7f006f8407995cd"
+    },
+    {
+      "name": "xxxTreme Lightning",
+      "sourceUrl": "https://api.spacebet.app/uploads/6059d6d1-4003-419e-aa7e-67683c17e4a5.jpeg",
+      "file": "xxxtreme-lightning.jpg",
+      "bytes": 91324,
+      "sha256": "7917249aa924e9c463683b88f3fbfab49135eff2a08edf472d0f1aea267f3abd"
+    }
+  ]
+}

@@ -1,0 +1,97 @@
+/* Paga Bandida: lime highlights, forest surfaces and accessible light/dark palettes. */
+
+:root[data-theme="dark"] {
+  --on-primary:#102000;
+  --gradient-primary:linear-gradient(180deg,#C4FF36 0%,#B6FF00 55%,#8AD100 100%);
+  --bg:#080D06;
+  --bg-2:#0D1509;
+  --surface:rgba(20,34,13,.66);
+  --surface-solid:#14220D;
+  --surface-2:#1D3013;
+  --surface-3:#2A421C;
+  --border:rgba(182,255,0,.16);
+  --border-strong:rgba(182,255,0,.36);
+  --text:#F4FAEA;
+  --text-2:#BDCDB0;
+  --text-3:#91A880;
+  --primary:#B6FF00;
+  --primary-text:#B6FF00;
+  --primary-soft:rgba(109,174,0,.18);
+  --glow:rgba(182,255,0,.55);
+  --glow-soft:rgba(182,255,0,.22);
+  --pink:#FF5FD2;
+  --pink-soft:rgba(255,95,210,.16);
+  --success:#34D399;
+  --warning:#FBBF24;
+  --danger:#F87171;
+  --info:#60A5FA;
+  --shadow-card:0 1px 0 rgba(255,255,255,.04) inset,0 12px 40px rgba(0,0,0,.55);
+  --shadow-glow:0 0 0 1px rgba(182,255,0,.35),0 0 28px -6px rgba(182,255,0,.6);
+  --grid-line:rgba(182,255,0,.07);
+  --track:rgba(182,255,0,.14);
+  --track-off:#304226;
+  --edge-a:rgba(182,255,0,.75);
+  --edge-b:rgba(124,196,0,.45);
+  color-scheme:dark;
+  /* cores dos 6 alertas (sempre com ícone e nome) */
+  --a-rosas: #FF5FD2; /* contraste 7,0:1 */
+  --a-rosas-soft: rgba(255,95,210,.14);
+  --a-baixos: #FF8A3D; /* contraste 8,0:1 */
+  --a-baixos-soft: rgba(255,138,61,.14);
+  --a-d30: #FDE047; /* contraste 14,2:1 */
+  --a-d30-soft: rgba(253,224,71,.12);
+  --a-d100: #38BDF8; /* contraste 8,7:1 */
+  --a-d100-soft: rgba(56,189,248,.14);
+  --a-1000: #F2B84B; /* contraste 10,5:1 */
+  --a-1000-soft: rgba(242,184,75,.14);
+  --a-quente: #4ADE80; /* contraste 10,8:1 */
+  --a-quente-soft: rgba(74,222,128,.14);
+}
+
+:root[data-theme="light"] {
+  --bg:#F7FAF2;
+  --bg-2:#EDF4E3;
+  --surface:rgba(255,255,255,.80);
+  --surface-solid:#FFFFFF;
+  --surface-2:#F1F6E9;
+  --surface-3:#E5EED8;
+  --border:rgba(48,85,0,.12);
+  --border-strong:rgba(48,85,0,.28);
+  --text:#14220D;
+  --text-2:#3F5033;
+  --text-3:#526246;
+  --primary:#397000;
+  --primary-text:#356600;
+  --primary-soft:rgba(109,174,0,.10);
+  --glow:rgba(109,174,0,.28);
+  --glow-soft:rgba(109,174,0,.12);
+  --pink:#C0178E;
+  --pink-soft:rgba(192,23,142,.10);
+  --success:#047857;
+  --warning:#B45309;
+  --danger:#B91C1C;
+  --info:#1D4ED8;
+  --shadow-card:0 1px 2px rgba(20,34,13,.06),0 10px 30px rgba(48,85,0,.10);
+  --shadow-glow:0 0 0 1px rgba(109,174,0,.35),0 8px 24px -6px rgba(109,174,0,.35);
+  --grid-line:rgba(48,85,0,.06);
+  --track:rgba(48,85,0,.12);
+  --track-off:#D6E2C8;
+  --edge-a:rgba(109,174,0,.45);
+  --edge-b:rgba(57,112,0,.25);
+  color-scheme:light;
+  --hero: #285200; /* destaque profundo (cartão de destaque, texto branco 9,0:1) */
+  /* cores dos 6 alertas (sempre com ícone e nome) */
+  --a-rosas: #BE1A8A; /* contraste 5,7:1 */
+  --a-rosas-soft: rgba(190,26,138,.08);
+  --a-baixos: #B84A00; /* contraste 5,2:1 */
+  --a-baixos-soft: rgba(184,74,0,.08);
+  --a-d30: #7F6500; /* contraste 5,5:1 */
+  --a-d30-soft: rgba(127,101,0,.08);
+  --a-d100: #0369A1; /* contraste 5,9:1 */
+  --a-d100-soft: rgba(3,105,161,.08);
+  --a-1000: #9A6206; /* contraste 5,1:1 */
+  --a-1000-soft: rgba(154,98,6,.08);
+  --a-quente: #15803D; /* contraste 5,0:1 */
+  --a-quente-soft: rgba(21,128,61,.08);
+}
+

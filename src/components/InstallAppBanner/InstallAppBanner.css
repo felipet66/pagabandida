@@ -1,0 +1,49 @@
+.install-app-layout { --install-app-height: 0px; padding-top: var(--install-app-height); }
+.install-app-layout.has-install-banner { --install-app-height: calc(64px + env(safe-area-inset-top, 0px)); --app-safe-top: 0px; }
+.install-app-bar { position: fixed; inset: 0 0 auto; z-index: 1080; box-sizing: border-box; height: var(--install-app-height); padding: calc(8px + env(safe-area-inset-top, 0px)) 16px 8px; background: var(--surface-solid, #14220D); color: var(--text, #F4FAEA); border-bottom: 1px solid var(--border-strong, #a78bfa5c); box-shadow: var(--shadow-card); font-family: var(--font-body, sans-serif); }
+.install-app-bar__inner { display: flex; align-items: center; gap: 10px; height: 100%; max-width: 1200px; margin: 0 auto; }
+body.swal2-shown .install-app-bar, body.modal-open .install-app-bar { z-index: 1040; }
+.install-app-bar__icon { display: block; width: 36px; height: 36px; flex-shrink: 0; object-fit: contain; border-radius: 9px; }
+.install-app-bar__content { min-width: 0; margin-right: auto; }
+:root[data-theme] .install-app-bar h2 { margin: 0 0 2px; font: 600 13px/1.4 var(--font-body); color: var(--text); }
+:root[data-theme] .install-app-bar p { margin: 0; font-size: 10px; line-height: 1.5; color: var(--text-2); }
+.install-app-bar__action { display: inline-flex; align-items: center; justify-content: center; gap: 7px; flex-shrink: 0; min-height: 44px; padding: 8px 14px; border: 1px solid transparent; border-radius: var(--radius-12, 12px); background: linear-gradient(var(--button-scrim),var(--button-scrim)),var(--gradient-primary); color: var(--on-primary, #fff); font-size: 12px; font-weight: 600; cursor: pointer; }
+.install-app-bar__action:hover:not(:disabled), .install-app-popup__done:hover { border-color: var(--edge-a); box-shadow: var(--shadow-glow); }
+.install-app-bar__action:disabled { opacity: .65; cursor: wait; }
+#root .install-app-layout .wrapper, #root .install-app-layout .main-panel,
+:root[data-theme] #root .install-app-layout > .game-catalog { min-height: calc(100vh - var(--install-app-height)); min-height: calc(100dvh - var(--install-app-height)); }
+.install-app-layout [id] { scroll-margin-top: calc(var(--install-app-height) + 16px); }
+@media (min-width: 992px) { :root[data-theme] #root .install-app-layout .sidebar.app-sidebar { top: calc(92px + var(--install-app-height)); } }
+
+/* Instructions are shared by authentication, the catalog and the panel. */
+.install-app-popup.swal2-popup { width: min(460px, calc(100vw - 24px)); max-height: calc(100dvh - 32px); padding: 24px; overflow-y: auto; background: var(--surface-solid, #14220D); color: var(--text, #F4FAEA); border: 1px solid var(--border-strong); border-radius: var(--radius-24, 24px); box-shadow: var(--shadow-card); font-family: var(--font-body, sans-serif); }
+:root[data-theme] .install-app-popup .install-app-popup__title { padding: 8px 26px 0 0; color: var(--text); font-size: 23px; line-height: 1.3; font-weight: 600; text-align: left; }
+.install-app-popup .install-app-popup__content { margin: 12px 0 0; padding: 0; text-align: left; overflow: visible; }
+:root[data-theme] .install-app-popup .install-app-intro { margin: 0; color: var(--text-2); font-size: 12px; line-height: 1.7; }
+.install-app-popup .install-app-popup__close { width: 44px; height: 44px; margin: 4px; border-radius: 10px; color: var(--text-2); font-size: 28px; }
+.install-app-platform { display: flex; gap: 4px; padding: 4px; margin: 20px 0 16px; border: 1px solid var(--border); border-radius: var(--radius-12, 12px); background: var(--bg-2); }
+.install-app-platform button { display: flex; justify-content: center; align-items: center; gap: 6px; flex: 1; min-width: 0; min-height: 44px; padding: 7px 5px; border: 0; border-radius: var(--radius-8, 8px); background: transparent; color: var(--text-2); font-size: 11px; white-space: nowrap; cursor: pointer; }
+.install-app-platform button[aria-pressed="true"] { background: var(--primary-soft); color: var(--primary-text); font-weight: 600; }
+:root[data-theme] .install-app-popup .install-app-browser { margin: 0 0 18px; color: var(--text-2); font-size: 12px; line-height: 1.6; }
+.install-app-browser strong { color: var(--text); }
+.install-app-steps { list-style: none; padding: 0; margin: 0; display: flex; flex-direction: column; gap: 18px; }
+.install-app-steps li { display: flex; align-items: flex-start; gap: 12px; }
+.install-app-steps__number { display: grid; place-items: center; flex: 0 0 28px; height: 28px; border-radius: 50%; color: var(--primary-text); border: 1px solid var(--border-strong); background: var(--primary-soft); font-size: 12px; font-weight: 600; }
+:root[data-theme] .install-app-popup .install-app-steps h3 { margin: 4px 0 6px; color: var(--text); font-size: 13px; line-height: 1.5; font-weight: 600; }
+:root[data-theme] .install-app-popup .install-app-steps p { margin: 0; color: var(--text-2); font-size: 12px; line-height: 1.7; }
+:root[data-theme] .install-app-popup .install-app-tip { margin: 20px 0 18px; padding: 12px; border: 1px solid var(--border); border-radius: var(--radius-12, 12px); background: var(--bg-2); color: var(--text-2); font-size: 11px; line-height: 1.7; }
+.install-app-popup .install-app-popup__actions { width: 100%; margin: 0; }
+.install-app-popup__done { display: block; width: 100%; min-height: 44px; border: 1px solid transparent; border-radius: var(--radius-12, 12px); background: linear-gradient(var(--button-scrim),var(--button-scrim)),var(--gradient-primary); color: var(--on-primary, #fff); font-size: 13px; font-weight: 600; cursor: pointer; }
+.install-app-bar button:focus-visible, .install-app-popup button:focus-visible { outline: var(--focus-width, 2px) solid var(--focus-ring, #B6FF00); outline-offset: 3px; box-shadow: var(--focus-shadow); }
+@media (max-width: 480px) { .install-app-platform button i { display: none; } }
+@media (max-width: 359px) {
+  .install-app-bar { padding-left: 10px; padding-right: 10px; }
+  .install-app-bar__inner { gap: 7px; }
+  .install-app-bar__icon { width: 30px; height: 30px; }
+  :root[data-theme] .install-app-bar h2 { font-size: 12px; }
+  :root[data-theme] .install-app-bar p { font-size: 9px; }
+  .install-app-bar__action { padding: 8px 10px; font-size: 11px; }
+  .install-app-popup.swal2-popup { padding: 22px 16px 18px; }
+  .install-app-platform button { font-size: 10px; }
+  .install-app-platform button i { display: none; }
+}

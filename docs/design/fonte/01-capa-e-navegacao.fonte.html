@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="pt-BR"><head>
+<meta charset="utf-8">
+<title>Capa e navegação</title>
+<script src="561b89a5-31f4-4781-96a5-527862b7af31"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<style></style>
+<style>
+body{margin:0;background:#050309}
+*{box-sizing:border-box}
+.t-dark{--bg:#07050D;--bg-2:#0D0919;--surface:rgba(22,15,42,.66);--surface-solid:#140E26;--surface-2:#1C1535;--surface-3:#261C47;--border:rgba(167,139,250,.16);--border-strong:rgba(167,139,250,.36);--text:#F4F1FF;--text-2:#BDB4DA;--text-3:#8F86B2;--primary:#7C3AED;--primary-text:#B79BFF;--primary-soft:rgba(124,58,237,.18);--glow:rgba(139,92,246,.55);--glow-soft:rgba(139,92,246,.22);--pink:#FF5FD2;--pink-soft:rgba(255,95,210,.16);--success:#34D399;--warning:#FBBF24;--danger:#F87171;--shadow-card:0 1px 0 rgba(255,255,255,.04) inset,0 12px 40px rgba(0,0,0,.55);--shadow-glow:0 0 0 1px rgba(167,139,250,.35),0 0 28px -6px rgba(139,92,246,.6);--grid-line:rgba(167,139,250,.07);--track:rgba(167,139,250,.14);--track-off:#2B2247;--edge-a:rgba(183,155,255,.75);--edge-b:rgba(255,95,210,.45);color-scheme:dark}
+.t-light{--bg:#F7F5FF;--bg-2:#EEE9FE;--surface:rgba(255,255,255,.80);--surface-solid:#FFFFFF;--surface-2:#F3EFFF;--surface-3:#E9E2FF;--border:rgba(76,29,149,.12);--border-strong:rgba(76,29,149,.28);--text:#120B24;--text-2:#463D63;--text-3:#615880;--primary:#7C3AED;--primary-text:#6D28D9;--primary-soft:rgba(124,58,237,.10);--glow:rgba(124,58,237,.28);--glow-soft:rgba(124,58,237,.12);--pink:#C0178E;--pink-soft:rgba(192,23,142,.10);--success:#047857;--warning:#B45309;--danger:#B91C1C;--shadow-card:0 1px 2px rgba(18,11,36,.06),0 10px 30px rgba(91,33,182,.10);--shadow-glow:0 0 0 1px rgba(124,58,237,.35),0 8px 24px -6px rgba(124,58,237,.35);--grid-line:rgba(91,33,182,.06);--track:rgba(91,33,182,.12);--track-off:#D9D1F2;--edge-a:rgba(124,58,237,.45);--edge-b:rgba(192,23,142,.25);color-scheme:light}
+.app{font-family:'Sora',system-ui,sans-serif;color:var(--text);background-color:var(--bg);-webkit-font-smoothing:antialiased}
+.fx{background-image:radial-gradient(640px 360px at 90% -8%,var(--glow-soft),transparent 70%),radial-gradient(520px 320px at -10% 35%,var(--primary-soft),transparent 70%),linear-gradient(var(--grid-line) 1px,transparent 1px),linear-gradient(90deg,var(--grid-line) 1px,transparent 1px);background-size:auto,auto,28px 28px,28px 28px}
+.glass{background:var(--surface);-webkit-backdrop-filter:blur(16px) saturate(140%);backdrop-filter:blur(16px) saturate(140%);border:1px solid var(--border);box-shadow:var(--shadow-card)}
+.edge{position:relative}
+.edge::after{content:"";position:absolute;inset:0;border-radius:inherit;padding:1px;background:linear-gradient(140deg,var(--edge-a),transparent 38%,transparent 62%,var(--edge-b));-webkit-mask:linear-gradient(#000 0 0) content-box,linear-gradient(#000 0 0);-webkit-mask-composite:xor;mask-composite:exclude;pointer-events:none}
+.disp{font-family:'Chakra Petch',sans-serif;letter-spacing:.01em}
+.mono{font-family:'JetBrains Mono',ui-monospace,monospace;font-variant-numeric:tabular-nums}
+.ic{fill:none;stroke:currentColor;stroke-width:1.75;stroke-linecap:round;stroke-linejoin:round;flex-shrink:0}
+.icon-btn{appearance:none;border:0;background:transparent;color:var(--text-2);width:44px;height:44px;border-radius:12px;display:inline-flex;align-items:center;justify-content:center;position:relative;cursor:pointer}
+.count{position:absolute;top:6px;right:5px;min-width:18px;height:18px;padding:0 5px;border-radius:999px;background:#FF5FD2;color:#1A0614;font-size:11px;font-weight:700;display:flex;align-items:center;justify-content:center;box-shadow:0 0 0 2px var(--bg)}
+.t-light .count{background:#C0178E;color:#fff}
+.nav-i{display:flex;align-items:center;gap:12px;min-height:44px;padding:0 12px;border-radius:12px;color:var(--text-2);text-decoration:none;font-size:14px;font-weight:500}
+.nav-i.on{color:var(--text);background:var(--primary-soft);box-shadow:inset 0 0 0 1px var(--border-strong)}
+.nav-i.on .ic{color:var(--primary-text)}
+.nav-sec{font-size:11px;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:var(--text-3);padding:14px 12px 6px}
+.new{margin-left:auto;font-size:10px;font-weight:700;letter-spacing:.08em;padding:3px 7px;border-radius:999px;color:var(--primary-text);background:var(--primary-soft);border:1px solid var(--border-strong)}
+.tab{display:flex;flex-direction:column;align-items:center;justify-content:center;gap:3px;min-height:56px;color:var(--text-3);text-decoration:none;font-size:11px;font-weight:600}
+.tab.on{color:var(--primary-text)}
+.tab-ic{width:48px;height:28px;border-radius:999px;display:flex;align-items:center;justify-content:center}
+.tab.on .tab-ic{background:var(--primary-soft);box-shadow:inset 0 0 0 1px var(--border-strong)}
+.fab{width:52px;height:52px;margin-top:-30px;border-radius:18px;display:flex;align-items:center;justify-content:center;color:#fff;background:linear-gradient(160deg,#9B6BFF,#6D28D9);box-shadow:0 0 0 4px var(--bg),0 8px 24px -4px var(--glow)}
+.sw{appearance:none;border:0;padding:0;cursor:pointer;width:46px;height:28px;border-radius:999px;background:var(--track-off);box-shadow:inset 0 0 0 1px var(--border-strong);position:relative;flex-shrink:0}
+.sw::after{content:"";position:absolute;top:3px;left:3px;width:22px;height:22px;border-radius:50%;background:#fff;box-shadow:0 1px 3px rgba(0,0,0,.35);transition:transform .22s cubic-bezier(.2,.8,.2,1)}
+.sw.on{background:var(--primary);box-shadow:none}
+.sw.on::after{transform:translateX(18px)}
+.pin{width:26px;height:26px;border-radius:50%;display:inline-flex;align-items:center;justify-content:center;font-size:12px;font-weight:700;color:#fff;background:#E5398F;box-shadow:0 0 0 3px rgba(229,57,143,.25);flex-shrink:0;font-family:'JetBrains Mono',monospace}
+.lbl{font-size:12px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--text-3)}
+a{color:var(--primary-text)}a:hover{color:var(--text)}
+</style>
+</helmet>
+<div class="app t-dark fx" style="width: 1760px; height: 1400px; padding: 64px; display: flex; gap: 64px; overflow: hidden">
+
+  <section style="width: 520px; flex-shrink: 0; display: flex; flex-direction: column; gap: 32px">
+    <div style="display: flex; align-items: center; gap: 12px">
+      <svg width="34" height="34" sc-camel-view-box="0 0 34 34" aria-hidden="true"><path d="M17 2 30 9.5v15L17 32 4 24.5v-15z" style="fill: none; stroke: #B79BFF; stroke-width: 2"></path><path d="M12.5 10h6a4 4 0 0 1 1 7.9 4.2 4.2 0 0 1-1 8.1h-6z" style="fill: #7C3AED"></path></svg>
+      <span class="disp" style="font-size: 26px; font-weight: 700; letter-spacing: .02em">betuxo</span>
+      <span style="margin-left: 6px; font-size: 12px; font-weight: 600; padding: 5px 10px; border-radius: 999px; color: var(--primary-text); background: var(--primary-soft); border: 1px solid var(--border-strong)">Comunidade Aviator</span>
+    </div>
+    <div style="display: flex; flex-direction: column; gap: 16px">
+      <h1 class="disp" style="margin: 0; font-size: 58px; line-height: 1.02; font-weight: 700">Probabilidades, Gamificação e Notificações</h1>
+      <p style="margin: 0; font-size: 18px; line-height: 1.55; color: var(--text-2)">Três telas novas para o app da comunidade. Mobile primeiro (390 px), desktop em 1440 px, modo escuro e modo claro completos, prontas para React com Bootstrap 4 e reactstrap por baixo.</p>
+    </div>
+    <div class="glass edge" style="border-radius: 20px; padding: 22px 24px; display: flex; flex-direction: column; gap: 12px">
+      <span class="lbl">Neste quadro</span>
+      <div style="display: grid; grid-template-columns: 34px 1fr; row-gap: 10px; font-size: 14px; line-height: 1.45">
+        <span class="mono" style="color: var(--primary-text)">01</span><span><b>Capa e navegação</b> · onde as telas entram no menu e onde fica o sininho</span>
+        <span class="mono" style="color: var(--primary-text)">02</span><span><b>Guia de estilo</b> · tokens dos dois temas, tipografia, componentes, contraste</span>
+        <span class="mono" style="color: var(--primary-text)">03</span><span><b>Notas de dev</b> · Three.js, Remotion, custo por efeito, reduzir movimento</span>
+        <span class="mono" style="color: var(--primary-text)">04</span><span><b>Probabilidades</b> · 7 estados no mobile, protótipo clicável no desktop</span>
+        <span class="mono" style="color: var(--primary-text)">05</span><span><b>Gamificação</b> · normal, carregando, vazio e 3 celebrações</span>
+        <span class="mono" style="color: var(--primary-text)">06</span><span><b>Notificações</b> · 6 alertas, push, instalar no iPhone, sininho</span>
+      </div>
+    </div>
+    <div style="display: flex; flex-direction: column; gap: 12px">
+      <span class="lbl">Princípios</span>
+      <div class="glass" style="border-radius: 16px; padding: 16px 18px; display: flex; gap: 14px; align-items: flex-start">
+        <svg class="ic" width="22" height="22" sc-camel-view-box="0 0 24 24" aria-hidden="true" style="color: var(--primary-text); margin-top: 2px"><circle cx="12" cy="12" r="9"></circle><path d="M12 11v5M12 8h.01"></path></svg>
+        <div><div style="font-weight: 600; font-size: 15px">Estimativa, nunca promessa</div><div style="font-size: 13.5px; line-height: 1.5; color: var(--text-2); margin-top: 4px">Horários aparecem sempre com o aviso fixo e a palavra “provável”. Nenhum valor de ganho em nenhuma tela.</div></div>
+      </div>
+      <div class="glass" style="border-radius: 16px; padding: 16px 18px; display: flex; gap: 14px; align-items: flex-start">
+        <svg class="ic" width="22" height="22" sc-camel-view-box="0 0 24 24" aria-hidden="true" style="color: var(--primary-text); margin-top: 2px"><path d="M4 6h16M4 12h10M4 18h7"></path></svg>
+        <div><div style="font-weight: 600; font-size: 15px">Conteúdo antes do efeito</div><div style="font-size: 13.5px; line-height: 1.5; color: var(--text-2); margin-top: 4px">Horários, XP e alertas carregam primeiro. A cena 3D entra depois, só se o aparelho aguentar.</div></div>
+      </div>
+      <div class="glass" style="border-radius: 16px; padding: 16px 18px; display: flex; gap: 14px; align-items: flex-start">
+        <svg class="ic" width="22" height="22" sc-camel-view-box="0 0 24 24" aria-hidden="true" style="color: var(--primary-text); margin-top: 2px"><path d="M3 12h4l3-7 4 14 3-7h4"></path></svg>
+        <div><div style="font-weight: 600; font-size: 15px">Movimento com saída</div><div style="font-size: 13.5px; line-height: 1.5; color: var(--text-2); margin-top: 4px">Toda animação tem uma versão estática para “reduzir movimento” e para aparelhos fracos.</div></div>
+      </div>
+    </div>
+    <div style="margin-top: auto; display: flex; align-items: center; gap: 10px; font-size: 13px; color: var(--text-3)">
+      <svg class="ic" width="18" height="18" sc-camel-view-box="0 0 24 24" aria-hidden="true"><path d="M12 3 4.5 6v5.5c0 4.5 3.2 8.2 7.5 9.5 4.3-1.3 7.5-5 7.5-9.5V6z"></path><path d="M9 12l2 2 4-4"></path></svg>
+      <span>Jogo responsável · 18+ · Jogue com responsabilidade. Horários em Brasília (UTC−3).</span>
+    </div>
+  </section>
+
+  <section style="flex: 1; min-width: 0; display: flex; flex-direction: column; gap: 28px">
+    <div style="display: flex; flex-direction: column; gap: 14px">
+      <h2 class="disp" style="margin: 0; font-size: 32px; font-weight: 700">Navegação</h2>
+      <div style="display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); column-gap: 32px; row-gap: 10px; font-size: 13.5px; line-height: 1.45; color: var(--text-2)">
+        <div style="display: flex; gap: 10px; align-items: flex-start"><span class="pin">1</span><span>Desktop: as 3 telas entram na sidebar com selo <b style="color: var(--text)">NOVO</b> por 14 dias. Probabilidades em Principal, Gamificação em Evolução, Notificações em Conta.</span></div>
+        <div style="display: flex; gap: 10px; align-items: flex-start"><span class="pin">2</span><span>Mobile: a barra inferior fica com 5 itens. Probabilidades vai ao centro, em destaque; Gamificação vira “Conquistas”.</span></div>
+        <div style="display: flex; gap: 10px; align-items: flex-start"><span class="pin">3</span><span>O que não cabe (Banca, Aulas, Depósito, Saque, Notificações, Perfil) vai para a folha “Mais”, junto com Tema e Reduzir movimento.</span></div>
+        <div style="display: flex; gap: 10px; align-items: flex-start"><span class="pin">4</span><span>Sininho sempre à direita da barra superior, com contador (até “9+”). Desktop abre popover de 380 px; mobile abre folha inferior.</span></div>
+      </div>
+    </div>
+
+    <div style="display: flex; gap: 56px; align-items: flex-start">
+      <div style="display: flex; flex-direction: column; gap: 12px">
+        <div style="display: flex; align-items: center; gap: 10px"><span class="pin">1</span><span class="lbl">Sidebar desktop · 256 px</span></div>
+        <div style="display: flex; gap: 24px">
+          <sc-for list="{{themes}}" as="th" hint-placeholder-count="2">
+            <aside class="app fx {{th.cls}}" aria-label="Menu lateral" style="width: 256px; height: 812px; border-radius: 20px; border: 1px solid var(--border); padding: 16px 12px; display: flex; flex-direction: column; overflow: hidden">
+              <div style="display: flex; align-items: center; gap: 10px; padding: 4px 8px 12px">
+                <svg width="28" height="28" sc-camel-view-box="0 0 34 34" aria-hidden="true"><path d="M17 2 30 9.5v15L17 32 4 24.5v-15z" style="fill: none; stroke: #8B5CF6; stroke-width: 2"></path><path d="M12.5 10h6a4 4 0 0 1 1 7.9 4.2 4.2 0 0 1-1 8.1h-6z" style="fill: #7C3AED"></path></svg>
+                <span class="disp" style="font-size: 20px; font-weight: 700">betuxo</span>
+              </div>
+              <div class="nav-sec">Principal</div>
+              <a href="#" class="nav-i"><svg class="ic" width="20" height="20" sc-camel-view-box="0 0 24 24" aria-hidden="true"><path d="M3 10.5 12 3l9 7.5"></path><path d="M5 9.5V20h14V9.5"></path><path d="M10 20v-6h4v6"></path></svg>Início</a>
+              <a href="#" class="nav-i"><svg class="ic" width="20" height="20" sc-camel-view-box="0 0 24 24" aria-hidden="true"><rect x="2.5" y="7" width="19" height="11" rx="5.5"></rect><path d="M7 11v3M5.5 12.5h3"></path><circle cx="16" cy="11.5" r="1"></circle><circle cx="18" cy="13.5" r="1"></circle></svg>Jogos</a>
+              <a href="#" class="nav-i on" aria-current="page"><svg class="ic" width="20" height="20" sc-camel-view-box="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"></circle><circle cx="12" cy="12" r="5"></circle><path d="M12 12l6-6"></path></svg>Probabilidades<span class="new">NOVO</span></a>
+              <div class="nav-sec">Evolução</div>
+              <a href="#" class="nav-i"><svg class="ic" width="20" height="20" sc-camel-view-box="0 0 24 24" aria-hidden="true"><path d="M8 4h8v5a4 4 0 0 1-8 0V4z"></path><path d="M16 5h3v2a3 3 0 0 1-3 3M8 5H5v2a3 3 0 0 0 3 3"></path><path d="M12 13v4M8.5 20h7"></path></svg>Gamificação<span class="new">NOVO</span></a>
+              <a href="#" class="nav-i"><svg class="ic" width="20" height="20" sc-camel-view-box="0 0 24 24" aria-hidden="true"><path d="M5 4h11a3 3 0 0 1 3 3v13H8a3 3 0 0 1-3-3z"></path><path d="M5 17a3 3 0 0 1 3-3h11"></path></svg>Aulas</a>
+              <div class="nav-sec">Carteira</div>
+              <a href="#" class="nav-i"><svg class="ic" width="20" height="20" sc-camel-view-box="0 0 24 24" aria-hidden="true"><path d="M12 3v11M7.5 9.5 12 14l4.5-4.5"></path><path d="M4 15v3a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-3"></path></svg>Depósito</a>
+              <a href="#" class="nav-i"><svg class="ic" width="20" height="20" sc-camel-view-box="0 0 24 24" aria-hidden="true"><path d="M12 14V3M7.5 7.5 12 3l4.5 4.5"></path><path d="M4 15v3a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-3"></path></svg>Saque</a>
+              <a href="#" class="nav-i"><svg class="ic" width="20" height="20" sc-camel-view-box="0 0 24 24" aria-hidden="true"><path d="M3 7.5A2.5 2.5 0 0 1 5.5 5H18v3"></path><rect x="3" y="7.5" width="18" height="12" rx="2.5"></rect><path d="M16 13.5h2"></path></svg>Gestão de banca</a>
+              <div class="nav-sec">Conta</div>
+              <a href="#" class="nav-i"><svg class="ic" width="20" height="20" sc-camel-view-box="0 0 24 24" aria-hidden="true"><path d="M6 16V11a6 6 0 0 1 12 0v5l1.5 2h-15z"></path><path d="M10 20.5a2 2 0 0 0 4 0"></path></svg>Notificações<span class="new">NOVO</span></a>
+              <a href="#" class="nav-i"><svg class="ic" width="20" height="20" sc-camel-view-box="0 0 24 24" aria-hidden="true"><circle cx="12" cy="8" r="4"></circle><path d="M4 20.5a8 8 0 0 1 16 0"></path></svg>Perfil</a>
+              <div class="glass" style="margin-top: auto; border-radius: 16px; padding: 12px; display: flex; flex-direction: column; gap: 8px">
+                <div role="group" aria-label="Tema" style="display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 4px; padding: 4px; border-radius: 12px; background: var(--surface-2)">
+                  <sc-if value="{{th.dark}}" hint-placeholder-val="{{true}}">
+                    <button style="appearance: none; border: 0; min-height: 36px; border-radius: 9px; font: inherit; font-size: 12.5px; font-weight: 600; display: flex; align-items: center; justify-content: center; gap: 6px; background: var(--primary); color: #fff" aria-pressed="true"><svg class="ic" width="16" height="16" sc-camel-view-box="0 0 24 24" aria-hidden="true"><path d="M20 14.5A8 8 0 0 1 9.5 4a8 8 0 1 0 10.5 10.5z"></path></svg>Escuro</button>
+                    <button style="appearance: none; border: 0; min-height: 36px; border-radius: 9px; font: inherit; font-size: 12.5px; font-weight: 600; display: flex; align-items: center; justify-content: center; gap: 6px; background: transparent; color: var(--text-2)" aria-pressed="false"><svg class="ic" width="16" height="16" sc-camel-view-box="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="4"></circle><path d="M12 2.5v2M12 19.5v2M2.5 12h2M19.5 12h2M5.3 5.3l1.4 1.4M17.3 17.3l1.4 1.4M5.3 18.7l1.4-1.4M17.3 6.7l1.4-1.4"></path></svg>Claro</button>
+                  </sc-if>
+                  <sc-if value="{{th.light}}" hint-placeholder-val="{{false}}">
+                    <button style="appearance: none; border: 0; min-height: 36px; border-radius: 9px; font: inherit; font-size: 12.5px; font-weight: 600; display: flex; align-items: center; justify-content: center; gap: 6px; background: transparent; color: var(--text-2)" aria-pressed="false"><svg class="ic" width="16" height="16" sc-camel-view-box="0 0 24 24" aria-hidden="true"><path d="M20 14.5A8 8 0 0 1 9.5 4a8 8 0 1 0 10.5 10.5z"></path></svg>Escuro</button>
+                    <button style="appearance: none; border: 0; min-height: 36px; border-radius: 9px; font: inherit; font-size: 12.5px; font-weight: 600; display: flex; align-items: center; justify-content: center; gap: 6px; background: var(--primary); color: #fff" aria-pressed="true"><svg class="ic" width="16" height="16" sc-camel-view-box="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="4"></circle><path d="M12 2.5v2M12 19.5v2M2.5 12h2M19.5 12h2M5.3 5.3l1.4 1.4M17.3 17.3l1.4 1.4M5.3 18.7l1.4-1.4M17.3 6.7l1.4-1.4"></path></svg>Claro</button>
+                  </sc-if>
+                </div>
+                <div style="display: flex; align-items: center; justify-content: space-between; min-height: 44px; padding: 0 4px; font-size: 13px; color: var(--text-2)"><span>Reduzir movimento</span><button class="sw" role="switch" aria-checked="false" aria-label="Reduzir movimento"></button></div>
+                <a href="#" style="display: flex; align-items: center; gap: 8px; min-height: 36px; padding: 0 4px; font-size: 12px; color: var(--text-3); text-decoration: none"><svg class="ic" width="16" height="16" sc-camel-view-box="0 0 24 24" aria-hidden="true"><path d="M12 3 4.5 6v5.5c0 4.5 3.2 8.2 7.5 9.5 4.3-1.3 7.5-5 7.5-9.5V6z"></path></svg>Jogo responsável · 18+</a>
+              </div>
+            </aside>
+          </sc-for>
+        </div>
+      </div>
+
+      <div style="width: 390px; display: flex; flex-direction: column; gap: 12px">
+        <div style="display: flex; align-items: center; gap: 10px"><span class="pin">4</span><span class="lbl">Barra superior mobile · sininho</span></div>
+        <sc-for list="{{themes}}" as="th" hint-placeholder-count="2">
+          <div class="app fx {{th.cls}}" style="height: 60px; border-radius: 16px; border: 1px solid var(--border); display: flex; align-items: center; justify-content: space-between; padding: 0 8px 0 16px">
+            <div style="display: flex; align-items: center; gap: 8px"><svg width="24" height="24" sc-camel-view-box="0 0 34 34" aria-hidden="true"><path d="M17 2 30 9.5v15L17 32 4 24.5v-15z" style="fill: none; stroke: #8B5CF6; stroke-width: 2"></path><path d="M12.5 10h6a4 4 0 0 1 1 7.9 4.2 4.2 0 0 1-1 8.1h-6z" style="fill: #7C3AED"></path></svg><span class="disp" style="font-size: 18px; font-weight: 700">betuxo</span></div>
+            <div style="display: flex; align-items: center">
+              <button class="icon-btn" aria-label="Avisos da equipe, 2 não lidos"><svg class="ic" width="22" height="22" sc-camel-view-box="0 0 24 24" aria-hidden="true"><path d="M6 16V11a6 6 0 0 1 12 0v5l1.5 2h-15z"></path><path d="M10 20.5a2 2 0 0 0 4 0"></path></svg><span class="count">2</span></button>
+              <button class="icon-btn" aria-label="Perfil"><span style="width: 32px; height: 32px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 13px; font-weight: 700; color: #fff; background: linear-gradient(140deg,#8B5CF6,#C0178E)">MA</span></button>
+            </div>
+          </div>
+        </sc-for>
+
+        <div style="display: flex; align-items: center; gap: 10px; margin-top: 12px"><span class="pin">2</span><span class="lbl">Barra inferior mobile · 5 itens</span></div>
+        <sc-for list="{{themes}}" as="th" hint-placeholder-count="2">
+          <nav class="app {{th.cls}}" aria-label="Navegação principal" style="height: 92px; padding-top: 18px; border-radius: 16px; overflow: visible; border: 1px solid var(--border); background-color: var(--surface-solid); display: grid; grid-template-columns: 1fr 1fr 1.35fr 1fr 1fr; align-items: center; padding-left: 4px; padding-right: 4px">
+            <a href="#" class="tab"><span class="tab-ic"><svg class="ic" width="22" height="22" sc-camel-view-box="0 0 24 24" aria-hidden="true"><path d="M3 10.5 12 3l9 7.5"></path><path d="M5 9.5V20h14V9.5"></path><path d="M10 20v-6h4v6"></path></svg></span>Início</a>
+            <a href="#" class="tab"><span class="tab-ic"><svg class="ic" width="22" height="22" sc-camel-view-box="0 0 24 24" aria-hidden="true"><rect x="2.5" y="7" width="19" height="11" rx="5.5"></rect><path d="M7 11v3M5.5 12.5h3"></path><circle cx="16" cy="11.5" r="1"></circle><circle cx="18" cy="13.5" r="1"></circle></svg></span>Jogos</a>
+            <a href="#" class="tab on" aria-current="page"><span class="fab"><svg class="ic" width="26" height="26" sc-camel-view-box="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"></circle><circle cx="12" cy="12" r="5"></circle><path d="M12 12l6-6"></path></svg></span>Probabilidades</a>
+            <a href="#" class="tab"><span class="tab-ic"><svg class="ic" width="22" height="22" sc-camel-view-box="0 0 24 24" aria-hidden="true"><path d="M8 4h8v5a4 4 0 0 1-8 0V4z"></path><path d="M16 5h3v2a3 3 0 0 1-3 3M8 5H5v2a3 3 0 0 0 3 3"></path><path d="M12 13v4M8.5 20h7"></path></svg></span>Conquistas</a>
+            <a href="#" class="tab"><span class="tab-ic"><svg class="ic" width="22" height="22" sc-camel-view-box="0 0 24 24" aria-hidden="true"><rect x="4" y="4" width="6.5" height="6.5" rx="1.5"></rect><rect x="13.5" y="4" width="6.5" height="6.5" rx="1.5"></rect><rect x="4" y="13.5" width="6.5" height="6.5" rx="1.5"></rect><rect x="13.5" y="13.5" width="6.5" height="6.5" rx="1.5"></rect></svg></span>Mais</a>
+          </nav>
+        </sc-for>
+
+        <div style="display: flex; align-items: center; gap: 10px; margin-top: 12px"><span class="pin">3</span><span class="lbl">Folha “Mais” · modo claro</span></div>
+        <div class="app fx t-light" style="border-radius: 24px; border: 1px solid var(--border); padding: 10px 16px 18px; display: flex; flex-direction: column; gap: 14px; box-shadow: var(--shadow-card)">
+          <div style="width: 40px; height: 5px; border-radius: 999px; background: var(--border-strong); align-self: center"></div>
+          <div style="display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 10px">
+            <a href="#" class="glass" style="border-radius: 16px; min-height: 76px; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 6px; font-size: 12.5px; font-weight: 600; color: var(--text); text-decoration: none"><svg class="ic" width="22" height="22" sc-camel-view-box="0 0 24 24" aria-hidden="true" style="color: var(--primary-text)"><path d="M3 7.5A2.5 2.5 0 0 1 5.5 5H18v3"></path><rect x="3" y="7.5" width="18" height="12" rx="2.5"></rect><path d="M16 13.5h2"></path></svg>Banca</a>
+            <a href="#" class="glass" style="border-radius: 16px; min-height: 76px; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 6px; font-size: 12.5px; font-weight: 600; color: var(--text); text-decoration: none"><svg class="ic" width="22" height="22" sc-camel-view-box="0 0 24 24" aria-hidden="true" style="color: var(--primary-text)"><path d="M5 4h11a3 3 0 0 1 3 3v13H8a3 3 0 0 1-3-3z"></path><path d="M5 17a3 3 0 0 1 3-3h11"></path></svg>Aulas</a>
+            <a href="#" class="glass" style="border-radius: 16px; min-height: 76px; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 6px; font-size: 12.5px; font-weight: 600; color: var(--text); text-decoration: none"><svg class="ic" width="22" height="22" sc-camel-view-box="0 0 24 24" aria-hidden="true" style="color: var(--primary-text)"><path d="M12 3v11M7.5 9.5 12 14l4.5-4.5"></path><path d="M4 15v3a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-3"></path></svg>Depósito</a>
+            <a href="#" class="glass" style="border-radius: 16px; min-height: 76px; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 6px; font-size: 12.5px; font-weight: 600; color: var(--text); text-decoration: none"><svg class="ic" width="22" height="22" sc-camel-view-box="0 0 24 24" aria-hidden="true" style="color: var(--primary-text)"><path d="M12 14V3M7.5 7.5 12 3l4.5 4.5"></path><path d="M4 15v3a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-3"></path></svg>Saque</a>
+            <a href="#" class="glass" style="border-radius: 16px; min-height: 76px; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 6px; font-size: 12.5px; font-weight: 600; color: var(--text); text-decoration: none; position: relative; box-shadow: var(--shadow-glow)"><svg class="ic" width="22" height="22" sc-camel-view-box="0 0 24 24" aria-hidden="true" style="color: var(--primary-text)"><path d="M6 16V11a6 6 0 0 1 12 0v5l1.5 2h-15z"></path><path d="M10 20.5a2 2 0 0 0 4 0"></path></svg>Notificações<span class="new" style="position: absolute; top: 6px; right: 6px; margin: 0">NOVO</span></a>
+            <a href="#" class="glass" style="border-radius: 16px; min-height: 76px; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 6px; font-size: 12.5px; font-weight: 600; color: var(--text); text-decoration: none"><svg class="ic" width="22" height="22" sc-camel-view-box="0 0 24 24" aria-hidden="true" style="color: var(--primary-text)"><circle cx="12" cy="8" r="4"></circle><path d="M4 20.5a8 8 0 0 1 16 0"></path></svg>Perfil</a>
+          </div>
+          <div class="glass" style="border-radius: 16px; padding: 4px 14px">
+            <div style="display: flex; align-items: center; justify-content: space-between; min-height: 48px; font-size: 14px; border-bottom: 1px solid var(--border)"><span style="display: flex; align-items: center; gap: 10px"><svg class="ic" width="20" height="20" sc-camel-view-box="0 0 24 24" aria-hidden="true"><path d="M20 14.5A8 8 0 0 1 9.5 4a8 8 0 1 0 10.5 10.5z"></path></svg>Modo escuro</span><button class="sw" role="switch" aria-checked="false" aria-label="Modo escuro"></button></div>
+            <div style="display: flex; align-items: center; justify-content: space-between; min-height: 48px; font-size: 14px; border-bottom: 1px solid var(--border)"><span style="display: flex; align-items: center; gap: 10px"><svg class="ic" width="20" height="20" sc-camel-view-box="0 0 24 24" aria-hidden="true"><path d="M3 12h4l3-7 4 14 3-7h4"></path></svg>Reduzir movimento</span><button class="sw" role="switch" aria-checked="false" aria-label="Reduzir movimento"></button></div>
+            <a href="#" style="display: flex; align-items: center; justify-content: space-between; min-height: 48px; font-size: 14px; color: var(--text); text-decoration: none"><span style="display: flex; align-items: center; gap: 10px"><svg class="ic" width="20" height="20" sc-camel-view-box="0 0 24 24" aria-hidden="true"><path d="M12 3 4.5 6v5.5c0 4.5 3.2 8.2 7.5 9.5 4.3-1.3 7.5-5 7.5-9.5V6z"></path><path d="M9 12l2 2 4-4"></path></svg>Jogo responsável · 18+</span><svg class="ic" width="18" height="18" sc-camel-view-box="0 0 24 24" aria-hidden="true" style="color: var(--text-3)"><path d="M9 6l6 6-6 6"></path></svg></a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div style="display: flex; flex-direction: column; gap: 12px">
+      <div style="display: flex; align-items: center; gap: 10px"><span class="pin">4</span><span class="lbl">Barra superior desktop · sininho abre popover</span></div>
+      <sc-for list="{{themes}}" as="th" hint-placeholder-count="2">
+        <div class="app fx {{th.cls}}" style="height: 72px; border-radius: 16px; border: 1px solid var(--border); display: flex; align-items: center; justify-content: space-between; padding: 0 12px 0 24px">
+          <div style="display: flex; align-items: center; gap: 10px; font-size: 14px; color: var(--text-2)"><span style="color: var(--text-3)">Início</span><svg class="ic" width="14" height="14" sc-camel-view-box="0 0 24 24" aria-hidden="true" style="color: var(--text-3)"><path d="M9 6l6 6-6 6"></path></svg><span style="color: var(--text); font-weight: 600">Probabilidades</span></div>
+          <div style="display: flex; align-items: center; gap: 8px">
+            <span class="mono" style="font-size: 13px; color: var(--text-2); padding: 8px 12px; border-radius: 999px; border: 1px solid var(--border); display: flex; align-items: center; gap: 8px"><svg class="ic" width="16" height="16" sc-camel-view-box="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"></circle><path d="M12 7v5l3.5 2"></path></svg>20:42:18 · Brasília</span>
+            <button class="icon-btn" aria-label="Avisos da equipe, 2 não lidos"><svg class="ic" width="22" height="22" sc-camel-view-box="0 0 24 24" aria-hidden="true"><path d="M6 16V11a6 6 0 0 1 12 0v5l1.5 2h-15z"></path><path d="M10 20.5a2 2 0 0 0 4 0"></path></svg><span class="count">2</span></button>
+            <button class="icon-btn" aria-label="Perfil"><span style="width: 34px; height: 34px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 13px; font-weight: 700; color: #fff; background: linear-gradient(140deg,#8B5CF6,#C0178E)">MA</span></button>
+          </div>
+        </div>
+      </sc-for>
+    </div>
+  </section>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script="" data-props="{&quot;$preview&quot;:{&quot;width&quot;:1760,&quot;height&quot;:1400}}">
+class Component extends DCLogic {
+  renderVals() {
+    return {
+      themes: [
+        { cls: 't-dark', dark: true, light: false },
+        { cls: 't-light', dark: false, light: true }
+      ]
+    };
+  }
+}
+</script>
+
+
+</body></html>

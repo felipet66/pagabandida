@@ -1,0 +1,38 @@
+:root[data-theme] #root .admin-topbar { position: relative; z-index: 1050; display: flex; align-items: center; gap: var(--space-5); min-height: 76px; padding: var(--space-3) var(--space-8) var(--space-3) 280px; border-bottom: 1px solid var(--border); background: var(--surface-solid); color: var(--text); }
+.admin-topbar__brand { display: flex; align-items: center; gap: var(--space-5); min-width: 0; }
+.admin-topbar__brand img { display: block; width: 48px; height: 48px; object-fit: contain; }
+.admin-topbar__title { color: var(--text-2); font-size: var(--type-caption); white-space: nowrap; }
+.admin-topbar__menu { display: none; place-items: center; }
+.admin-topbar__wallet { display: flex; align-items: center; gap: var(--space-2); margin-left: auto; min-width: 0; }
+.admin-topbar__desktop-account { display: grid; place-items: center; }
+:root[data-theme] :is(.admin-topbar__menu,.admin-topbar__desktop-account,.admin-wallet__icon) { flex-shrink: 0; width: var(--touch-target); height: var(--touch-target); padding: 0; border: 1px solid var(--border-strong); border-radius: var(--radius-12); background: var(--surface-solid); color: var(--text-2); cursor: pointer; }
+:root[data-theme] :is(.admin-topbar__menu,.admin-topbar__desktop-account,.admin-wallet__icon):hover:not(:disabled) { color: var(--primary-text); border-color: var(--primary-text); background: var(--primary-soft); }
+.admin-wallet { display: flex; align-items: center; gap: var(--space-3); min-width: 0; }
+.admin-wallet__balance { display: flex; align-items: center; gap: var(--space-2); min-width: 0; }
+.admin-wallet__value { min-width: 0; margin-right: var(--space-1); }
+.admin-wallet__label { display: block; color: var(--text-2); font-size: var(--type-caption); line-height: var(--line-caption); }
+.admin-wallet__amount { display: block; color: var(--text); font: 600 var(--type-body-sm)/var(--line-body-sm) var(--font-mono); white-space: nowrap; font-variant-numeric: tabular-nums; }
+.admin-wallet__icon { display: grid; place-items: center; }
+.admin-wallet__icon:disabled { color: var(--text-3); border-style: dashed; cursor: not-allowed; }
+:root[data-theme] .admin-wallet__deposit { display: inline-flex; align-items: center; justify-content: center; flex: 0 0 var(--touch-target); width: var(--touch-target); height: var(--touch-target); padding: 0; border: 1px solid transparent; border-radius: var(--radius-12); background: linear-gradient(var(--button-scrim),var(--button-scrim)),var(--gradient-primary); color: var(--on-primary); }
+:root[data-theme] .admin-wallet__deposit:hover { color: var(--on-primary); border-color: var(--edge-a); box-shadow: var(--shadow-glow); }
+.admin-topbar :is(button,a):focus-visible { outline: var(--focus-width) solid var(--focus-ring); outline-offset: var(--focus-spread); box-shadow: var(--focus-shadow); }
+.admin-main-panel > .content { padding-top: var(--space-6); }
+@media (min-width: 992px) { .admin-main-panel > .game-catalog--embedded { margin-left: 260px; } }
+@media (max-width: 1199px) and (min-width: 992px) { :root[data-theme] #root .admin-topbar { gap: var(--space-3); padding-right: var(--space-5); } .admin-topbar__title { display: none; } }
+@media (max-width: 991px) { :root[data-theme] #root .admin-topbar { padding: calc(var(--space-3) + var(--app-safe-top)) var(--space-5) var(--space-3); } .admin-topbar__menu { display: grid; } .admin-topbar__desktop-account { display: none; } .admin-topbar__title { display: none; } }
+@media (max-width: 600px) {
+  :root[data-theme] #root .admin-topbar { gap: var(--space-2); padding: calc(var(--space-3) + var(--app-safe-top)) var(--space-4) var(--space-3); }
+  .admin-topbar__brand { gap: var(--space-2); }
+  .admin-topbar__brand img { display: block; width: 48px; height: 48px; object-fit: contain; }
+  .admin-wallet__balance { gap: var(--space-1); }
+  .admin-wallet__value { margin-right: 0; }
+  .admin-wallet__amount { font-size: var(--type-caption); }
+}
+@media (max-width: 359px) {
+  :root[data-theme] #root .admin-topbar { flex-wrap: wrap; }
+  .admin-topbar__wallet { flex-basis: 100%; }
+  .admin-wallet, .admin-wallet__balance { width: 100%; }
+  .admin-wallet__value { margin-right: auto; }
+  .admin-topbar__brand img { display: block; width: 48px; height: 48px; object-fit: contain; }
+}

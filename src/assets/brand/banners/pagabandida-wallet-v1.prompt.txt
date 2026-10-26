@@ -1,0 +1,13 @@
+Mode: built-in image_gen
+Style reference: /Users/felipeteles/projects/teleco-pro/src/assets/banners/teleco-pro-cupom-aviator-violet.png
+Identity reference: /Users/felipeteles/Downloads/IMG_6924.png
+Logo reference: src/assets/brand/pagabandida-emblema-verde-v1.png
+
+Create ONE finished premium Brazilian app promotional bitmap, matching the supplied Teleco Pro reference's composition, dimensional silver type, cutout photography, subtle propeller plane, controlled light trails and dramatic graphic finish, but fully branded as Paga Bandida.
+Reference image 1 is ONLY the graphic layout/style inspiration: discard its old man, old brand and all its copy/offers. Reference image 2 is the sole identity and portrait source: preserve this exact adult man's face, hair, facial hair, skin tone, tattoos, clothing, glasses/cap if present, pose and distinctive features. Do not blend him with the man from image 1. Cut him cleanly out of his original background and composite with natural lighting and lime rim light, natural undistorted anatomy.
+Reference image 3 is the approved Paga Bandida green emblem: incorporate it once, small and unobtrusive; main readable brand text is PAGA BANDIDA. Retain that emblem's identity, do not use TELECO or Betuxo lettering anywhere.
+Palette: dominant electric lime #B6FF00, light lime #C4FF36, forest #14220D, near-black #080D06, silver/white #F4FAEA. No purple, violet, red or pink graphic accents. Preserve authentic skin and source clothing colors. Dark rich background, lime fog and light trails, crisp bright text and limited realistic metallic silver. Consistent campaign design, professionally spaced typography, no clutter.
+Requirements: all lettering comfortably inset at least 5% from edges; mobile-readable large exact Portuguese text; no cropped head, no overlapping text/face, no watermark, no UI frame, no extra people. No promises of profit, prize amounts, bonus or coupon claims. No fabricated game statistics. Return a single final artwork, no variations or contact sheet.
+
+Wide landscape 16:9 composition. Retain the expressive side-profile man with hand raised, cap, glasses, tattoos and ochre shirt, cutout at left, face looking toward the right-side text. Graphic background with subtle secure-wallet/card motif and a discreet silver/lime propeller airplane. Replace the entire reference coupon offer with this exact copy only: small brand "PAGA BANDIDA"; huge "SUA CARTEIRA"; next line "NA ganhebetBR"; supporting line "Acesse a área de depósito no app"; lime framed CTA "ACESSAR CARTEIRA". Never include R$, bonus, free spins, coupon codes or amounts.
+

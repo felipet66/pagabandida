@@ -1,0 +1,1874 @@
+.history-results {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    padding: 0px 20px;
+
+    >span {
+        margin-left: 5px;
+    }
+}
+
+.register {
+    .input-group-text {
+        color: #e30613;
+        margin-left: 16px;
+    }
+}
+
+.login-modal-pagabandida {
+    border: 1px solid rgba(227, 6, 19, 0.42);
+    box-shadow: 0 24px 70px rgba(0, 0, 0, 0.62), 0 0 36px rgba(227, 6, 19, 0.18);
+    overflow: hidden;
+}
+
+.login-modal-pagabandida__hero {
+    aspect-ratio: 16 / 7;
+    background: #080808;
+    max-height: 220px;
+    overflow: hidden;
+    position: relative;
+
+    &:after {
+        background: linear-gradient(180deg, rgba(0, 0, 0, 0) 45%, rgba(0, 0, 0, 0.92) 100%);
+        bottom: 0;
+        content: "";
+        left: 0;
+        position: absolute;
+        right: 0;
+        top: 0;
+    }
+
+    img {
+        display: block;
+        height: 100%;
+        object-fit: cover;
+        object-position: center 26%;
+        width: 100%;
+    }
+}
+
+.login-modal-pagabandida__brand {
+    bottom: 14px;
+    left: 18px;
+    position: absolute;
+    right: 18px;
+    text-align: left;
+    z-index: 1;
+
+    span,
+    strong {
+        display: block;
+        line-height: 1.05;
+    }
+
+    span {
+        color: #fff;
+        font-size: 23px;
+        font-weight: 800;
+        text-transform: uppercase;
+    }
+
+    strong {
+        color: #e30613;
+        font-size: 10px;
+        letter-spacing: 0;
+        margin-top: 4px;
+        text-transform: uppercase;
+    }
+}
+
+.login-modal-pagabandida__content {
+    padding: 14px 24px 22px;
+
+    h5 {
+        color: #fff;
+        font-size: 14px;
+        line-height: 1.45;
+    }
+
+    .btn {
+        border-radius: 8px;
+        margin-bottom: 0;
+    }
+}
+
+.pagabandida-login-alert {
+    border: 1px solid rgba(227, 6, 19, 0.46);
+    border-radius: 8px;
+    box-shadow: 0 28px 70px rgba(0, 0, 0, 0.7), 0 0 32px rgba(227, 6, 19, 0.2);
+    overflow: hidden;
+}
+
+.pagabandida-login-alert__hero {
+    border-bottom: 1px solid rgba(227, 6, 19, 0.32);
+    height: 230px;
+    overflow: hidden;
+    position: relative;
+
+    &:after {
+        background: linear-gradient(180deg, rgba(17, 20, 22, 0) 55%, #111416 100%);
+        bottom: 0;
+        content: "";
+        left: 0;
+        position: absolute;
+        right: 0;
+        top: 0;
+    }
+
+    img {
+        display: block;
+        height: 100%;
+        object-fit: cover;
+        object-position: center 24%;
+        width: 100%;
+    }
+}
+
+.pagabandida-login-alert__heading {
+    color: #fff;
+    font-size: 25px;
+    font-weight: 800;
+    line-height: 1.1;
+    margin: 18px 22px 0 !important;
+    padding: 0 !important;
+    text-align: center;
+    text-transform: uppercase;
+}
+
+.pagabandida-login-alert__html {
+    margin: 0 !important;
+    padding: 0 0 18px !important;
+}
+
+.pagabandida-login-alert__content {
+    color: rgba(255, 255, 255, 0.72);
+    padding: 0 24px;
+    text-align: left;
+}
+
+.pagabandida-login-alert__lead {
+    color: rgba(255, 255, 255, 0.82);
+    font-size: 14px;
+    line-height: 1.45;
+    margin: 10px 0 14px;
+    text-align: center;
+
+    strong {
+        color: #e30613;
+    }
+}
+
+.pagabandida-login-alert__step {
+    background: rgba(255, 255, 255, 0.035);
+    border: 1px solid rgba(255, 255, 255, 0.07);
+    border-radius: 8px;
+    margin-top: 10px;
+    padding: 12px;
+
+    strong,
+    span {
+        display: block;
+    }
+
+    strong {
+        color: #fff;
+        font-size: 13px;
+        margin-bottom: 4px;
+    }
+
+    span {
+        color: rgba(255, 255, 255, 0.58);
+        font-size: 12px;
+        line-height: 1.35;
+    }
+}
+
+.pagabandida-login-alert__link {
+    align-items: center;
+    background: rgba(255, 255, 255, 0.08);
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    border-radius: 8px;
+    color: #fff;
+    display: flex;
+    font-size: 13px;
+    font-weight: 700;
+    justify-content: center;
+    margin-top: 10px;
+    min-height: 38px;
+    text-decoration: none;
+
+    &:hover {
+        background: rgba(227, 6, 19, 0.14);
+        border-color: rgba(227, 6, 19, 0.44);
+        color: #fff;
+        text-decoration: none;
+    }
+}
+
+.pagabandida-login-alert__confirm {
+    background: linear-gradient(135deg, #e30613, #8f0610);
+    border: 0;
+    border-radius: 8px;
+    box-shadow: 0 10px 22px rgba(227, 6, 19, 0.28);
+    color: #fff;
+    cursor: pointer;
+    font-size: 14px;
+    font-weight: 800;
+    margin: 0 24px 24px;
+    min-height: 42px;
+    width: calc(100% - 48px);
+}
+
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(180deg);
+  }
+}
+
+.refresh-icon {
+  transition: transform 0.3s ease-in-out;
+}
+
+.refresh-icon.spin {
+  animation: spin 1s linear infinite;
+}
+
+.vela-results {
+    margin: 4px;
+    text-align: center;
+    color: white;
+    cursor: pointer;
+
+    &:hover {
+        opacity: .8;
+    }
+}
+
+.odd-method-select {
+    margin-right: 10px;
+}
+
+.card-table {
+    height: 400px;
+    overflow: auto!important;
+}
+
+.aviator-content {
+    position: relative;
+    margin-bottom: 16px;
+
+    .loading-puff {
+        position: absolute;
+        top: 82px;
+        left: 100px;
+    }
+
+    .odd-aviator {
+        position: absolute;
+        top: 91px;
+        left: 82px;
+        font-weight: bold;
+    }
+}
+
+.bg-blue {
+    background-color: #1d8cf8 !important;
+}
+
+.bg-info {
+   background-color: #1d8cf8 !important;
+}
+
+.swal2-dark {
+    background-color: #525f7f;
+    color: #fff;
+}
+
+.swal2-dark .swal2-popup {
+    background-color: #3e3e3e;
+    color: #fff;
+    border: 1px solid #444;
+}
+
+.swal2-dark .swal2-title {
+    color: #fff;
+}
+
+.swal2-dark .swal2-content {
+    color: #fff;
+}
+
+.swal2-dark .swal2-input {
+    background-color: #555;
+    color: #fff;
+    border: 1px solid #666;
+}
+
+.swal2-dark .swal2-confirm {
+    background-color: #4caf50;
+    color: #fff;
+}
+
+.swal2-dark .swal2-cancel {
+    background-color: #f44336;
+    color: #fff;
+}
+
+.swal2-dark .swal2-styled:focus {
+    box-shadow: 0 0 2px 2px rgba(255, 255, 255, 0.5);
+}
+
+.nav-balance {
+    justify-content: flex-end;
+    width: 100%;
+
+    @media (max-width: 500px) {
+        margin-top: -34px;
+    }
+}
+
+
+.history-hours {
+    .body-hours {
+        height: 380px;
+        overflow-x: auto;
+
+        @media (max-width: 576px) {
+            height: 280px;
+        }
+    }
+
+    .hour {
+        &-item {
+            width: 100%;
+            border: 1px solid $default;
+            border-radius: 8px;
+            padding: 4px;
+            text-align: center;
+        }
+
+        &-count {
+            width: 100%;
+            border: 1px solid $primary;
+            background-color: $primary;
+            border-radius: 8px;
+            font-weight: 600 !important;
+            padding: 4px;
+            text-align: center;
+            margin-left: 12px;
+        }
+    }
+}
+
+.aviator-game {
+    .aviator {
+        position: relative;
+        background: url("../../../img/aviator2.png") no-repeat center center;
+        height: 100%;
+        -webkit-background-size: cover;
+        -moz-background-size: cover;
+        -ms-background-size: cover;
+        -o-background-size: cover;
+        background-size: cover;
+    }
+
+    .animation-start {
+        animation: anim-aviator 5s linear normal;
+        animation-direction: reverse;
+    }
+
+    @keyframes anim-aviator {
+        from {
+            transform: translateY(0px);
+        }
+        to {
+            transform: translateY(100px);
+        }
+    }
+
+    .content-aviator {
+        width: 100%;
+        height: 240px;
+        overflow: hidden;
+        position: relative;
+        border: 1px solid #484C47;
+        border-radius: 16px;
+    }
+
+    .counter {
+        position: absolute;
+        top: 100px;
+        left: -50%;
+        right: -50%;
+        color: white;
+        font-size: 50px;
+    }
+
+    .button-aviator {
+        margin-top: 48px;
+        background-color: #3BCA19 !important;
+        width: 225px;
+        height: 60px;
+        border: 1px solid #484C47 !important;
+        border-radius: 8px;
+        color: white;
+        font-weight: 600;
+    }
+}
+.whatsapp-float {
+        position: fixed;
+        width: 55px;
+        height: 55px;
+        bottom: 20px;
+        right: 20px;
+        background-color: #25d366;
+        color: #fff;
+        border-radius: 50px;
+        text-align: center;
+        font-size: 30px;
+        z-index: 1000;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        box-shadow: 0px 4px 8px rgba(0,0,0,0.3);
+        transition: all 0.3s ease;
+    }
+
+.whatsapp-float:hover {
+    transform: scale(1.1);
+}
+.slider-banners {
+    position: relative;
+    width: 100%;
+
+    .br4bet-logo {
+        background: url("../../../brand/support.svg") no-repeat center center;
+        background-size: cover;
+        width: 100%;
+        height: 200px;
+    }
+
+    .br4bet-logo2 {
+        background: url("../../../brand/welcome.svg") no-repeat center center;
+        background-size: cover;
+        width: 100%;
+        height: 200px;
+    }
+
+    .br4bet-logo3 {
+        background: url("../../../brand/history.svg") no-repeat center center;
+        background-size: cover;
+        width: 100%;
+        height: 200px;
+    }
+
+    .br4bet-logo4 {
+        background: url("../../../brand/analysis.svg") no-repeat center center;
+        background-size: cover;
+        width: 100%;
+        height: 200px;
+    }
+
+    .overlay {
+        position: absolute;
+        bottom: 0;
+        width: 100%;
+        background: linear-gradient(to top, rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0));
+        padding: 12px;
+    }
+
+    .overlay h3 {
+        margin: 0;
+        padding: 0;
+        font-size: 16px;
+        margin-top: -10px;
+    }
+
+    .overlay a {
+        margin: 0;
+        padding: 8px;
+        text-decoration: none;
+        font-size: 12px;
+    }
+}
+
+.dashboard {
+    .game-category {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        color: #e30613;
+        text-decoration: none;
+        transition: transform 0.2s;
+    }
+
+    .game-category:hover {
+        transform: scale(1.05);
+        color: #ff4a57;
+    }
+
+    .icon-circle {
+        border: 2px solid #e30613;
+        border-radius: 50%;
+        padding: 15px;
+        margin-bottom: 5px;
+    }
+
+}
+
+$automa-primary: #e30613; // Vermelho principal
+$automa-background: #000; // Preto escuro de fundo
+$automa-text-muted: #888;
+$automa-border: #e30613;
+
+.bottom-navigation {
+  display: none;
+
+  @media (max-width: 768px) {
+    display: flex;
+    position: fixed;
+    bottom: 12px;
+    left: 12px;
+    right: 12px;
+    background: linear-gradient(180deg, rgba(18, 18, 18, 0.96), rgba(0, 0, 0, 0.98));
+    justify-content: space-between;
+    align-items: center;
+    gap: 6px;
+    padding: 8px;
+    z-index: 1030;
+    border: 1px solid rgba(227, 6, 19, 0.42);
+    border-radius: 20px;
+    box-shadow: 0 -10px 30px rgba(0, 0, 0, 0.42), 0 0 24px rgba(227, 6, 19, 0.18);
+    backdrop-filter: blur(16px);
+
+    .bottom-nav-item {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      color: rgba(255, 255, 255, 0.58);
+      flex: 1 1 0;
+      font-size: 10px;
+      font-weight: 600;
+      min-height: 54px;
+      min-width: 0;
+      padding: 7px 6px;
+      border-radius: 14px;
+      text-decoration: none;
+      transition: color 0.2s ease, background-color 0.2s ease, transform 0.2s ease, box-shadow 0.2s ease;
+
+      i {
+        align-items: center;
+        display: flex;
+        font-size: 17px;
+        height: 22px;
+        justify-content: center;
+        margin-bottom: 4px;
+      }
+
+      span {
+        display: block;
+        line-height: 1.1;
+        max-width: 100%;
+        overflow: hidden;
+        text-align: center;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+      }
+
+      &:hover {
+        color: #fff;
+        background: rgba(227, 6, 19, 0.12);
+      }
+
+      &.active {
+        background: linear-gradient(135deg, #e30613, #8f0610);
+        box-shadow: 0 8px 18px rgba(227, 6, 19, 0.28);
+        color: #fff;
+        transform: translateY(-2px);
+      }
+    }
+  }
+}
+
+.promotions {
+    .preco-box {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-size: 1.2rem;
+    font-weight: 600;
+    }
+
+    .preco-original {
+    text-decoration: line-through;
+    color: #888;
+    font-size: 1rem;
+    }
+
+    .preco-atual {
+    color: #28a745;
+    font-weight: bold;
+    font-size: 1.3rem;
+    }
+    .preco-atual.gratis {
+    color: #d63384;
+    font-size: 1.3rem;
+    font-weight: bold;
+    }
+
+}
+
+.predict-next {
+    @keyframes pulse {
+        0% { opacity: 1; }
+        50% { opacity: 0.2; }
+        100% { opacity: 1; }
+    }
+}
+
+.aviator-pro-button-loading {
+    align-items: center;
+    display: inline-flex;
+    gap: 8px;
+}
+
+.animated-message-feed {
+    background: linear-gradient(180deg, rgba(16, 16, 16, 0.94), rgba(5, 5, 5, 0.98));
+    border: 1px solid rgba(227, 6, 19, 0.26);
+    border-radius: 8px;
+    box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.05), 0 12px 26px rgba(0, 0, 0, 0.22);
+    min-width: 290px;
+    overflow: hidden;
+    padding: 11px 12px 10px;
+    position: relative;
+    text-align: left;
+
+    &:before {
+        background: linear-gradient(90deg, rgba(227, 6, 19, 0), rgba(227, 6, 19, 0.65), rgba(227, 6, 19, 0));
+        content: "";
+        height: 1px;
+        left: 12px;
+        opacity: 0.8;
+        position: absolute;
+        right: 12px;
+        top: 0;
+    }
+}
+
+.animated-message-feed__signal {
+    align-items: center;
+    background: rgba(227, 6, 19, 0.12);
+    border: 1px solid rgba(227, 6, 19, 0.26);
+    border-radius: 999px;
+    display: flex;
+    height: 22px;
+    justify-content: center;
+    position: absolute;
+    right: 12px;
+    top: 10px;
+    width: 22px;
+
+    span {
+        animation: animatedMessagePulse 1.15s ease-in-out infinite;
+        background: #e30613;
+        border-radius: 50%;
+        box-shadow: 0 0 0 6px rgba(227, 6, 19, 0.12);
+        display: block;
+        height: 7px;
+        width: 7px;
+    }
+}
+
+.animated-message-feed__list {
+    height: 48px;
+    overflow: hidden;
+    padding-right: 28px;
+    position: relative;
+}
+
+.animated-message {
+    align-items: center;
+    animation: animatedMessageIn 7s ease both;
+    display: grid;
+    gap: 10px;
+    grid-template-columns: 32px minmax(0, 1fr) auto;
+    left: 0;
+    position: absolute;
+    right: 0;
+    top: 0;
+
+    small {
+        color: rgba(255, 255, 255, 0.44);
+        font-size: 10px;
+        white-space: nowrap;
+    }
+}
+
+.animated-message__icon {
+    align-items: center;
+    background: linear-gradient(135deg, #e30613, #8f0610);
+    border-radius: 8px;
+    box-shadow: 0 8px 18px rgba(227, 6, 19, 0.22);
+    color: #fff;
+    display: flex;
+    height: 32px;
+    justify-content: center;
+    width: 32px;
+
+    i {
+        font-size: 13px;
+    }
+}
+
+.animated-message__content {
+    min-width: 0;
+
+    span,
+    strong {
+        display: block;
+        line-height: 1.15;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+    }
+
+    span {
+        color: rgba(255, 255, 255, 0.58);
+        font-size: 11px;
+        margin-bottom: 4px;
+    }
+
+    strong {
+        color: #fff;
+        font-size: 14px;
+        font-weight: 700;
+    }
+}
+
+.animated-message-feed__caption {
+    align-items: center;
+    border-top: 1px solid rgba(255, 255, 255, 0.07);
+    color: rgba(255, 255, 255, 0.48);
+    display: flex;
+    font-size: 10px;
+    gap: 6px;
+    justify-content: space-between;
+    margin-top: 9px;
+    padding-top: 8px;
+    text-transform: uppercase;
+
+    i {
+        color: #e30613;
+        font-size: 6px;
+    }
+}
+
+.aviator-game-tabs {
+    background: rgba(255, 255, 255, 0.035);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 8px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    padding: 8px;
+}
+
+.aviator-game-tabs__item {
+    align-items: center;
+    display: inline-flex;
+    gap: 8px;
+    justify-content: center;
+    margin: 0;
+    min-height: 42px;
+    min-width: 174px;
+
+    i {
+        font-size: 13px;
+    }
+}
+
+@keyframes animatedMessageIn {
+    0% {
+        opacity: 0;
+        transform: translateY(12px);
+    }
+    10%,
+    82% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+    100% {
+        opacity: 0;
+        transform: translateY(-12px);
+    }
+}
+
+@keyframes animatedMessagePulse {
+    0%,
+    100% {
+        opacity: 0.55;
+        transform: scale(0.9);
+    }
+    50% {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+.aviator-pro-page {
+    .row {
+        margin-left: -8px;
+        margin-right: -8px;
+    }
+}
+
+.aviator-pro-back {
+    align-items: center;
+    display: inline-flex;
+    gap: 8px;
+    font-weight: 600;
+}
+
+.aviator-pro-panel {
+    background: #000;
+    border: 1px solid rgba(255, 255, 255, 0.06);
+    border-radius: 8px;
+    box-shadow: 0 18px 45px rgba(0, 0, 0, 0.26);
+    min-height: 100%;
+    padding: 18px;
+}
+
+.aviator-pro-hero {
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+    margin-bottom: 16px;
+    padding-bottom: 16px;
+
+    span {
+        color: #e30613;
+        display: block;
+        font-size: 12px;
+        font-weight: 700;
+        margin-bottom: 6px;
+        text-transform: uppercase;
+    }
+
+    h2 {
+        color: #fff;
+        font-size: 26px;
+        font-weight: 500;
+        line-height: 1.15;
+        margin: 0 0 8px;
+    }
+
+    p {
+        color: rgba(255, 255, 255, 0.58);
+        margin: 0;
+    }
+}
+
+.aviator-pro-message {
+    background: rgba(255, 255, 255, 0.035);
+    border: 1px solid rgba(255, 255, 255, 0.07);
+    border-radius: 8px;
+    margin-bottom: 14px;
+    padding: 12px;
+}
+
+.aviator-pro-primary-action {
+    margin: 0 0 16px;
+    min-height: 46px;
+    width: 100%;
+}
+
+.aviator-pro-scan {
+    background: linear-gradient(180deg, rgba(10, 10, 10, 0.96), rgba(0, 0, 0, 0.98));
+    border: 1px solid rgba(227, 6, 19, 0.28);
+    border-radius: 8px;
+    box-shadow: 0 18px 40px rgba(0, 0, 0, 0.28), inset 0 1px 0 rgba(255, 255, 255, 0.04);
+    overflow: hidden;
+    padding: 16px;
+    position: relative;
+    margin-bottom: 16px;
+
+    &:before {
+        background: linear-gradient(90deg, transparent, rgba(227, 6, 19, 0.24), transparent);
+        content: "";
+        height: 1px;
+        left: 0;
+        position: absolute;
+        right: 0;
+        top: 0;
+    }
+
+    &.is-reading:after {
+        animation: aviatorScanLine 1.4s ease-in-out infinite;
+        background: linear-gradient(90deg, transparent, rgba(227, 6, 19, 0.42), transparent);
+        content: "";
+        height: 80px;
+        left: -20%;
+        opacity: 0.8;
+        position: absolute;
+        top: -30px;
+        transform: rotate(8deg);
+        width: 140%;
+    }
+}
+
+.aviator-pro-scan__header {
+    align-items: center;
+    display: flex;
+    justify-content: space-between;
+    position: relative;
+    z-index: 1;
+
+    span,
+    strong {
+        display: block;
+    }
+
+    span {
+        color: rgba(255, 255, 255, 0.48);
+        font-size: 12px;
+    }
+
+    strong {
+        color: #fff;
+        font-size: 15px;
+        margin-top: 3px;
+    }
+}
+
+.aviator-pro-scan__pulse {
+    animation: aviatorPulse 1s ease-in-out infinite;
+    background: #e30613;
+    border-radius: 50%;
+    box-shadow: 0 0 0 8px rgba(227, 6, 19, 0.12);
+    height: 12px;
+    width: 12px;
+}
+
+.aviator-pro-scan__steps {
+    display: grid;
+    gap: 8px;
+    grid-template-columns: repeat(3, 1fr);
+    margin-top: 14px;
+    position: relative;
+    z-index: 1;
+
+    span {
+        background: rgba(255, 255, 255, 0.04);
+        border: 1px solid rgba(255, 255, 255, 0.08);
+        border-radius: 999px;
+        color: rgba(255, 255, 255, 0.42);
+        font-size: 11px;
+        padding: 6px 8px;
+        text-align: center;
+
+        &.is-active {
+            background: rgba(227, 6, 19, 0.14);
+            border-color: rgba(227, 6, 19, 0.42);
+            color: #fff;
+        }
+    }
+}
+
+.aviator-pro-scan__multipliers {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-top: 14px;
+    min-height: 72px;
+    position: relative;
+    z-index: 1;
+
+    &.is-compact {
+        gap: 6px;
+        min-height: 54px;
+    }
+}
+
+.aviator-pro-scan__multiplier {
+    align-items: center;
+    animation: aviatorMultiplierIn 0.36s ease both;
+    background: #1e90ff;
+    border-radius: 6px;
+    color: #fff;
+    display: inline-flex;
+    flex-direction: column;
+    justify-content: center;
+    min-height: 52px;
+    min-width: 66px;
+    padding: 7px 9px;
+
+    strong {
+        font-size: 14px;
+        line-height: 1;
+    }
+
+    small {
+        color: rgba(255, 255, 255, 0.82);
+        font-size: 10px;
+        margin-top: 4px;
+    }
+
+    &.is-pink {
+        background: #e14eca;
+    }
+
+    &.is-purple {
+        background: #5603ad;
+    }
+
+    &.is-placeholder {
+        background: rgba(255, 255, 255, 0.06);
+
+        i {
+            animation: aviatorPlaceholder 0.8s ease-in-out infinite;
+            background: rgba(255, 255, 255, 0.28);
+            border-radius: 999px;
+            display: block;
+            height: 10px;
+            width: 32px;
+        }
+    }
+}
+
+.aviator-pro-results {
+    display: grid;
+    gap: 12px;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.aviator-pro-result-card {
+    background: rgba(255, 255, 255, 0.04);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 8px;
+    overflow: hidden;
+    padding: 16px;
+    position: relative;
+
+    &:before {
+        content: "";
+        height: 3px;
+        left: 0;
+        position: absolute;
+        right: 0;
+        top: 0;
+    }
+
+    span,
+    strong,
+    small {
+        display: block;
+    }
+
+    span {
+        color: rgba(255, 255, 255, 0.5);
+        font-size: 11px;
+        margin-bottom: 8px;
+    }
+
+    strong {
+        color: #fff;
+        font-size: 29px;
+        line-height: 1;
+        margin-bottom: 8px;
+    }
+
+    small {
+        color: rgba(255, 255, 255, 0.62);
+        font-size: 12px;
+    }
+
+    &.is-purple:before {
+        background: #5603ad;
+    }
+
+    &.is-red:before {
+        background: #e30613;
+    }
+}
+
+.aviator-pro-frame-panel {
+    align-items: stretch;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    min-height: 100%;
+
+    iframe {
+        flex: 0 0 auto;
+        height: 700px;
+        min-height: 700px;
+        width: 100%;
+    }
+}
+
+.aviator-pro-tabs {
+    align-self: stretch;
+    justify-content: center;
+
+    .aviator-game-tabs__item {
+        flex: 1 1 0;
+        min-width: 0;
+    }
+}
+
+@media (max-width: 991px) {
+    .aviator-pro-results {
+        grid-template-columns: 1fr;
+    }
+
+    .aviator-pro-tabs {
+        .aviator-game-tabs__item {
+            flex-basis: 100%;
+        }
+    }
+}
+
+@keyframes aviatorScanLine {
+    0% {
+        transform: translateY(-80px) rotate(8deg);
+    }
+    100% {
+        transform: translateY(180px) rotate(8deg);
+    }
+}
+
+@keyframes aviatorPulse {
+    0%,
+    100% {
+        opacity: 0.5;
+        transform: scale(0.9);
+    }
+    50% {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+@keyframes aviatorMultiplierIn {
+    from {
+        opacity: 0;
+        transform: translateY(8px) scale(0.96);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+}
+
+@keyframes aviatorPlaceholder {
+    0%,
+    100% {
+        opacity: 0.28;
+    }
+    50% {
+        opacity: 0.75;
+    }
+}
+
+.bankroll-card {
+    overflow: hidden;
+}
+
+.bankroll-back-link {
+    align-items: center;
+    display: inline-flex;
+    gap: 8px;
+    margin-bottom: 6px;
+}
+
+.bankroll-shortcut-card {
+    overflow: hidden;
+}
+
+.bankroll-shortcut {
+    align-items: center;
+    display: grid;
+    gap: 16px;
+    grid-template-columns: 48px 1fr auto;
+}
+
+.bankroll-shortcut__icon {
+    align-items: center;
+    background: rgba(227, 6, 19, 0.14);
+    border: 1px solid rgba(227, 6, 19, 0.32);
+    border-radius: 8px;
+    color: #e30613;
+    display: flex;
+    font-size: 22px;
+    height: 48px;
+    justify-content: center;
+    width: 48px;
+}
+
+.bankroll-shortcut__content {
+    span {
+        color: rgba(255, 255, 255, 0.54);
+        display: block;
+        font-size: 12px;
+        margin-bottom: 3px;
+    }
+
+    h3 {
+        color: #fff;
+        font-size: 20px;
+        font-weight: 500;
+        margin: 0 0 4px;
+    }
+
+    p {
+        color: rgba(255, 255, 255, 0.58);
+        margin: 0;
+    }
+}
+
+.bankroll-shortcut__cta {
+    margin: 0;
+    white-space: nowrap;
+}
+
+.bankroll-manager {
+    color: #fff;
+}
+
+.bankroll-manager__header {
+    align-items: flex-start;
+    display: flex;
+    gap: 24px;
+    justify-content: space-between;
+    margin-bottom: 22px;
+
+    h3 {
+        color: #fff;
+        font-size: 24px;
+        font-weight: 500;
+        margin: 4px 0 6px;
+    }
+
+    p {
+        color: rgba(255, 255, 255, 0.62);
+        margin: 0;
+        max-width: 560px;
+    }
+}
+
+.bankroll-manager__eyebrow,
+.bankroll-manager__rate span,
+.bankroll-summary span {
+    color: rgba(255, 255, 255, 0.54);
+    display: block;
+    font-size: 12px;
+    letter-spacing: 0;
+}
+
+.bankroll-manager__rate {
+    align-items: flex-end;
+    background: rgba(227, 6, 19, 0.12);
+    border: 1px solid rgba(227, 6, 19, 0.36);
+    border-radius: 8px;
+    display: flex;
+    flex-direction: column;
+    min-width: 118px;
+    padding: 12px 14px;
+
+    strong {
+        color: #fff;
+        font-size: 22px;
+        line-height: 1;
+    }
+}
+
+.bankroll-manager__controls {
+    align-items: end;
+    display: grid;
+    gap: 16px;
+    grid-template-columns: minmax(210px, 0.85fr) minmax(420px, 1.6fr) auto;
+}
+
+.bankroll-field label {
+    color: rgba(255, 255, 255, 0.72);
+    font-size: 12px;
+    margin-bottom: 8px;
+}
+
+.bankroll-field__input {
+    align-items: center;
+    border: 1px solid rgba(255, 255, 255, 0.16);
+    border-radius: 8px;
+    display: flex;
+    min-height: 46px;
+    overflow: hidden;
+
+    span {
+        color: rgba(255, 255, 255, 0.58);
+        flex: 0 0 44px;
+        text-align: center;
+    }
+
+    .form-control {
+        border: 0;
+        height: 44px;
+        padding-left: 0;
+    }
+}
+
+.bankroll-strategies {
+    display: grid;
+    gap: 10px;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.bankroll-strategy {
+    background: rgba(255, 255, 255, 0.04);
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    border-radius: 8px;
+    color: rgba(255, 255, 255, 0.72);
+    cursor: pointer;
+    min-height: 82px;
+    padding: 12px;
+    text-align: left;
+    transition: border-color 0.2s ease, background-color 0.2s ease;
+
+    span,
+    strong,
+    small {
+        display: block;
+    }
+
+    span {
+        color: #fff;
+        font-weight: 600;
+        margin-bottom: 3px;
+    }
+
+    strong {
+        color: #e30613;
+        font-size: 18px;
+        line-height: 1.1;
+        margin-bottom: 5px;
+    }
+
+    small {
+        color: rgba(255, 255, 255, 0.48);
+        font-size: 11px;
+        line-height: 1.25;
+    }
+
+    &.is-active {
+        background: rgba(227, 6, 19, 0.14);
+        border-color: #e30613;
+    }
+}
+
+.bankroll-actions {
+    display: flex;
+    gap: 8px;
+    justify-content: flex-end;
+    min-width: 250px;
+
+    .btn {
+        margin: 0;
+        min-height: 44px;
+        white-space: nowrap;
+    }
+}
+
+.bankroll-entry-suggestion {
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 8px;
+    margin-top: 20px;
+    padding: 14px;
+}
+
+.bankroll-entry-suggestion__heading {
+    align-items: baseline;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px 12px;
+    margin-bottom: 12px;
+
+    span,
+    strong,
+    small {
+        display: block;
+    }
+
+    span {
+        color: rgba(255, 255, 255, 0.54);
+        font-size: 12px;
+        text-transform: uppercase;
+    }
+
+    strong {
+        color: #fff;
+        font-size: 15px;
+    }
+
+    small {
+        color: rgba(255, 255, 255, 0.48);
+        font-size: 12px;
+    }
+}
+
+.bankroll-bet-preview {
+    display: grid;
+    gap: 8px;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.bankroll-bet-card {
+    background: #191b1d;
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    border-radius: 8px;
+    min-height: 210px;
+    min-width: 0;
+    padding: 14px;
+}
+
+.bankroll-bet-card__top {
+    align-items: center;
+    display: grid;
+    gap: 12px;
+    grid-template-columns: 1fr auto;
+    min-height: 52px;
+
+    i {
+        align-items: center;
+        background: #24272b;
+        border-radius: 50%;
+        color: rgba(255, 255, 255, 0.72);
+        display: flex;
+        font-size: 18px;
+        height: 42px;
+        justify-content: center;
+        width: 42px;
+    }
+}
+
+.bankroll-bet-card__tabs {
+    background: #101315;
+    border-radius: 999px;
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    justify-self: center;
+    max-width: 420px;
+    padding: 8px;
+    width: min(100%, 420px);
+
+    span {
+        border-radius: 999px;
+        color: rgba(255, 255, 255, 0.6);
+        font-size: clamp(14px, 1.25vw, 18px);
+        line-height: 1;
+        padding: 13px 12px;
+        text-align: center;
+
+        &.is-active {
+            background: #2d3034;
+            color: #f3f3f4;
+        }
+    }
+}
+
+.bankroll-bet-card__body {
+    align-items: center;
+    display: grid;
+    gap: 18px;
+    grid-template-columns: minmax(180px, 0.74fr) minmax(240px, 1.26fr);
+    margin-top: 24px;
+}
+
+.bankroll-bet-card__controls {
+    display: grid;
+    gap: 8px;
+}
+
+.bankroll-bet-card__amount {
+    align-items: center;
+    background: #101315;
+    border-radius: 999px;
+    display: grid;
+    grid-template-columns: 48px 1fr 48px;
+    min-height: 56px;
+
+    button {
+        align-items: center;
+        background: #2b2e32;
+        border: 0;
+        border-radius: 50%;
+        color: rgba(255, 255, 255, 0.7);
+        display: flex;
+        font-size: 30px;
+        height: 48px;
+        justify-content: center;
+        line-height: 1;
+        margin: 4px;
+        width: 48px;
+    }
+
+    strong {
+        color: rgba(255, 255, 255, 0.86);
+        font-size: clamp(20px, 2vw, 25px);
+        line-height: 1;
+        text-align: center;
+    }
+}
+
+.bankroll-bet-card__chips {
+    display: grid;
+    gap: 8px;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+
+    span {
+        background: #101315;
+        border-radius: 999px;
+        color: rgba(255, 255, 255, 0.58);
+        font-size: clamp(16px, 1.6vw, 21px);
+        line-height: 1;
+        padding: 10px 12px;
+        text-align: center;
+    }
+}
+
+.bankroll-bet-card__button {
+    align-items: center;
+    background: #19a900;
+    border: 2px solid rgba(255, 255, 255, 0.66);
+    border-radius: 22px;
+    box-shadow: inset 0 0 0 1px rgba(0, 0, 0, 0.22), 0 4px 0 rgba(0, 0, 0, 0.18);
+    color: #fff;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    min-height: 128px;
+    padding: 16px;
+    text-align: center;
+
+    span,
+    strong {
+        display: block;
+    }
+
+    span {
+        font-size: clamp(30px, 3.2vw, 42px);
+        font-weight: 400;
+        line-height: 1;
+    }
+
+    strong {
+        color: #fff;
+        font-size: clamp(19px, 2vw, 24px);
+        font-weight: 400;
+        line-height: 1.2;
+        margin-top: 8px;
+    }
+}
+
+.bankroll-summary {
+    display: grid;
+    gap: 12px;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    margin-top: 20px;
+
+    div {
+        background: rgba(255, 255, 255, 0.04);
+        border: 1px solid rgba(255, 255, 255, 0.1);
+        border-radius: 8px;
+        padding: 14px;
+    }
+
+    strong {
+        color: #fff;
+        display: block;
+        font-size: 18px;
+        margin-top: 6px;
+    }
+}
+
+.bankroll-table-wrap {
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 8px;
+    margin-top: 18px;
+    max-height: 360px;
+    overflow: auto;
+}
+
+.bankroll-table {
+    margin-bottom: 0;
+
+    thead th {
+        background: #050505;
+        color: rgba(255, 255, 255, 0.58);
+        font-size: 11px;
+        position: sticky;
+        top: 0;
+        z-index: 1;
+    }
+
+    td,
+    th {
+        border-color: rgba(255, 255, 255, 0.08) !important;
+        padding: 10px 12px !important;
+        vertical-align: middle;
+    }
+
+    td {
+        color: rgba(255, 255, 255, 0.82);
+        font-size: 12px;
+    }
+}
+
+.bankroll-day {
+    background: rgba(227, 6, 19, 0.14);
+    border-radius: 6px;
+    color: #fff;
+    display: inline-block;
+    font-weight: 700;
+    margin-right: 8px;
+    min-width: 30px;
+    padding: 3px 6px;
+    text-align: center;
+}
+
+.bankroll-empty {
+    align-items: center;
+    border: 1px dashed rgba(255, 255, 255, 0.16);
+    border-radius: 8px;
+    display: flex;
+    gap: 14px;
+    margin-top: 20px;
+    padding: 18px;
+
+    i {
+        color: #e30613;
+        font-size: 24px;
+    }
+
+    strong,
+    span {
+        display: block;
+    }
+
+    strong {
+        color: #fff;
+    }
+
+    span {
+        color: rgba(255, 255, 255, 0.5);
+        font-size: 12px;
+    }
+}
+
+@media (max-width: 1399px) {
+    .bankroll-bet-preview {
+        grid-template-columns: 1fr;
+    }
+
+    .bankroll-bet-card {
+        min-height: 0;
+    }
+}
+
+@media (max-width: 1199px) {
+    .bankroll-manager__controls {
+        grid-template-columns: 1fr;
+    }
+
+    .bankroll-actions {
+        justify-content: flex-start;
+        min-width: 0;
+    }
+
+    .bankroll-bet-card__body {
+        grid-template-columns: minmax(170px, 0.65fr) minmax(260px, 1.35fr);
+    }
+}
+
+@media (max-width: 991px) {
+    .bankroll-entry-suggestion {
+        padding: 12px;
+    }
+
+    .bankroll-bet-card {
+        padding: 12px;
+    }
+
+    .bankroll-bet-card__body {
+        gap: 14px;
+        grid-template-columns: minmax(160px, 0.72fr) minmax(220px, 1.28fr);
+        margin-top: 18px;
+    }
+
+    .bankroll-bet-card__button {
+        min-height: 116px;
+    }
+}
+
+@media (max-width: 767px) {
+    .bankroll-shortcut {
+        align-items: stretch;
+        grid-template-columns: 1fr;
+    }
+
+    .bankroll-shortcut__cta {
+        text-align: center;
+        width: 100%;
+    }
+
+    .bankroll-manager__header,
+    .bankroll-actions {
+        flex-direction: column;
+    }
+
+    .bankroll-manager__header {
+        gap: 14px;
+    }
+
+    .bankroll-manager__rate {
+        align-items: flex-start;
+        width: 100%;
+    }
+
+    .bankroll-strategies,
+    .bankroll-summary,
+    .bankroll-bet-card__body {
+        grid-template-columns: 1fr;
+    }
+
+    .bankroll-bet-preview {
+        gap: 6px;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .bankroll-bet-card {
+        min-height: 0;
+        padding: 8px;
+    }
+
+    .bankroll-bet-card__top {
+        grid-template-columns: 1fr;
+        min-height: 36px;
+    }
+
+    .bankroll-bet-card__top i {
+        display: none;
+    }
+
+    .bankroll-bet-card__tabs {
+        padding: 4px;
+        width: 100%;
+    }
+
+    .bankroll-bet-card__tabs span {
+        font-size: 11px;
+        padding: 8px 4px;
+    }
+
+    .bankroll-bet-card__body {
+        gap: 8px;
+        margin-top: 10px;
+    }
+
+    .bankroll-bet-card__controls {
+        gap: 6px;
+    }
+
+    .bankroll-bet-card__amount {
+        grid-template-columns: 34px 1fr 34px;
+        min-height: 40px;
+
+        button {
+            font-size: 20px;
+            height: 34px;
+            margin: 3px;
+            width: 34px;
+        }
+
+        strong {
+            font-size: 15px;
+        }
+    }
+
+    .bankroll-bet-card__chips {
+        gap: 5px;
+
+        span {
+            font-size: 13px;
+            padding: 7px 4px;
+        }
+    }
+
+    .bankroll-bet-card__button {
+        border-radius: 14px;
+        min-height: 78px;
+        padding: 10px 6px;
+    }
+
+    .bankroll-bet-card__button span {
+        font-size: 21px;
+    }
+
+    .bankroll-bet-card__button strong {
+        font-size: 13px;
+        margin-top: 5px;
+    }
+}
+
+@media (max-width: 480px) {
+    .bankroll-entry-suggestion {
+        margin-left: -8px;
+        margin-right: -8px;
+        padding: 8px;
+    }
+
+    .bankroll-entry-suggestion__heading {
+        align-items: flex-start;
+        flex-direction: column;
+    }
+
+    .bankroll-bet-card__amount {
+        grid-template-columns: 30px 1fr 30px;
+        min-height: 36px;
+
+        button {
+            font-size: 18px;
+            height: 30px;
+            width: 30px;
+        }
+
+        strong {
+            font-size: 13px;
+        }
+    }
+
+    .bankroll-bet-card__chips {
+        gap: 4px;
+
+        span {
+            font-size: 12px;
+            padding: 6px 4px;
+        }
+    }
+
+    .bankroll-bet-card__button {
+        border-radius: 12px;
+        min-height: 72px;
+        padding: 8px 4px;
+    }
+
+    .bankroll-bet-card__button span {
+        font-size: 18px;
+    }
+
+    .bankroll-bet-card__button strong {
+        font-size: 12px;
+    }
+}

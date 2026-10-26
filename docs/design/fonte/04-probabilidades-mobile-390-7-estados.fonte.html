@@ -1,0 +1,337 @@
+<!DOCTYPE html>
+<html lang="pt-BR"><head>
+<meta charset="utf-8">
+<title>Probabilidades · mobile</title>
+<script src="16e44503-649a-4ad5-8921-dfdc2ffe9019"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<style></style>
+<style>
+body{margin:0;background:#050309}
+*{box-sizing:border-box}
+.t-dark{--bg:#07050D;--surface:rgba(22,15,42,.66);--surface-solid:#140E26;--surface-2:#1C1535;--surface-3:#261C47;--border:rgba(167,139,250,.16);--border-strong:rgba(167,139,250,.36);--text:#F4F1FF;--text-2:#BDB4DA;--text-3:#8F86B2;--primary:#7C3AED;--primary-text:#B79BFF;--primary-soft:rgba(124,58,237,.18);--glow:rgba(139,92,246,.55);--glow-soft:rgba(139,92,246,.22);--pink:#FF5FD2;--pink-soft:rgba(255,95,210,.16);--success:#34D399;--warning:#FBBF24;--danger:#F87171;--shadow-card:0 1px 0 rgba(255,255,255,.04) inset,0 12px 40px rgba(0,0,0,.55);--shadow-glow:0 0 0 1px rgba(167,139,250,.35),0 0 28px -6px rgba(139,92,246,.6);--grid-line:rgba(167,139,250,.07);--track:rgba(167,139,250,.14);--edge-a:rgba(183,155,255,.75);--edge-b:rgba(255,95,210,.45);--bar-bg:rgba(13,9,25,.82);color-scheme:dark}
+.t-light{--bg:#F7F5FF;--surface:rgba(255,255,255,.80);--surface-solid:#FFFFFF;--surface-2:#F3EFFF;--surface-3:#E9E2FF;--border:rgba(76,29,149,.12);--border-strong:rgba(76,29,149,.28);--text:#120B24;--text-2:#463D63;--text-3:#615880;--primary:#7C3AED;--primary-text:#6D28D9;--primary-soft:rgba(124,58,237,.10);--glow:rgba(124,58,237,.28);--glow-soft:rgba(124,58,237,.12);--pink:#C0178E;--pink-soft:rgba(192,23,142,.10);--success:#047857;--warning:#B45309;--danger:#B91C1C;--shadow-card:0 1px 2px rgba(18,11,36,.06),0 10px 30px rgba(91,33,182,.10);--shadow-glow:0 0 0 1px rgba(124,58,237,.35),0 8px 24px -6px rgba(124,58,237,.35);--grid-line:rgba(91,33,182,.06);--track:rgba(91,33,182,.12);--edge-a:rgba(124,58,237,.45);--edge-b:rgba(192,23,142,.25);--bar-bg:rgba(255,255,255,.86);color-scheme:light}
+.app{font-family:'Sora',system-ui,sans-serif;color:var(--text);background-color:var(--bg);-webkit-font-smoothing:antialiased}
+.fx{background-image:radial-gradient(420px 300px at 100% -5%,var(--glow-soft),transparent 70%),radial-gradient(360px 260px at -20% 40%,var(--primary-soft),transparent 70%),linear-gradient(var(--grid-line) 1px,transparent 1px),linear-gradient(90deg,var(--grid-line) 1px,transparent 1px);background-size:auto,auto,24px 24px,24px 24px}
+.glass{background:var(--surface);-webkit-backdrop-filter:blur(16px) saturate(140%);backdrop-filter:blur(16px) saturate(140%);border:1px solid var(--border);box-shadow:var(--shadow-card)}
+.edge{position:relative}
+.edge::after{content:"";position:absolute;inset:0;border-radius:inherit;padding:1px;background:linear-gradient(140deg,var(--edge-a),transparent 38%,transparent 62%,var(--edge-b));-webkit-mask:linear-gradient(#000 0 0) content-box,linear-gradient(#000 0 0);-webkit-mask-composite:xor;mask-composite:exclude;pointer-events:none}
+.disp{font-family:'Chakra Petch',sans-serif;letter-spacing:.01em}
+.mono{font-family:'JetBrains Mono',ui-monospace,monospace;font-variant-numeric:tabular-nums}
+.ic{fill:none;stroke:currentColor;stroke-width:1.75;stroke-linecap:round;stroke-linejoin:round;flex-shrink:0}
+.lbl{font-size:11.5px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--text-3)}
+.phone{width:390px;height:960px;border-radius:32px;overflow:hidden;position:relative;border:1px solid var(--border);display:flex;flex-direction:column;box-shadow:0 30px 80px -30px rgba(0,0,0,.6)}
+.topbar{height:60px;flex-shrink:0;display:flex;align-items:center;justify-content:space-between;padding:0 6px 0 16px;background:var(--bar-bg);-webkit-backdrop-filter:blur(14px);backdrop-filter:blur(14px);border-bottom:1px solid var(--border)}
+.content{flex:1;padding:18px 16px 104px;display:flex;flex-direction:column;gap:14px}
+.botnav{position:absolute;left:0;right:0;bottom:0;height:84px;padding:12px 4px 8px;background:var(--bar-bg);-webkit-backdrop-filter:blur(14px);backdrop-filter:blur(14px);border-top:1px solid var(--border);display:grid;grid-template-columns:1fr 1fr 1.35fr 1fr 1fr;align-items:center}
+.icon-btn{appearance:none;border:0;background:transparent;color:var(--text-2);width:44px;height:44px;border-radius:12px;display:inline-flex;align-items:center;justify-content:center;position:relative;cursor:pointer}
+.count{position:absolute;top:6px;right:5px;min-width:18px;height:18px;padding:0 5px;border-radius:999px;background:#FF5FD2;color:#1A0614;font-size:11px;font-weight:700;display:flex;align-items:center;justify-content:center;box-shadow:0 0 0 2px var(--bg)}
+.t-light .count{background:#C0178E;color:#fff}
+.tab{display:flex;flex-direction:column;align-items:center;justify-content:center;gap:3px;min-height:56px;color:var(--text-3);text-decoration:none;font-size:11px;font-weight:600}
+.tab.on{color:var(--primary-text)}
+.tab-ic{width:48px;height:28px;border-radius:999px;display:flex;align-items:center;justify-content:center}
+.fab{width:52px;height:52px;margin-top:-30px;border-radius:18px;display:flex;align-items:center;justify-content:center;color:#fff;background:linear-gradient(160deg,#9B6BFF,#6D28D9);box-shadow:0 0 0 4px var(--bg),0 8px 24px -4px var(--glow)}
+.notice{display:flex;gap:10px;align-items:flex-start;padding:10px 12px;border-radius:12px;font-size:12px;line-height:1.45;color:var(--text-2);background:var(--surface-2);border:1px solid var(--border)}
+.btn{appearance:none;border:0;cursor:pointer;font:inherit;display:inline-flex;align-items:center;justify-content:center;gap:10px;min-height:52px;padding:0 20px;border-radius:16px;font-weight:600;font-size:16px;width:100%;text-decoration:none}
+.btn-primary{color:#fff;background:linear-gradient(180deg,#9466FF 0%,#7C3AED 55%,#6D28D9 100%);box-shadow:var(--shadow-glow)}
+.btn-secondary{color:var(--primary-text);background:var(--primary-soft);border:1px solid var(--border-strong)}
+.btn-ghost{color:var(--text-2);background:transparent;border:1px solid var(--border-strong)}
+.btn-dis{cursor:not-allowed;background:var(--surface-2);color:var(--text-2);border:1px dashed var(--border-strong);box-shadow:none}
+.hero{position:relative;border-radius:22px;overflow:hidden;color:#fff;background:linear-gradient(160deg,#1A0F33 0%,#2A1260 55%,#4C1D95 100%);box-shadow:var(--shadow-card),0 0 0 1px rgba(183,155,255,.28)}
+.hero-tag{position:absolute;display:flex;align-items:center;gap:6px;font-size:11.5px;font-weight:600;padding:5px 9px;border-radius:999px;background:rgba(7,5,13,.55);-webkit-backdrop-filter:blur(8px);backdrop-filter:blur(8px);color:#E9E2FF;border:1px solid rgba(183,155,255,.3)}
+.live{width:8px;height:8px;border-radius:50%;background:#34D399;box-shadow:0 0 0 3px rgba(52,211,153,.25)}
+.chip{display:inline-flex;align-items:center;gap:6px;height:26px;padding:0 10px;border-radius:999px;font-family:'JetBrains Mono',monospace;font-size:12.5px;font-weight:700}
+.c3{color:var(--primary-text);background:var(--primary-soft);box-shadow:inset 0 0 0 1px var(--primary-text)}
+.c10{color:var(--pink);background:var(--pink-soft);box-shadow:inset 0 0 0 1px var(--pink)}
+.win{border-radius:20px;padding:16px;display:flex;gap:12px;align-items:center}
+.win10{box-shadow:var(--shadow-card),0 0 0 1px var(--pink),0 0 30px -10px var(--pink)}
+.bar{height:8px;border-radius:999px;background:var(--track);overflow:hidden}
+.bar i{display:block;height:100%;border-radius:inherit;background:linear-gradient(90deg,#7C3AED,#B79BFF);box-shadow:0 0 12px var(--glow)}
+.term{border-radius:20px;padding:16px;background:#07050D;color:#D9CCFF;border:1px solid rgba(183,155,255,.3);box-shadow:0 0 0 1px rgba(124,58,237,.25),0 0 36px -10px rgba(139,92,246,.7);position:relative;overflow:hidden}
+.scan{position:absolute;left:0;right:0;height:46px;background:linear-gradient(180deg,transparent,rgba(183,155,255,.20),transparent);border-bottom:1px solid rgba(183,155,255,.55)}
+.cap{font-size:13px;line-height:1.5;color:var(--text-2)}
+.tech{display:inline-flex;align-items:center;height:22px;padding:0 8px;border-radius:999px;font-size:11px;font-weight:700}
+.k-css{color:#B79BFF;background:rgba(124,58,237,.18)}
+.k-three{color:#38BDF8;background:rgba(56,189,248,.14)}
+.k-js{color:#FDE047;background:rgba(253,224,71,.12)}
+.k-api{color:#4ADE80;background:rgba(74,222,128,.12)}
+a{color:var(--primary-text)}a:hover{color:var(--text)}
+</style>
+</helmet>
+<div class="app t-dark" style="width: 3120px; min-height: 2460px; padding: 56px; display: flex; flex-direction: column; gap: 40px; background-color: #050309">
+  <header style="display: flex; justify-content: space-between; align-items: flex-end">
+    <div style="display: flex; flex-direction: column; gap: 8px">
+      <span class="lbl">04 · Probabilidades · mobile 390 px</span>
+      <h1 class="disp" style="margin: 0; font-size: 44px; font-weight: 700">Do toque em “Calcular” até o botão liberar de novo</h1>
+    </div>
+    <span class="cap" style="max-width: 640px; text-align: right">Fila de cima: modo escuro. Fila de baixo: modo claro. As telas mostram a rolagem inteira (960 px); a barra inferior é fixa. Horários de exemplo: agora 20:42:18 em Brasília.</span>
+  </header>
+
+  <sc-for list="{{rows}}" as="row" hint-placeholder-count="2">
+    <div style="display: flex; flex-direction: column; gap: 16px">
+      <span class="lbl" style="color: #BDB4DA">{{row.label}}</span>
+      <div style="display: flex; gap: 44px; align-items: flex-start">
+        <sc-for list="{{row.phones}}" as="ph" hint-placeholder-count="7">
+          <div style="width: 390px; display: flex; flex-direction: column; gap: 16px">
+            <div class="app fx phone {{ph.cls}}">
+              <div class="topbar">
+                <div style="display: flex; align-items: center; gap: 8px"><svg width="24" height="24" sc-camel-view-box="0 0 34 34" aria-hidden="true"><path d="M17 2 30 9.5v15L17 32 4 24.5v-15z" style="fill: none; stroke: #8B5CF6; stroke-width: 2"></path><path d="M12.5 10h6a4 4 0 0 1 1 7.9 4.2 4.2 0 0 1-1 8.1h-6z" style="fill: #7C3AED"></path></svg><span class="disp" style="font-size: 18px; font-weight: 700">betuxo</span></div>
+                <div style="display: flex; align-items: center">
+                  <button class="icon-btn" aria-label="Avisos da equipe, 2 não lidos"><svg class="ic" width="22" height="22" sc-camel-view-box="0 0 24 24" aria-hidden="true"><path d="M6 16V11a6 6 0 0 1 12 0v5l1.5 2h-15z"></path><path d="M10 20.5a2 2 0 0 0 4 0"></path></svg><span class="count">2</span></button>
+                  <button class="icon-btn" aria-label="Perfil"><span style="width: 32px; height: 32px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 13px; font-weight: 700; color: #fff; background: linear-gradient(140deg,#8B5CF6,#C0178E)">MA</span></button>
+                </div>
+              </div>
+
+              <div class="content">
+                <div style="display: flex; flex-direction: column; gap: 6px">
+                  <h1 class="disp" style="margin: 0; font-size: 28px; line-height: 1.1; font-weight: 700">Probabilidades</h1>
+                  <p style="margin: 0; font-size: 14px; line-height: 1.45; color: var(--text-2)">Horários prováveis de multiplicadores altos no Aviator, lidos do histórico de hoje.</p>
+                </div>
+                <div class="notice" role="note">
+                  <svg class="ic" width="18" height="18" sc-camel-view-box="0 0 24 24" aria-hidden="true" style="color: var(--warning); margin-top: 1px"><circle cx="12" cy="12" r="9"></circle><path d="M12 11v5M12 8h.01"></path></svg>
+                  <span>Estimativa baseada no histórico de rodadas. Não é garantia de resultado. Jogue com responsabilidade. <b style="color: var(--text)">18+</b></span>
+                </div>
+
+                <sc-if value="{{ph.heroBig}}" hint-placeholder-val="{{true}}">
+                  <div class="hero" style="height: 206px">
+                    <svg sc-camel-view-box="0 0 358 206" width="358" height="206" aria-hidden="true" style="position: absolute; inset: 0; display: block">
+                      <defs>
+                        <linearGradient id="trailA" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#7C3AED" stop-opacity="0"></stop><stop offset=".55" stop-color="#A78BFA"></stop><stop offset="1" stop-color="#FF5FD2"></stop></linearGradient>
+                        <linearGradient id="areaA" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#8B5CF6" stop-opacity=".45"></stop><stop offset="1" stop-color="#8B5CF6" stop-opacity="0"></stop></linearGradient>
+                        <radialGradient id="glowA" cx=".5" cy=".5" r=".5"><stop offset="0" stop-color="#FF5FD2" stop-opacity=".9"></stop><stop offset="1" stop-color="#FF5FD2" stop-opacity="0"></stop></radialGradient>
+                      </defs>
+                      <g style="stroke: rgba(183,155,255,.22); stroke-width: 1">
+                        <path d="M0 150H358M0 166H358M0 184H358M0 204H358"></path>
+                        <path d="M179 120 0 206M179 120 90 206M179 120 179 206M179 120 268 206M179 120 358 206M179 120 -120 206M179 120 478 206"></path>
+                      </g>
+                      <path d="M14 196 C 120 192, 210 168, 272 74 L272 206 L14 206 Z" style="fill: url(#areaA)"></path>
+                      <path d="M14 196 C 120 192, 210 168, 272 74" style="fill: none; stroke: url(#trailA); stroke-width: 3; stroke-linecap: round"></path>
+                      <circle cx="274" cy="70" r="34" style="fill: url(#glowA)"></circle>
+                      <g transform="translate(276 68) rotate(-52)">
+                        <path d="M22 0 L-12 -15 L-5 0 L-12 15 Z" style="fill: #F4F1FF"></path>
+                        <path d="M22 0 L-5 0 L-12 15 Z" style="fill: #C4B0FF"></path>
+                      </g>
+                      <g style="fill: #E9E2FF">
+                        <circle cx="40" cy="40" r="1.4"></circle><circle cx="96" cy="22" r="1"></circle><circle cx="150" cy="58" r="1.6"></circle><circle cx="214" cy="30" r="1.1"></circle><circle cx="320" cy="120" r="1.4"></circle><circle cx="330" cy="36" r="1"></circle><circle cx="60" cy="110" r="1"></circle><circle cx="240" cy="110" r="1.2"></circle><circle cx="300" cy="18" r="1.6"></circle>
+                      </g>
+                    </svg>
+                    <span class="hero-tag" style="left: 12px; top: 12px"><span class="live"></span>Aviator · ao vivo</span>
+                    <span class="hero-tag" style="right: 12px; top: 12px"><span class="mono">2.976</span>rodadas hoje</span>
+                    <div style="position: absolute; left: 16px; bottom: 14px; display: flex; flex-direction: column; gap: 2px">
+                      <span class="disp" style="font-size: 24px; font-weight: 700; text-shadow: 0 2px 12px rgba(0,0,0,.5)">Aviator</span>
+                      <span style="font-size: 12px; color: #D9CCFF">Leitura das rodadas de hoje</span>
+                    </div>
+                  </div>
+                </sc-if>
+
+                <sc-if value="{{ph.heroSmall}}" hint-placeholder-val="{{false}}">
+                  <div class="hero" style="height: 76px; display: flex; align-items: center; gap: 12px; padding: 0 14px">
+                    <svg sc-camel-view-box="0 0 358 76" width="358" height="76" aria-hidden="true" style="position: absolute; inset: 0; display: block">
+                      <defs><linearGradient id="trailB" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#7C3AED" stop-opacity="0"></stop><stop offset=".6" stop-color="#A78BFA"></stop><stop offset="1" stop-color="#FF5FD2"></stop></linearGradient></defs>
+                      <path d="M150 72 C 230 70, 290 60, 336 14" style="fill: none; stroke: url(#trailB); stroke-width: 2.5; stroke-linecap: round"></path>
+                      <g transform="translate(338 12) rotate(-45)"><path d="M14 0 L-8 -10 L-3 0 L-8 10 Z" style="fill: #F4F1FF"></path></g>
+                      <g style="fill: #E9E2FF"><circle cx="200" cy="20" r="1.2"></circle><circle cx="260" cy="36" r="1"></circle><circle cx="300" cy="62" r="1.3"></circle></g>
+                    </svg>
+                    <span style="position: relative; width: 44px; height: 44px; border-radius: 12px; display: flex; align-items: center; justify-content: center; background: rgba(255,255,255,.1); border: 1px solid rgba(183,155,255,.35)"><svg class="ic" width="22" height="22" sc-camel-view-box="0 0 24 24" aria-hidden="true"><path d="M3 17 C 9 16.5, 14 14, 19 6"></path><path d="M16 5.5 20.5 5 20 9.5"></path></svg></span>
+                    <div style="position: relative; display: flex; flex-direction: column; gap: 2px">
+                      <span class="disp" style="font-size: 18px; font-weight: 700">Aviator</span>
+                      <span style="font-size: 12px; color: #D9CCFF; display: flex; align-items: center; gap: 6px"><span class="live"></span><span class="mono">2.976</span> rodadas de hoje</span>
+                    </div>
+                  </div>
+                </sc-if>
+
+                <sc-if value="{{ph.inicial}}" hint-placeholder-val="{{true}}">
+                  <button class="btn btn-primary"><svg class="ic" width="22" height="22" sc-camel-view-box="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"></circle><circle cx="12" cy="12" r="5"></circle><path d="M12 12l6-6"></path></svg>Calcular horários</button>
+                  <div class="glass" style="border-radius: 20px; padding: 16px; display: flex; flex-direction: column; gap: 12px">
+                    <span class="lbl">Como funciona</span>
+                    <div style="display: flex; gap: 12px; align-items: flex-start"><span class="mono" style="width: 26px; height: 26px; border-radius: 8px; display: flex; align-items: center; justify-content: center; font-size: 12px; font-weight: 700; color: var(--primary-text); background: var(--primary-soft); flex-shrink: 0">1</span><span style="font-size: 13.5px; line-height: 1.45; color: var(--text-2)">Lemos as rodadas do Aviator desde 00:00 (Brasília).</span></div>
+                    <div style="display: flex; gap: 12px; align-items: flex-start"><span class="mono" style="width: 26px; height: 26px; border-radius: 8px; display: flex; align-items: center; justify-content: center; font-size: 12px; font-weight: 700; color: var(--primary-text); background: var(--primary-soft); flex-shrink: 0">2</span><span style="font-size: 13.5px; line-height: 1.45; color: var(--text-2)">Estimamos o próximo horário provável acima de 3x e acima de 10x.</span></div>
+                    <div style="display: flex; gap: 12px; align-items: flex-start"><span class="mono" style="width: 26px; height: 26px; border-radius: 8px; display: flex; align-items: center; justify-content: center; font-size: 12px; font-weight: 700; color: var(--primary-text); background: var(--primary-soft); flex-shrink: 0">3</span><span style="font-size: 13.5px; line-height: 1.45; color: var(--text-2)">Uma nova leitura libera depois que o horário previsto passar.</span></div>
+                  </div>
+                  <div style="display: flex; justify-content: space-between; font-size: 12px; color: var(--text-3)"><span class="mono">Agora 20:42:18 (Brasília)</span><span>Última leitura: nenhuma hoje</span></div>
+                </sc-if>
+
+                <sc-if value="{{ph.calculando}}" hint-placeholder-val="{{false}}">
+                  <div class="term" role="status" aria-live="polite" aria-label="Lendo histórico, 64 por cento">
+                    <div class="scan" style="top: 74px"></div>
+                    <div style="display: flex; justify-content: space-between; align-items: center; font-family: 'JetBrains Mono', monospace; font-size: 11.5px; color: #A796E0"><span>LEITURA_HISTÓRICO // AVIATOR</span><span style="color: #34D399">● REC</span></div>
+                    <div class="mono" style="margin-top: 14px; font-size: 44px; font-weight: 700; letter-spacing: .04em; color: #F4F1FF; text-shadow: 0 0 18px rgba(167,139,250,.8)">2<span style="color: #B79BFF">0</span>:<span style="color: #FF5FD2">5</span><span style="opacity: .55">8</span>:<span style="opacity: .4">1</span><span style="color: #B79BFF; opacity: .7">6</span></div>
+                    <div class="mono" style="margin-top: 14px; display: flex; flex-direction: column; gap: 5px; font-size: 12px; color: #BDB4DA">
+                      <span style="color: #8F86B2">&gt; lendo rodadas de hoje (Brasília)</span>
+                      <span>#2976 · <span style="color: #F4F1FF">1,42x</span> · 20:41:07</span>
+                      <span>#2975 · <span style="color: #B79BFF">3,18x</span> · 20:40:39</span>
+                      <span>#2974 · <span style="color: #F4F1FF">1,07x</span> · 20:40:14</span>
+                      <span>#2973 · <span style="color: #FF5FD2">12,64x</span> · 20:39:41</span>
+                      <span style="opacity: .6">#2972 · 2,31x · 20:39:12</span>
+                      <span style="color: #8F86B2">&gt; cruzando intervalos 3x+ e 10x+ …</span>
+                    </div>
+                    <div style="margin-top: 16px; display: flex; flex-direction: column; gap: 8px">
+                      <div class="bar" style="background: rgba(167,139,250,.16)"><i style="width: 64%"></i></div>
+                      <div class="mono" style="display: flex; justify-content: space-between; font-size: 11.5px; color: #A796E0"><span>1.904 de 2.976 rodadas</span><span>64%</span></div>
+                    </div>
+                  </div>
+                  <button class="btn btn-dis" disabled=""><svg class="ic" width="20" height="20" sc-camel-view-box="0 0 24 24" aria-hidden="true"><path d="M12 3a9 9 0 1 0 9 9"></path></svg>Lendo histórico…</button>
+                </sc-if>
+
+                <sc-if value="{{ph.resultado}}" hint-placeholder-val="{{false}}">
+                  <div class="glass edge win">
+                    <div style="flex: 1; min-width: 0; display: flex; flex-direction: column; gap: 6px">
+                      <div style="display: flex; align-items: center; gap: 8px"><span class="chip c3">▲ 3x</span><span class="lbl">faixa 2x a 3x</span></div>
+                      <span style="font-size: 13px; line-height: 1.35; color: var(--text-2)">Próximo horário provável acima de 3x</span>
+                      <span class="mono" style="font-size: 38px; font-weight: 700; line-height: 1.05">20:47:32</span>
+                    </div>
+                    <div style="position: relative; width: 86px; height: 86px; flex-shrink: 0" role="timer" aria-label="Faltam 5 minutos e 14 segundos">
+                      <svg width="86" height="86" sc-camel-view-box="0 0 86 86" aria-hidden="true"><circle cx="43" cy="43" r="37" style="fill: none; stroke: var(--track); stroke-width: 6"></circle><circle cx="43" cy="43" r="37" transform="rotate(-90 43 43)" style="fill: none; stroke: var(--primary-text); stroke-width: 6; stroke-linecap: round; stroke-dasharray: 232.5; stroke-dashoffset: 92"></circle></svg>
+                      <div style="position: absolute; inset: 0; display: flex; flex-direction: column; align-items: center; justify-content: center"><span class="mono" style="font-size: 17px; font-weight: 700">05:14</span><span style="font-size: 10.5px; color: var(--text-3)">faltam</span></div>
+                    </div>
+                  </div>
+                  <div class="glass edge win win10">
+                    <div style="flex: 1; min-width: 0; display: flex; flex-direction: column; gap: 6px">
+                      <div style="display: flex; align-items: center; gap: 8px"><span class="chip c10">◆ 10x</span><span class="lbl">faixa 5x a 10x</span></div>
+                      <span style="font-size: 13px; line-height: 1.35; color: var(--text-2)">Próximo horário provável acima de 10x</span>
+                      <span class="mono" style="font-size: 38px; font-weight: 700; line-height: 1.05">21:03:10</span>
+                    </div>
+                    <div style="position: relative; width: 86px; height: 86px; flex-shrink: 0" role="timer" aria-label="Faltam 20 minutos e 52 segundos">
+                      <svg width="86" height="86" sc-camel-view-box="0 0 86 86" aria-hidden="true"><circle cx="43" cy="43" r="37" style="fill: none; stroke: var(--track); stroke-width: 6"></circle><circle cx="43" cy="43" r="37" transform="rotate(-90 43 43)" style="fill: none; stroke: var(--pink); stroke-width: 6; stroke-linecap: round; stroke-dasharray: 232.5; stroke-dashoffset: 30"></circle></svg>
+                      <div style="position: absolute; inset: 0; display: flex; flex-direction: column; align-items: center; justify-content: center"><span class="mono" style="font-size: 17px; font-weight: 700">20:52</span><span style="font-size: 10.5px; color: var(--text-3)">faltam</span></div>
+                    </div>
+                  </div>
+                  <div class="mono" style="display: flex; flex-direction: column; gap: 4px; font-size: 12px; color: var(--text-2); padding: 0 4px">
+                    <span>Aviator · 2.976 rodadas de hoje</span>
+                    <span>Agora 20:42:18 (Brasília) · calculado às 20:42:15</span>
+                  </div>
+                  <div style="display: flex; flex-direction: column; gap: 8px">
+                    <button class="btn btn-dis" disabled="" aria-describedby="lockmsg"><svg class="ic" width="20" height="20" sc-camel-view-box="0 0 24 24" aria-hidden="true"><rect x="5" y="10.5" width="14" height="10" rx="2.5"></rect><path d="M8 10.5V8a4 4 0 0 1 8 0v2.5"></path></svg>Nova leitura às <span class="mono">20:47:32</span></button>
+                    <span id="lockmsg" style="font-size: 12.5px; text-align: center; color: var(--text-3)">Aguarde o horário previsto para uma nova leitura do histórico.</span>
+                  </div>
+                </sc-if>
+
+                <sc-if value="{{ph.bloqueado}}" hint-placeholder-val="{{false}}">
+                  <div class="glass" style="border-radius: 20px; padding: 6px 14px">
+                    <div style="display: flex; align-items: center; gap: 10px; min-height: 52px; border-bottom: 1px solid var(--border)"><span class="chip c3">▲ 3x</span><span style="font-size: 13px; color: var(--text-2); flex: 1">acima de 3x</span><span class="mono" style="font-size: 18px; font-weight: 700">20:47:32</span><span class="mono" style="font-size: 12px; color: var(--primary-text); width: 52px; text-align: right">01:41</span></div>
+                    <div style="display: flex; align-items: center; gap: 10px; min-height: 52px"><span class="chip c10">◆ 10x</span><span style="font-size: 13px; color: var(--text-2); flex: 1">acima de 10x</span><span class="mono" style="font-size: 18px; font-weight: 700">21:03:10</span><span class="mono" style="font-size: 12px; color: var(--pink); width: 52px; text-align: right">17:19</span></div>
+                  </div>
+                  <div class="glass edge" style="border-radius: 22px; padding: 22px 18px; display: flex; flex-direction: column; align-items: center; gap: 14px; text-align: center">
+                    <div style="position: relative; width: 120px; height: 120px">
+                      <svg width="120" height="120" sc-camel-view-box="0 0 120 120" aria-hidden="true"><circle cx="60" cy="60" r="52" style="fill: none; stroke: var(--track); stroke-width: 8"></circle><circle cx="60" cy="60" r="52" transform="rotate(-90 60 60)" style="fill: none; stroke: var(--primary-text); stroke-width: 8; stroke-linecap: round; stroke-dasharray: 326.7; stroke-dashoffset: 52"></circle></svg>
+                      <div style="position: absolute; inset: 0; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 2px"><svg class="ic" width="20" height="20" sc-camel-view-box="0 0 24 24" aria-hidden="true" style="color: var(--text-3)"><rect x="5" y="10.5" width="14" height="10" rx="2.5"></rect><path d="M8 10.5V8a4 4 0 0 1 8 0v2.5"></path></svg><span class="mono" style="font-size: 22px; font-weight: 700">01:41</span></div>
+                    </div>
+                    <div style="display: flex; flex-direction: column; gap: 6px">
+                      <span class="disp" style="font-size: 18px; font-weight: 700">Leitura em espera</span>
+                      <span style="font-size: 14px; line-height: 1.5; color: var(--text-2)">Aguarde o horário previsto para uma nova leitura do histórico.</span>
+                    </div>
+                    <button class="btn btn-dis" disabled=""><svg class="ic" width="20" height="20" sc-camel-view-box="0 0 24 24" aria-hidden="true"><rect x="5" y="10.5" width="14" height="10" rx="2.5"></rect><path d="M8 10.5V8a4 4 0 0 1 8 0v2.5"></path></svg>Nova leitura às <span class="mono">20:47:32</span></button>
+                  </div>
+                  <div class="mono" style="display: flex; justify-content: space-between; font-size: 12px; color: var(--text-3); padding: 0 4px"><span>Agora 20:45:51 (Brasília)</span><span>calculado às 20:42:15</span></div>
+                </sc-if>
+
+                <sc-if value="{{ph.amostra}}" hint-placeholder-val="{{false}}">
+                  <div class="glass edge" style="border-radius: 22px; padding: 22px 18px; display: flex; flex-direction: column; gap: 14px">
+                    <span style="width: 48px; height: 48px; border-radius: 14px; display: flex; align-items: center; justify-content: center; background: var(--primary-soft); color: var(--primary-text)"><svg class="ic" width="24" height="24" sc-camel-view-box="0 0 24 24" aria-hidden="true"><path d="M4 20V10M10 20V4M16 20v-7M22 20H2"></path></svg></span>
+                    <div style="display: flex; flex-direction: column; gap: 6px">
+                      <span class="disp" style="font-size: 20px; font-weight: 700">Ainda não há rodadas suficientes de hoje</span>
+                      <span style="font-size: 14px; line-height: 1.5; color: var(--text-2)">O dia começa às 00:00 (Brasília). A leitura precisa de pelo menos 200 rodadas para estimar um horário.</span>
+                    </div>
+                    <div style="display: flex; flex-direction: column; gap: 8px">
+                      <div style="display: flex; justify-content: space-between; font-size: 13px"><span>Rodadas de hoje</span><span class="mono" style="color: var(--text-2)">86 / 200</span></div>
+                      <div class="bar" role="progressbar" aria-valuenow="43" aria-valuemin="0" aria-valuemax="100" aria-label="Rodadas de hoje"><i style="width: 43%"></i></div>
+                      <span style="font-size: 12.5px; color: var(--text-3)">Libera por volta de <span class="mono">01:24</span>.</span>
+                    </div>
+                  </div>
+                  <button class="btn btn-dis" disabled="">Calcular horários</button>
+                  <button class="btn btn-secondary"><svg class="ic" width="20" height="20" sc-camel-view-box="0 0 24 24" aria-hidden="true"><path d="M6 16V11a6 6 0 0 1 12 0v5l1.5 2h-15z"></path><path d="M10 20.5a2 2 0 0 0 4 0"></path></svg>Me avise quando liberar</button>
+                  <span class="mono" style="font-size: 12px; color: var(--text-3); padding: 0 4px">Agora 00:36:12 (Brasília)</span>
+                </sc-if>
+
+                <sc-if value="{{ph.erro}}" hint-placeholder-val="{{false}}">
+                  <div class="glass" role="alert" style="border-radius: 22px; padding: 22px 18px; display: flex; flex-direction: column; gap: 14px; border-color: var(--danger)">
+                    <span style="width: 48px; height: 48px; border-radius: 14px; display: flex; align-items: center; justify-content: center; color: var(--danger); background: var(--surface-2); box-shadow: inset 0 0 0 1px var(--danger)"><svg class="ic" width="24" height="24" sc-camel-view-box="0 0 24 24" aria-hidden="true"><path d="M12 3 2.5 20h19z"></path><path d="M12 10v4.5M12 17.5h.01"></path></svg></span>
+                    <div style="display: flex; flex-direction: column; gap: 6px">
+                      <span class="disp" style="font-size: 20px; font-weight: 700">Não conseguimos ler o histórico agora</span>
+                      <span style="font-size: 14px; line-height: 1.5; color: var(--text-2)">A conexão com as rodadas caiu no meio da leitura. Sua leitura não foi contada e o botão continua liberado.</span>
+                    </div>
+                    <button class="btn btn-primary"><svg class="ic" width="20" height="20" sc-camel-view-box="0 0 24 24" aria-hidden="true"><path d="M20 11a8 8 0 1 0-2.3 5.7"></path><path d="M20 5v6h-6"></path></svg>Tentar novamente</button>
+                    <span class="mono" style="font-size: 11.5px; color: var(--text-3)">Código LEIT-503 · 20:42:21 (Brasília)</span>
+                  </div>
+                  <a href="#" style="font-size: 13.5px; text-align: center; padding: 12px; text-decoration: none">Ver status do serviço</a>
+                </sc-if>
+
+                <sc-if value="{{ph.embreve}}" hint-placeholder-val="{{false}}">
+                  <div class="hero" style="height: 230px">
+                    <svg sc-camel-view-box="0 0 358 230" width="358" height="230" aria-hidden="true" style="position: absolute; inset: 0; display: block; opacity: .45">
+                      <defs><linearGradient id="trailC" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#7C3AED" stop-opacity="0"></stop><stop offset="1" stop-color="#C4B0FF"></stop></linearGradient></defs>
+                      <g style="stroke: rgba(183,155,255,.25); stroke-width: 1"><path d="M0 170H358M0 190H358M0 212H358"></path><path d="M179 140 0 230M179 140 90 230M179 140 179 230M179 140 268 230M179 140 358 230"></path></g>
+                      <path d="M14 220 C 120 216, 210 190, 272 90" style="fill: none; stroke: url(#trailC); stroke-width: 3; stroke-dasharray: 6 8; stroke-linecap: round"></path>
+                      <g transform="translate(276 84) rotate(-52)"><path d="M22 0 L-12 -15 L-5 0 L-12 15 Z" style="fill: #F4F1FF"></path></g>
+                    </svg>
+                    <div style="position: absolute; inset: 0; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 10px; text-align: center; padding: 20px">
+                      <span style="font-size: 12px; font-weight: 700; letter-spacing: .14em; padding: 6px 12px; border-radius: 999px; background: rgba(255,255,255,.14); border: 1px solid rgba(255,255,255,.35)">EM BREVE</span>
+                      <span class="disp" style="font-size: 26px; font-weight: 700; line-height: 1.1">Probabilidades está chegando</span>
+                    </div>
+                  </div>
+                  <p style="margin: 0; font-size: 14.5px; line-height: 1.55; color: var(--text-2)">Estamos terminando os testes da leitura do histórico do Aviator. Quando liberar, você recebe um aviso no sininho.</p>
+                  <a href="#" class="btn btn-primary"><svg class="ic" width="20" height="20" sc-camel-view-box="0 0 24 24" aria-hidden="true"><path d="M3 10.5 12 3l9 7.5"></path><path d="M5 9.5V20h14V9.5"></path></svg>Voltar para o início</a>
+                  <button class="btn btn-ghost"><svg class="ic" width="20" height="20" sc-camel-view-box="0 0 24 24" aria-hidden="true"><path d="M6 16V11a6 6 0 0 1 12 0v5l1.5 2h-15z"></path><path d="M10 20.5a2 2 0 0 0 4 0"></path></svg>Me avise quando liberar</button>
+                </sc-if>
+
+                <a href="#" style="margin-top: 4px; display: flex; align-items: center; justify-content: center; gap: 8px; min-height: 44px; font-size: 12.5px; color: var(--text-3); text-decoration: none"><svg class="ic" width="16" height="16" sc-camel-view-box="0 0 24 24" aria-hidden="true"><path d="M12 3 4.5 6v5.5c0 4.5 3.2 8.2 7.5 9.5 4.3-1.3 7.5-5 7.5-9.5V6z"></path></svg>Jogo responsável · 18+</a>
+              </div>
+
+              <nav class="botnav" aria-label="Navegação principal">
+                <a href="#" class="tab"><span class="tab-ic"><svg class="ic" width="22" height="22" sc-camel-view-box="0 0 24 24" aria-hidden="true"><path d="M3 10.5 12 3l9 7.5"></path><path d="M5 9.5V20h14V9.5"></path><path d="M10 20v-6h4v6"></path></svg></span>Início</a>
+                <a href="#" class="tab"><span class="tab-ic"><svg class="ic" width="22" height="22" sc-camel-view-box="0 0 24 24" aria-hidden="true"><rect x="2.5" y="7" width="19" height="11" rx="5.5"></rect><path d="M7 11v3M5.5 12.5h3"></path><circle cx="16" cy="11.5" r="1"></circle><circle cx="18" cy="13.5" r="1"></circle></svg></span>Jogos</a>
+                <a href="#" class="tab on" aria-current="page"><span class="fab"><svg class="ic" width="26" height="26" sc-camel-view-box="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"></circle><circle cx="12" cy="12" r="5"></circle><path d="M12 12l6-6"></path></svg></span>Probabilidades</a>
+                <a href="#" class="tab"><span class="tab-ic"><svg class="ic" width="22" height="22" sc-camel-view-box="0 0 24 24" aria-hidden="true"><path d="M8 4h8v5a4 4 0 0 1-8 0V4z"></path><path d="M16 5h3v2a3 3 0 0 1-3 3M8 5H5v2a3 3 0 0 0 3 3"></path><path d="M12 13v4M8.5 20h7"></path></svg></span>Conquistas</a>
+                <a href="#" class="tab"><span class="tab-ic"><svg class="ic" width="22" height="22" sc-camel-view-box="0 0 24 24" aria-hidden="true"><rect x="4" y="4" width="6.5" height="6.5" rx="1.5"></rect><rect x="13.5" y="4" width="6.5" height="6.5" rx="1.5"></rect><rect x="4" y="13.5" width="6.5" height="6.5" rx="1.5"></rect><rect x="13.5" y="13.5" width="6.5" height="6.5" rx="1.5"></rect></svg></span>Mais</a>
+              </nav>
+            </div>
+
+            <sc-if value="{{ph.showCap}}" hint-placeholder-val="{{true}}">
+              <div style="display: flex; flex-direction: column; gap: 8px; padding: 0 4px">
+                <div style="display: flex; align-items: baseline; gap: 10px"><span class="mono" style="font-size: 13px; color: #B79BFF">{{ph.num}}</span><span class="disp" style="font-size: 20px; font-weight: 700; color: #F4F1FF">{{ph.title}}</span></div>
+                <span class="cap" style="color: #BDB4DA">{{ph.desc}}</span>
+                <div style="display: flex; gap: 6px; flex-wrap: wrap">
+                  <sc-for list="{{ph.tags}}" as="tg" hint-placeholder-count="2"><span class="tech {{tg.k}}">{{tg.t}}</span></sc-for>
+                </div>
+              </div>
+            </sc-if>
+          </div>
+        </sc-for>
+      </div>
+    </div>
+  </sc-for>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script="" data-props="{&quot;$preview&quot;:{&quot;width&quot;:3120,&quot;height&quot;:2460}}">
+class Component extends DCLogic {
+  renderVals() {
+    var defs = [
+      { key: 'inicial', num: '01', title: 'Inicial', desc: 'Cena 3D do Aviator como identidade da tela, botão principal e um resumo de 3 passos. Sem resultado ainda.', tags: [{ t: 'Three.js', k: 'k-three' }, { t: 'CSS', k: 'k-css' }] },
+      { key: 'calculando', num: '02', title: 'Calculando · ~3 s', desc: 'A cena encolhe para 76 px. Terminal: dígitos embaralhando, linha de varredura descendo, feed com as últimas rodadas reais e barra de progresso.', tags: [{ t: 'JS / React', k: 'k-js' }, { t: 'Dados', k: 'k-api' }] },
+      { key: 'resultado', num: '03', title: 'Resultado', desc: 'Dois cartões empilhados com horário HH:MM:SS, selo com forma própria (▲ 3x, ◆ 10x em rosa neon) e anel de contagem regressiva. O botão já fica bloqueado.', tags: [{ t: 'CSS', k: 'k-css' }, { t: 'Dados', k: 'k-api' }] },
+      { key: 'bloqueado', num: '04', title: 'Bloqueado', desc: 'Usuário voltou à tela antes do horário: resultados viram uma lista compacta e o foco é o tempo até liberar a próxima leitura.', tags: [{ t: 'Dados', k: 'k-api' }] },
+      { key: 'amostra', num: '05', title: 'Amostra insuficiente', desc: 'Começo do dia. Mostra quantas rodadas faltam e quando deve liberar. Botão desabilitado, com opção de aviso.', tags: [{ t: 'Dados', k: 'k-api' }] },
+      { key: 'erro', num: '06', title: 'Erro', desc: 'Falha na leitura. Diz o que aconteceu, garante que a leitura não foi contada e oferece tentar de novo.', tags: [{ t: 'Dados', k: 'k-api' }] },
+      { key: 'embreve', num: '07', title: 'Em breve', desc: 'Recurso ainda desligado por feature flag. Cena estática esmaecida, chamada para voltar ao início e opção de aviso.', tags: [{ t: 'Flag', k: 'k-api' }] }
+    ];
+    var rows = [{ cls: 't-dark', label: 'Modo escuro', cap: true }, { cls: 't-light', label: 'Modo claro', cap: false }].map(function (th) {
+      return {
+        label: th.label,
+        phones: defs.map(function (d) {
+          var p = { cls: th.cls, showCap: th.cap, num: d.num, title: d.title, desc: d.desc, tags: d.tags };
+          ['inicial', 'calculando', 'resultado', 'bloqueado', 'amostra', 'erro', 'embreve'].forEach(function (k) { p[k] = d.key === k; });
+          p.heroBig = d.key === 'inicial' || d.key === 'amostra' || d.key === 'erro';
+          p.heroSmall = d.key === 'calculando' || d.key === 'resultado' || d.key === 'bloqueado';
+          return p;
+        })
+      };
+    });
+    return { rows: rows };
+  }
+}
+</script>
+
+
+</body></html>

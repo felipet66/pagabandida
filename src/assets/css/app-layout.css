@@ -1,0 +1,129 @@
+:root {
+  --app-background: #09090c;
+  --app-surface: #100e12;
+  --app-border: #ffffff12;
+  --app-gutter: 24px;
+  --app-sidebar-space: 260px;
+  --app-bottom-nav-height: 68px;
+  --app-safe-top: env(safe-area-inset-top, 0px);
+  --app-safe-bottom: env(safe-area-inset-bottom, 0px);
+}
+
+html { background: var(--app-background); scroll-padding-bottom: 24px; }
+body { background: var(--app-background); overflow-x: hidden; }
+#root {
+  min-height: 100vh;
+  min-height: 100dvh;
+  background: radial-gradient(ellipse 1000px 480px at 80% 0, #e3061309, transparent 75%), var(--app-background);
+}
+#root .wrapper { height: auto; min-height: 100vh; min-height: 100dvh; }
+#root .main-panel {
+  float: none;
+  width: 100%;
+  min-width: 0;
+  min-height: 100vh;
+  min-height: 100dvh;
+  background: transparent;
+  border-top: 0;
+}
+#root .admin-main-panel { display: flex; flex-direction: column; }
+#root .admin-main-panel > .content {
+  flex: 1 0 auto;
+  min-width: 0;
+  min-height: 0;
+  width: auto;
+  margin: 0 0 0 var(--app-sidebar-space) !important;
+  padding: var(--app-gutter) var(--app-gutter) 24px !important;
+}
+#root .admin-main-panel > .content.container { max-width: none; }
+#root .admin-main-panel > .content > .row { min-width: 0; }
+#root .admin-main-panel > .game-catalog--embedded {
+  flex: 1 0 auto;
+  min-height: 0;
+  min-width: 0;
+  margin-left: var(--app-sidebar-space);
+}
+#root .game-catalog { background: transparent; }
+#root .game-catalog--embedded .catalog-main { padding: var(--app-gutter) var(--app-gutter) 24px; }
+#root .admin-main-panel > .footer {
+  margin-left: var(--app-sidebar-space);
+  padding: 20px var(--app-gutter) 24px;
+  border-top: 1px solid var(--app-border);
+}
+#root .admin-main-panel > .footer .container-fluid { display: flex; justify-content: space-between; flex-wrap: wrap; gap: 12px; }
+#root .admin-main-panel > .footer .nav { float: none; padding: 0; }
+#root .admin-main-panel > .footer .copyright { float: none; padding: 0; margin: 0; color: #938998; font-size: 11px; }
+#root .admin-main-panel > .footer .nav-link { color: #a99fad; font-size: 11px; }
+#root .admin-topbar { padding-left: calc(var(--app-sidebar-space) + var(--app-gutter)); padding-right: var(--app-gutter); background: var(--app-surface); }
+#root .sidebar.app-sidebar { background: #141216; top: 92px; bottom: 16px; height: auto; margin: 0 0 0 16px; width: 228px; }
+#root .sidebar.app-sidebar .app-sidebar__wrapper { width: 100%; }
+.admin-sidebar-backdrop { display: none; }
+.admin-appearance { height: 0; }
+.admin-appearance > span { display: none; }
+
+#root .auth-main-panel { display: flex; flex-direction: column; }
+#root .auth-main-panel > .navbar { position: relative; inset: auto; margin: 0; min-height: 60px; padding: 10px var(--app-gutter); background: var(--app-surface); border-bottom: 1px solid var(--app-border); }
+#root .auth-main-panel > .navbar .container-fluid { padding: 0; }
+#root .auth-main-panel > .auth-form-page { flex: 1; min-height: 0; background: transparent; padding: 24px var(--app-gutter) max(36px, var(--app-safe-bottom)); }
+
+@media (max-width: 991px) {
+  :root { --app-gutter: 20px; --app-sidebar-space: 0px; }
+  html { scroll-padding-bottom: calc(var(--app-bottom-nav-height) + var(--app-safe-bottom) + 24px); }
+  #root .admin-main-panel,
+  .nav-open #root .admin-main-panel { right: auto; transform: none; }
+  #root .admin-topbar { padding-top: max(12px, var(--app-safe-top)); }
+  #root .sidebar.app-sidebar {
+    top: 0; bottom: 0; left: 0; width: min(280px, 86vw); height: 100vh; height: 100dvh;
+    margin: 0; z-index: 1120; transform: translateX(-100%);
+  }
+  .nav-open #root .sidebar.app-sidebar { transform: translateX(0); }
+  #root .admin-sidebar-backdrop {
+    display: block; position: fixed; inset: 0; width: 100%; height: 100%; padding: 0;
+    border: 0; background: #0009; backdrop-filter: blur(3px); z-index: 1110; cursor: pointer;
+  }
+  #root .bottom-navigation {
+    display: flex; position: fixed; left: var(--app-gutter); right: var(--app-gutter); bottom: 0;
+    min-height: calc(var(--app-bottom-nav-height) + var(--app-safe-bottom));
+    padding: 6px 6px calc(6px + var(--app-safe-bottom)); gap: 4px;
+    background: #141216f5; border: 1px solid #ffffff18; border-bottom: 0;
+    border-radius: 16px 16px 0 0; box-shadow: 0 -6px 24px #0004; z-index: 1060;
+  }
+  #root .bottom-navigation .bottom-nav-item {
+    display: flex; flex: 1 1 0; flex-direction: column; align-items: center; justify-content: center;
+    min-width: 0; min-height: 54px; padding: 6px 3px; margin: 0; gap: 4px;
+    border: 0; border-radius: 10px; background: transparent; color: #b3a9bc;
+    font-size: 10px; line-height: 1.2; font-weight: 500; cursor: pointer; text-decoration: none;
+  }
+  #root .bottom-navigation .bottom-nav-item i,
+  #root .bottom-navigation .bottom-nav-item svg { height: 20px; margin: 0; font-size: 16px; }
+  #root .bottom-navigation .bottom-nav-item span { max-width: 100%; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+  #root .bottom-navigation .bottom-nav-item.active { background: #e3061324; color: #ff8992; box-shadow: none; transform: none; }
+  #root .bottom-navigation .bottom-nav-item:focus-visible { outline: 2px solid #ff606c; outline-offset: -2px; }
+  #root .admin-main-panel > .footer { padding-bottom: calc(var(--app-bottom-nav-height) + var(--app-safe-bottom) + 24px); }
+  #root .admin-main-panel > .footer .container-fluid { justify-content: center; text-align: center; }
+  #root .admin-appearance { display: flex; align-items: center; justify-content: flex-end; gap: 12px; height: auto; padding: 0 var(--app-gutter) 20px; }
+  #root .admin-appearance > span { display: block; color: #a99fad; font-size: 11px; }
+  #root .fixed-plugin { position: relative; top: auto; bottom: auto; right: auto; width: 40px; border-radius: 10px; background: #141216; }
+  #root .fixed-plugin .fa-cog { padding: 10px; font-size: 20px; }
+  #root .fixed-plugin .dropdown-menu { top: auto !important; bottom: 48px; right: 0; max-width: calc(100vw - 32px); }
+}
+@media (max-width: 600px) {
+  :root { --app-gutter: 16px; }
+  #root .admin-main-panel > .content { padding-top: 20px !important; }
+  #root input:not([type="checkbox"]):not([type="radio"]):not([readonly]),
+  #root select, #root textarea:not([readonly]) { font-size: 16px; }
+  #root .game-catalog--embedded .catalog-main { padding-top: 20px; }
+  #root .auth-main-panel > .auth-form-page { padding-top: 16px; }
+  #root .auth-form-card { padding: 24px 20px; }
+  #root .aviator-history-controls { grid-template-columns: minmax(0, .85fr) minmax(0, 1.15fr); }
+  #root .catalog-row > .catalog-game { flex-basis: calc((100% - 24px) / 3); }
+  #root .catalog-row { margin-right: calc(-1 * var(--app-gutter)); padding-right: var(--app-gutter); }
+}
+@media (max-width: 360px) {
+  :root { --app-gutter: 12px; }
+  #root .auth-form-card { padding: 20px 16px; }
+  #root .bottom-navigation .bottom-nav-item { font-size: 9px; }
+  #root .admin-wallet { gap: 4px; }
+  #root .admin-wallet__deposit { padding-inline: 8px; }
+}
+@media (prefers-reduced-motion: reduce) { :where(:root:not([data-motion="full"])) #root .sidebar.app-sidebar { transition: none; } }

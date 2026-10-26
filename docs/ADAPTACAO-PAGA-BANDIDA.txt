@@ -1,0 +1,137 @@
+ADAPTAÇÃO PAGA BANDIDA — 25/10/2026
+
+Resultado
+Aplicativo adaptado para Paga Bandida (pagabandida), casa ganhebetBR
+(ganhebetbr), preservando layout, rotas de navegação e contratos do BFF.
+
+Referências alteradas
+- Login, cadastro, menus, cabeçalhos, rodapés, diálogos, instalação,
+  manutenção, ferramentas, páginas de entrada e títulos: Paga Bandida.
+- Metadados Open Graph/Twitter e os dois manifestos PWA atualizados.
+  Identidade PWA /pagabandida; start_url e scope continuam /.
+- Tema escuro: verde-lima #B6FF00, fundos verde-floresta, texto escuro nos
+  botões. Tema claro: verde #397000, superfícies claras, texto branco nos
+  botões. Cores semânticas distintas dos alertas preservadas.
+- Chaves de preferências, sessão temporária de jogo, check-in e cooldown
+  usam pagabandida. Na primeira carga, a migração limpa sessão e atribuição
+  herdadas; o tracking da URL atual é capturado novamente.
+- Analytics antigos removidos. GA/GTM recebem app_id=pagabandida;
+  LogRocket usa identidade pagabandida:<user_id> e trait app=pagabandida.
+  Analytics ficam desativados até provisionar propriedades do novo app.
+- Histórico público envia betHouse=ganhebetbr, sem mudar endpoint ou schema.
+- Afiliação/click ID herdados removidos. A afiliação oficial fornecida
+  posteriormente pelo usuário é usada como padrão: axioAffId=NLNYO e
+  axioClickId=e5050517-3f86-4335-9fc7-5d0adaf550f4. Cadastro mantém campos públicos
+  axioAffId, axioClickId, UTMs, landingUrl e ga_client_id recebidos da URL
+  ou do armazenamento da sessão atual. Nenhum click ID de teste em runtime.
+  A URL atual tem prioridade sobre atribuição previamente capturada.
+- Campanha antiga DJ4APRI e anúncios de premiação herdados desativados.
+  Resgate genérico de cupons e fluxos de depósito continuam existentes.
+
+BFF e credencial
+- URL preservada: https://api.tropadostelecos.com.br/
+- Rotas existentes de auth, catálogo, jogos, carteira, KYC, ranking,
+  gamificação, aulas, torneios e cupons preservadas.
+- REACT_APP_APP_KEY configurada com a chave fornecida em .env.local,
+  permissão 0600; .gitignore exclui .env, .env.* e build.
+- Não existe diretório .git neste checkout; nenhum commit foi criado.
+- Nenhuma chave foi gravada em src/, public/, scripts/ ou docs/.
+- O mecanismo atual é React/CRA: REACT_APP_APP_KEY entra no bundle entregue
+  ao navegador e no header X-App-Key. Variável de build não é segredo de
+  servidor. Para confidencialidade no navegador é necessário um proxy de
+  servidor com segredo em runtime; essa alteração não foi feita para
+  preservar o mecanismo e os contratos solicitados.
+- Nenhum header/parâmetro de tenant/casa foi acrescentado ao cliente BFF.
+  A resolução e autorização continuam a cargo do BFF pela chave do app.
+- Tabelas, contratos, serviços compartilhados e respectivos hosts mantidos.
+  Os nomes API_URL_BR4BET e o host compartilhado com “teleco” são contratos
+  legados de configuração, não nomes exibidos ao usuário.
+
+Links verificados
+- Site oficial: https://www.ganhebetbr.com/
+- Suporte atualizado por solicitação do usuário:
+  https://wa.me/5571987591913?text=Lugo%20eu%20vim%20do%20Pagabandida
+  Todos os pontos do app usam src/config/support.js, inclusive botões,
+  carrossel, telas de acesso, KYC, saque, manutenção e landing.
+  A mensagem pré-preenchida foi preservada exatamente como fornecida.
+- Cadastro do app permanece em /auth/register e usa os endpoints existentes
+  api/auth/validate-document e api/auth/register-simplified.
+- Cadastro externo confirmado pelo link fornecido pelo usuário:
+  https://www.ganhebetbr.com/?modal=register&axioClickId=e5050517-3f86-4335-9fc7-5d0adaf550f4&axioAffId=NLNYO
+- Não foi confirmado deep link de recuperação de senha.
+  Não foram inventadas rotas /register, /forgot-password ou similares.
+  O link “Recuperar senha no site da ganhebetBR” abre a raiz oficial;
+  BET_HOUSE.recoveryUrl permanece null até confirmação do caminho específico.
+  BET_HOUSE.registrationUrl abre modal=register com a afiliação oficial
+  e o tracking atual. BET_HOUSE.siteUrl inclui afiliação/tracking nos links
+  gerais sem forçar o modal. Links de suporte continuam no canal oficial.
+- WhatsApp e redes pessoais herdados foram substituídos por suporte/site da
+  casa. Canal próprio de comunidade/Telegram do Paga Bandida ainda falta.
+
+Assets
+- Em 26/10/2026, a logo verde aprovada pelo usuário passou a ser usada
+  nos cabeçalhos, menu, acesso, manutenção e instalação. A imagem original
+  com transparência foi preservada e há uma versão WebP otimizada de 512 px.
+- Favicon ICO (16/32/48), PNGs (16/32/64), Apple Touch (180), Android
+  (192/512), ícone maskable (512) e imagens de compartilhamento derivados
+  da mesma logo. Manifestos e HTML usam a revisão pagabandida-emblema-v2.
+  Identidade, escopo e rotas da PWA foram preservados.
+- Regenerar derivados: npm run brand:icons (scripts/generate-brand-icons.cjs).
+- Em 26/10/2026, os placeholders foram substituídos por seis artes geradas
+  com image_gen, usando as quatro fotos fornecidas, a logo aprovada e os
+  banners do Teleco Pro como referência de composição. Paleta verde-lima,
+  verde-floresta e prata/branco; preservadas identidade das fotos e proporções.
+  Artes: boas-vindas (IMG_6866), carteira (IMG_6924), ranking (IMG_6704),
+  suporte (IMG_6866), histórico (IMG_6704) e análises I.A. (IMG_8041).
+  Originais e prompts: src/assets/brand/banners. Derivados WebP responsivos
+  gerados por npm run optimize:banners, sem recortar o conteúdo das artes.
+  Links de carteira, ranking, suporte e ferramentas mantidos. As ofertas
+  antigas do Teleco Pro não foram copiadas. Posteriormente, por solicitação
+  explícita do usuário, o ranking passou a anunciar R$10.000,00 em prêmios
+  para os top depositantes do mês, com a mesma identidade verde (ranking-v2).
+  O banner de suporte-v2 identifica Paga Bandida em vez de ganhebetBR.
+- A referência anexada foi usada somente para as cores; seu bônus e marca
+  “Bingou” não foram publicados como oferta do Paga Bandida.
+- Assets antigos retirados de src/ e preservados em artifacts/legacy-brand.
+  O otimizador agora usa apenas assets da pasta src/assets/brand.
+- As seis artes foram aplicadas ao app e ficam disponíveis para revisão.
+  Canal próprio de comunidade e eventuais campanhas com ofertas continuam
+  dependendo de configuração/conteúdo confirmado, sem anúncios inventados.
+
+Verificações e limites reais
+- npm ci concluído; npm run optimize:banners concluído.
+- npm run build concluído com avisos existentes de lint/depreciação.
+- 62 suítes, 428 testes aprovados, incluindo contratos BFF, cadastro,
+  atribuição, migração de storage, PWA, cupons, analytics e contraste AA
+  dos temas claro/escuro. O teste de landing tinha seletor de status ambíguo;
+  foi tornado específico sem alterar o comportamento da tela.
+- Conferência no navegador: login e catálogo exibem a nova identidade,
+  suporte correto e mensagens de indisponibilidade; tela escura revisada.
+  Tema claro validado pelos testes de preferência/bootstrap/contraste.
+- GET /api/games/catalog com a chave fornecida respondeu HTTP 501,
+  code UNSUPPORTED_OPERATION: “Esta casa não tem catálogo próprio neste BFF.”
+  O frontend não substitui por catálogo ou dados de outra casa.
+- Histórico público com betHouse=ganhebetbr, chartNumber=1 e limit=1
+  respondeu HTTP 200, data=[]; não há rodada disponível nessa consulta.
+- Login real, criação de conta, KYC, Pix e saque não foram executados.
+  Não foram feitas operações financeiras ou alterações de banco/backend.
+
+Configurações e habilitações pendentes
+1. Habilitar catálogo da ganhebetBR no BFF e confirmar suporte de
+   start-game-v2 para a casa; catálogo é o bloqueio efetivamente observado.
+2. Disponibilizar/coletar histórico ganhebetbr e confirmar as três versões.
+3. Validar credenciais da casa e capacidades de login/cadastro, documento,
+   carteira, Pix, saque e KYC em ambiente de homologação. Nenhum fallback
+   para a casa anterior foi adicionado.
+4. Configurar aulas, ranking, cupons, torneios e gamificação para o aplicativo
+   pagabandida no painel/BFF, conforme as capacidades habilitadas.
+5. Confirmar link externo específico de recuperação de senha e o canal
+   de comunidade; fornecer artes oficiais e campanhas aprovadas.
+6. Na hospedagem de destino, definir REACT_APP_BFF_URL e REACT_APP_APP_KEY
+   com os valores próprios do Paga Bandida antes de compilar/publicar.
+   A configuração local não altera variáveis de nenhuma hospedagem.
+7. Se necessário, configurar REACT_APP_LOGROCKET_APP_ID,
+   REACT_APP_GA_MEASUREMENT_ID e REACT_APP_GTM_ID com propriedades novas.
+   Modelo sem segredos em .env.example.
+
+Relação detalhada de arquivos: docs/ARQUIVOS-ADAPTADOS.txt.

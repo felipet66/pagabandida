@@ -1,0 +1,23 @@
+Sidebar da esquerda e navbar — revisão do design system
+
+Ranking de Players commitado em 4d7cee6 antes desta etapa.
+
+Alterações:
+- Sidebar e navbar usam tokens compartilhados em todas as rotas administrativas, com tema claro/escuro.
+- Ícones Lucide na navegação, menu, conta, depósito e visibilidade do saldo.
+- Tipografia Sora/Chakra Petch e saldo em JetBrains Mono; tamanho mínimo de texto de 12px.
+- Controles com 44px, links da sidebar com 48px e foco visível violeta.
+- Estado ativo, hover, bordas e superfícies coerentes com as telas migradas.
+- Navbar usa duas linhas abaixo de 360px para preservar área de toque e legibilidade.
+- Regras visuais antigas da sidebar/navbar foram retiradas do app-design.css e consolidadas nos componentes.
+- Links, agrupamentos, abrir/fechar menu, saldo, ocultação e ações da conta preservados.
+
+Validação:
+- 3 testes de BalanceWithdrawButton aprovados: saldo inválido, ocultação e carregamento/depósito.
+- Conferência via npm start, sem build, no desktop 1440x1000 e móvel 320x740 / 390x844.
+- Tema claro/escuro; sidebar móvel abre e fecha pelo controle existente.
+- Navbar sem overflow horizontal em 320px (309px clientWidth/scrollWidth) e 390px (379px).
+- Capturas da navbar com saldo oculto; visibilidade do saldo, tema e viewport restaurados.
+- Nenhuma transação, logout ou mensagem externa executada.
+
+Alterações de sidebar/navbar permanecem sem commit para revisão.

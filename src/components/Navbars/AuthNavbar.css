@@ -1,0 +1,11 @@
+#root .auth-main-panel > .auth-navbar { min-height: 60px; background: #120e12; color: #fff; }
+.auth-navbar__inner { display: flex; align-items: center; justify-content: space-between; gap: 16px; width: 100%; max-width: 1200px; margin: 0 auto; }
+.auth-navbar__brand { display: flex; align-items: center; gap: 14px; min-width: 0; }
+.auth-navbar__logo { display: flex; align-items: center; flex-shrink: 0; min-height: 40px; }
+.auth-navbar__logo img { display: block; width: 48px; height: 48px; object-fit: contain; }
+.auth-navbar__page { padding-left: 14px; border-left: 1px solid #ffffff18; color: #c8c0ca; font-size: 12px; line-height: 20px; }
+.auth-navbar__help { display: inline-flex; align-items: center; justify-content: center; gap: 7px; flex-shrink: 0; min-height: 40px; padding: 8px 10px; border: 1px solid #ffffff12; border-radius: 9px; color: #d5cdd7; background: #ffffff04; font-size: 12px; }
+.auth-navbar__help svg { font-size: 15px; }
+.auth-navbar__help:hover { color: #fff; border-color: #e3061350; background: #e3061312; }
+.auth-navbar a:focus-visible { outline: 2px solid #ff7a85; outline-offset: 3px; }
+@media (max-width: 360px) { .auth-navbar__brand { gap: 10px; } .auth-navbar__page { padding-left: 10px; } .auth-navbar__help { padding: 8px; } }

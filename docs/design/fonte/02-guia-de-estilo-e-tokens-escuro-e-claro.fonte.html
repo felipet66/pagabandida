@@ -1,0 +1,340 @@
+<!DOCTYPE html>
+<html lang="pt-BR"><head>
+<meta charset="utf-8">
+<title>Guia de estilo e tokens</title>
+<script src="3cdb2911-5f3a-4d3f-a4e9-11f7ab4f0567"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<style></style>
+<style>
+body{margin:0;background:#050309}
+*{box-sizing:border-box}
+.t-dark{--bg:#07050D;--bg-2:#0D0919;--surface:rgba(22,15,42,.66);--surface-solid:#140E26;--surface-2:#1C1535;--surface-3:#261C47;--border:rgba(167,139,250,.16);--border-strong:rgba(167,139,250,.36);--text:#F4F1FF;--text-2:#BDB4DA;--text-3:#8F86B2;--primary:#7C3AED;--primary-text:#B79BFF;--primary-soft:rgba(124,58,237,.18);--glow:rgba(139,92,246,.55);--glow-soft:rgba(139,92,246,.22);--pink:#FF5FD2;--pink-soft:rgba(255,95,210,.16);--success:#34D399;--warning:#FBBF24;--danger:#F87171;--info:#60A5FA;--shadow-card:0 1px 0 rgba(255,255,255,.04) inset,0 12px 40px rgba(0,0,0,.55);--shadow-glow:0 0 0 1px rgba(167,139,250,.35),0 0 28px -6px rgba(139,92,246,.6);--grid-line:rgba(167,139,250,.07);--track:rgba(167,139,250,.14);--track-off:#2B2247;--edge-a:rgba(183,155,255,.75);--edge-b:rgba(255,95,210,.45);color-scheme:dark}
+.t-light{--bg:#F7F5FF;--bg-2:#EEE9FE;--surface:rgba(255,255,255,.80);--surface-solid:#FFFFFF;--surface-2:#F3EFFF;--surface-3:#E9E2FF;--border:rgba(76,29,149,.12);--border-strong:rgba(76,29,149,.28);--text:#120B24;--text-2:#463D63;--text-3:#615880;--primary:#7C3AED;--primary-text:#6D28D9;--primary-soft:rgba(124,58,237,.10);--glow:rgba(124,58,237,.28);--glow-soft:rgba(124,58,237,.12);--pink:#C0178E;--pink-soft:rgba(192,23,142,.10);--success:#047857;--warning:#B45309;--danger:#B91C1C;--info:#1D4ED8;--shadow-card:0 1px 2px rgba(18,11,36,.06),0 10px 30px rgba(91,33,182,.10);--shadow-glow:0 0 0 1px rgba(124,58,237,.35),0 8px 24px -6px rgba(124,58,237,.35);--grid-line:rgba(91,33,182,.06);--track:rgba(91,33,182,.12);--track-off:#D9D1F2;--edge-a:rgba(124,58,237,.45);--edge-b:rgba(192,23,142,.25);color-scheme:light}
+.app{font-family:'Sora',system-ui,sans-serif;color:var(--text);background-color:var(--bg);-webkit-font-smoothing:antialiased}
+.fx{background-image:radial-gradient(640px 360px at 90% -8%,var(--glow-soft),transparent 70%),radial-gradient(520px 320px at -10% 35%,var(--primary-soft),transparent 70%),linear-gradient(var(--grid-line) 1px,transparent 1px),linear-gradient(90deg,var(--grid-line) 1px,transparent 1px);background-size:auto,auto,28px 28px,28px 28px}
+.glass{background:var(--surface);-webkit-backdrop-filter:blur(16px) saturate(140%);backdrop-filter:blur(16px) saturate(140%);border:1px solid var(--border);box-shadow:var(--shadow-card)}
+.edge{position:relative}
+.edge::after{content:"";position:absolute;inset:0;border-radius:inherit;padding:1px;background:linear-gradient(140deg,var(--edge-a),transparent 38%,transparent 62%,var(--edge-b));-webkit-mask:linear-gradient(#000 0 0) content-box,linear-gradient(#000 0 0);-webkit-mask-composite:xor;mask-composite:exclude;pointer-events:none}
+.disp{font-family:'Chakra Petch',sans-serif;letter-spacing:.01em}
+.mono{font-family:'JetBrains Mono',ui-monospace,monospace;font-variant-numeric:tabular-nums}
+.ic{fill:none;stroke:currentColor;stroke-width:1.75;stroke-linecap:round;stroke-linejoin:round;flex-shrink:0}
+.btn{appearance:none;border:0;cursor:pointer;font:inherit;display:inline-flex;align-items:center;justify-content:center;gap:10px;min-height:48px;padding:0 20px;border-radius:14px;font-weight:600;font-size:15px}
+.btn-primary{color:#fff;background:linear-gradient(180deg,#9466FF 0%,#7C3AED 55%,#6D28D9 100%);box-shadow:var(--shadow-glow)}
+.btn-secondary{color:var(--primary-text);background:var(--primary-soft);border:1px solid var(--border-strong)}
+.btn-ghost{color:var(--text-2);background:transparent;border:1px solid var(--border-strong)}
+.btn-dis{cursor:not-allowed;background:var(--surface-2);color:var(--text-3);border:1px dashed var(--border-strong);box-shadow:none}
+.sw{appearance:none;border:0;padding:0;cursor:pointer;width:46px;height:28px;border-radius:999px;background:var(--track-off);box-shadow:inset 0 0 0 1px var(--border-strong);position:relative;flex-shrink:0}
+.sw::after{content:"";position:absolute;top:3px;left:3px;width:22px;height:22px;border-radius:50%;background:#fff;box-shadow:0 1px 3px rgba(0,0,0,.35)}
+.sw.on{background:var(--primary);box-shadow:none}
+.sw.on::after{transform:translateX(18px)}
+.sw.dis{opacity:.45;cursor:not-allowed}
+.bar{height:10px;border-radius:999px;background:var(--track);overflow:hidden}
+.bar i{display:block;height:100%;border-radius:inherit;background:linear-gradient(90deg,#7C3AED,#B79BFF);box-shadow:0 0 12px var(--glow)}
+.lbl{font-size:12px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--text-3)}
+.sec-h{display:flex;align-items:baseline;gap:16px}
+.cell{font-size:13px;color:var(--text-2)}
+a{color:var(--primary-text)}a:hover{color:var(--text)}
+</style>
+</helmet>
+<div class="app t-dark fx" style="width: 1680px; min-height: 3000px; padding: 64px; display: flex; flex-direction: column; gap: 56px">
+
+  <header style="display: flex; justify-content: space-between; align-items: flex-end; gap: 40px">
+    <div style="display: flex; flex-direction: column; gap: 12px; max-width: 900px">
+      <span class="lbl">02 · Guia de estilo</span>
+      <h1 class="disp" style="margin: 0; font-size: 52px; line-height: 1.05; font-weight: 700">Roxo e preto, nos dois temas</h1>
+      <p style="margin: 0; font-size: 17px; line-height: 1.55; color: var(--text-2)">Tokens prontos para CSS custom properties. Os componentes são cards, badges, botões, switches, abas e barras de progresso do Bootstrap 4/reactstrap; vidro, bordas com brilho e grade entram por cima, como classes utilitárias (<span class="mono" style="font-size: 14px; color: var(--primary-text)">.glass</span>, <span class="mono" style="font-size: 14px; color: var(--primary-text)">.edge</span>, <span class="mono" style="font-size: 14px; color: var(--primary-text)">.fx</span>).</p>
+    </div>
+    <div class="glass" style="border-radius: 16px; padding: 16px 20px; font-size: 13px; line-height: 1.6; color: var(--text-2); max-width: 420px">O tema claro não é inversão: o fundo vira lavanda, o roxo escurece para manter 4,5:1 em texto, os brilhos viram sombras coloridas e o cartão de destaque continua roxo profundo com texto branco.</div>
+  </header>
+
+  <section style="display: flex; flex-direction: column; gap: 20px">
+    <div class="sec-h"><h2 class="disp" style="margin: 0; font-size: 30px">Paleta e tokens</h2><span class="cell">Contraste medido contra a superfície do card (escuro #140E26, claro #FFFFFF)</span></div>
+    <div style="display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 32px">
+      <sc-for list="{{palettes}}" as="p" hint-placeholder-count="2">
+        <div class="app fx {{p.cls}}" style="border-radius: 24px; border: 1px solid var(--border); padding: 28px; display: flex; flex-direction: column; gap: 20px">
+          <div style="display: flex; justify-content: space-between; align-items: center"><span class="disp" style="font-size: 22px; font-weight: 700">{{p.name}}</span><span class="mono" style="font-size: 12px; color: var(--text-3)">{{p.selector}}</span></div>
+          <span class="lbl">Base</span>
+          <div style="display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 10px">
+            <sc-for list="{{p.base}}" as="s" hint-placeholder-count="10">
+              <div class="glass" style="border-radius: 14px; padding: 10px; display: flex; gap: 12px; align-items: center">
+                <span style="width: 44px; height: 44px; border-radius: 10px; flex-shrink: 0; background: {{s.hex}}; box-shadow: inset 0 0 0 1px rgba(128,110,180,.35)"></span>
+                <div style="display: flex; flex-direction: column; gap: 2px; min-width: 0">
+                  <span style="font-size: 13.5px; font-weight: 600">{{s.name}}</span>
+                  <span class="mono" style="font-size: 11.5px; color: var(--text-3)">{{s.token}} · {{s.hex}}</span>
+                </div>
+                <span class="mono" style="margin-left: auto; font-size: 11.5px; color: var(--text-2)">{{s.ratio}}</span>
+              </div>
+            </sc-for>
+          </div>
+          <span class="lbl">Semânticas e multiplicadores</span>
+          <div style="display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 10px">
+            <sc-for list="{{p.sem}}" as="s" hint-placeholder-count="6">
+              <div class="glass" style="border-radius: 14px; padding: 10px 12px; display: flex; flex-direction: column; gap: 6px">
+                <div style="display: flex; align-items: center; gap: 8px"><span style="width: 14px; height: 14px; border-radius: 4px; background: {{s.hex}}"></span><span style="font-size: 13px; font-weight: 600; color: {{s.hex}}">{{s.name}}</span></div>
+                <span class="mono" style="font-size: 11px; color: var(--text-3)">{{s.token}} · {{s.hex}} · {{s.ratio}}</span>
+              </div>
+            </sc-for>
+          </div>
+          <span class="lbl">Cores dos 6 alertas (sempre com ícone e nome)</span>
+          <div style="display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 10px">
+            <sc-for list="{{p.alerts}}" as="s" hint-placeholder-count="6">
+              <div class="glass" style="border-radius: 14px; padding: 10px 12px; display: flex; align-items: center; gap: 10px">
+                <span style="width: 36px; height: 36px; border-radius: 10px; display: flex; align-items: center; justify-content: center; background: {{s.soft}}; color: {{s.hex}}; box-shadow: inset 0 0 0 1px {{s.hex}}"><span class="mono" style="font-size: 11px; font-weight: 700">{{s.short}}</span></span>
+                <div style="display: flex; flex-direction: column; gap: 2px; min-width: 0"><span style="font-size: 12.5px; font-weight: 600; color: {{s.hex}}">{{s.name}}</span><span class="mono" style="font-size: 10.5px; color: var(--text-3)">{{s.token}} · {{s.ratio}}</span></div>
+              </div>
+            </sc-for>
+          </div>
+        </div>
+      </sc-for>
+    </div>
+  </section>
+
+  <section style="display: grid; grid-template-columns: 1.15fr 1fr; gap: 32px">
+    <div class="glass edge" style="border-radius: 24px; padding: 28px; display: flex; flex-direction: column; gap: 18px">
+      <div class="sec-h"><h2 class="disp" style="margin: 0; font-size: 30px">Tipografia</h2></div>
+      <div style="display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 12px">
+        <div style="border-radius: 14px; padding: 14px; background: var(--surface-2)"><div class="disp" style="font-size: 34px; font-weight: 700">Aa</div><div style="font-size: 13px; font-weight: 600; margin-top: 6px">Chakra Petch</div><div class="cell">Títulos, rótulos de nível, selos. 600–700.</div></div>
+        <div style="border-radius: 14px; padding: 14px; background: var(--surface-2)"><div style="font-size: 34px; font-weight: 600">Aa</div><div style="font-size: 13px; font-weight: 600; margin-top: 6px">Sora</div><div class="cell">Texto corrido, botões, formulários. 400–600.</div></div>
+        <div style="border-radius: 14px; padding: 14px; background: var(--surface-2)"><div class="mono" style="font-size: 34px; font-weight: 700">09</div><div style="font-size: 13px; font-weight: 600; margin-top: 6px">JetBrains Mono</div><div class="cell">Horários, contagem, XP. Números tabulares.</div></div>
+      </div>
+      <div style="display: flex; flex-direction: column">
+        <div style="display: grid; grid-template-columns: 170px 1fr 150px; align-items: baseline; gap: 16px; padding: 12px 0; border-bottom: 1px solid var(--border)"><span class="mono cell">display-xl</span><span class="mono" style="font-size: 44px; font-weight: 700; line-height: 1">20:47:32</span><span class="mono cell">44/48 · 700 · mono</span></div>
+        <div style="display: grid; grid-template-columns: 170px 1fr 150px; align-items: baseline; gap: 16px; padding: 12px 0; border-bottom: 1px solid var(--border)"><span class="mono cell">display</span><span class="disp" style="font-size: 36px; font-weight: 700; line-height: 1.1">Probabilidades</span><span class="mono cell">36/40 · 700</span></div>
+        <div style="display: grid; grid-template-columns: 170px 1fr 150px; align-items: baseline; gap: 16px; padding: 12px 0; border-bottom: 1px solid var(--border)"><span class="mono cell">h1</span><span class="disp" style="font-size: 28px; font-weight: 700">Nível 7 · Piloto Sênior</span><span class="mono cell">28/34 · 700</span></div>
+        <div style="display: grid; grid-template-columns: 170px 1fr 150px; align-items: baseline; gap: 16px; padding: 12px 0; border-bottom: 1px solid var(--border)"><span class="mono cell">h2</span><span class="disp" style="font-size: 20px; font-weight: 600">Histórico de XP</span><span class="mono cell">20/26 · 600</span></div>
+        <div style="display: grid; grid-template-columns: 170px 1fr 150px; align-items: baseline; gap: 16px; padding: 12px 0; border-bottom: 1px solid var(--border)"><span class="mono cell">body</span><span style="font-size: 15px; line-height: 22px">Estimativa baseada no histórico de rodadas de hoje.</span><span class="mono cell">15/22 · 400</span></div>
+        <div style="display: grid; grid-template-columns: 170px 1fr 150px; align-items: baseline; gap: 16px; padding: 12px 0; border-bottom: 1px solid var(--border)"><span class="mono cell">body-sm</span><span style="font-size: 13.5px; line-height: 20px; color: var(--text-2)">Aguarde o horário previsto para uma nova leitura.</span><span class="mono cell">13.5/20 · 400</span></div>
+        <div style="display: grid; grid-template-columns: 170px 1fr 150px; align-items: baseline; gap: 16px; padding: 12px 0"><span class="mono cell">caption</span><span class="lbl">Calculado às 20:42:15</span><span class="mono cell">12/16 · 600 · caps</span></div>
+      </div>
+      <p class="cell" style="margin: 0; line-height: 1.6">Tamanho mínimo de texto: 12 px (só legendas em caixa alta). Escala respeita o zoom do navegador: defina em rem com base 16.</p>
+    </div>
+
+    <div style="display: flex; flex-direction: column; gap: 32px">
+      <div class="glass edge" style="border-radius: 24px; padding: 28px; display: flex; flex-direction: column; gap: 16px">
+        <h2 class="disp" style="margin: 0; font-size: 30px">Espaço, raio e sombra</h2>
+        <span class="lbl">Espaçamento · base 4</span>
+        <div style="display: flex; align-items: flex-end; gap: 14px">
+          <sc-for list="{{spaces}}" as="s" hint-placeholder-count="9">
+            <div style="display: flex; flex-direction: column; align-items: center; gap: 6px"><span style="display: block; width: {{s.px}}; height: {{s.px}}; border-radius: 4px; background: var(--primary-soft); box-shadow: inset 0 0 0 1px var(--border-strong)"></span><span class="mono" style="font-size: 11px; color: var(--text-3)">{{s.n}}</span></div>
+          </sc-for>
+        </div>
+        <span class="lbl">Raios</span>
+        <div style="display: flex; gap: 14px; align-items: flex-end">
+          <sc-for list="{{radii}}" as="r" hint-placeholder-count="6">
+            <div style="display: flex; flex-direction: column; align-items: center; gap: 6px"><span style="display: block; width: 64px; height: 52px; border: 2px solid var(--primary-text); border-radius: {{r.px}}; border-right-color: transparent; border-bottom-color: transparent"></span><span class="mono" style="font-size: 11px; color: var(--text-3)">{{r.n}}</span></div>
+          </sc-for>
+        </div>
+        <span class="lbl">Sombras e brilhos</span>
+        <div style="display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 14px">
+          <div class="glass" style="border-radius: 16px; height: 84px; display: flex; align-items: flex-end; padding: 10px"><span class="mono" style="font-size: 11px; color: var(--text-2)">--shadow-card</span></div>
+          <div style="border-radius: 16px; height: 84px; display: flex; align-items: flex-end; padding: 10px; background: var(--surface-solid); box-shadow: var(--shadow-glow)"><span class="mono" style="font-size: 11px; color: var(--text-2)">--shadow-glow</span></div>
+          <div style="border-radius: 16px; height: 84px; display: flex; align-items: flex-end; padding: 10px; background: var(--surface-solid); outline: 2px solid var(--primary-text); outline-offset: 3px"><span class="mono" style="font-size: 11px; color: var(--text-2)">foco · 2px + 3px</span></div>
+        </div>
+      </div>
+      <div class="glass edge" style="border-radius: 24px; padding: 28px; display: flex; flex-direction: column; gap: 14px">
+        <h2 class="disp" style="margin: 0; font-size: 30px">Ícones</h2>
+        <p class="cell" style="margin: 0; line-height: 1.6">Traço de 1,75 px em grade de 24, pontas e junções arredondadas, sem preenchimento. Tamanhos 16 · 20 · 22 · 26. Cor herdada do texto (<span class="mono">currentColor</span>). Use lucide-react ou SVG próprio no mesmo estilo.</p>
+        <div style="display: grid; grid-template-columns: repeat(8, minmax(0, 1fr)); gap: 10px; color: var(--text-2)">
+          <span style="height: 52px; border-radius: 12px; background: var(--surface-2); display: flex; align-items: center; justify-content: center"><svg class="ic" width="24" height="24" sc-camel-view-box="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"></circle><circle cx="12" cy="12" r="5"></circle><path d="M12 12l6-6"></path></svg></span>
+          <span style="height: 52px; border-radius: 12px; background: var(--surface-2); display: flex; align-items: center; justify-content: center"><svg class="ic" width="24" height="24" sc-camel-view-box="0 0 24 24" aria-hidden="true"><path d="M8 4h8v5a4 4 0 0 1-8 0V4z"></path><path d="M16 5h3v2a3 3 0 0 1-3 3M8 5H5v2a3 3 0 0 0 3 3"></path><path d="M12 13v4M8.5 20h7"></path></svg></span>
+          <span style="height: 52px; border-radius: 12px; background: var(--surface-2); display: flex; align-items: center; justify-content: center"><svg class="ic" width="24" height="24" sc-camel-view-box="0 0 24 24" aria-hidden="true"><path d="M6 16V11a6 6 0 0 1 12 0v5l1.5 2h-15z"></path><path d="M10 20.5a2 2 0 0 0 4 0"></path></svg></span>
+          <span style="height: 52px; border-radius: 12px; background: var(--surface-2); display: flex; align-items: center; justify-content: center"><svg class="ic" width="24" height="24" sc-camel-view-box="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"></circle><path d="M12 7v5l3.5 2"></path></svg></span>
+          <span style="height: 52px; border-radius: 12px; background: var(--surface-2); display: flex; align-items: center; justify-content: center"><svg class="ic" width="24" height="24" sc-camel-view-box="0 0 24 24" aria-hidden="true"><rect x="5" y="10.5" width="14" height="10" rx="2.5"></rect><path d="M8 10.5V8a4 4 0 0 1 8 0v2.5"></path></svg></span>
+          <span style="height: 52px; border-radius: 12px; background: var(--surface-2); display: flex; align-items: center; justify-content: center"><svg class="ic" width="24" height="24" sc-camel-view-box="0 0 24 24" aria-hidden="true"><path d="M12 21a6.5 6.5 0 0 0 6.5-6.5c0-4-3.5-5.5-4-10-2.5 1.5-4.5 4.5-4 7.5-1.5-.5-2.5-2-2.5-3.5-1.5 1.5-2.5 3.5-2.5 6A6.5 6.5 0 0 0 12 21z"></path></svg></span>
+          <span style="height: 52px; border-radius: 12px; background: var(--surface-2); display: flex; align-items: center; justify-content: center"><svg class="ic" width="24" height="24" sc-camel-view-box="0 0 24 24" aria-hidden="true"><path d="M4 9.5h3.5L12 5.5v13l-4.5-4H4z"></path><path d="M15.5 9a4 4 0 0 1 0 6M18 6.5a7.5 7.5 0 0 1 0 11"></path></svg></span>
+          <span style="height: 52px; border-radius: 12px; background: var(--surface-2); display: flex; align-items: center; justify-content: center"><svg class="ic" width="24" height="24" sc-camel-view-box="0 0 24 24" aria-hidden="true"><path d="M3.5 8 7.5 12 12 5l4.5 7 4-4-2 11h-13z"></path></svg></span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section style="display: flex; flex-direction: column; gap: 20px">
+    <div class="sec-h"><h2 class="disp" style="margin: 0; font-size: 30px">Componentes reutilizados</h2><span class="cell">Mesma marcação nos dois temas; só os tokens mudam</span></div>
+    <div style="display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 32px">
+      <sc-for list="{{palettes}}" as="p" hint-placeholder-count="2">
+        <div class="app fx {{p.cls}}" style="border-radius: 24px; border: 1px solid var(--border); padding: 28px; display: flex; flex-direction: column; gap: 22px">
+          <span class="disp" style="font-size: 22px; font-weight: 700">{{p.name}}</span>
+
+          <div style="display: flex; flex-direction: column; gap: 10px">
+            <span class="lbl">Botões · 48 px (mín. 44)</span>
+            <div style="display: flex; flex-wrap: wrap; gap: 10px">
+              <button class="btn btn-primary"><svg class="ic" width="20" height="20" sc-camel-view-box="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"></circle><circle cx="12" cy="12" r="5"></circle><path d="M12 12l6-6"></path></svg>Calcular horários</button>
+              <button class="btn btn-secondary">Me avise</button>
+              <button class="btn btn-ghost">Voltar</button>
+            </div>
+            <div style="display: flex; flex-wrap: wrap; gap: 10px">
+              <button class="btn btn-dis" disabled="">Indisponível</button>
+              <button class="btn btn-dis" disabled=""><svg class="ic" width="18" height="18" sc-camel-view-box="0 0 24 24" aria-hidden="true"><rect x="5" y="10.5" width="14" height="10" rx="2.5"></rect><path d="M8 10.5V8a4 4 0 0 1 8 0v2.5"></path></svg>Nova leitura às <span class="mono">20:47:32</span></button>
+            </div>
+          </div>
+
+          <div style="display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 16px">
+            <div style="display: flex; flex-direction: column; gap: 10px">
+              <span class="lbl">Badge de nível</span>
+              <div style="display: flex; align-items: center; gap: 12px">
+                <span style="position: relative; width: 56px; height: 62px; display: flex; align-items: center; justify-content: center">
+                  <svg width="56" height="62" sc-camel-view-box="0 0 56 62" aria-hidden="true" style="position: absolute; inset: 0"><path d="M28 2 53 16v30L28 60 3 46V16z" style="fill: #7C3AED; stroke: #C4B0FF; stroke-width: 2"></path></svg>
+                  <span class="disp" style="position: relative; color: #fff; font-weight: 700; font-size: 20px">7</span>
+                </span>
+                <div><div class="disp" style="font-weight: 700; font-size: 16px">Piloto Sênior</div><div class="cell">Nível 7</div></div>
+              </div>
+            </div>
+            <div style="display: flex; flex-direction: column; gap: 10px">
+              <span class="lbl">Selos de multiplicador</span>
+              <div style="display: flex; gap: 8px; flex-wrap: wrap">
+                <span class="mono" style="display: inline-flex; align-items: center; gap: 6px; height: 30px; padding: 0 12px; border-radius: 999px; font-size: 13px; font-weight: 700; color: var(--primary-text); background: var(--primary-soft); box-shadow: inset 0 0 0 1px var(--primary-text)">▲ 3x</span>
+                <span class="mono" style="display: inline-flex; align-items: center; gap: 6px; height: 30px; padding: 0 12px; border-radius: 999px; font-size: 13px; font-weight: 700; color: var(--pink); background: var(--pink-soft); box-shadow: inset 0 0 0 1px var(--pink)">◆ 10x</span>
+              </div>
+            </div>
+          </div>
+
+          <div style="display: flex; flex-direction: column; gap: 10px">
+            <span class="lbl">Barra de progresso · 10 px</span>
+            <div style="display: flex; justify-content: space-between; font-size: 13px"><span>XP do nível</span><span class="mono" style="color: var(--text-2)">2.340 / 3.000</span></div>
+            <div class="bar" role="progressbar" aria-valuenow="78" aria-valuemin="0" aria-valuemax="100" aria-label="XP do nível"><i style="width: 78%"></i></div>
+          </div>
+
+          <div style="display: flex; flex-direction: column; gap: 4px">
+            <span class="lbl">Switch · área de toque 44 px</span>
+            <div style="display: flex; align-items: center; justify-content: space-between; min-height: 44px; font-size: 14px"><span>Ligado</span><button class="sw on" role="switch" aria-checked="true" aria-label="Exemplo ligado"></button></div>
+            <div style="display: flex; align-items: center; justify-content: space-between; min-height: 44px; font-size: 14px"><span>Desligado</span><button class="sw" role="switch" aria-checked="false" aria-label="Exemplo desligado"></button></div>
+            <div style="display: flex; align-items: center; justify-content: space-between; min-height: 44px; font-size: 14px; color: var(--text-3)"><span>Bloqueado pelo navegador</span><button class="sw dis" role="switch" aria-checked="false" aria-disabled="true" aria-label="Exemplo bloqueado"></button></div>
+          </div>
+
+          <div style="display: flex; flex-direction: column; gap: 10px">
+            <span class="lbl">Card · vidro + borda com brilho</span>
+            <div class="glass edge" style="border-radius: 20px; padding: 18px; display: flex; align-items: center; gap: 14px">
+              <span style="width: 44px; height: 44px; border-radius: 12px; display: flex; align-items: center; justify-content: center; background: var(--primary-soft); color: var(--primary-text)"><svg class="ic" width="22" height="22" sc-camel-view-box="0 0 24 24" aria-hidden="true"><path d="M12 21a6.5 6.5 0 0 0 6.5-6.5c0-4-3.5-5.5-4-10-2.5 1.5-4.5 4.5-4 7.5-1.5-.5-2.5-2-2.5-3.5-1.5 1.5-2.5 3.5-2.5 6A6.5 6.5 0 0 0 12 21z"></path></svg></span>
+              <div><div style="font-weight: 600">12 dias seguidos</div><div class="cell">Volte amanhã para manter a sequência.</div></div>
+            </div>
+          </div>
+
+          <div style="display: flex; flex-direction: column; gap: 10px">
+            <span class="lbl">Toast · 4 s, some sozinho</span>
+            <div role="status" style="align-self: flex-start; display: flex; align-items: center; gap: 12px; padding: 10px 16px 10px 10px; border-radius: 16px; background: var(--surface-solid); box-shadow: var(--shadow-glow)">
+              <span class="mono" style="height: 32px; padding: 0 10px; border-radius: 10px; display: flex; align-items: center; font-weight: 700; font-size: 14px; color: #fff; background: linear-gradient(160deg,#9B6BFF,#6D28D9)">+20 XP</span>
+              <span style="font-size: 14px; font-weight: 500">Login diário</span>
+            </div>
+          </div>
+
+          <div style="display: flex; flex-direction: column; gap: 10px">
+            <span class="lbl">Aviso fixo de jogo responsável</span>
+            <div role="note" style="display: flex; gap: 10px; align-items: flex-start; padding: 10px 12px; border-radius: 12px; font-size: 12.5px; line-height: 1.45; color: var(--text-2); background: var(--surface-2); border: 1px solid var(--border)">
+              <svg class="ic" width="18" height="18" sc-camel-view-box="0 0 24 24" aria-hidden="true" style="color: var(--warning); margin-top: 1px"><circle cx="12" cy="12" r="9"></circle><path d="M12 11v5M12 8h.01"></path></svg>
+              <span>Estimativa baseada no histórico de rodadas. Não é garantia de resultado. Jogue com responsabilidade. <b style="color: var(--text)">18+</b></span>
+            </div>
+          </div>
+        </div>
+      </sc-for>
+    </div>
+  </section>
+
+  <section style="display: grid; grid-template-columns: 1fr 1fr; gap: 32px">
+    <div class="glass edge" style="border-radius: 24px; padding: 28px; display: flex; flex-direction: column; gap: 14px">
+      <h2 class="disp" style="margin: 0; font-size: 30px">Movimento</h2>
+      <div style="display: grid; grid-template-columns: 150px 1fr 1fr; gap: 0; font-size: 13.5px">
+        <span class="lbl" style="padding: 8px 0; border-bottom: 1px solid var(--border)">Token</span><span class="lbl" style="padding: 8px 0; border-bottom: 1px solid var(--border)">Valor</span><span class="lbl" style="padding: 8px 0; border-bottom: 1px solid var(--border)">Uso</span>
+        <span class="mono" style="padding: 10px 0; border-bottom: 1px solid var(--border)">--dur-fast</span><span class="mono" style="padding: 10px 0; border-bottom: 1px solid var(--border); color: var(--text-2)">150ms</span><span style="padding: 10px 0; border-bottom: 1px solid var(--border); color: var(--text-2)">hover, switch, toque</span>
+        <span class="mono" style="padding: 10px 0; border-bottom: 1px solid var(--border)">--dur-base</span><span class="mono" style="padding: 10px 0; border-bottom: 1px solid var(--border); color: var(--text-2)">240ms</span><span style="padding: 10px 0; border-bottom: 1px solid var(--border); color: var(--text-2)">abas, popover, folha</span>
+        <span class="mono" style="padding: 10px 0; border-bottom: 1px solid var(--border)">--dur-theme</span><span class="mono" style="padding: 10px 0; border-bottom: 1px solid var(--border); color: var(--text-2)">320ms</span><span style="padding: 10px 0; border-bottom: 1px solid var(--border); color: var(--text-2)">troca de tema (cores cruzadas)</span>
+        <span class="mono" style="padding: 10px 0; border-bottom: 1px solid var(--border)">--dur-slow</span><span class="mono" style="padding: 10px 0; border-bottom: 1px solid var(--border); color: var(--text-2)">500ms</span><span style="padding: 10px 0; border-bottom: 1px solid var(--border); color: var(--text-2)">entrada de tela, barras</span>
+        <span class="mono" style="padding: 10px 0; border-bottom: 1px solid var(--border)">--dur-reveal</span><span class="mono" style="padding: 10px 0; border-bottom: 1px solid var(--border); color: var(--text-2)">700ms</span><span style="padding: 10px 0; border-bottom: 1px solid var(--border); color: var(--text-2)">revelar resultado, contadores</span>
+        <span class="mono" style="padding: 10px 0">--ease-out</span><span class="mono" style="padding: 10px 0; color: var(--text-2)">cubic-bezier(.2,.8,.2,1)</span><span style="padding: 10px 0; color: var(--text-2)">tudo que entra</span>
+      </div>
+      <p class="cell" style="margin: 0; line-height: 1.6">Com “reduzir movimento”: durações caem para 0 ms, entradas viram troca direta de opacidade (120 ms), cenas 3D e peças Remotion viram imagem estática.</p>
+    </div>
+    <div class="glass edge" style="border-radius: 24px; padding: 28px; display: flex; flex-direction: column; gap: 14px">
+      <h2 class="disp" style="margin: 0; font-size: 30px">Acessibilidade</h2>
+      <div style="display: flex; flex-direction: column; gap: 12px; font-size: 14px; line-height: 1.5; color: var(--text-2)">
+        <div style="display: flex; gap: 12px"><span class="mono" style="color: var(--primary-text)">AA</span><span>Texto ≥ 4,5:1 e componentes ≥ 3:1 nos dois temas (veja os números em cada token). O roxo #7C3AED só é usado como fundo de botão com texto branco (5,7:1); como texto vira #B79BFF no escuro e #6D28D9 no claro.</span></div>
+        <div style="display: flex; gap: 12px"><span class="mono" style="color: var(--primary-text)">44</span><span>Alvos de toque de no mínimo 44 × 44 px: ícones, switches (linha inteira clicável), itens de menu, abas.</span></div>
+        <div style="display: flex; gap: 12px"><span class="mono" style="color: var(--primary-text)">≠</span><span>Nada só por cor: alertas têm ícone e nome, selos têm forma (▲ 3x, ◆ 10x), conquistas bloqueadas têm cadeado, item ativo tem pílula de fundo.</span></div>
+        <div style="display: flex; gap: 12px"><span class="mono" style="color: var(--primary-text)">⌨</span><span>Foco visível em tudo (contorno de 2 px). Contagens regressivas usam aria-live="off" e anunciam só a cada minuto e ao chegar a zero.</span></div>
+        <div style="display: flex; gap: 12px"><span class="mono" style="color: var(--primary-text)">◐</span><span>Respeita prefers-reduced-motion e prefers-color-scheme no primeiro acesso; a escolha manual fica salva.</span></div>
+      </div>
+    </div>
+  </section>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script="" data-props="{&quot;$preview&quot;:{&quot;width&quot;:1680,&quot;height&quot;:3000}}">
+class Component extends DCLogic {
+  renderVals() {
+    var dark = {
+      cls: 't-dark', name: 'Modo escuro', selector: '[data-theme="dark"]',
+      base: [
+        { name: 'Fundo', token: '--bg', hex: '#07050D', ratio: '' },
+        { name: 'Superfície', token: '--surface-solid', hex: '#140E26', ratio: '' },
+        { name: 'Superfície 2', token: '--surface-2', hex: '#1C1535', ratio: '' },
+        { name: 'Superfície 3', token: '--surface-3', hex: '#261C47', ratio: '' },
+        { name: 'Texto', token: '--text', hex: '#F4F1FF', ratio: '16,8:1' },
+        { name: 'Texto 2', token: '--text-2', hex: '#BDB4DA', ratio: '9,5:1' },
+        { name: 'Texto 3', token: '--text-3', hex: '#8F86B2', ratio: '5,5:1' },
+        { name: 'Primária', token: '--primary', hex: '#7C3AED', ratio: 'branco 5,7:1' },
+        { name: 'Primária texto', token: '--primary-text', hex: '#B79BFF', ratio: '8,2:1' },
+        { name: 'Brilho neon', token: '--glow', hex: '#8B5CF6', ratio: '55%' }
+      ],
+      sem: [
+        { name: 'Sucesso', token: '--success', hex: '#34D399', ratio: '9,7:1' },
+        { name: 'Aviso', token: '--warning', hex: '#FBBF24', ratio: '11,2:1' },
+        { name: 'Erro', token: '--danger', hex: '#F87171', ratio: '6,8:1' },
+        { name: 'Info', token: '--info', hex: '#60A5FA', ratio: '7,4:1' },
+        { name: 'Selo 3x', token: '--primary-text', hex: '#B79BFF', ratio: '8,2:1' },
+        { name: 'Selo 10x', token: '--pink', hex: '#FF5FD2', ratio: '7,0:1' }
+      ],
+      alerts: [
+        { name: 'Rosas', short: '10x', token: '--a-rosas', hex: '#FF5FD2', soft: 'rgba(255,95,210,.14)', ratio: '7,0:1' },
+        { name: 'Baixos', short: '<3x', token: '--a-baixos', hex: '#FF8A3D', soft: 'rgba(255,138,61,.14)', ratio: '8,0:1' },
+        { name: 'Dist. 30x', short: '30', token: '--a-d30', hex: '#FDE047', soft: 'rgba(253,224,71,.12)', ratio: '14,2:1' },
+        { name: 'Dist. 100x', short: '100', token: '--a-d100', hex: '#38BDF8', soft: 'rgba(56,189,248,.14)', ratio: '8,7:1' },
+        { name: 'Saiu 1000x', short: '1K', token: '--a-1000', hex: '#F2B84B', soft: 'rgba(242,184,75,.14)', ratio: '10,5:1' },
+        { name: 'Minuto quente', short: 'MQ', token: '--a-quente', hex: '#4ADE80', soft: 'rgba(74,222,128,.14)', ratio: '10,8:1' }
+      ]
+    };
+    var light = {
+      cls: 't-light', name: 'Modo claro', selector: '[data-theme="light"]',
+      base: [
+        { name: 'Fundo', token: '--bg', hex: '#F7F5FF', ratio: '' },
+        { name: 'Superfície', token: '--surface-solid', hex: '#FFFFFF', ratio: '' },
+        { name: 'Superfície 2', token: '--surface-2', hex: '#F3EFFF', ratio: '' },
+        { name: 'Superfície 3', token: '--surface-3', hex: '#E9E2FF', ratio: '' },
+        { name: 'Texto', token: '--text', hex: '#120B24', ratio: '19,1:1' },
+        { name: 'Texto 2', token: '--text-2', hex: '#463D63', ratio: '9,9:1' },
+        { name: 'Texto 3', token: '--text-3', hex: '#615880', ratio: '6,5:1' },
+        { name: 'Primária', token: '--primary', hex: '#7C3AED', ratio: 'branco 5,7:1' },
+        { name: 'Primária texto', token: '--primary-text', hex: '#6D28D9', ratio: '7,1:1' },
+        { name: 'Destaque profundo', token: '--hero', hex: '#5B21B6', ratio: 'branco 9,0:1' }
+      ],
+      sem: [
+        { name: 'Sucesso', token: '--success', hex: '#047857', ratio: '5,5:1' },
+        { name: 'Aviso', token: '--warning', hex: '#B45309', ratio: '5,0:1' },
+        { name: 'Erro', token: '--danger', hex: '#B91C1C', ratio: '6,5:1' },
+        { name: 'Info', token: '--info', hex: '#1D4ED8', ratio: '6,7:1' },
+        { name: 'Selo 3x', token: '--primary-text', hex: '#6D28D9', ratio: '7,1:1' },
+        { name: 'Selo 10x', token: '--pink', hex: '#C0178E', ratio: '5,6:1' }
+      ],
+      alerts: [
+        { name: 'Rosas', short: '10x', token: '--a-rosas', hex: '#BE1A8A', soft: 'rgba(190,26,138,.08)', ratio: '5,7:1' },
+        { name: 'Baixos', short: '<3x', token: '--a-baixos', hex: '#B84A00', soft: 'rgba(184,74,0,.08)', ratio: '5,2:1' },
+        { name: 'Dist. 30x', short: '30', token: '--a-d30', hex: '#7F6500', soft: 'rgba(127,101,0,.08)', ratio: '5,5:1' },
+        { name: 'Dist. 100x', short: '100', token: '--a-d100', hex: '#0369A1', soft: 'rgba(3,105,161,.08)', ratio: '5,9:1' },
+        { name: 'Saiu 1000x', short: '1K', token: '--a-1000', hex: '#9A6206', soft: 'rgba(154,98,6,.08)', ratio: '5,1:1' },
+        { name: 'Minuto quente', short: 'MQ', token: '--a-quente', hex: '#15803D', soft: 'rgba(21,128,61,.08)', ratio: '5,0:1' }
+      ]
+    };
+    return {
+      palettes: [dark, light],
+      spaces: [4, 8, 12, 16, 20, 24, 32, 40, 56].map(function (n) { return { n: n, px: n + 'px' }; }),
+      radii: [
+        { n: '8', px: '8px' }, { n: '12', px: '12px' }, { n: '16', px: '16px' },
+        { n: '20', px: '20px' }, { n: '24', px: '24px' }, { n: 'pill', px: '999px' }
+      ]
+    };
+  }
+}
+</script>
+
+
+</body></html>

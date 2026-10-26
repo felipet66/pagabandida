@@ -1,0 +1,16 @@
+Generated with built-in image_gen; transparent_background: false.
+
+Use case: compositing / identity-preserve.
+Asset type: ONE finished square 1:1 app card cover, HISTÓRICO COMPLETO for TELECO PRO.
+Input 1: original history cover, EDIT TARGET and composition reference.
+Input 2: photograph IMG_4751.jpg, exact adult man's facial identity reference.
+Input 3: photograph IMG_4752.jpg, same man's supporting identity reference.
+Input 4: current violet TELECO PRO logo, branding reference.
+Update the target cover by replacing the woman entirely with a photoreal cutout of the man from inputs 2/3. Keep his actual recognizable facial features, short cropped black hair, dark defined eyebrows, neatly trimmed beard and moustache/goatee, natural skin tone, rectangular lightly tinted rimless glasses with gold bridge. Keep actual burgundy crewneck shirt with white shoulder piping. Confident natural serious expression based on input 2. Natural skin with gentle violet edge lighting. No room background, chair, hand or microphone. Large upper-torso portrait fills upper left/center with head fully visible and not covered by text.
+Match the new brand and recently updated violet banners: replace ALL red graphics, neon lighting, clouds, aircraft and trails with saturated violet #7C3AED, lavender #B79BFF and restrained pink #FF5FD2 highlights. Dark background #07050D / #140E26. Replace top-right MUSA AVIATOR brand with compact TELECO PRO logo inspired by input 4. Keep small violet propeller airplane and understated history multiplier tiles/flight chart in upper right; these are secondary and do not interfere with face or lettering.
+Preserve exact original text content and hierarchy:
+"HISTÓRICO" huge silver-white #F4F1FF bold beveled geometric letters across lower half
+"COMPLETO" huge violet/lavender beveled letters directly below
+"Original • VIP • Premium" smaller clear line
+"Cada rodada, todos os detalhes." elegant small final line.
+Strong mobile-readable composition, bold clean lettering, correct accents, all words fully inside generous 7% safe margins. Upper branding says TELECO PRO, never MUSA. Full-bleed square opaque finished bitmap. No browser UI, borders or rounded outer corners, no woman, no extra slogans, no watermark. Preserve the distinct history theme with subtle multiplier cards, compared to a separate AI-analysis cover.

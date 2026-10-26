@@ -1,0 +1,36 @@
+{
+  "short_name": "Paga Bandida",
+  "name": "Paga Bandida",
+  "icons": [
+    {
+      "src": "favicon.png?v=pagabandida-emblema-v2",
+      "sizes": "64x64",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "android-chrome-192x192.png?v=pagabandida-emblema-v2",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "android-chrome-512x512.png?v=pagabandida-emblema-v2",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "/android-chrome-maskable-512x512.png?v=pagabandida-emblema-v2",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "maskable"
+    }
+  ],
+  "id": "/pagabandida",
+  "start_url": "/",
+  "scope": "/",
+  "display": "standalone",
+  "theme_color": "#397000",
+  "background_color": "#14220D"
+}

@@ -1,0 +1,4 @@
+Mode: built-in image_gen
+
+Use case: text-localization. This image is the EDIT TARGET, the Paga Bandida green WhatsApp support banner. Make one targeted lettering change only: replace the silver text "ganhebetBR" below the huge SUPORTE headline with "PAGA BANDIDA". This banner now links to the Paga Bandida support contact. Keep "PRECISA DE AJUDA?", "SUPORTE", and "FALAR NO WHATSAPP" unchanged. Preserve the man's exact face and pose, shirt, tattoos, expression, logo at upper left, airplane, WhatsApp symbol, phone, lime/forest/silver palette, light trails, layout and wide 16:9 aspect ratio. Match the original dimensional silver type for PAGA BANDIDA, fitting safely in the same area. Do not add a phone number or URL to the image, do not add any other words. No cropping or watermark.
+

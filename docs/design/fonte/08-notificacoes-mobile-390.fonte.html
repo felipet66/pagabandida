@@ -1,0 +1,381 @@
+<!DOCTYPE html>
+<html lang="pt-BR"><head>
+<meta charset="utf-8">
+<title>Notificações · mobile</title>
+<script src="fb0aa2f8-7cfb-4e6a-a8fb-e243b9a85620"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<style></style>
+<style>
+body{margin:0;background:#050309}
+*{box-sizing:border-box}
+.t-dark{--bg:#07050D;--surface:rgba(22,15,42,.66);--surface-solid:#140E26;--surface-2:#1C1535;--surface-3:#261C47;--border:rgba(167,139,250,.16);--border-strong:rgba(167,139,250,.36);--text:#F4F1FF;--text-2:#BDB4DA;--text-3:#8F86B2;--primary:#7C3AED;--primary-text:#B79BFF;--primary-soft:rgba(124,58,237,.18);--glow:rgba(139,92,246,.55);--glow-soft:rgba(139,92,246,.22);--pink:#FF5FD2;--success:#34D399;--success-soft:rgba(52,211,153,.14);--warning:#FBBF24;--warning-soft:rgba(251,191,36,.14);--info:#60A5FA;--info-soft:rgba(96,165,250,.14);--shadow-card:0 1px 0 rgba(255,255,255,.04) inset,0 12px 40px rgba(0,0,0,.55);--shadow-glow:0 0 0 1px rgba(167,139,250,.35),0 0 28px -6px rgba(139,92,246,.6);--grid-line:rgba(167,139,250,.07);--track-off:#2B2247;--edge-a:rgba(183,155,255,.75);--edge-b:rgba(255,95,210,.45);--bar-bg:rgba(13,9,25,.82);--scrim:rgba(4,2,10,.72);--a-rosas:#FF5FD2;--a-rosas-s:rgba(255,95,210,.14);--a-baixos:#FF8A3D;--a-baixos-s:rgba(255,138,61,.14);--a-d30:#FDE047;--a-d30-s:rgba(253,224,71,.12);--a-d100:#38BDF8;--a-d100-s:rgba(56,189,248,.14);--a-mil:#F2B84B;--a-mil-s:rgba(242,184,75,.14);--a-quente:#4ADE80;--a-quente-s:rgba(74,222,128,.14);color-scheme:dark}
+.t-light{--bg:#F7F5FF;--surface:rgba(255,255,255,.80);--surface-solid:#FFFFFF;--surface-2:#F3EFFF;--surface-3:#E9E2FF;--border:rgba(76,29,149,.12);--border-strong:rgba(76,29,149,.28);--text:#120B24;--text-2:#463D63;--text-3:#615880;--primary:#7C3AED;--primary-text:#6D28D9;--primary-soft:rgba(124,58,237,.10);--glow:rgba(124,58,237,.28);--glow-soft:rgba(124,58,237,.12);--pink:#C0178E;--success:#047857;--success-soft:rgba(4,120,87,.10);--warning:#B45309;--warning-soft:rgba(180,83,9,.10);--info:#1D4ED8;--info-soft:rgba(29,78,216,.10);--shadow-card:0 1px 2px rgba(18,11,36,.06),0 10px 30px rgba(91,33,182,.10);--shadow-glow:0 0 0 1px rgba(124,58,237,.35),0 8px 24px -6px rgba(124,58,237,.35);--grid-line:rgba(91,33,182,.06);--track-off:#D9D1F2;--edge-a:rgba(124,58,237,.45);--edge-b:rgba(192,23,142,.25);--bar-bg:rgba(255,255,255,.86);--scrim:rgba(18,11,36,.55);--a-rosas:#BE1A8A;--a-rosas-s:rgba(190,26,138,.10);--a-baixos:#B84A00;--a-baixos-s:rgba(184,74,0,.10);--a-d30:#7F6500;--a-d30-s:rgba(127,101,0,.10);--a-d100:#0369A1;--a-d100-s:rgba(3,105,161,.10);--a-mil:#9A6206;--a-mil-s:rgba(154,98,6,.10);--a-quente:#15803D;--a-quente-s:rgba(21,128,61,.10);color-scheme:light}
+.al-rosas{--ac:var(--a-rosas);--acs:var(--a-rosas-s)}
+.al-baixos{--ac:var(--a-baixos);--acs:var(--a-baixos-s)}
+.al-d30{--ac:var(--a-d30);--acs:var(--a-d30-s)}
+.al-d100{--ac:var(--a-d100);--acs:var(--a-d100-s)}
+.al-mil{--ac:var(--a-mil);--acs:var(--a-mil-s)}
+.al-quente{--ac:var(--a-quente);--acs:var(--a-quente-s)}
+.app{font-family:'Sora',system-ui,sans-serif;color:var(--text);background-color:var(--bg);-webkit-font-smoothing:antialiased}
+.fx{background-image:radial-gradient(420px 300px at 100% -5%,var(--glow-soft),transparent 70%),radial-gradient(360px 260px at -20% 30%,var(--primary-soft),transparent 70%),linear-gradient(var(--grid-line) 1px,transparent 1px),linear-gradient(90deg,var(--grid-line) 1px,transparent 1px);background-size:auto,auto,24px 24px,24px 24px}
+.glass{background:var(--surface);-webkit-backdrop-filter:blur(16px) saturate(140%);backdrop-filter:blur(16px) saturate(140%);border:1px solid var(--border);box-shadow:var(--shadow-card)}
+.edge{position:relative}
+.edge::after{content:"";position:absolute;inset:0;border-radius:inherit;padding:1px;background:linear-gradient(140deg,var(--edge-a),transparent 38%,transparent 62%,var(--edge-b));-webkit-mask:linear-gradient(#000 0 0) content-box,linear-gradient(#000 0 0);-webkit-mask-composite:xor;mask-composite:exclude;pointer-events:none}
+.disp{font-family:'Chakra Petch',sans-serif;letter-spacing:.01em}
+.mono{font-family:'JetBrains Mono',ui-monospace,monospace;font-variant-numeric:tabular-nums}
+.ic{fill:none;stroke:currentColor;stroke-width:1.75;stroke-linecap:round;stroke-linejoin:round;flex-shrink:0}
+.lbl{font-size:11.5px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--text-3)}
+.phone{width:390px;border-radius:32px;overflow:hidden;position:relative;border:1px solid var(--border);display:flex;flex-direction:column;box-shadow:0 30px 80px -30px rgba(0,0,0,.6)}
+.topbar{height:60px;flex-shrink:0;display:flex;align-items:center;justify-content:space-between;padding:0 6px 0 16px;background:var(--bar-bg);-webkit-backdrop-filter:blur(14px);backdrop-filter:blur(14px);border-bottom:1px solid var(--border)}
+.content{flex:1;padding:18px 16px 104px;display:flex;flex-direction:column;gap:14px}
+.botnav{position:absolute;left:0;right:0;bottom:0;height:84px;padding:12px 4px 8px;background:var(--bar-bg);-webkit-backdrop-filter:blur(14px);backdrop-filter:blur(14px);border-top:1px solid var(--border);display:grid;grid-template-columns:1fr 1fr 1.35fr 1fr 1fr;align-items:center}
+.icon-btn{appearance:none;border:0;background:transparent;color:var(--text-2);width:44px;height:44px;border-radius:12px;display:inline-flex;align-items:center;justify-content:center;position:relative;cursor:pointer}
+.icon-btn.on{color:var(--primary-text);background:var(--primary-soft)}
+.count{position:absolute;top:6px;right:5px;min-width:18px;height:18px;padding:0 5px;border-radius:999px;background:#FF5FD2;color:#1A0614;font-size:11px;font-weight:700;display:flex;align-items:center;justify-content:center;box-shadow:0 0 0 2px var(--bg)}
+.t-light .count{background:#C0178E;color:#fff}
+.tab{display:flex;flex-direction:column;align-items:center;justify-content:center;gap:3px;min-height:56px;color:var(--text-3);text-decoration:none;font-size:11px;font-weight:600}
+.tab.on{color:var(--primary-text)}
+.tab-ic{width:48px;height:28px;border-radius:999px;display:flex;align-items:center;justify-content:center}
+.tab.on .tab-ic{background:var(--primary-soft);box-shadow:inset 0 0 0 1px var(--border-strong)}
+.fab{width:52px;height:52px;margin-top:-30px;border-radius:18px;display:flex;align-items:center;justify-content:center;color:var(--primary-text);background:var(--surface-solid);box-shadow:0 0 0 4px var(--bg),inset 0 0 0 1px var(--border-strong)}
+.btn{appearance:none;border:0;cursor:pointer;font:inherit;display:inline-flex;align-items:center;justify-content:center;gap:10px;min-height:48px;padding:0 18px;border-radius:14px;font-weight:600;font-size:15px;width:100%;text-decoration:none}
+.btn-primary{color:#fff;background:linear-gradient(180deg,#9466FF 0%,#7C3AED 55%,#6D28D9 100%);box-shadow:var(--shadow-glow)}
+.btn-ghost{color:var(--text);background:transparent;border:1px solid var(--border-strong)}
+.sw{position:relative;display:inline-block;width:46px;height:28px;border-radius:999px;background:var(--track-off);box-shadow:inset 0 0 0 1px var(--border-strong);flex-shrink:0;transition:background .22s}
+.sw::after{content:"";position:absolute;top:3px;left:3px;width:22px;height:22px;border-radius:50%;background:#fff;box-shadow:0 1px 3px rgba(0,0,0,.35);transition:transform .22s cubic-bezier(.2,.8,.2,1)}
+.sw.on{background:var(--primary);box-shadow:0 0 12px -2px var(--glow)}
+.sw.on::after{transform:translateX(18px)}
+.swbtn{appearance:none;border:0;background:transparent;padding:8px 0 8px 8px;min-height:44px;display:flex;align-items:center;cursor:pointer}
+.alert{border-radius:20px;padding:14px;display:flex;flex-direction:column;gap:12px;background-image:radial-gradient(200px 120px at 0 0,var(--acs),transparent 75%)}
+.a-ic{width:44px;height:44px;border-radius:13px;display:flex;align-items:center;justify-content:center;color:var(--ac);background:var(--acs);box-shadow:inset 0 0 0 1px var(--ac)}
+.a-chip{display:inline-flex;align-items:center;gap:5px;height:22px;padding:0 8px;border-radius:999px;font-size:11.5px;font-weight:700;color:var(--ac);background:var(--acs)}
+.test{appearance:none;cursor:pointer;font:inherit;display:inline-flex;align-items:center;gap:6px;min-height:44px;padding:0 12px;border-radius:12px;font-size:13px;font-weight:600;color:var(--text-2);background:var(--surface-2);border:1px solid var(--border)}
+.test.on{color:var(--ac);border-color:var(--ac)}
+.eq{display:inline-flex;align-items:flex-end;gap:2px;height:14px}
+.eq i{display:block;width:3px;border-radius:2px;background:currentColor;animation:eq .7s ease-in-out infinite alternate}
+.eq i:nth-child(2){animation-delay:.15s}.eq i:nth-child(3){animation-delay:.3s}
+@keyframes eq{from{height:3px}to{height:14px}}
+.tgs{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:6px}
+.tg{appearance:none;font:inherit;cursor:pointer;text-align:left;display:flex;flex-direction:column;gap:8px;padding:10px;border-radius:14px;background:var(--surface-2);border:1px solid var(--border);color:var(--text);min-height:88px}
+.tg.dis{cursor:not-allowed}
+.tg.dis .sw{opacity:.45}
+.tg-top{display:flex;align-items:center;gap:6px;font-size:12.5px;font-weight:600}
+.tg-sub{font-size:11px;color:var(--text-3);line-height:1.2}
+.tile{width:44px;height:44px;border-radius:13px;display:flex;align-items:center;justify-content:center;flex-shrink:0}
+.step{display:flex;align-items:center;gap:12px;min-height:52px}
+.step-n{width:26px;height:26px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-family:'JetBrains Mono',monospace;font-size:12px;font-weight:700;color:var(--primary-text);background:var(--primary-soft);flex-shrink:0}
+.scrim{position:absolute;inset:0;background:var(--scrim);-webkit-backdrop-filter:blur(3px);backdrop-filter:blur(3px)}
+.ann{display:flex;gap:12px;padding:14px 4px;border-bottom:1px solid var(--border)}
+.dot{width:10px;height:10px;border-radius:50%;margin-top:6px;flex-shrink:0}
+.cap{font-size:13px;line-height:1.5;color:#BDB4DA}
+.tech{display:inline-flex;align-items:center;height:22px;padding:0 8px;border-radius:999px;font-size:11px;font-weight:700}
+.k-css{color:#B79BFF;background:rgba(124,58,237,.18)}
+.k-js{color:#FDE047;background:rgba(253,224,71,.12)}
+.k-api{color:#4ADE80;background:rgba(74,222,128,.12)}
+a{color:var(--primary-text)}a:hover{color:var(--text)}
+</style>
+</helmet>
+<div class="app t-dark" style="width: 1362px; height: 5000px; padding: 52px; display: flex; flex-direction: column; gap: 40px; background-color: #050309; overflow: hidden">
+  <header style="display: flex; flex-direction: column; gap: 10px">
+    <span class="lbl">08 · Notificações · mobile 390 px</span>
+    <h1 class="disp" style="margin: 0; font-size: 40px; font-weight: 700">Cada alerta, do jeito que a pessoa quiser</h1>
+    <span class="cap" style="max-width: 900px">Interruptores funcionam (estado compartilhado entre os telefones). “Testar” toca o som do alerta por 1,6 s. O interruptor geral de som desliga o som de todos os alertas sem apagar a escolha de cada um.</span>
+  </header>
+
+  <sc-for list="{{rows}}" as="row" hint-placeholder-count="2">
+    <div style="display: flex; flex-direction: column; gap: 16px">
+      <span class="lbl" style="color: #BDB4DA">{{row.label}}</span>
+      <div style="display: flex; gap: 44px; align-items: flex-start">
+        <sc-for list="{{row.cols}}" as="col" hint-placeholder-count="3">
+          <div style="width: 390px; display: flex; flex-direction: column; gap: 40px">
+            <sc-for list="{{col.phones}}" as="ph" hint-placeholder-count="2">
+              <div style="display: flex; flex-direction: column; gap: 16px">
+                <sc-if value="{{ph.showCap}}" hint-placeholder-val="{{true}}">
+                  <div style="display: flex; flex-direction: column; gap: 8px; padding: 0 4px; min-height: 118px">
+                    <div style="display: flex; align-items: baseline; gap: 10px"><span class="mono" style="font-size: 13px; color: #B79BFF">{{ph.num}}</span><span class="disp" style="font-size: 20px; font-weight: 700; color: #F4F1FF">{{ph.title}}</span></div>
+                    <span class="cap">{{ph.desc}}</span>
+                    <div style="display: flex; gap: 6px; flex-wrap: wrap"><sc-for list="{{ph.tags}}" as="tg" hint-placeholder-count="2"><span class="tech {{tg.k}}">{{tg.t}}</span></sc-for></div>
+                  </div>
+                </sc-if>
+
+                <div class="app fx phone {{ph.cls}}" style="height: {{ph.h}}">
+                  <div class="topbar">
+                    <div style="display: flex; align-items: center; gap: 8px"><svg width="24" height="24" sc-camel-view-box="0 0 34 34" aria-hidden="true"><path d="M17 2 30 9.5v15L17 32 4 24.5v-15z" style="fill: none; stroke: #8B5CF6; stroke-width: 2"></path><path d="M12.5 10h6a4 4 0 0 1 1 7.9 4.2 4.2 0 0 1-1 8.1h-6z" style="fill: #7C3AED"></path></svg><span class="disp" style="font-size: 18px; font-weight: 700">betuxo</span></div>
+                    <div style="display: flex; align-items: center">
+                      <button class="icon-btn {{ph.bellCls}}" aria-label="Avisos da equipe, 2 não lidos" aria-expanded="{{ph.bellAria}}"><svg class="ic" width="22" height="22" sc-camel-view-box="0 0 24 24" aria-hidden="true"><path d="M6 16V11a6 6 0 0 1 12 0v5l1.5 2h-15z"></path><path d="M10 20.5a2 2 0 0 0 4 0"></path></svg><span class="count">2</span></button>
+                      <button class="icon-btn" aria-label="Perfil"><span style="width: 32px; height: 32px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 13px; font-weight: 700; color: #fff; background: linear-gradient(140deg,#8B5CF6,#C0178E)">MA</span></button>
+                    </div>
+                  </div>
+
+                  <div class="content">
+                    <div style="display: flex; flex-direction: column; gap: 4px">
+                      <a href="#" style="display: inline-flex; align-items: center; gap: 4px; min-height: 32px; font-size: 13px; font-weight: 600; text-decoration: none; color: var(--text-3)"><svg class="ic" width="16" height="16" sc-camel-view-box="0 0 24 24" aria-hidden="true"><path d="M15 6l-6 6 6 6"></path></svg>Mais</a>
+                      <h1 class="disp" style="margin: 0; font-size: 26px; line-height: 1.12; font-weight: 700">Configurações de notificações</h1>
+                      <p style="margin: 4px 0 0; font-size: 14px; line-height: 1.45; color: var(--text-2)">Escolha quais alertas do Aviator quer receber e como: som, aviso na tela ou push.</p>
+                    </div>
+
+                    <div class="glass edge" style="border-radius: 20px; padding: 12px 12px 12px 14px; display: flex; align-items: center; gap: 12px">
+                      <span class="tile" style="color: var(--primary-text); background: var(--primary-soft)"><sc-if value="{{soundOn}}" hint-placeholder-val="{{true}}"><svg class="ic" width="22" height="22" sc-camel-view-box="0 0 24 24" aria-hidden="true"><path d="M4 9.5h3.5L12 5.5v13l-4.5-4H4z"></path><path d="M15.5 9a4 4 0 0 1 0 6M18 6.5a7.5 7.5 0 0 1 0 11"></path></svg></sc-if><sc-if value="{{soundOff}}" hint-placeholder-val="{{false}}"><svg class="ic" width="22" height="22" sc-camel-view-box="0 0 24 24" aria-hidden="true"><path d="M4 9.5h3.5L12 5.5v13l-4.5-4H4z"></path><path d="M16 9.5l5 5M21 9.5l-5 5"></path></svg></sc-if></span>
+                      <div style="flex: 1; display: flex; flex-direction: column; gap: 2px"><span style="font-size: 15px; font-weight: 600">Som dos alertas</span><span style="font-size: 12.5px; line-height: 1.4; color: var(--text-2)">{{soundSub}}</span></div>
+                      <button class="swbtn" role="switch" aria-checked="{{soundAria}}" aria-label="Som geral dos alertas" sc-camel-on-click="{{toggleSound}}"><span class="sw {{soundCls}}"></span></button>
+                    </div>
+
+                    <sc-if value="{{ph.pAsk}}" hint-placeholder-val="{{false}}">
+                      <div class="glass" style="border-radius: 20px; padding: 16px; display: flex; flex-direction: column; gap: 12px">
+                        <div style="display: flex; gap: 12px; align-items: flex-start">
+                          <span class="tile" style="color: var(--primary-text); background: var(--primary-soft)"><svg class="ic" width="22" height="22" sc-camel-view-box="0 0 24 24" aria-hidden="true"><path d="M6 16V11a6 6 0 0 1 12 0v5l1.5 2h-15z"></path><path d="M10 20.5a2 2 0 0 0 4 0M19.5 4.5a6 6 0 0 1 2 3.5M4.5 4.5a6 6 0 0 0-2 3.5"></path></svg></span>
+                          <div style="display: flex; flex-direction: column; gap: 3px"><span style="font-size: 15px; font-weight: 600">Ativar notificações push</span><span style="font-size: 13px; line-height: 1.45; color: var(--text-2)">Receba os alertas mesmo com o app fechado. Você escolhe quais tipos abaixo.</span></div>
+                        </div>
+                        <button class="btn btn-primary">Ativar notificações push</button>
+                        <span style="font-size: 12px; color: var(--text-3); text-align: center">O navegador vai pedir sua permissão uma única vez.</span>
+                      </div>
+                    </sc-if>
+
+                    <sc-if value="{{ph.pOk}}" hint-placeholder-val="{{true}}">
+                      <div class="glass" style="border-radius: 20px; padding: 14px; display: flex; flex-direction: column; gap: 12px">
+                        <div style="display: flex; gap: 12px; align-items: center">
+                          <span class="tile" style="color: var(--success); background: var(--success-soft)"><svg class="ic" width="22" height="22" sc-camel-view-box="0 0 24 24" aria-hidden="true" style="stroke-width: 2.2"><path d="M5 12.5l4.5 4.5L19 7.5"></path></svg></span>
+                          <div style="flex: 1; display: flex; flex-direction: column; gap: 2px"><span style="font-size: 15px; font-weight: 600">Push ativado neste aparelho</span><span style="font-size: 12.5px; color: var(--text-2)">iPhone · app instalado na Tela de Início</span></div>
+                          <span style="display: inline-flex; align-items: center; height: 24px; padding: 0 9px; border-radius: 999px; font-size: 11.5px; font-weight: 700; color: var(--success); background: var(--success-soft)">Permitido</span>
+                        </div>
+                        <button class="btn btn-ghost" style="min-height: 44px; font-size: 14px">Enviar push de teste</button>
+                      </div>
+                    </sc-if>
+
+                    <sc-if value="{{ph.pBlocked}}" hint-placeholder-val="{{false}}">
+                      <div class="glass" role="alert" style="border-radius: 20px; padding: 16px; display: flex; flex-direction: column; gap: 12px; border-color: var(--warning)">
+                        <div style="display: flex; gap: 12px; align-items: flex-start">
+                          <span class="tile" style="color: var(--warning); background: var(--warning-soft)"><svg class="ic" width="22" height="22" sc-camel-view-box="0 0 24 24" aria-hidden="true"><path d="M6 16V11a6 6 0 0 1 9.5-4.9M18 11v5l1.5 2h-15"></path><path d="M10 20.5a2 2 0 0 0 4 0M3.5 3.5l17 17"></path></svg></span>
+                          <div style="display: flex; flex-direction: column; gap: 3px"><span style="font-size: 15px; font-weight: 600">Push bloqueado pelo navegador</span><span style="font-size: 13px; line-height: 1.45; color: var(--text-2)">A permissão foi recusada antes. Para liberar:</span></div>
+                        </div>
+                        <ol style="margin: 0; padding: 0; list-style: none; display: flex; flex-direction: column; gap: 2px">
+                          <li class="step" style="min-height: 40px"><span class="step-n">1</span><span style="font-size: 13.5px; line-height: 1.4">Toque no cadeado ao lado do endereço</span></li>
+                          <li class="step" style="min-height: 40px"><span class="step-n">2</span><span style="font-size: 13.5px; line-height: 1.4">Abra <b>Permissões › Notificações</b></span></li>
+                          <li class="step" style="min-height: 40px"><span class="step-n">3</span><span style="font-size: 13.5px; line-height: 1.4">Escolha <b>Permitir</b> e volte para esta tela</span></li>
+                        </ol>
+                        <span style="font-size: 12.5px; line-height: 1.45; color: var(--text-3)">No app instalado no iPhone: Ajustes do aparelho › Notificações › Betuxo.</span>
+                        <button class="btn btn-ghost" style="min-height: 44px; font-size: 14px">Já liberei, verificar de novo</button>
+                      </div>
+                    </sc-if>
+
+                    <sc-if value="{{ph.pNo}}" hint-placeholder-val="{{false}}">
+                      <div class="glass" style="border-radius: 20px; padding: 16px; display: flex; flex-direction: column; gap: 12px">
+                        <div style="display: flex; gap: 12px; align-items: flex-start">
+                          <span class="tile" style="color: var(--info); background: var(--info-soft)"><svg class="ic" width="22" height="22" sc-camel-view-box="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"></circle><path d="M12 11v5.5M12 7.8v.2"></path></svg></span>
+                          <div style="display: flex; flex-direction: column; gap: 3px"><span style="font-size: 15px; font-weight: 600">Push não suportado aqui</span><span style="font-size: 13px; line-height: 1.45; color: var(--text-2)">Este navegador não recebe push. Som e aviso na tela continuam funcionando com o app aberto.</span></div>
+                        </div>
+                        <span style="font-size: 12.5px; line-height: 1.45; color: var(--text-3)">No iPhone, o push só funciona com o app instalado na Tela de Início (iOS 16.4 ou mais novo).</span>
+                        <a href="#" class="btn btn-ghost" style="min-height: 44px; font-size: 14px">Ver como instalar no iPhone</a>
+                      </div>
+                    </sc-if>
+
+                    <div style="display: flex; justify-content: space-between; align-items: baseline; margin-top: 6px"><h2 class="disp" style="margin: 0; font-size: 20px; font-weight: 700">Tipos de alerta</h2><span class="mono" style="font-size: 13px; color: var(--text-2)"><b style="color: var(--text)">{{activeCount}}</b>/6 ativos</span></div>
+
+                    <sc-for list="{{ph.alerts}}" as="a" hint-placeholder-count="6">
+                      <section class="alert glass {{a.cls}}" aria-label="{{a.name}}">
+                        <div style="display: flex; gap: 12px; align-items: flex-start">
+                          <span class="a-ic"><svg class="ic" width="22" height="22" sc-camel-view-box="0 0 24 24" aria-hidden="true"><path d="{{a.icon}}"></path></svg></span>
+                          <div style="flex: 1; min-width: 0; display: flex; flex-direction: column; gap: 5px">
+                            <span style="font-size: 15px; font-weight: 600; line-height: 1.25">{{a.name}}</span>
+                            <div style="display: flex; gap: 6px; flex-wrap: wrap"><span class="a-chip">{{a.chip}}</span><sc-if value="{{a.isOff}}" hint-placeholder-val="{{false}}"><span style="display: inline-flex; align-items: center; height: 22px; padding: 0 8px; border-radius: 999px; font-size: 11.5px; font-weight: 600; color: var(--text-3); background: var(--surface-3)">Desligado</span></sc-if></div>
+                          </div>
+                          <button class="test {{a.testCls}}" aria-label="{{a.testAria}}" sc-camel-on-click="{{a.test}}">
+                            <sc-if value="{{a.playing}}" hint-placeholder-val="{{false}}"><span class="eq" aria-hidden="true"><i></i><i></i><i></i></span>Tocando</sc-if>
+                            <sc-if value="{{a.idle}}" hint-placeholder-val="{{true}}"><svg class="ic" width="16" height="16" sc-camel-view-box="0 0 24 24" aria-hidden="true"><path d="M4 9.5h3.5L12 5.5v13l-4.5-4H4z"></path><path d="M15.5 9a4 4 0 0 1 0 6"></path></svg>Testar</sc-if>
+                          </button>
+                        </div>
+                        <span style="font-size: 13px; line-height: 1.45; color: var(--text-2)">{{a.desc}}</span>
+                        <div class="tgs">
+                          <sc-for list="{{a.cells}}" as="c" hint-placeholder-count="3">
+                            <button class="tg {{c.dis}}" role="switch" aria-checked="{{c.aria}}" aria-disabled="{{c.ariaDis}}" aria-label="{{c.ariaLabel}}" sc-camel-on-click="{{c.toggle}}">
+                              <span class="tg-top"><svg class="ic" width="15" height="15" sc-camel-view-box="0 0 24 24" aria-hidden="true"><path d="{{c.icon}}"></path></svg>{{c.label}}</span>
+                              <span class="sw {{c.sw}}"></span>
+                              <span class="tg-sub">{{c.sub}}</span>
+                            </button>
+                          </sc-for>
+                        </div>
+                      </section>
+                    </sc-for>
+
+                    <sc-if value="{{ph.full}}" hint-placeholder-val="{{true}}">
+                      <section class="glass edge" aria-labelledby="ios-t" style="border-radius: 20px; padding: 16px; display: flex; flex-direction: column; gap: 6px; margin-top: 6px">
+                        <div style="display: flex; gap: 12px; align-items: center; margin-bottom: 4px">
+                          <span class="tile" style="color: var(--primary-text); background: var(--primary-soft)"><svg class="ic" width="22" height="22" sc-camel-view-box="0 0 24 24" aria-hidden="true"><rect x="6.5" y="2.5" width="11" height="19" rx="2.5"></rect><path d="M10.5 18.5h3"></path></svg></span>
+                          <div style="display: flex; flex-direction: column; gap: 2px"><h2 id="ios-t" class="disp" style="margin: 0; font-size: 18px; font-weight: 700">Como instalar no iPhone</h2><span style="font-size: 12.5px; color: var(--text-2)">Abre em tela cheia e libera o push.</span></div>
+                        </div>
+                        <ol style="margin: 0; padding: 0; list-style: none; display: flex; flex-direction: column">
+                          <li class="step"><span class="step-n">1</span><span style="flex: 1; font-size: 14px; line-height: 1.4">Abra este endereço no navegador do iPhone</span><svg class="ic" width="22" height="22" sc-camel-view-box="0 0 24 24" aria-hidden="true" style="color: var(--text-3)"><circle cx="12" cy="12" r="9"></circle><path d="M15.5 8.5l-2 5-5 2 2-5z"></path></svg></li>
+                          <li class="step"><span class="step-n">2</span><span style="flex: 1; font-size: 14px; line-height: 1.4">Toque em <b>Compartilhar</b> na barra inferior</span><svg class="ic" width="22" height="22" sc-camel-view-box="0 0 24 24" aria-hidden="true" style="color: var(--primary-text)"><path d="M12 3v12M8 7l4-4 4 4"></path><path d="M7 10H6a2 2 0 0 0-2 2v7a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-7a2 2 0 0 0-2-2h-1"></path></svg></li>
+                          <li class="step"><span class="step-n">3</span><span style="flex: 1; font-size: 14px; line-height: 1.4">Role e toque em <b>Adicionar à Tela de Início</b></span><svg class="ic" width="22" height="22" sc-camel-view-box="0 0 24 24" aria-hidden="true" style="color: var(--primary-text)"><rect x="4" y="4" width="16" height="16" rx="4"></rect><path d="M12 8.5v7M8.5 12h7"></path></svg></li>
+                          <li class="step"><span class="step-n">4</span><span style="flex: 1; font-size: 14px; line-height: 1.4">Abra pelo ícone e ative o push aqui</span><svg class="ic" width="22" height="22" sc-camel-view-box="0 0 24 24" aria-hidden="true" style="color: var(--text-3)"><path d="M6 16V11a6 6 0 0 1 12 0v5l1.5 2h-15z"></path><path d="M10 20.5a2 2 0 0 0 4 0"></path></svg></li>
+                        </ol>
+                      </section>
+                      <a href="#" style="display: flex; align-items: center; justify-content: center; gap: 8px; min-height: 44px; font-size: 12.5px; color: var(--text-3); text-decoration: none"><svg class="ic" width="16" height="16" sc-camel-view-box="0 0 24 24" aria-hidden="true"><path d="M12 3 4.5 6v5.5c0 4.5 3.2 8.2 7.5 9.5 4.3-1.3 7.5-5 7.5-9.5V6z"></path></svg>Alertas não são garantia de resultado · Jogue com responsabilidade · 18+</a>
+                    </sc-if>
+                  </div>
+
+                  <nav class="botnav" aria-label="Navegação principal">
+                    <a href="#" class="tab"><span class="tab-ic"><svg class="ic" width="22" height="22" sc-camel-view-box="0 0 24 24" aria-hidden="true"><path d="M3 10.5 12 3l9 7.5"></path><path d="M5 9.5V20h14V9.5"></path><path d="M10 20v-6h4v6"></path></svg></span>Início</a>
+                    <a href="#" class="tab"><span class="tab-ic"><svg class="ic" width="22" height="22" sc-camel-view-box="0 0 24 24" aria-hidden="true"><rect x="2.5" y="7" width="19" height="11" rx="5.5"></rect><path d="M7 11v3M5.5 12.5h3"></path><circle cx="16" cy="11.5" r="1"></circle><circle cx="18" cy="13.5" r="1"></circle></svg></span>Jogos</a>
+                    <a href="#" class="tab"><span class="fab"><svg class="ic" width="26" height="26" sc-camel-view-box="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"></circle><circle cx="12" cy="12" r="5"></circle><path d="M12 12l6-6"></path></svg></span>Probabilidades</a>
+                    <a href="#" class="tab"><span class="tab-ic"><svg class="ic" width="22" height="22" sc-camel-view-box="0 0 24 24" aria-hidden="true"><path d="M8 4h8v5a4 4 0 0 1-8 0V4z"></path><path d="M16 5h3v2a3 3 0 0 1-3 3M8 5H5v2a3 3 0 0 0 3 3"></path><path d="M12 13v4M8.5 20h7"></path></svg></span>Conquistas</a>
+                    <a href="#" class="tab on" aria-current="page"><span class="tab-ic"><svg class="ic" width="22" height="22" sc-camel-view-box="0 0 24 24" aria-hidden="true"><rect x="4" y="4" width="6.5" height="6.5" rx="1.5"></rect><rect x="13.5" y="4" width="6.5" height="6.5" rx="1.5"></rect><rect x="4" y="13.5" width="6.5" height="6.5" rx="1.5"></rect><rect x="13.5" y="13.5" width="6.5" height="6.5" rx="1.5"></rect></svg></span>Mais</a>
+                  </nav>
+
+                  <sc-if value="{{ph.sheet}}" hint-placeholder-val="{{false}}">
+                    <div class="scrim"></div>
+                    <div role="dialog" aria-modal="true" aria-labelledby="sheet-t" style="position: absolute; left: 0; right: 0; bottom: 0; max-height: 640px; border-radius: 28px 28px 0 0; padding: 10px 18px 24px; background: var(--surface-solid); box-shadow: 0 -20px 60px -10px rgba(124,58,237,.45); display: flex; flex-direction: column">
+                      <span style="align-self: center; width: 40px; height: 5px; border-radius: 999px; background: var(--border-strong); margin-bottom: 10px"></span>
+                      <div style="display: flex; justify-content: space-between; align-items: center; gap: 8px">
+                        <div style="display: flex; flex-direction: column; gap: 2px"><h2 id="sheet-t" class="disp" style="margin: 0; font-size: 20px; font-weight: 700">Avisos da equipe</h2><span style="font-size: 12.5px; color: var(--text-3)">2 não lidos</span></div>
+                        <button class="test" style="color: var(--primary-text)">Marcar como lidos</button>
+                      </div>
+                      <div style="display: flex; flex-direction: column; margin-top: 6px">
+                        <sc-for list="{{ann}}" as="n" hint-placeholder-count="4">
+                          <article class="ann" style="border-bottom-color: {{n.line}}">
+                            <span class="dot" style="{{n.dot}}" aria-hidden="true"></span>
+                            <div style="flex: 1; display: flex; flex-direction: column; gap: 4px">
+                              <div style="display: flex; align-items: center; gap: 8px; flex-wrap: wrap"><span style="font-size: 14.5px; font-weight: {{n.weight}}">{{n.title}}</span><sc-if value="{{n.unread}}" hint-placeholder-val="{{true}}"><span style="font-size: 10.5px; font-weight: 700; letter-spacing: .06em; padding: 2px 7px; border-radius: 999px; color: var(--primary-text); background: var(--primary-soft)">NOVO</span></sc-if></div>
+                              <span style="font-size: 13px; line-height: 1.45; color: var(--text-2)">{{n.text}}</span>
+                              <span class="mono" style="font-size: 11.5px; color: var(--text-3)">{{n.date}}</span>
+                            </div>
+                          </article>
+                        </sc-for>
+                      </div>
+                      <button class="btn btn-ghost" style="margin-top: 14px; min-height: 48px">Fechar</button>
+                    </div>
+                  </sc-if>
+                </div>
+              </div>
+            </sc-for>
+          </div>
+        </sc-for>
+      </div>
+    </div>
+  </sc-for>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script="" data-props="{&quot;$preview&quot;:{&quot;width&quot;:1362,&quot;height&quot;:5000}}">
+class Component extends DCLogic {
+  constructor(props) {
+    super(props);
+    this.state = {
+      sound: true,
+      testing: null,
+      prefs: {
+        rosas: { som: true, tela: true, push: true },
+        baixos: { som: true, tela: true, push: false },
+        d30: { som: false, tela: true, push: false },
+        d100: { som: true, tela: true, push: true },
+        mil: { som: true, tela: true, push: true },
+        quente: { som: false, tela: false, push: false }
+      }
+    };
+  }
+  componentWillUnmount() { clearTimeout(this.tt); }
+  renderVals() {
+    var self = this, s = this.state;
+    var I = {
+      rosas: 'M12 3l7.5 9L12 21l-7.5-9zM12 3v18M4.5 12h15',
+      baixos: 'M3 6.5l6 6 4-4 8 8M21 11v5.5h-5.5',
+      d30: 'M3 12h18M7 8l-4 4 4 4M17 8l4 4-4 4',
+      d100: 'M7 3h10M7 21h10M8 3c0 5 8 5.5 8 9s-8 4-8 9M16 3c0 5-8 5.5-8 9s8 4 8 9',
+      mil: 'M12 2.5l2.4 6.1 6.6.4-5.1 4.2 1.7 6.4L12 16l-5.6 3.6 1.7-6.4L3 9l6.6-.4z',
+      quente: 'M12 21a7.5 7.5 0 1 0 0-15 7.5 7.5 0 0 0 0 15zM12 9.5v4l2.5 1.5M9.5 2.5h5',
+      som: 'M4 9.5h3.5L12 5.5v13l-4.5-4H4zM15.5 9a4 4 0 0 1 0 6',
+      tela: 'M3.5 5h17v11h-17zM8.5 20h7M12 16v4',
+      push: 'M6 16V11a6 6 0 0 1 12 0v5l1.5 2h-15zM10 20.5a2 2 0 0 0 4 0'
+    };
+    var defs = [
+      { id: 'rosas', name: 'Alertas de Rosas', chip: '◆ acima de 10x', desc: 'Quando sair um multiplicador acima de 10x.' },
+      { id: 'baixos', name: 'Alerta de Baixos', chip: '▼ 10 seguidos abaixo de 3x', desc: '10 multiplicadores seguidos abaixo de 3x.' },
+      { id: 'd30', name: 'Distanciamento 30x', chip: '↔ 4 rodadas', desc: '4 rodadas entre 10x e 30x sem nenhuma de 30x ou mais.' },
+      { id: 'd100', name: 'Distanciamento 100x', chip: '↔ 10 rodadas', desc: '10 rodadas entre 10x e 100x sem nenhuma de 100x ou mais.' },
+      { id: 'mil', name: 'Saiu 1000x', chip: '★ 1000x ou mais', desc: 'Multiplicador de 1000x ou mais.' },
+      { id: 'quente', name: 'Minuto quente', chip: '◷ faixa 5x a 10x', desc: 'Estimativa de 5x a 10x no minuto atual, a partir do histórico.' }
+    ];
+    var chans = [['som', 'Som'], ['tela', 'Na tela'], ['push', 'Push']];
+    var activeCount = defs.filter(function (d) { var p = s.prefs[d.id]; return (p.som && s.sound) || p.tela || p.push; }).length;
+    function setPref(id, ch) {
+      var p = Object.assign({}, s.prefs[id]); p[ch] = !p[ch];
+      var np = Object.assign({}, s.prefs); np[id] = p;
+      self.setState({ prefs: np });
+    }
+    function buildAlerts(pushOk, n) {
+      return defs.slice(0, n).map(function (d) {
+        var p = s.prefs[d.id];
+        var cells = chans.map(function (c) {
+          var key = c[0];
+          var dis = (key === 'push' && !pushOk) || (key === 'som' && !s.sound);
+          var on = !!p[key] && !dis;
+          var sub = on ? 'Ligado' : 'Desligado';
+          if (key === 'push' && !pushOk) sub = 'Indisponível';
+          if (key === 'som' && !s.sound) sub = 'Som geral off';
+          return {
+            label: c[1], icon: I[key], sw: on ? 'on' : '', aria: on ? 'true' : 'false',
+            dis: dis ? 'dis' : '', ariaDis: dis ? 'true' : 'false', sub: sub,
+            ariaLabel: c[1] + ' para ' + d.name,
+            toggle: function () { if (!dis) setPref(d.id, key); }
+          };
+        });
+        var allOff = !((p.som && s.sound) || p.tela || (p.push && pushOk));
+        var playing = s.testing === d.id;
+        return {
+          cls: 'al-' + d.id, name: d.name, chip: d.chip, desc: d.desc, icon: I[d.id], cells: cells,
+          isOff: allOff, playing: playing, idle: !playing, testCls: playing ? 'on' : '',
+          testAria: 'Testar som: ' + d.name,
+          test: function () {
+            clearTimeout(self.tt);
+            self.setState({ testing: d.id });
+            self.tt = setTimeout(function () { self.setState({ testing: null }); }, 1600);
+          }
+        };
+      });
+    }
+    var screens = [
+      { key: 'ok', h: '2200px', num: '01', title: 'Normal · push permitido', desc: 'Tela inteira. Cada alerta tem cor, ícone e forma no selo, 3 interruptores com o estado escrito e “Testar”. No fim, o passo a passo do iPhone.', tags: [{ t: 'CSS', k: 'k-css' }, { t: 'Dados', k: 'k-api' }] },
+      { key: 'ask', h: '880px', num: '02', title: 'Push ainda não pedido', desc: 'A permissão só é pedida quando a pessoa toca no botão, nunca ao abrir a tela. Até lá o push de cada alerta fica “Indisponível”.', tags: [{ t: 'JS', k: 'k-js' }] },
+      { key: 'blocked', h: '880px', num: '03', title: 'Push bloqueado', desc: 'Três passos para liberar no navegador, caminho do app instalado e botão para verificar de novo.', tags: [{ t: 'JS', k: 'k-js' }] },
+      { key: 'no', h: '880px', num: '04', title: 'Push não suportado', desc: 'Navegador sem push (ex.: iPhone sem o app instalado). Som e aviso na tela seguem funcionando; leva ao passo a passo.', tags: [{ t: 'JS', k: 'k-js' }] },
+      { key: 'sheet', h: '880px', num: '05', title: 'Sininho · folha inferior', desc: 'Comunicados da equipe. Não lido tem ponto e o rótulo “NOVO”, não só cor. Arrastar para baixo ou tocar fora fecha.', tags: [{ t: 'CSS', k: 'k-css' }, { t: 'Dados', k: 'k-api' }] }
+    ];
+    function phone(d, th) {
+      var pushOk = d.key === 'ok' || d.key === 'sheet';
+      return {
+        cls: th.cls, showCap: th.cap, h: d.h, num: d.num, title: d.title, desc: d.desc, tags: d.tags,
+        full: d.key === 'ok', pOk: pushOk, pAsk: d.key === 'ask', pBlocked: d.key === 'blocked', pNo: d.key === 'no',
+        sheet: d.key === 'sheet', bellCls: d.key === 'sheet' ? 'on' : '', bellAria: d.key === 'sheet' ? 'true' : 'false',
+        alerts: buildAlerts(pushOk, d.key === 'ok' ? 6 : 2)
+      };
+    }
+    var rows = [{ cls: 't-dark', label: 'Modo escuro', cap: true }, { cls: 't-light', label: 'Modo claro', cap: false }].map(function (th) {
+      var ph = screens.map(function (d) { return phone(d, th); });
+      return { label: th.label, cols: [{ phones: [ph[0]] }, { phones: [ph[1], ph[2]] }, { phones: [ph[3], ph[4]] }] };
+    });
+    var ann = [
+      { title: 'Probabilidades liberada', text: 'A leitura de horários está aberta para todos. Lembre: é estimativa do histórico, não garantia.', date: 'Hoje, 18:00', unread: true },
+      { title: 'Manutenção do feed de rodadas', text: 'Quarta, das 04:00 às 04:30 (Brasília), os alertas ficam pausados.', date: 'Ontem, 21:30', unread: true },
+      { title: 'Aula nova: Pausas e limites', text: 'O módulo 3 da trilha de gestão de banca já está disponível.', date: '10/10, 14:12', unread: false },
+      { title: 'Ajuste no Alerta de Baixos', text: 'Agora o alerta dispara após 10 rodadas seguidas abaixo de 3x.', date: '08/10, 09:00', unread: false }
+    ].map(function (n, i, arr) {
+      return Object.assign({}, n, {
+        weight: n.unread ? 700 : 500,
+        dot: n.unread ? 'background:var(--primary);box-shadow:0 0 10px var(--glow)' : 'background:transparent;box-shadow:inset 0 0 0 1.5px var(--border-strong)',
+        line: i === arr.length - 1 ? 'transparent' : 'var(--border)'
+      });
+    });
+    return {
+      rows: rows, ann: ann, activeCount: activeCount,
+      soundOn: s.sound, soundOff: !s.sound, soundCls: s.sound ? 'on' : '', soundAria: s.sound ? 'true' : 'false',
+      soundSub: s.sound ? 'Ligado. Cada alerta usa a própria escolha abaixo.' : 'Desligado. Nenhum alerta toca som agora.',
+      toggleSound: function () { self.setState({ sound: !s.sound }); }
+    };
+  }
+}
+</script>
+
+
+</body></html>

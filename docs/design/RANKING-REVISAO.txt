@@ -1,0 +1,20 @@
+Ranking de Players — revisão do design system
+
+Commit anterior: 0db99fb (menu da conta, mínimo de saque de R$ 30 e sugestões de depósito de R$ 20, 50, 150, 400, 800, 1.000, 2.500 e 5.000).
+
+Ranking:
+- Versões pública (/ranking) e administrativa (/admin/ranking) usam os mesmos tokens, ícones Lucide, cartões glass/edge e tipografia.
+- Colocações no pódio preservam medalhas e identificação textual; valores usam JetBrains Mono.
+- Tabela responsiva, nomes e valores podem quebrar linha em telas estreitas.
+- Regras de participação e estados vazio/erro/carregamento adaptados; skeleton estático.
+- Navegação administrativa habilita o chrome compartilhado na rota do Ranking.
+- Hook, API, atualização periódica, jogadores e valores não foram alterados.
+
+Validação:
+- 2 suites e 5 testes aprovados: DepositRanking e useDepositRanking.
+- localhost:3000: escuro administrativo em 1440x1000, público claro em 390x844 e ambas as rotas em 320px sem overflow horizontal.
+- Superfície clara sólida e fonte mono dos valores conferidas no navegador.
+- Capturas mostram as regras para não registrar valores individuais de jogadores.
+- Sem build, depósitos, saques ou mensagens externas. Tema e viewport restaurados.
+
+Ranking permanece sem commit para revisão.

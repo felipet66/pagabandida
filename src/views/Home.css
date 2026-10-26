@@ -1,0 +1,213 @@
+/* Aviator history: theme tokens without changing calculations or the game frame. */
+.aviator-home { color: var(--text); padding-bottom: 100px !important; }
+.aviator-home__header { display: flex; align-items: center; justify-content: space-between; gap: var(--space-4); margin-bottom: var(--space-6); }
+.aviator-home__meta { display: flex; align-items: center; flex-wrap: wrap; gap: 6px 10px; }
+.aviator-home__eyebrow { color: var(--primary-text); font-size: var(--type-caption); font-weight: 600; letter-spacing: .1em; text-transform: uppercase; }
+:root[data-theme] .aviator-home h1 { margin: var(--space-2) 0; color: var(--text); font: 700 var(--type-h1)/var(--line-h1) var(--font-heading); letter-spacing: .01em; }
+:root[data-theme] .aviator-home__header p { margin: 0; color: var(--text-2); font-size: var(--type-body-sm); line-height: var(--line-body-sm); }
+:root[data-theme] .aviator-secondary-action { display: inline-flex; align-items: center; justify-content: center; gap: var(--space-2); min-height: var(--control-height); padding: var(--space-3) var(--space-4); border: 1px solid var(--border-strong); border-radius: var(--radius-14); background: var(--surface-solid); color: var(--primary-text); font-size: var(--type-body-sm); white-space: nowrap; cursor: pointer; }
+:root[data-theme] .aviator-secondary-action:hover:not(:disabled) { background: var(--primary-soft); }
+:root[data-theme] .aviator-secondary-action:disabled { color: var(--text-3); background: var(--surface-2); border-style: dashed; cursor: not-allowed; }
+.aviator-version-selector { display: flex; gap: var(--space-1); width: fit-content; max-width: 100%; padding: var(--space-1); margin-bottom: var(--space-6); border: 1px solid var(--border); border-radius: var(--radius-16); background: var(--surface-solid); }
+.aviator-version-selector button { display: flex; flex-direction: column; align-items: center; justify-content: center; gap: var(--space-2); min-height: var(--control-height); min-width: 120px; padding: var(--space-3) var(--space-5); border: 1px solid transparent; border-radius: var(--radius-12); background: transparent; color: var(--text-2); font-size: var(--type-body-sm); cursor: pointer; }
+.aviator-version-label { display: inline-flex; align-items: center; gap: var(--space-2); }
+.aviator-version-selector button:hover:not(:disabled) { color: var(--primary-text); background: var(--primary-soft); }
+.aviator-version-selector button.is-active { background: linear-gradient(var(--button-scrim),var(--button-scrim)),var(--gradient-primary); box-shadow: var(--shadow-glow); color: var(--on-primary); font-weight: 600; }
+.aviator-version-selector button:disabled { color: var(--text-3); background: var(--surface-2); border: 1px dashed var(--border-strong); cursor: not-allowed; }
+.aviator-version-coming-soon { display: inline-flex; align-items: center; gap: var(--space-1); color: var(--warning); font-size: var(--type-caption); line-height: var(--line-caption); white-space: nowrap; }
+:root[data-theme] .aviator-zones { margin-bottom: var(--space-6); padding: 16px; border-radius: var(--radius-20); background: var(--surface-solid); }
+.aviator-zones__heading { display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 8px 16px; margin-bottom: 14px; }
+.aviator-zones__eyebrow { display: inline-flex; align-items: center; gap: 6px; color: var(--primary-text); font-size: 11px; }
+:root[data-theme] .aviator-zones h2 { margin: 5px 0 0; color: var(--text); font: 600 18px/1.35 var(--font-heading); }
+.aviator-zones__updated { max-width: 100%; color: var(--text-2); font-size: 11px; overflow-wrap: anywhere; }
+.aviator-zones__grid { display: grid; grid-template-columns: repeat(3,minmax(0,1fr)); gap: 12px; }
+.aviator-zones__grid > section { min-width: 0; padding: 14px; border: 1px solid var(--border); border-radius: var(--radius-12); background: var(--bg-2); }
+:root[data-theme] .aviator-zones h3 { margin: 0 0 10px; color: var(--text-2); font-size: 12px; font-weight: 500; line-height: 1.4; }
+.aviator-zones__window { --zone-color: var(--primary-text); }
+.aviator-zones__window--hot { --zone-color: var(--warning); }
+.aviator-zones__window--cold { --zone-color: var(--info); }
+.aviator-zones__window--unavailable { --zone-color: var(--text-2); }
+.aviator-zones__badge { display: inline-block; padding: 4px 8px; border: 1px solid currentColor; border-radius: var(--radius-pill); color: var(--zone-color); font-size: 11px; font-weight: 600; }
+:root[data-theme] .aviator-zones p { margin: 10px 0 0; color: var(--text-2); font-size: 12px; line-height: 1.6; }
+.aviator-zones__count strong { color: var(--text); font-family: var(--font-mono); }
+.aviator-zones__concentration { display: flex; align-items: baseline; flex-wrap: wrap; gap: 6px; margin-top: 8px; }
+.aviator-zones__concentration strong { color: var(--text); font: 600 24px/1.4 var(--font-mono); }
+.aviator-zones__concentration span { color: var(--text-2); font-size: 11px; }
+.aviator-zones__track { height: 6px; margin-top: 10px; overflow: hidden; border-radius: var(--radius-pill); background: var(--surface-2); }
+.aviator-zones__track > span { display: block; height: 100%; background: var(--zone-color); border-radius: inherit; }
+.aviator-zones__distance-value { display: block; margin-top: 14px; color: var(--text); font: 600 20px/1.4 var(--font-mono); overflow-wrap: anywhere; }
+.aviator-zones__rules { margin-top: 12px; border-top: 1px solid var(--border); }
+.aviator-zones__rules summary { display: list-item; min-height: 44px; padding: 12px 0; color: var(--primary-text); font-size: 12px; cursor: pointer; }
+.aviator-zones__rules summary:focus-visible { outline: 2px solid var(--focus-ring); outline-offset: 2px; }
+:root[data-theme] .aviator-zones .aviator-zones__feedback { padding: 12px 0; }
+:root[data-theme] .aviator-zones .aviator-zones__note { font-size: 11px; }
+:root[data-theme] .aviator-history-panel, :root[data-theme] .aviator-player-panel { margin-bottom: var(--space-6); border-radius: var(--radius-20); }
+.aviator-history-panel { overflow: visible; }
+.aviator-player-panel { overflow: hidden; }
+:root[data-theme="light"] .aviator-home :is(.aviator-history-panel,.aviator-player-panel,.aviator-bankroll-link) { background-color: var(--surface-solid); }
+.aviator-panel-heading { display: flex; align-items: center; justify-content: space-between; gap: var(--space-3); padding: var(--space-6); }
+.aviator-history-panel .aviator-panel-heading { padding: 12px; gap: 8px; flex-wrap: nowrap; align-items: center; }
+.aviator-history-panel .aviator-panel-heading > div { min-width: 0; flex: 1; }
+.aviator-history-panel .aviator-panel-heading { flex-wrap: wrap; }
+.aviator-history-panel .aviator-panel-heading > div:first-child { flex: 1 1 160px; }
+.aviator-history-panel .aviator-panel-heading > .aviator-history-actions { display: flex; flex: 0 1 auto; flex-wrap: wrap; gap: 8px; }
+:root[data-theme] .aviator-auto-refresh[aria-pressed="true"] { background: var(--primary-soft); border-color: var(--primary-text); }
+.aviator-history-sync { display: flex; flex-wrap: wrap; gap: 4px 16px; padding: 0 12px 10px; color: var(--text-2); font-size: 11px; line-height: 1.5; }
+.aviator-history-sync__error { flex-basis: 100%; color: var(--warning); }
+:root[data-theme] .aviator-history-panel .aviator-panel-heading h2 { font-size: 18px; line-height: 1.25; margin-bottom: 3px; }
+:root[data-theme] .aviator-history-panel .aviator-panel-heading p { font-size: 11px; line-height: 1.35; }
+:root[data-theme] .aviator-history-panel .aviator-secondary-action { min-height: 40px; padding: 8px 10px; border-radius: 8px; gap: 6px; font-size: 12px; }
+:root[data-theme] .aviator-panel-heading h2 { margin: 0 0 var(--space-1); color: var(--text); font: 600 var(--type-h2)/var(--line-h2) var(--font-heading); }
+:root[data-theme] .aviator-panel-heading p { margin: 0; color: var(--text-2); font-size: var(--type-caption); line-height: var(--line-caption); }
+.aviator-history-controls { display: grid; grid-template-columns: minmax(0,1fr) minmax(0,1fr) minmax(0,1.5fr) minmax(0,1.2fr); gap: 10px; padding: 0 12px 10px; border-bottom: 1px solid var(--border); }
+:root[data-theme] .aviator-history-controls .aviator-rounds-toggle { align-self: end; min-width: 0; min-height: 40px; padding: 0; gap: 6px; }
+.aviator-rounds-toggle { --switch-travel: 16px; }
+.aviator-rounds-toggle .ds-switch__label { min-width: 0; font-size: 12px; }
+.aviator-rounds-toggle .ds-switch__track { width: 36px; height: 20px; }
+.aviator-rounds-toggle .ds-switch__thumb { width: 16px; height: 16px; top: 2px; left: 2px; }
+:root[data-theme] .aviator-history-controls label { display: block; min-width: 0; margin: 0; color: var(--text-2); font-size: 11px; }
+:root[data-theme] .aviator-home .app-select__trigger { min-height: var(--control-height); border: 1px solid var(--border-strong); border-radius: var(--radius-12); background: var(--bg-2); color: var(--text); padding: var(--space-3); font-size: var(--type-body-sm); }
+:root[data-theme] .aviator-home .app-select__trigger[aria-expanded="true"] { border-color: var(--primary-text); }
+:root[data-theme] .aviator-home .app-select__trigger:disabled { color: var(--text-3); opacity: 1; border-style: dashed; cursor: not-allowed; }
+:root[data-theme] .aviator-home .app-select__options { border-color: var(--border-strong); border-radius: var(--radius-12); background: var(--surface-solid); box-shadow: var(--shadow-card); padding: var(--space-1); scrollbar-color: var(--border-strong) transparent; }
+:root[data-theme] .aviator-home .app-select__options button { min-height: var(--touch-target); color: var(--text-2); font-size: var(--type-body-sm); border-radius: var(--radius-8); padding: var(--space-3); }
+:root[data-theme] .aviator-home .app-select__options button:hover, :root[data-theme] .aviator-home .app-select__options button.is-selected { background: var(--primary-soft); color: var(--primary-text); }
+:root[data-theme] .aviator-history-note { margin: var(--space-3) var(--space-4) 0; color: var(--text-2); font-size: var(--type-caption); line-height: var(--line-body-sm); }
+.aviator-history-results { padding: 10px; }
+.aviator-candle-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(104px, 1fr)); align-content: start; gap: 8px 6px; max-height: 390px; overflow-y: auto; padding: 4px; scrollbar-width: thin; scrollbar-color: var(--border-strong) transparent; }
+.aviator-candle-item { display: flex; flex-direction: column; align-items: center; gap: 4px; min-width: 0; text-align: center; }
+.aviator-candle { position: relative; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 3px; width: 100%; height: 52px; min-width: 0; min-height: 0; margin: 0; padding: 5px 6px; overflow: hidden; border: 1px solid var(--candle-border); border-radius: 9px; background: var(--candle-background); color: var(--candle-color); cursor: pointer; transition: border-color var(--motion-theme),box-shadow var(--motion-theme); }
+.aviator-candle--low { --candle-color: #2799ff; --candle-border: #155b9e; --candle-background: #15283f; }
+.aviator-candle--medium { --candle-color: #ae6aff; --candle-border: #70429e; --candle-background: #2b1e3d; }
+.aviator-candle--high { --candle-color: #e94dce; --candle-border: #91327f; --candle-background: #351d32; box-shadow: 0 0 16px rgba(233,77,206,.16); }
+:root[data-theme="light"] .aviator-candle--low { --candle-color: #0067c4; --candle-border: #7cbbef; --candle-background: #e7f2ff; }
+:root[data-theme="light"] .aviator-candle--medium { --candle-color: #7936b7; --candle-border: #b69ad6; --candle-background: #f0e7fa; }
+:root[data-theme="light"] .aviator-candle--high { --candle-color: #b31d91; --candle-border: #db8bcc; --candle-background: #fbe5f6; }
+.aviator-candle:hover { border-color: currentColor; box-shadow: inset 0 0 0 1px currentColor; }
+:root[data-theme] .aviator-candle strong { max-width: 100%; white-space: nowrap; color: inherit; font: 800 calc(20px * var(--candle-odd-scale,1))/1.1 Arial, Helvetica, sans-serif; font-variant-numeric: tabular-nums; }
+.aviator-candle strong span { font-size: inherit; }
+:root[data-theme] .aviator-candle-item time { display: block; margin: 0; color: var(--text); font: 600 12px/1.2 Arial, Helvetica, sans-serif; white-space: nowrap; font-variant-numeric: tabular-nums; }
+.aviator-candle-round { display: block; width: 100%; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; color: var(--text); font: 700 13px/1.2 Arial, Helvetica, sans-serif; font-variant-numeric: tabular-nums; text-align: center; }
+.aviator-candle.is-selected { outline: 2px solid var(--text-3); outline-offset: 2px; border-color: currentColor; box-shadow: inset 0 0 0 1px currentColor; }
+.aviator-candle.is-pattern { border-color: var(--success); box-shadow: inset 0 0 0 1px var(--success); }
+.aviator-candle-marker { position: absolute; display: flex; gap: 0; top: 1px; right: 1px; color: var(--primary-text); }
+.aviator-candle.is-pattern .aviator-candle-marker { color: var(--success); }
+.aviator-history-legend { display: flex; flex-wrap: wrap; align-items: center; gap: 10px; margin-top: 8px; color: var(--text-2); font-size: 10px; }
+.aviator-history-legend > span { display: inline-flex; align-items: center; gap: var(--space-1); }
+.aviator-history-legend > span:last-child { margin-left: auto; font-family: var(--font-mono); }
+.aviator-history-legend .low { color: var(--info); } .aviator-history-legend .medium { color: var(--primary-text); } .aviator-history-legend .high { color: var(--a-rosas); }
+.aviator-statistics { padding: 0 12px; border-top: 1px solid var(--border); background: var(--surface-solid); border-radius: 0 0 var(--radius-20) var(--radius-20); }
+.aviator-statistics summary { min-height: 44px; padding: 12px 0; cursor: pointer; color: var(--text-2); font-size: 12px; font-weight: 500; }
+.aviator-statistics summary::marker { color: var(--primary-text); }
+.aviator-statistics summary:focus-visible { outline: 2px solid var(--focus-ring); outline-offset: 2px; border-radius: 6px; }
+.aviator-statistics__sample { display: inline-block; margin-left: 8px; color: var(--primary-text); font-size: 11px; }
+.aviator-statistics__body { padding-bottom: 16px; }
+.aviator-statistics__grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: var(--space-3); margin: 14px 0 0; }
+.aviator-statistics__grid > div { min-width: 0; padding: 10px 12px; border: 1px solid var(--border); border-radius: var(--radius-8); background: var(--bg-2); }
+.aviator-statistics dt { margin-bottom: 4px; color: var(--text-2); font-size: 12px; font-weight: 400; }
+.aviator-statistics dd { margin: 0; color: var(--text); font: 600 16px/1.35 var(--font-mono); font-variant-numeric: tabular-nums; overflow-wrap: anywhere; }
+.aviator-statistics__frequent { display: flex; flex-wrap: wrap; gap: 6px 12px; margin-top: 12px; color: var(--text-2); font-size: 12px; }
+.aviator-statistics__frequent strong { color: var(--text); font-family: var(--font-mono); }
+.aviator-statistics__section { margin-top: 18px; padding-top: 16px; border-top: 1px solid var(--border); }
+:root[data-theme] .aviator-statistics__section h3 { margin: 0; color: var(--text); font-size: 14px; font-weight: 600; line-height: 1.4; }
+.aviator-statistics__distribution { display: grid; gap: 12px; margin: 12px 0 0; padding: 0; list-style: none; }
+.aviator-statistics__distribution li > div:first-child { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 4px 12px; margin-bottom: 6px; color: var(--text-2); font-size: 12px; }
+.aviator-statistics__distribution strong { color: var(--text); font-family: var(--font-mono); font-size: 12px; }
+.aviator-statistics__distribution strong span { color: var(--text-2); font-weight: 400; }
+.aviator-statistics__track { height: 6px; border-radius: 6px; overflow: hidden; background: var(--surface-2); }
+.aviator-statistics__track > span { display: block; height: 100%; border-radius: inherit; background: var(--primary-text); }
+.aviator-statistics__band--low .aviator-statistics__track > span { background: var(--info); }
+.aviator-statistics__band--high .aviator-statistics__track > span { background: var(--a-rosas); }
+.aviator-statistics__table-wrap { max-width: 100%; overflow-x: auto; margin-top: 10px; }
+.aviator-statistics__table { width: 100%; margin: 0; border-collapse: collapse; font-size: 12px; }
+.aviator-statistics__table :is(th,td) { padding: 10px 8px; border-bottom: 1px solid var(--border); color: var(--text); text-align: right; font-variant-numeric: tabular-nums; }
+.aviator-statistics__table thead th { color: var(--text-2); font-weight: 500; }
+.aviator-statistics__table tr > :first-child { text-align: left; padding-left: 0; }
+.aviator-statistics__table tr > :last-child { padding-right: 0; }
+.aviator-statistics__table tbody td:last-child { font-size: 11px; }
+.aviator-statistics__table tbody tr:last-child > * { border-bottom: 0; }
+.aviator-statistics__streaks { display: grid; grid-template-columns: repeat(3,minmax(0,1fr)); gap: 12px; margin: 12px 0 0; }
+.aviator-statistics__streaks > div { min-width: 0; }
+:root[data-theme] .aviator-statistics__note { margin: 8px 0 0; color: var(--text-2); font-size: var(--type-caption); }
+.aviator-loading-state { display: flex; align-items: center; justify-content: center; gap: var(--space-3); min-height: 100px; padding: 12px; color: var(--text-2); font-size: var(--type-body-sm); }
+.aviator-loading-spinner { width: 20px; height: 20px; border: 2px solid var(--border-strong); border-top-color: var(--primary-text); border-radius: 50%; animation: aviator-loading-spin .8s linear infinite; }
+.aviator-player-frame { position: relative; isolation: isolate; min-height: 300px; background: var(--bg-2); }
+.aviator-player-frame iframe { display: block; position: relative; z-index: 1; width: 100%; height: 700px; border: 0; pointer-events: auto; touch-action: auto; }
+.aviator-player-frame:fullscreen { display: flex; align-items: stretch; background: var(--bg); }
+.aviator-player-frame:fullscreen iframe { height: 100%; }
+:root[data-theme] .aviator-bankroll-link { display: flex; align-items: center; gap: var(--space-4); padding: var(--space-5); border-radius: var(--radius-20); color: var(--text-2); }
+.aviator-bankroll-link__icon { display: grid; place-items: center; flex: 0 0 var(--control-height); height: var(--control-height); border-radius: var(--radius-12); background: var(--primary-soft); color: var(--primary-text); }
+.aviator-bankroll-link strong { display: block; margin-bottom: var(--space-1); color: var(--text); font-size: var(--type-body-sm); font-weight: 600; }
+.aviator-bankroll-link span > span { display: block; color: var(--text-2); font-size: var(--type-caption); line-height: var(--line-body-sm); }
+.aviator-bankroll-link > .ds-icon { margin-left: auto; color: var(--primary-text); }
+:root[data-theme] .aviator-bankroll-link:hover { border-color: var(--primary-text); }
+:root[data-theme] .aviator-home :is(a,button,select):focus-visible { outline: var(--focus-width) solid var(--focus-ring); outline-offset: 3px; box-shadow: var(--focus-shadow); }
+:root[data-theme] .aviator-home .app-empty-state__icon { border-color: var(--border-strong); background: var(--primary-soft); color: var(--primary-text); }
+:root[data-theme] .aviator-home .app-empty-state strong { color: var(--text); font-size: var(--type-body); }
+:root[data-theme] .aviator-home .app-empty-state p { color: var(--text-2); font-size: var(--type-body-sm); }
+:root[data-theme] .aviator-home .app-empty-state button { min-height: var(--control-height); border-color: var(--border-strong); border-radius: var(--radius-14); background: var(--primary-soft); color: var(--primary-text); font-size: var(--type-body-sm); }
+@keyframes aviator-loading-spin { to { transform: rotate(360deg); } }
+@media (max-width: 600px) {
+  :root[data-theme] .aviator-zones { padding: 12px; border-radius: 12px; }
+  .aviator-zones__grid { grid-template-columns: repeat(2,minmax(0,1fr)); gap: 8px; }
+  .aviator-zones__grid > section { padding: 12px; }
+  .aviator-zones__distance { grid-column: 1 / -1; }
+  .aviator-zones__distance-value { margin-top: 0; font-size: 18px; }
+  .aviator-home__header { align-items: flex-start; margin-bottom: var(--space-5); }
+  .aviator-home__header > a { padding: 0; width: var(--control-height); flex-shrink: 0; }
+  .aviator-home__header > a span { display: none; }
+  .aviator-version-selector { width: 100%; }
+  .aviator-version-selector button { flex: 1; min-width: 0; padding: var(--space-3) var(--space-2); }
+  .aviator-version-label { gap: var(--space-1); }
+  .aviator-version-label .ds-icon { width: 16px; height: 16px; }
+  .aviator-panel-heading { padding: var(--space-4); align-items: flex-start; flex-wrap: wrap; }
+  .aviator-panel-heading .aviator-secondary-action { padding: var(--space-2) var(--space-3); font-size: var(--type-caption); }
+  .aviator-history-controls { grid-template-columns: 1fr 1fr; gap: 8px; padding: 0 10px 10px; }
+  .aviator-history-results { padding: 10px; }
+  .aviator-candle-grid { grid-template-columns: repeat(5, minmax(0, 1fr)); gap: 8px 4px; max-height: 320px; padding: 4px; }
+  .aviator-candle { height: 44px; padding: 4px 2px; gap: 2px; border-radius: 7px; }
+  :root[data-theme] .aviator-candle strong { font-size: calc(14px * var(--candle-odd-scale,1)); }
+  .aviator-candle-round { font-size: 10px; letter-spacing: -.3px; }
+  :root[data-theme] .aviator-candle-item time { font-size: 10px; letter-spacing: -.1px; }
+  .aviator-history-legend { gap: var(--space-2); }
+  .aviator-statistics { padding: 0 12px; }
+  .aviator-statistics__grid { grid-template-columns: 1fr 1fr; gap: var(--space-4); }
+  .aviator-statistics__grid > div { padding: 10px; }
+  .aviator-statistics__streaks { grid-template-columns: 1fr; gap: 10px; }
+  .aviator-statistics__streaks > div { display: flex; align-items: baseline; justify-content: space-between; gap: 12px; }
+  .aviator-statistics__streaks dt { margin: 0; }
+  .aviator-statistics__streaks dd { flex-shrink: 0; font-size: 14px; }
+  .aviator-history-note { margin: 8px 10px 0; }
+  :root[data-theme] .aviator-bankroll-link { padding: var(--space-4); gap: var(--space-3); }
+  .aviator-player-frame iframe { height: 600px; }
+}
+@media (max-width: 360px) {
+  .aviator-version-selector button { font-size: var(--type-caption); }
+}
+:root[data-theme] .aviator-player-panel.aviator-player-panel--expanded { position: fixed; inset: 0; z-index: 10000; display: flex; flex-direction: column; height: 100dvh; margin: 0; border: 0; border-radius: 0; padding-top: env(safe-area-inset-top, 0px); background: var(--surface-solid); backdrop-filter: none; -webkit-backdrop-filter: none; }
+:root[data-theme] .aviator-player-panel--expanded.edge::after { display: none; }
+.aviator-player-panel--expanded .aviator-panel-heading { flex-shrink: 0; padding: var(--space-3) var(--space-4); }
+.aviator-player-panel--expanded .aviator-panel-heading p { display: none; }
+.aviator-player-panel--expanded .aviator-player-frame { flex: 1; min-height: 0; padding-bottom: env(safe-area-inset-bottom, 0px); }
+.aviator-player-panel--expanded .aviator-player-frame iframe { height: 100%; }
+@media (max-width: 991px) { #root .admin-main-panel { transform: none; } }
+
+:root[data-theme] .aviator-history-panel .app-select__trigger { min-height: 40px; padding: 7px 9px; border-radius: 8px; font-size: 12px; }
+.aviator-history-controls .app-select__trigger > span { min-width: 0; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+:root[data-theme] .aviator-history-panel .aviator-history-note { margin: 8px 12px 0; font-size: 10px; line-height: 1.35; }
+@media (max-width: 600px) {
+  :root[data-theme] .aviator-history-panel { border-radius: 12px; }
+  .aviator-history-panel .aviator-panel-heading { padding: 10px; }
+  :root[data-theme] .aviator-history-panel .aviator-panel-heading h2 { font-size: 15px; }
+  :root[data-theme] .aviator-history-panel .aviator-panel-heading p { font-size: 10px; }
+  :root[data-theme] .aviator-history-panel .aviator-history-note { margin: 7px 10px 0; }
+  :root[data-theme] .aviator-history-controls .aviator-rounds-toggle { gap: 5px; }
+  .aviator-rounds-toggle .ds-switch__label { font-size: 11px; }
+  .aviator-history-legend .ds-icon { width: 12px; height: 12px; }
+}
+@media (max-width: 360px) {
+  .aviator-history-results { padding: 8px 6px; }
+  :root[data-theme] .aviator-candle strong { font-size: calc(13px * var(--candle-odd-scale,1)); }
+  .aviator-candle-round { font-size: 9.5px; }
+  :root[data-theme] .aviator-candle-item time { font-size: 9.5px; }
+}

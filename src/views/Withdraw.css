@@ -1,0 +1,48 @@
+/* Wallet presentation only; request handling and Pix key semantics stay in Withdraw.js. */
+.withdraw-page { color: var(--text); padding-bottom: 100px !important; }
+.withdraw-shell { max-width: 760px; margin: 0 auto; }
+:root[data-theme] .withdraw-back { display: inline-flex; align-items: center; gap: var(--space-2); min-height: var(--touch-target); margin-bottom: var(--space-4); color: var(--text-2); font-size: var(--type-caption); }
+:root[data-theme] .withdraw-back:hover { color: var(--primary-text); }
+.withdraw-eyebrow { color: var(--primary-text); font: 600 var(--type-caption)/var(--line-caption) var(--font-body); letter-spacing: .1em; text-transform: uppercase; }
+:root[data-theme] .withdraw-header h1 { margin: var(--space-2) 0; color: var(--text); font: 700 var(--type-h1)/var(--line-h1) var(--font-heading); }
+:root[data-theme] .withdraw-header p { margin: 0; color: var(--text-2); font-size: var(--type-body-sm); line-height: var(--line-body-sm); }
+:root[data-theme] .withdraw-card { margin-top: var(--space-6); padding: var(--space-6); border-radius: var(--radius-20); }
+:root[data-theme="light"] .withdraw-card, :root[data-theme="light"] .withdraw-support { background-color: var(--surface-solid); }
+.withdraw-card-heading { display: flex; align-items: center; gap: var(--space-3); margin-bottom: var(--space-6); }
+.withdraw-icon { display: grid; place-items: center; flex: 0 0 var(--touch-target); height: var(--touch-target); border: 1px solid var(--border); border-radius: var(--radius-12); background: var(--primary-soft); color: var(--primary-text); }
+.withdraw-location { display: block; margin-bottom: var(--space-1); color: var(--text-2); font-size: var(--type-caption); line-height: var(--line-caption); }
+:root[data-theme] .withdraw-card h2 { margin: 0; color: var(--text); font: 600 var(--type-h2)/var(--line-h2) var(--font-heading); }
+.withdraw-page fieldset { border: 0; margin: 0; padding: 0; min-width: 0; }
+.withdraw-page .auth-field { margin-bottom: var(--space-5); }
+:root[data-theme] .withdraw-page label { display: block; margin-bottom: var(--space-2); font-size: var(--type-body-sm); color: var(--text-2); }
+:root[data-theme] .withdraw-page :is(input, select) { width: 100%; min-height: var(--control-height); padding: var(--space-3) var(--space-4); border: 1px solid var(--border-strong); border-radius: var(--radius-12); background: var(--surface-solid); color: var(--text); font: 400 1rem/var(--line-body) var(--font-body); }
+:root[data-theme] .withdraw-page #withdraw-amount { height: 64px; font: 600 var(--type-h1)/var(--line-h1) var(--font-mono); font-variant-numeric: tabular-nums; }
+:root[data-theme] .withdraw-page input::placeholder { color: var(--text-3); opacity: 1; }
+:root[data-theme] .withdraw-page select { margin-bottom: var(--space-4); appearance: auto; }
+:root[data-theme] .withdraw-page :is(input, select):focus { outline: var(--focus-width) solid var(--focus-ring); outline-offset: var(--focus-spread); border-color: var(--primary-text); box-shadow: var(--focus-shadow); }
+:root[data-theme] .withdraw-page input[aria-invalid="true"] { border-color: var(--danger); }
+:root[data-theme] .withdraw-page fieldset:disabled :is(input, select) { background: var(--surface-2); color: var(--text-3); opacity: 1; cursor: not-allowed; }
+:root[data-theme] .withdraw-hint { margin: 0 0 var(--space-5); color: var(--text-2); font-size: var(--type-caption); line-height: var(--line-body-sm); }
+:root[data-theme] .withdraw-error { color: var(--danger); font-size: var(--type-body-sm); line-height: var(--line-body-sm); margin-bottom: var(--space-4); overflow-wrap: anywhere; }
+:root[data-theme] .withdraw-page .withdraw-primary { width: 100%; margin: 0; background-image: linear-gradient(var(--button-scrim),var(--button-scrim)),var(--gradient-primary) !important; background-position: center; background-size: 100% 100%; }
+:root[data-theme] .withdraw-page .withdraw-primary:disabled { background-image: none !important; }
+.withdraw-action-area { display: flex; flex-wrap: wrap; align-items: center; gap: var(--space-3) var(--space-4); margin-top: var(--space-6); padding-top: var(--space-5); border-top: 1px solid var(--border); }
+:root[data-theme] .withdraw-page .withdraw-secondary { margin: 0; }
+:root[data-theme] .withdraw-action-area p { margin: 0; color: var(--text-2); font-size: var(--type-caption); line-height: var(--line-body-sm); }
+:root[data-theme] .withdraw-support { display: flex; flex-wrap: wrap; align-items: center; gap: var(--space-3); padding: var(--space-5); margin-top: var(--space-4); border-radius: var(--radius-16); }
+.withdraw-support-icon { color: var(--primary-text); }
+.withdraw-support > div { flex: 1 1 180px; min-width: 0; }
+:root[data-theme] .withdraw-support h2 { margin: 0 0 var(--space-1); color: var(--text); font: 600 var(--type-body)/var(--line-body) var(--font-heading); }
+:root[data-theme] .withdraw-support p { margin: 0; color: var(--text-2); font-size: var(--type-caption); line-height: var(--line-body-sm); }
+.withdraw-success { display: flex; align-items: flex-start; gap: var(--space-3); padding: var(--space-4); border: 1px solid var(--success); background: var(--surface-solid); border-radius: var(--radius-12); color: var(--success); }
+:root[data-theme] .withdraw-success strong { display: block; font: 600 var(--type-body)/var(--line-body) var(--font-heading); }
+:root[data-theme] .withdraw-success p { margin: var(--space-2) 0 0; color: var(--text-2); font-size: var(--type-body-sm); line-height: var(--line-body-sm); }
+@media (max-width: 600px) {
+  :root[data-theme] .withdraw-card { padding: var(--space-5) var(--space-4); }
+  .withdraw-card-heading { align-items: flex-start; }
+  :root[data-theme] .withdraw-support { padding: var(--space-4); }
+  .withdraw-action-area { align-items: flex-start; flex-direction: column; }
+  :root[data-theme] .withdraw-page .withdraw-secondary { width: 100%; }
+}
+
+:root[data-theme] .withdraw-page .auth-field-hint { margin: var(--space-2) 0 0; color: var(--primary-text); font-size: var(--type-caption); line-height: var(--line-body-sm); font-weight: 600; }

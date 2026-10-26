@@ -1,0 +1,29 @@
+Menu da conta — painel que abre pela direita
+
+Saque commitado em 0f5df10 antes desta etapa.
+
+Alterações:
+- AccountDrawer e DepositRankingPreview usam ícones Lucide e tokens compartilhados.
+- Superfície sólida em claro/escuro, backdrop, bordas violetas, tipografia e valores em fonte mono.
+- Controles de fechar/copiar/atualizar têm 44px; ação Depositar e demais botões têm 48px.
+- Em 320px os saldos são empilhados para evitar compressão e rolagem horizontal.
+- Entrada sem animação; indicador de carregamento continua via aria-busy e estados de texto.
+- Links, dados, atualização de saldo, logout, top 5, cópia de ID, Escape e contenção de foco preservados.
+
+Validação:
+- 3 testes de AccountDrawer aprovados (ranking, fechamento/restauração do foco, teclado e cópia).
+- Conferido no npm start em localhost:3000, sem build.
+- Tema escuro em 1440x1000; claro em 390x844; largura de 320px sem overflow no painel.
+- Escape e botão fechar conferidos no navegador. Tema e viewport restaurados.
+- Capturas restritas às ações para não registrar nome, ID ou saldos da conta.
+- Nenhuma transação, logout ou mensagem ao suporte executada.
+
+Alterações do menu permanecem sem commit para revisão.
+
+Atualização — alternar tema pelo menu da direita:
+- Seção Aparência, abaixo do perfil, com o interruptor Modo claro.
+- Reutiliza ThemeToggle e ThemeContext: ligado usa claro; desligado usa escuro. A escolha vale para todo o app e fica salva pela preferência existente.
+- Verificado no navegador em localhost:3001: alternância nos dois sentidos e preferência mantida ao fechar/reabrir o menu. Tema inicial restaurado.
+- AccountDrawer e ThemeWrapper: 2 suítes, 14 testes aprovados, incluindo alternância e persistência ao remontar o provedor.
+- npm run build aprovado, com avisos anteriores do projeto; git diff --check aprovado.
+- Capturas alternar-tema-escuro.jpg e alternar-tema-claro.jpg em docs/design/revisao-menu-conta/, restritas ao controle de aparência.

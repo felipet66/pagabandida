@@ -1,0 +1,421 @@
+<!DOCTYPE html>
+<html lang="pt-BR"><head>
+<meta charset="utf-8">
+<title>Probabilidades · desktop</title>
+<script src="8d3e6ce6-8f89-49ce-9422-7ab9fa333d0f"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<style></style>
+<style>
+body{margin:0;background:#050309}
+*{box-sizing:border-box}
+.t-dark{--bg:#07050D;--surface:rgba(22,15,42,.66);--surface-solid:#140E26;--surface-2:#1C1535;--surface-3:#261C47;--border:rgba(167,139,250,.16);--border-strong:rgba(167,139,250,.36);--text:#F4F1FF;--text-2:#BDB4DA;--text-3:#8F86B2;--primary:#7C3AED;--primary-text:#B79BFF;--primary-soft:rgba(124,58,237,.18);--glow:rgba(139,92,246,.55);--glow-soft:rgba(139,92,246,.22);--pink:#FF5FD2;--pink-soft:rgba(255,95,210,.16);--success:#34D399;--warning:#FBBF24;--danger:#F87171;--shadow-card:0 1px 0 rgba(255,255,255,.04) inset,0 12px 40px rgba(0,0,0,.55);--shadow-glow:0 0 0 1px rgba(167,139,250,.35),0 0 28px -6px rgba(139,92,246,.6);--grid-line:rgba(167,139,250,.07);--track:rgba(167,139,250,.14);--track-off:#2B2247;--edge-a:rgba(183,155,255,.75);--edge-b:rgba(255,95,210,.45);--bar-bg:rgba(13,9,25,.82);color-scheme:dark}
+.t-light{--bg:#F7F5FF;--surface:rgba(255,255,255,.80);--surface-solid:#FFFFFF;--surface-2:#F3EFFF;--surface-3:#E9E2FF;--border:rgba(76,29,149,.12);--border-strong:rgba(76,29,149,.28);--text:#120B24;--text-2:#463D63;--text-3:#615880;--primary:#7C3AED;--primary-text:#6D28D9;--primary-soft:rgba(124,58,237,.10);--glow:rgba(124,58,237,.28);--glow-soft:rgba(124,58,237,.12);--pink:#C0178E;--pink-soft:rgba(192,23,142,.10);--success:#047857;--warning:#B45309;--danger:#B91C1C;--shadow-card:0 1px 2px rgba(18,11,36,.06),0 10px 30px rgba(91,33,182,.10);--shadow-glow:0 0 0 1px rgba(124,58,237,.35),0 8px 24px -6px rgba(124,58,237,.35);--grid-line:rgba(91,33,182,.06);--track:rgba(91,33,182,.12);--track-off:#D9D1F2;--edge-a:rgba(124,58,237,.45);--edge-b:rgba(192,23,142,.25);--bar-bg:rgba(255,255,255,.86);color-scheme:light}
+.app{font-family:'Sora',system-ui,sans-serif;color:var(--text);background-color:var(--bg);-webkit-font-smoothing:antialiased}
+.fx{background-image:radial-gradient(700px 420px at 95% -10%,var(--glow-soft),transparent 70%),radial-gradient(600px 380px at 10% 50%,var(--primary-soft),transparent 70%),linear-gradient(var(--grid-line) 1px,transparent 1px),linear-gradient(90deg,var(--grid-line) 1px,transparent 1px);background-size:auto,auto,28px 28px,28px 28px}
+.glass{background:var(--surface);-webkit-backdrop-filter:blur(16px) saturate(140%);backdrop-filter:blur(16px) saturate(140%);border:1px solid var(--border);box-shadow:var(--shadow-card)}
+.edge{position:relative}
+.edge::after{content:"";position:absolute;inset:0;border-radius:inherit;padding:1px;background:linear-gradient(140deg,var(--edge-a),transparent 38%,transparent 62%,var(--edge-b));-webkit-mask:linear-gradient(#000 0 0) content-box,linear-gradient(#000 0 0);-webkit-mask-composite:xor;mask-composite:exclude;pointer-events:none}
+.disp{font-family:'Chakra Petch',sans-serif;letter-spacing:.01em}
+.mono{font-family:'JetBrains Mono',ui-monospace,monospace;font-variant-numeric:tabular-nums}
+.ic{fill:none;stroke:currentColor;stroke-width:1.75;stroke-linecap:round;stroke-linejoin:round;flex-shrink:0}
+.lbl{font-size:11.5px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--text-3)}
+.frame{width:1440px;height:1100px;border-radius:20px;overflow:hidden;border:1px solid var(--border);display:flex;box-shadow:0 40px 100px -40px rgba(0,0,0,.7)}
+.side{width:256px;flex-shrink:0;padding:16px 12px;display:flex;flex-direction:column;border-right:1px solid var(--border);background:var(--bar-bg)}
+.nav-i{display:flex;align-items:center;gap:12px;min-height:44px;padding:0 12px;border-radius:12px;color:var(--text-2);text-decoration:none;font-size:14px;font-weight:500}
+.nav-i.on{color:var(--text);background:var(--primary-soft);box-shadow:inset 0 0 0 1px var(--border-strong)}
+.nav-i.on .ic{color:var(--primary-text)}
+.nav-sec{font-size:11px;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:var(--text-3);padding:14px 12px 6px}
+.new{margin-left:auto;font-size:10px;font-weight:700;letter-spacing:.08em;padding:3px 7px;border-radius:999px;color:var(--primary-text);background:var(--primary-soft);border:1px solid var(--border-strong)}
+.topbar{height:72px;flex-shrink:0;display:flex;align-items:center;justify-content:space-between;padding:0 16px 0 40px;border-bottom:1px solid var(--border);background:var(--bar-bg)}
+.icon-btn{appearance:none;border:0;background:transparent;color:var(--text-2);width:44px;height:44px;border-radius:12px;display:inline-flex;align-items:center;justify-content:center;position:relative;cursor:pointer}
+.count{position:absolute;top:6px;right:5px;min-width:18px;height:18px;padding:0 5px;border-radius:999px;background:#FF5FD2;color:#1A0614;font-size:11px;font-weight:700;display:flex;align-items:center;justify-content:center;box-shadow:0 0 0 2px var(--bg)}
+.t-light .count{background:#C0178E;color:#fff}
+.notice{display:flex;gap:10px;align-items:flex-start;padding:12px 14px;border-radius:14px;font-size:12.5px;line-height:1.45;color:var(--text-2);background:var(--surface-2);border:1px solid var(--border)}
+.btn{appearance:none;border:0;cursor:pointer;font:inherit;display:inline-flex;align-items:center;justify-content:center;gap:10px;min-height:52px;padding:0 24px;border-radius:16px;font-weight:600;font-size:16px;text-decoration:none;transition:transform .15s,box-shadow .15s}
+.btn-primary{color:#fff;background:linear-gradient(180deg,#9466FF 0%,#7C3AED 55%,#6D28D9 100%);box-shadow:var(--shadow-glow)}
+.btn-primary:hover{transform:translateY(-1px)}
+.btn-secondary{color:var(--primary-text);background:var(--primary-soft);border:1px solid var(--border-strong)}
+.btn-ghost{color:var(--text-2);background:transparent;border:1px solid var(--border-strong)}
+.btn-dis{cursor:not-allowed;background:var(--surface-2);color:var(--text-2);border:1px dashed var(--border-strong);box-shadow:none}
+.btn-onhero{color:#1A0F33;background:#fff;box-shadow:0 0 0 1px rgba(255,255,255,.6),0 10px 30px -6px rgba(183,155,255,.8)}
+.btn-onhero-dis{cursor:not-allowed;color:#E9E2FF;background:rgba(255,255,255,.1);border:1px dashed rgba(255,255,255,.45)}
+.hero{position:relative;border-radius:24px;overflow:hidden;color:#fff;background:linear-gradient(160deg,#1A0F33 0%,#2A1260 55%,#4C1D95 100%);box-shadow:var(--shadow-card),0 0 0 1px rgba(183,155,255,.28);transition:height .5s cubic-bezier(.2,.8,.2,1)}
+.hero-tag{display:inline-flex;align-items:center;gap:6px;font-size:12px;font-weight:600;padding:6px 10px;border-radius:999px;background:rgba(7,5,13,.55);-webkit-backdrop-filter:blur(8px);backdrop-filter:blur(8px);color:#E9E2FF;border:1px solid rgba(183,155,255,.3)}
+.live{width:8px;height:8px;border-radius:50%;background:#34D399;box-shadow:0 0 0 3px rgba(52,211,153,.25)}
+.chip{display:inline-flex;align-items:center;gap:6px;height:28px;padding:0 12px;border-radius:999px;font-family:'JetBrains Mono',monospace;font-size:13px;font-weight:700}
+.c3{color:var(--primary-text);background:var(--primary-soft);box-shadow:inset 0 0 0 1px var(--primary-text)}
+.c10{color:var(--pink);background:var(--pink-soft);box-shadow:inset 0 0 0 1px var(--pink)}
+.win{border-radius:24px;padding:24px 26px;display:flex;gap:20px;align-items:center;animation:rise .7s cubic-bezier(.2,.8,.2,1) both}
+.win10{box-shadow:var(--shadow-card),0 0 0 1px var(--pink),0 0 40px -12px var(--pink);animation-delay:.08s}
+@keyframes rise{from{opacity:0;transform:scale(.96);filter:blur(8px)}to{opacity:1;transform:none;filter:none}}
+.bar{height:8px;border-radius:999px;background:var(--track);overflow:hidden}
+.bar i{display:block;height:100%;border-radius:inherit;background:linear-gradient(90deg,#7C3AED,#B79BFF);box-shadow:0 0 12px var(--glow)}
+.term{border-radius:24px;padding:22px 24px;background:#07050D;color:#D9CCFF;border:1px solid rgba(183,155,255,.3);box-shadow:0 0 0 1px rgba(124,58,237,.25),0 0 40px -10px rgba(139,92,246,.7);position:relative;overflow:hidden}
+.scan{position:absolute;left:0;right:0;height:60px;background:linear-gradient(180deg,transparent,rgba(183,155,255,.18),transparent);border-bottom:1px solid rgba(183,155,255,.55);transition:top .1s linear}
+.sw{appearance:none;border:0;padding:0;cursor:pointer;width:46px;height:28px;border-radius:999px;background:#2B2247;box-shadow:inset 0 0 0 1px rgba(167,139,250,.36);position:relative;flex-shrink:0}
+.sw::after{content:"";position:absolute;top:3px;left:3px;width:22px;height:22px;border-radius:50%;background:#fff;box-shadow:0 1px 3px rgba(0,0,0,.35);transition:transform .22s cubic-bezier(.2,.8,.2,1)}
+.sw.on{background:#7C3AED;box-shadow:none}
+.sw.on::after{transform:translateX(18px)}
+.tool{appearance:none;cursor:pointer;font:inherit;min-height:40px;padding:0 14px;border-radius:12px;font-size:13px;font-weight:600;color:#BDB4DA;background:#140E26;border:1px solid rgba(167,139,250,.22)}
+.tool.on{color:#fff;background:#7C3AED;border-color:#7C3AED}
+.still .win,.still .win10{animation:none}
+.still .hero,.still .sw::after,.still .btn{transition:none}
+a{color:var(--primary-text)}a:hover{color:var(--text)}
+</style>
+</helmet>
+<div class="app t-dark {{motionCls}}" style="width: 3040px; min-height: 1220px; padding: 40px; display: flex; flex-direction: column; gap: 24px; background-color: #050309">
+  <div style="display: flex; align-items: center; justify-content: space-between; gap: 24px; flex-wrap: wrap">
+    <div style="display: flex; align-items: center; gap: 16px">
+      <span class="lbl" style="color: #BDB4DA">05 · Probabilidades · desktop 1440 · protótipo</span>
+      <span style="font-size: 13px; color: #8F86B2">Clique em “Calcular horários” para ver a leitura de 3 s e a contagem ao vivo. Os dois temas seguem o mesmo estado.</span>
+    </div>
+    <div style="display: flex; align-items: center; gap: 8px; flex-wrap: wrap" role="group" aria-label="Estados para revisão">
+      <sc-for list="{{presets}}" as="p" hint-placeholder-count="7">
+        <button class="tool {{p.cls}}" sc-camel-on-click="{{p.go}}">{{p.label}}</button>
+      </sc-for>
+      <button class="tool" sc-camel-on-click="{{skip}}">Avançar 5 min</button>
+      <span style="display: flex; align-items: center; gap: 10px; margin-left: 12px; font-size: 13px; color: #BDB4DA">Reduzir movimento<button class="sw {{reduceCls}}" role="switch" aria-checked="{{reduceAria}}" aria-label="Reduzir movimento" sc-camel-on-click="{{toggleReduce}}"></button></span>
+    </div>
+  </div>
+
+  <div style="display: flex; gap: 80px">
+    <sc-for list="{{themes}}" as="th" hint-placeholder-count="2">
+      <div class="app fx frame {{th.cls}}">
+        <aside class="side" aria-label="Menu lateral">
+          <div style="display: flex; align-items: center; gap: 10px; padding: 4px 8px 12px">
+            <svg width="28" height="28" sc-camel-view-box="0 0 34 34" aria-hidden="true"><path d="M17 2 30 9.5v15L17 32 4 24.5v-15z" style="fill: none; stroke: #8B5CF6; stroke-width: 2"></path><path d="M12.5 10h6a4 4 0 0 1 1 7.9 4.2 4.2 0 0 1-1 8.1h-6z" style="fill: #7C3AED"></path></svg>
+            <span class="disp" style="font-size: 20px; font-weight: 700">betuxo</span>
+          </div>
+          <div class="nav-sec">Principal</div>
+          <a href="#" class="nav-i"><svg class="ic" width="20" height="20" sc-camel-view-box="0 0 24 24" aria-hidden="true"><path d="M3 10.5 12 3l9 7.5"></path><path d="M5 9.5V20h14V9.5"></path><path d="M10 20v-6h4v6"></path></svg>Início</a>
+          <a href="#" class="nav-i"><svg class="ic" width="20" height="20" sc-camel-view-box="0 0 24 24" aria-hidden="true"><rect x="2.5" y="7" width="19" height="11" rx="5.5"></rect><path d="M7 11v3M5.5 12.5h3"></path><circle cx="16" cy="11.5" r="1"></circle><circle cx="18" cy="13.5" r="1"></circle></svg>Jogos</a>
+          <a href="#" class="nav-i on" aria-current="page"><svg class="ic" width="20" height="20" sc-camel-view-box="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"></circle><circle cx="12" cy="12" r="5"></circle><path d="M12 12l6-6"></path></svg>Probabilidades<span class="new">NOVO</span></a>
+          <div class="nav-sec">Evolução</div>
+          <a href="GamiDesktop.dc.html" class="nav-i"><svg class="ic" width="20" height="20" sc-camel-view-box="0 0 24 24" aria-hidden="true"><path d="M8 4h8v5a4 4 0 0 1-8 0V4z"></path><path d="M16 5h3v2a3 3 0 0 1-3 3M8 5H5v2a3 3 0 0 0 3 3"></path><path d="M12 13v4M8.5 20h7"></path></svg>Gamificação<span class="new">NOVO</span></a>
+          <a href="#" class="nav-i"><svg class="ic" width="20" height="20" sc-camel-view-box="0 0 24 24" aria-hidden="true"><path d="M5 4h11a3 3 0 0 1 3 3v13H8a3 3 0 0 1-3-3z"></path><path d="M5 17a3 3 0 0 1 3-3h11"></path></svg>Aulas</a>
+          <div class="nav-sec">Carteira</div>
+          <a href="#" class="nav-i"><svg class="ic" width="20" height="20" sc-camel-view-box="0 0 24 24" aria-hidden="true"><path d="M12 3v11M7.5 9.5 12 14l4.5-4.5"></path><path d="M4 15v3a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-3"></path></svg>Depósito</a>
+          <a href="#" class="nav-i"><svg class="ic" width="20" height="20" sc-camel-view-box="0 0 24 24" aria-hidden="true"><path d="M12 14V3M7.5 7.5 12 3l4.5 4.5"></path><path d="M4 15v3a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-3"></path></svg>Saque</a>
+          <a href="#" class="nav-i"><svg class="ic" width="20" height="20" sc-camel-view-box="0 0 24 24" aria-hidden="true"><path d="M3 7.5A2.5 2.5 0 0 1 5.5 5H18v3"></path><rect x="3" y="7.5" width="18" height="12" rx="2.5"></rect><path d="M16 13.5h2"></path></svg>Gestão de banca</a>
+          <div class="nav-sec">Conta</div>
+          <a href="NotifDesktop.dc.html" class="nav-i"><svg class="ic" width="20" height="20" sc-camel-view-box="0 0 24 24" aria-hidden="true"><path d="M6 16V11a6 6 0 0 1 12 0v5l1.5 2h-15z"></path><path d="M10 20.5a2 2 0 0 0 4 0"></path></svg>Notificações<span class="new">NOVO</span></a>
+          <a href="#" class="nav-i"><svg class="ic" width="20" height="20" sc-camel-view-box="0 0 24 24" aria-hidden="true"><circle cx="12" cy="8" r="4"></circle><path d="M4 20.5a8 8 0 0 1 16 0"></path></svg>Perfil</a>
+          <a href="#" style="margin-top: auto; display: flex; align-items: center; gap: 8px; min-height: 44px; padding: 0 12px; font-size: 12px; color: var(--text-3); text-decoration: none"><svg class="ic" width="16" height="16" sc-camel-view-box="0 0 24 24" aria-hidden="true"><path d="M12 3 4.5 6v5.5c0 4.5 3.2 8.2 7.5 9.5 4.3-1.3 7.5-5 7.5-9.5V6z"></path></svg>Jogo responsável · 18+</a>
+        </aside>
+
+        <div style="flex: 1; min-width: 0; display: flex; flex-direction: column">
+          <div class="topbar">
+            <div style="display: flex; align-items: center; gap: 10px; font-size: 14px"><span style="color: var(--text-3)">Início</span><svg class="ic" width="14" height="14" sc-camel-view-box="0 0 24 24" aria-hidden="true" style="color: var(--text-3)"><path d="M9 6l6 6-6 6"></path></svg><span style="font-weight: 600">Probabilidades</span></div>
+            <div style="display: flex; align-items: center; gap: 8px">
+              <span class="mono" style="font-size: 13px; color: var(--text-2); padding: 8px 12px; border-radius: 999px; border: 1px solid var(--border); display: flex; align-items: center; gap: 8px"><svg class="ic" width="16" height="16" sc-camel-view-box="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"></circle><path d="M12 7v5l3.5 2"></path></svg>{{nowTxt}} · Brasília</span>
+              <button class="icon-btn" aria-label="Avisos da equipe, 2 não lidos"><svg class="ic" width="22" height="22" sc-camel-view-box="0 0 24 24" aria-hidden="true"><path d="M6 16V11a6 6 0 0 1 12 0v5l1.5 2h-15z"></path><path d="M10 20.5a2 2 0 0 0 4 0"></path></svg><span class="count">2</span></button>
+              <button class="icon-btn" aria-label="Perfil"><span style="width: 34px; height: 34px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 13px; font-weight: 700; color: #fff; background: linear-gradient(140deg,#8B5CF6,#C0178E)">MA</span></button>
+            </div>
+          </div>
+
+          <div style="flex: 1; padding: 32px 40px; display: flex; flex-direction: column; gap: 22px; overflow: hidden">
+            <div style="display: flex; justify-content: space-between; align-items: flex-end; gap: 32px">
+              <div style="display: flex; flex-direction: column; gap: 8px">
+                <h1 class="disp" style="margin: 0; font-size: 36px; line-height: 1.1; font-weight: 700">Probabilidades</h1>
+                <p style="margin: 0; font-size: 15px; color: var(--text-2)">Horários prováveis de multiplicadores altos no Aviator, lidos do histórico de hoje.</p>
+              </div>
+              <div class="notice" role="note" style="max-width: 470px">
+                <svg class="ic" width="18" height="18" sc-camel-view-box="0 0 24 24" aria-hidden="true" style="color: var(--warning); margin-top: 1px"><circle cx="12" cy="12" r="9"></circle><path d="M12 11v5M12 8h.01"></path></svg>
+                <span>Estimativa baseada no histórico de rodadas. Não é garantia de resultado. Jogue com responsabilidade. <b style="color: var(--text)">18+</b></span>
+              </div>
+            </div>
+
+            <div class="hero" style="height: {{heroH}}; flex-shrink: 0">
+              <svg sc-camel-view-box="0 0 1104 330" width="100%" height="100%" sc-camel-preserve-aspect-ratio="xMidYMax slice" aria-hidden="true" style="position: absolute; inset: 0; display: block; opacity: {{heroOpacity}}">
+                <defs>
+                  <linearGradient id="dTrail" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#7C3AED" stop-opacity="0"></stop><stop offset=".55" stop-color="#A78BFA"></stop><stop offset="1" stop-color="#FF5FD2"></stop></linearGradient>
+                  <linearGradient id="dArea" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#8B5CF6" stop-opacity=".45"></stop><stop offset="1" stop-color="#8B5CF6" stop-opacity="0"></stop></linearGradient>
+                  <radialGradient id="dGlow" cx=".5" cy=".5" r=".5"><stop offset="0" stop-color="#FF5FD2" stop-opacity=".9"></stop><stop offset="1" stop-color="#FF5FD2" stop-opacity="0"></stop></radialGradient>
+                  <radialGradient id="dSphere" cx=".35" cy=".35" r=".7"><stop offset="0" stop-color="#C4B0FF" stop-opacity=".5"></stop><stop offset="1" stop-color="#4C1D95" stop-opacity="0"></stop></radialGradient>
+                </defs>
+                <circle cx="900" cy="150" r="150" style="fill: url(#dSphere)"></circle>
+                <g style="fill: none; stroke: rgba(196,176,255,.22); stroke-width: 1">
+                  <ellipse cx="900" cy="150" rx="150" ry="150"></ellipse><ellipse cx="900" cy="150" rx="150" ry="60"></ellipse><ellipse cx="900" cy="150" rx="150" ry="110"></ellipse><ellipse cx="900" cy="150" rx="60" ry="150"></ellipse><ellipse cx="900" cy="150" rx="110" ry="150"></ellipse>
+                </g>
+                <g style="stroke: rgba(183,155,255,.2); stroke-width: 1">
+                  <path d="M0 240H1104M0 262H1104M0 288H1104M0 318H1104"></path>
+                  <path d="M552 200 0 330M552 200 184 330M552 200 368 330M552 200 552 330M552 200 736 330M552 200 920 330M552 200 1104 330M552 200 -300 330M552 200 1400 330"></path>
+                </g>
+                <path d="M20 318 C 360 312, 640 280, 830 96 L830 330 L20 330 Z" style="fill: url(#dArea)"></path>
+                <path d="M20 318 C 360 312, 640 280, 830 96" style="fill: none; stroke: url(#dTrail); stroke-width: 4; stroke-linecap: round"></path>
+                <circle cx="834" cy="92" r="56" style="fill: url(#dGlow)"></circle>
+                <g transform="translate(838 88) rotate(-50) scale(1.6)">
+                  <path d="M22 0 L-12 -15 L-5 0 L-12 15 Z" style="fill: #F4F1FF"></path>
+                  <path d="M22 0 L-5 0 L-12 15 Z" style="fill: #C4B0FF"></path>
+                </g>
+                <g style="fill: #E9E2FF">
+                  <circle cx="80" cy="60" r="1.6"></circle><circle cx="220" cy="30" r="1.2"></circle><circle cx="360" cy="90" r="1.8"></circle><circle cx="470" cy="40" r="1.2"></circle><circle cx="610" cy="120" r="1.5"></circle><circle cx="700" cy="30" r="1"></circle><circle cx="1010" cy="40" r="1.6"></circle><circle cx="1060" cy="210" r="1.2"></circle><circle cx="160" cy="170" r="1.1"></circle><circle cx="520" cy="170" r="1.3"></circle>
+                </g>
+              </svg>
+              <div style="position: absolute; left: 28px; top: 22px; display: flex; gap: 8px"><span class="hero-tag"><span class="live"></span>Aviator · ao vivo</span><span class="hero-tag"><span class="mono">{{rounds}}</span> rodadas hoje</span></div>
+              <sc-if value="{{showHeroCta}}" hint-placeholder-val="{{true}}">
+                <div style="position: absolute; left: 28px; right: 28px; bottom: 26px; display: flex; justify-content: space-between; align-items: flex-end; gap: 20px">
+                  <div style="display: flex; flex-direction: column; gap: 4px"><span class="disp" style="font-size: 40px; font-weight: 700; line-height: 1; text-shadow: 0 2px 16px rgba(0,0,0,.5)">Aviator</span><span style="font-size: 14px; color: #D9CCFF">Toque em calcular para ler as rodadas de hoje</span></div>
+                  <button class="btn btn-onhero" sc-camel-on-click="{{calc}}"><svg class="ic" width="22" height="22" sc-camel-view-box="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"></circle><circle cx="12" cy="12" r="5"></circle><path d="M12 12l6-6"></path></svg>Calcular horários</button>
+                </div>
+              </sc-if>
+              <sc-if value="{{showHeroCompact}}" hint-placeholder-val="{{false}}">
+                <div style="position: absolute; left: 28px; right: 28px; bottom: 22px; display: flex; justify-content: space-between; align-items: center; gap: 20px">
+                  <span class="disp" style="font-size: 28px; font-weight: 700; text-shadow: 0 2px 16px rgba(0,0,0,.5)">Aviator</span>
+                  <sc-if value="{{canRecalc}}" hint-placeholder-val="{{false}}">
+                    <button class="btn btn-onhero" sc-camel-on-click="{{calc}}"><svg class="ic" width="20" height="20" sc-camel-view-box="0 0 24 24" aria-hidden="true"><path d="M20 11a8 8 0 1 0-2.3 5.7"></path><path d="M20 5v6h-6"></path></svg>Calcular de novo</button>
+                  </sc-if>
+                  <sc-if value="{{showLockedBtn}}" hint-placeholder-val="{{false}}">
+                    <button class="btn btn-onhero-dis" disabled="" aria-describedby="lockd"><svg class="ic" width="20" height="20" sc-camel-view-box="0 0 24 24" aria-hidden="true"><rect x="5" y="10.5" width="14" height="10" rx="2.5"></rect><path d="M8 10.5V8a4 4 0 0 1 8 0v2.5"></path></svg>Nova leitura às <span class="mono">{{t3Txt}}</span></button>
+                  </sc-if>
+                  <sc-if value="{{isCalc}}" hint-placeholder-val="{{false}}">
+                    <button class="btn btn-onhero-dis" disabled="">Lendo histórico… <span class="mono">{{prog}}%</span></button>
+                  </sc-if>
+                </div>
+              </sc-if>
+            </div>
+
+            <sc-if value="{{isInicial}}" hint-placeholder-val="{{true}}">
+              <div style="display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 16px">
+                <div class="glass" style="border-radius: 20px; padding: 20px; display: flex; flex-direction: column; gap: 10px"><span class="mono" style="font-size: 13px; color: var(--primary-text)">01</span><span style="font-weight: 600">Lemos as rodadas de hoje</span><span style="font-size: 13.5px; line-height: 1.5; color: var(--text-2)">Todas as rodadas do Aviator desde 00:00, horário de Brasília.</span></div>
+                <div class="glass" style="border-radius: 20px; padding: 20px; display: flex; flex-direction: column; gap: 10px"><span class="mono" style="font-size: 13px; color: var(--primary-text)">02</span><span style="font-weight: 600">Estimamos duas janelas</span><span style="font-size: 13.5px; line-height: 1.5; color: var(--text-2)">Próximo horário provável acima de 3x e acima de 10x, com contagem regressiva.</span></div>
+                <div class="glass" style="border-radius: 20px; padding: 20px; display: flex; flex-direction: column; gap: 10px"><span class="mono" style="font-size: 13px; color: var(--primary-text)">03</span><span style="font-weight: 600">Uma leitura por vez</span><span style="font-size: 13.5px; line-height: 1.5; color: var(--text-2)">O botão libera de novo depois que o horário previsto passar.</span></div>
+              </div>
+            </sc-if>
+
+            <sc-if value="{{isCalc}}" hint-placeholder-val="{{false}}">
+              <div class="term" role="status" aria-label="Lendo histórico">
+                <div class="scan" style="top: {{scanTop}}"></div>
+                <div style="display: flex; justify-content: space-between; font-family: 'JetBrains Mono', monospace; font-size: 12px; color: #A796E0"><span>LEITURA_HISTÓRICO // AVIATOR // AMERICA/SAO_PAULO</span><span style="color: #34D399">● REC</span></div>
+                <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 32px; margin-top: 16px; align-items: center">
+                  <div style="display: flex; flex-direction: column; gap: 16px">
+                    <span class="mono" style="font-size: 72px; font-weight: 700; letter-spacing: .04em; line-height: 1; color: #F4F1FF; text-shadow: 0 0 22px rgba(167,139,250,.85)">{{scramble}}</span>
+                    <div class="bar" style="background: rgba(167,139,250,.16)"><i style="width: {{progW}}"></i></div>
+                    <div class="mono" style="display: flex; justify-content: space-between; font-size: 12.5px; color: #A796E0"><span>{{readTxt}} de {{rounds}} rodadas</span><span>{{prog}}%</span></div>
+                  </div>
+                  <div class="mono" style="display: flex; flex-direction: column; gap: 6px; font-size: 13px; color: #BDB4DA; height: 168px; overflow: hidden">
+                    <span style="color: #8F86B2">&gt; lendo rodadas de hoje (Brasília)</span>
+                    <sc-for list="{{feed}}" as="f" hint-placeholder-count="6"><span>#{{f.id}} · <span style="color: {{f.c}}">{{f.m}}</span> · {{f.h}}</span></sc-for>
+                  </div>
+                </div>
+              </div>
+            </sc-if>
+
+            <sc-if value="{{isResult}}" hint-placeholder-val="{{false}}">
+              <div style="display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 20px">
+                <div class="glass edge win">
+                  <div style="flex: 1; min-width: 0; display: flex; flex-direction: column; gap: 10px">
+                    <div style="display: flex; align-items: center; gap: 10px"><span class="chip c3">▲ 3x</span><span class="lbl">faixa 2x a 3x</span></div>
+                    <span style="font-size: 15px; color: var(--text-2)">Próximo horário provável acima de 3x</span>
+                    <span class="mono" style="font-size: 60px; font-weight: 700; line-height: 1">{{t3Txt}}</span>
+                    <span style="font-size: 13px; font-weight: 600; color: var(--primary-text)">{{w3.status}}</span>
+                  </div>
+                  <div style="position: relative; width: 132px; height: 132px; flex-shrink: 0" role="timer" aria-label="{{w3.aria}}">
+                    <svg width="132" height="132" sc-camel-view-box="0 0 132 132" aria-hidden="true"><circle cx="66" cy="66" r="58" style="fill: none; stroke: var(--track); stroke-width: 8"></circle><circle cx="66" cy="66" r="58" transform="rotate(-90 66 66)" style="fill: none; stroke: var(--primary-text); stroke-width: 8; stroke-linecap: round; stroke-dasharray: 364.4; stroke-dashoffset: {{w3.off}}"></circle></svg>
+                    <div style="position: absolute; inset: 0; display: flex; flex-direction: column; align-items: center; justify-content: center"><span class="mono" style="font-size: 26px; font-weight: 700">{{w3.left}}</span><span style="font-size: 12px; color: var(--text-3)">{{w3.unit}}</span></div>
+                  </div>
+                </div>
+                <div class="glass edge win win10">
+                  <div style="flex: 1; min-width: 0; display: flex; flex-direction: column; gap: 10px">
+                    <div style="display: flex; align-items: center; gap: 10px"><span class="chip c10">◆ 10x</span><span class="lbl">faixa 5x a 10x</span></div>
+                    <span style="font-size: 15px; color: var(--text-2)">Próximo horário provável acima de 10x</span>
+                    <span class="mono" style="font-size: 60px; font-weight: 700; line-height: 1">{{t10Txt}}</span>
+                    <span style="font-size: 13px; font-weight: 600; color: var(--pink)">{{w10.status}}</span>
+                  </div>
+                  <div style="position: relative; width: 132px; height: 132px; flex-shrink: 0" role="timer" aria-label="{{w10.aria}}">
+                    <svg width="132" height="132" sc-camel-view-box="0 0 132 132" aria-hidden="true"><circle cx="66" cy="66" r="58" style="fill: none; stroke: var(--track); stroke-width: 8"></circle><circle cx="66" cy="66" r="58" transform="rotate(-90 66 66)" style="fill: none; stroke: var(--pink); stroke-width: 8; stroke-linecap: round; stroke-dasharray: 364.4; stroke-dashoffset: {{w10.off}}"></circle></svg>
+                    <div style="position: absolute; inset: 0; display: flex; flex-direction: column; align-items: center; justify-content: center"><span class="mono" style="font-size: 26px; font-weight: 700">{{w10.left}}</span><span style="font-size: 12px; color: var(--text-3)">{{w10.unit}}</span></div>
+                  </div>
+                </div>
+              </div>
+              <div class="glass" style="border-radius: 18px; padding: 14px 20px; display: flex; align-items: center; justify-content: space-between; gap: 20px">
+                <div class="mono" style="display: flex; gap: 28px; font-size: 13px; color: var(--text-2)"><span>Aviator · {{rounds}} rodadas de hoje</span><span>Agora {{nowTxt}} (Brasília)</span><span>calculado às {{calcTxt}}</span></div>
+                <span id="lockd" style="font-size: 13px; font-weight: 500; color: {{lockColor}}">{{lockMsg}}</span>
+              </div>
+            </sc-if>
+
+            <sc-if value="{{isBloq}}" hint-placeholder-val="{{false}}">
+              <div style="display: grid; grid-template-columns: 1.3fr 1fr; gap: 20px">
+                <div class="glass" style="border-radius: 24px; padding: 8px 24px">
+                  <div style="display: flex; align-items: center; gap: 14px; min-height: 76px; border-bottom: 1px solid var(--border)"><span class="chip c3">▲ 3x</span><span style="font-size: 14px; color: var(--text-2); flex: 1">Próximo horário provável acima de 3x · faixa 2x a 3x</span><span class="mono" style="font-size: 28px; font-weight: 700">{{t3Txt}}</span><span class="mono" style="font-size: 14px; color: var(--primary-text); width: 64px; text-align: right">{{w3.left}}</span></div>
+                  <div style="display: flex; align-items: center; gap: 14px; min-height: 76px; border-bottom: 1px solid var(--border)"><span class="chip c10">◆ 10x</span><span style="font-size: 14px; color: var(--text-2); flex: 1">Próximo horário provável acima de 10x · faixa 5x a 10x</span><span class="mono" style="font-size: 28px; font-weight: 700">{{t10Txt}}</span><span class="mono" style="font-size: 14px; color: var(--pink); width: 64px; text-align: right">{{w10.left}}</span></div>
+                  <div class="mono" style="display: flex; gap: 24px; min-height: 52px; align-items: center; font-size: 12.5px; color: var(--text-3)"><span>Aviator · {{rounds}} rodadas de hoje</span><span>Agora {{nowTxt}} (Brasília)</span><span>calculado às {{calcTxt}}</span></div>
+                </div>
+                <div class="glass edge" style="border-radius: 24px; padding: 22px 24px; display: flex; align-items: center; gap: 22px">
+                  <div style="position: relative; width: 120px; height: 120px; flex-shrink: 0">
+                    <svg width="120" height="120" sc-camel-view-box="0 0 120 120" aria-hidden="true"><circle cx="60" cy="60" r="52" style="fill: none; stroke: var(--track); stroke-width: 8"></circle><circle cx="60" cy="60" r="52" transform="rotate(-90 60 60)" style="fill: none; stroke: var(--primary-text); stroke-width: 8; stroke-linecap: round; stroke-dasharray: 326.7; stroke-dashoffset: {{lockOff}}"></circle></svg>
+                    <div style="position: absolute; inset: 0; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 2px"><svg class="ic" width="18" height="18" sc-camel-view-box="0 0 24 24" aria-hidden="true" style="color: var(--text-3)"><rect x="5" y="10.5" width="14" height="10" rx="2.5"></rect><path d="M8 10.5V8a4 4 0 0 1 8 0v2.5"></path></svg><span class="mono" style="font-size: 22px; font-weight: 700">{{w3.left}}</span></div>
+                  </div>
+                  <div style="display: flex; flex-direction: column; gap: 6px"><span class="disp" style="font-size: 20px; font-weight: 700">Leitura em espera</span><span style="font-size: 14px; line-height: 1.5; color: var(--text-2)">Aguarde o horário previsto para uma nova leitura do histórico.</span></div>
+                </div>
+              </div>
+            </sc-if>
+
+            <sc-if value="{{isAmostra}}" hint-placeholder-val="{{false}}">
+              <div class="glass edge" style="border-radius: 24px; padding: 28px; display: flex; gap: 28px; align-items: center">
+                <span style="width: 64px; height: 64px; border-radius: 18px; display: flex; align-items: center; justify-content: center; background: var(--primary-soft); color: var(--primary-text); flex-shrink: 0"><svg class="ic" width="30" height="30" sc-camel-view-box="0 0 24 24" aria-hidden="true"><path d="M4 20V10M10 20V4M16 20v-7M22 20H2"></path></svg></span>
+                <div style="flex: 1; display: flex; flex-direction: column; gap: 6px"><span class="disp" style="font-size: 24px; font-weight: 700">Ainda não há rodadas suficientes de hoje</span><span style="font-size: 14.5px; line-height: 1.5; color: var(--text-2)">O dia começa às 00:00 (Brasília). A leitura precisa de pelo menos 200 rodadas. Libera por volta de <span class="mono">01:24</span>.</span></div>
+                <div style="width: 300px; display: flex; flex-direction: column; gap: 8px"><div style="display: flex; justify-content: space-between; font-size: 13px"><span>Rodadas de hoje</span><span class="mono" style="color: var(--text-2)">86 / 200</span></div><div class="bar" role="progressbar" aria-valuenow="43" aria-valuemin="0" aria-valuemax="100" aria-label="Rodadas de hoje"><i style="width: 43%"></i></div><button class="btn btn-secondary" style="margin-top: 8px">Me avise quando liberar</button></div>
+              </div>
+            </sc-if>
+
+            <sc-if value="{{isErro}}" hint-placeholder-val="{{false}}">
+              <div class="glass" role="alert" style="border-radius: 24px; padding: 28px; display: flex; gap: 28px; align-items: center; border-color: var(--danger)">
+                <span style="width: 64px; height: 64px; border-radius: 18px; display: flex; align-items: center; justify-content: center; color: var(--danger); background: var(--surface-2); box-shadow: inset 0 0 0 1px var(--danger); flex-shrink: 0"><svg class="ic" width="30" height="30" sc-camel-view-box="0 0 24 24" aria-hidden="true"><path d="M12 3 2.5 20h19z"></path><path d="M12 10v4.5M12 17.5h.01"></path></svg></span>
+                <div style="flex: 1; display: flex; flex-direction: column; gap: 6px"><span class="disp" style="font-size: 24px; font-weight: 700">Não conseguimos ler o histórico agora</span><span style="font-size: 14.5px; line-height: 1.5; color: var(--text-2)">A conexão com as rodadas caiu no meio da leitura. Sua leitura não foi contada e o botão continua liberado.</span><span class="mono" style="font-size: 12px; color: var(--text-3)">Código LEIT-503 · {{nowTxt}} (Brasília)</span></div>
+                <button class="btn btn-primary" sc-camel-on-click="{{calc}}"><svg class="ic" width="20" height="20" sc-camel-view-box="0 0 24 24" aria-hidden="true"><path d="M20 11a8 8 0 1 0-2.3 5.7"></path><path d="M20 5v6h-6"></path></svg>Tentar novamente</button>
+              </div>
+            </sc-if>
+
+            <sc-if value="{{isBreve}}" hint-placeholder-val="{{false}}">
+              <div style="position: relative; margin-top: -{{breveLift}}; display: flex; flex-direction: column; align-items: center; gap: 14px; text-align: center; padding: 26px; border-radius: 24px">
+                <span style="font-size: 12px; font-weight: 700; letter-spacing: .14em; padding: 6px 12px; border-radius: 999px; color: var(--primary-text); background: var(--primary-soft); border: 1px solid var(--border-strong)">EM BREVE</span>
+                <span class="disp" style="font-size: 32px; font-weight: 700">Probabilidades está chegando</span>
+                <span style="font-size: 15px; line-height: 1.55; color: var(--text-2); max-width: 560px">Estamos terminando os testes da leitura do histórico do Aviator. Quando liberar, você recebe um aviso no sininho.</span>
+                <div style="display: flex; gap: 12px; margin-top: 6px"><a href="#" class="btn btn-primary"><svg class="ic" width="20" height="20" sc-camel-view-box="0 0 24 24" aria-hidden="true"><path d="M3 10.5 12 3l9 7.5"></path><path d="M5 9.5V20h14V9.5"></path></svg>Voltar para o início</a><button class="btn btn-ghost">Me avise quando liberar</button></div>
+              </div>
+            </sc-if>
+          </div>
+        </div>
+      </div>
+    </sc-for>
+  </div>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script="" data-props="{&quot;$preview&quot;:{&quot;width&quot;:3040,&quot;height&quot;:1220}}">
+class Component extends DCLogic {
+  constructor(props) {
+    super(props);
+    this.state = { st: 'inicial', now: 74538, prog: 0, scr: '20:42:18', calcAt: null, t3: null, t10: null, reduce: false };
+  }
+  componentDidMount() {
+    var self = this;
+    this.clock = setInterval(function () { self.setState(function (s) { return { now: s.now + 1 }; }); }, 1000);
+  }
+  componentWillUnmount() {
+    clearInterval(this.clock);
+    clearInterval(this.run);
+  }
+  fmt(t) {
+    t = ((t % 86400) + 86400) % 86400;
+    var h = Math.floor(t / 3600), m = Math.floor((t % 3600) / 60), s = t % 60;
+    return (h < 10 ? '0' : '') + h + ':' + (m < 10 ? '0' : '') + m + ':' + (s < 10 ? '0' : '') + s;
+  }
+  mmss(t) {
+    if (t < 0) t = 0;
+    var h = Math.floor(t / 3600), m = Math.floor((t % 3600) / 60), s = t % 60;
+    var core = (m < 10 ? '0' : '') + m + ':' + (s < 10 ? '0' : '') + s;
+    return h > 0 ? h + ':' + core : core;
+  }
+  calc() {
+    var self = this;
+    if (this.state.st === 'calculando') return;
+    if (this.state.calcAt !== null && this.state.now < this.state.t3) return;
+    clearInterval(this.run);
+    var step = this.state.reduce ? 10 : 3;
+    this.setState({ st: 'calculando', prog: 0 });
+    this.run = setInterval(function () {
+      var p = Math.min(100, self.state.prog + step);
+      var d = function () { return Math.floor(Math.random() * 10); };
+      var scr = self.state.reduce ? '··:··:··' : ('' + d() + d() + ':' + d() + d() + ':' + d() + d());
+      if (p >= 100) {
+        clearInterval(self.run);
+        var n = self.state.now;
+        self.setState({ st: 'resultado', prog: 100, calcAt: n, t3: n + 314, t10: n + 1252 });
+      } else {
+        self.setState({ prog: p, scr: scr });
+      }
+    }, 100);
+  }
+  preset(k) {
+    clearInterval(this.run);
+    var base = { prog: 0, calcAt: null, t3: null, t10: null, now: 74538 };
+    if (k === 'calculando') { this.setState(base, this.calc.bind(this)); return; }
+    if (k === 'resultado') { base = { now: 74538, calcAt: 74535, t3: 74852, t10: 75790, prog: 100 }; }
+    if (k === 'bloqueado') { base = { now: 74751, calcAt: 74535, t3: 74852, t10: 75790, prog: 100 }; }
+    if (k === 'amostra') { base.now = 2172; }
+    base.st = k;
+    this.setState(base);
+  }
+  win(t, start, label) {
+    var s = this.state;
+    var C = 364.4;
+    if (t === null) return { left: '--:--', unit: '', off: C, status: '', aria: '' };
+    var rem = t - s.now;
+    var total = Math.max(1, t - start);
+    if (rem > 0) {
+      return { left: this.mmss(rem), unit: 'faltam', off: (C * rem / total).toFixed(1), status: 'Janela prevista para ' + this.fmt(t), aria: 'Faltam ' + this.mmss(rem) + ' para o horário provável acima de ' + label };
+    }
+    if (rem > -60) return { left: 'agora', unit: 'janela aberta', off: 0, status: 'Janela agora · estimativa, sem garantia', aria: 'Janela provável acontecendo agora' };
+    return { left: '00:00', unit: 'encerrada', off: 0, status: 'Janela encerrada', aria: 'Janela encerrada' };
+  }
+  renderVals() {
+    var self = this, s = this.state;
+    var keys = [['inicial', 'Inicial'], ['calculando', 'Calculando'], ['resultado', 'Resultado'], ['bloqueado', 'Bloqueado'], ['amostra', 'Amostra insuficiente'], ['erro', 'Erro'], ['embreve', 'Em breve']];
+    var presets = keys.map(function (k) { return { label: k[1], cls: s.st === k[0] ? 'on' : '', go: function () { self.preset(k[0]); } }; });
+    var locked = s.calcAt !== null && s.now < s.t3;
+    var isResult = s.st === 'resultado';
+    var isBloq = s.st === 'bloqueado';
+    var compact = s.st === 'calculando' || isResult || isBloq;
+    var rounds = s.st === 'amostra' ? '86' : '2.976';
+    var feedAll = [
+      { id: 2976, m: '1,42x', h: '20:41:07', c: '#F4F1FF' }, { id: 2975, m: '3,18x', h: '20:40:39', c: '#B79BFF' },
+      { id: 2974, m: '1,07x', h: '20:40:14', c: '#F4F1FF' }, { id: 2973, m: '12,64x', h: '20:39:41', c: '#FF5FD2' },
+      { id: 2972, m: '2,31x', h: '20:39:12', c: '#F4F1FF' }, { id: 2971, m: '1,88x', h: '20:38:44', c: '#F4F1FF' },
+      { id: 2970, m: '4,05x', h: '20:38:13', c: '#B79BFF' }, { id: 2969, m: '1,00x', h: '20:37:51', c: '#F4F1FF' },
+      { id: 2968, m: '1,63x', h: '20:37:26', c: '#F4F1FF' }, { id: 2967, m: '27,40x', h: '20:36:58', c: '#FF5FD2' },
+      { id: 2966, m: '2,02x', h: '20:36:22', c: '#F4F1FF' }, { id: 2965, m: '1,29x', h: '20:35:57', c: '#F4F1FF' }
+    ];
+    var off = Math.min(6, Math.floor(s.prog / 16));
+    var feed = feedAll.slice(off, off + 6);
+    var lockRem = s.t3 !== null ? Math.max(0, s.t3 - s.now) : 0;
+    var lockTotal = s.t3 !== null ? Math.max(1, s.t3 - s.calcAt) : 1;
+    return {
+      presets: presets,
+      themes: [{ cls: 't-dark' }, { cls: 't-light' }],
+      motionCls: s.reduce ? 'still' : '',
+      reduceCls: s.reduce ? 'on' : '',
+      reduceAria: s.reduce ? 'true' : 'false',
+      toggleReduce: function () { self.setState({ reduce: !s.reduce }); },
+      skip: function () { self.setState({ now: s.now + 300 }); },
+      calc: function () { self.calc(); },
+      nowTxt: this.fmt(s.now),
+      calcTxt: s.calcAt !== null ? this.fmt(s.calcAt) : '--:--:--',
+      t3Txt: s.t3 !== null ? this.fmt(s.t3) : '--:--:--',
+      t10Txt: s.t10 !== null ? this.fmt(s.t10) : '--:--:--',
+      w3: this.win(s.t3, s.calcAt, '3x'),
+      w10: this.win(s.t10, s.calcAt, '10x'),
+      rounds: rounds,
+      heroH: compact ? '150px' : (s.st === 'embreve' ? '300px' : '330px'),
+      heroOpacity: s.st === 'embreve' ? '.35' : '1',
+      breveLift: '0px',
+      showHeroCta: s.st === 'inicial',
+      showHeroCompact: compact,
+      canRecalc: (isResult || isBloq) && !locked,
+      showLockedBtn: (isResult || isBloq) && locked,
+      isInicial: s.st === 'inicial',
+      isCalc: s.st === 'calculando',
+      isResult: isResult,
+      isBloq: isBloq,
+      isAmostra: s.st === 'amostra',
+      isErro: s.st === 'erro',
+      isBreve: s.st === 'embreve',
+      prog: s.prog,
+      progW: s.prog + '%',
+      scanTop: (20 + s.prog * 1.6) + 'px',
+      scramble: s.scr,
+      readTxt: Math.round(2976 * s.prog / 100).toLocaleString('pt-BR'),
+      feed: feed,
+      lockMsg: locked ? 'Aguarde o horário previsto para uma nova leitura do histórico.' : 'Leitura liberada. Você pode calcular de novo.',
+      lockColor: locked ? 'var(--text-3)' : 'var(--success)',
+      lockOff: (326.7 * lockRem / lockTotal).toFixed(1)
+    };
+  }
+}
+</script>
+
+
+</body></html>

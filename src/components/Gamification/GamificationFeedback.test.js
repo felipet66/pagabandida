@@ -1,0 +1,22 @@
+import React from "react";
+import fs from "fs";
+import path from "path";
+import { render, screen, fireEvent, waitFor } from "@testing-library/react";
+import { Footprints, Flame, Shield, GraduationCap, Wallet, Bell, Star, Crown, Award } from "lucide-react";
+import { getAchievementIcon } from "./AchievementIcon";
+import GamificationFeedback from "./GamificationFeedback";
+test.each([["footprints", Footprints], ["flame", Flame], ["shield", Shield], ["graduation-cap", GraduationCap], ["wallet", Wallet], ["bell", Bell], ["star", Star], ["crown", Crown], ["unknown", Award], ["constructor", Award], ["__proto__", Award], [null, Award]])("ícone %s tem mapeamento ou alternativa", (name, glyph) => expect(getAchievementIcon(name)).toBe(glyph));
+test("modal estático com movimento reduzido, foco, Esc e alternativa para aparelho fraco", async () => {
+  document.documentElement.dataset.motion = "reduced";
+  Object.defineProperty(navigator, "hardwareConcurrency", { configurable: true, value: 2 });
+  const trigger = document.createElement("button"); document.body.appendChild(trigger); trigger.focus();
+  const close = jest.fn(); const view = render(<GamificationFeedback celebration={{ title: "Parabéns", icon: "star", text: "Seu hábito" }} onClose={close} />);
+  const dialog = await screen.findByRole("dialog"); expect(document.querySelector(".gamification-static")).toBeTruthy();
+  expect(dialog.contains(document.activeElement)).toBe(true);
+  fireEvent.keyUp(dialog, { keyCode: 27 }); expect(close).toHaveBeenCalledTimes(1);
+  view.rerender(<GamificationFeedback celebration={null} onClose={close} />);
+  await waitFor(() => expect(screen.queryByRole("dialog")).toBeNull()); expect(document.activeElement).toBe(trigger);
+  const css = fs.readFileSync(path.join(__dirname, "Gamification.css"), "utf8");
+  expect(css).toContain(':root[data-motion="reduced"]'); expect(css).toContain("animation: none !important"); expect(css).toContain("prefers-reduced-motion: reduce");
+  trigger.remove(); delete document.documentElement.dataset.motion;
+});

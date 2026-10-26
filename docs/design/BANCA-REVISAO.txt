@@ -1,0 +1,54 @@
+GESTÃO DE BANCA — DESIGN SYSTEM
+
+Commit anterior do Histórico Aviator: 4f84a1e
+Revisão: http://localhost:3000/admin/gestao-banca
+
+Resultado
+Card glass/edge, títulos Chakra Petch, texto Sora e valores/percentuais em
+JetBrains Mono. Valor da banca, perfis, sugestões de entrada, resumo, tabela,
+estado inicial e popups acompanham os temas claro e escuro.
+Valor da banca e botões de ação têm 48 px. A tabela de detalhes tem rolagem
+própria e acesso pelo teclado. O popup usa a mesma formatação monetária da tabela.
+As taxas, divisão 80/20, fórmulas, período de 30 dias e estado local foram preservados.
+Nenhum token novo, nova dependência ou alteração no BFF.
+
+Arquivos alterados
+src/views/BankrollManagement.js
+src/components/InvestmentTable/InvestmentTable.js
+src/components/InvestmentTable/InvestmentTable.css
+src/layouts/Admin/Admin.js
+src/components/FloatingClock/FloatingClock.js
+
+Criados
+src/components/InvestmentTable/InvestmentTable.test.js
+docs/design/BANCA-REVISAO.txt
+docs/design/revisao-banca/escuro-desktop.jpg
+docs/design/revisao-banca/escuro-mobile.jpg
+docs/design/revisao-banca/claro-desktop.jpg
+docs/design/revisao-banca/claro-mobile.jpg
+docs/design/revisao-banca/claro-detalhes-mobile.jpg
+
+A camada de navegação já compartilhada foi habilitada na rota Gestão de Banca.
+Foram corrigidas as margens das linhas Bootstrap que excediam a largura em 3 px
+na tela de 320 px. O relógio também passa a usar a largura visível, descontando
+a barra de rolagem, e a conferir sua dimensão após montar.
+Alterações de artes/PWA existentes em paralelo no workspace foram preservadas.
+
+Verificação
+2 suítes e 25 testes passaram: InvestmentTable e designContrast.
+Incluem entradas 80/20, três perfis, 30 linhas e saldos finais, banca inválida,
+equivalência dos detalhes e contraste da paleta. git diff --check sem erros.
+Não rodei npm run build.
+
+Navegador na porta 3000: 1440x1000 e 390x844 nos dois temas; 320x740 no claro.
+Sem rolagem horizontal da página após os ajustes. A tabela mantém sua rolagem interna.
+Conferidos cálculo com o valor inicial fictício de 1000, 30 linhas, popup nos dois
+temas, rolagem horizontal por teclado no popup e fechamento por Escape.
+Conferido aviso para valor zero. Tema claro com movimento reduzido também conferido.
+Capturas da tela excluem a barra de saldo da conta. A captura do popup mostra apenas o popup.
+Preferências restauradas para seguir o sistema, com movimento manual desligado.
+
+Limites
+Não houve teste em aparelho físico ou leitor de tela real.
+As verificações usaram a simulação local; não foram realizadas apostas ou transações.
+As alterações novas da Gestão de Banca ficam sem commit para revisão.

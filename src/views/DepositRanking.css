@@ -1,0 +1,54 @@
+.deposit-ranking__shell { max-width: 840px; margin: 0 auto; color: var(--text); }
+.deposit-ranking--public { min-height: 100dvh; padding: var(--space-6); background-color: var(--bg); }
+:root[data-theme] .deposit-ranking__back { display: inline-flex; align-items: center; gap: var(--space-2); min-height: var(--touch-target); margin-bottom: var(--space-6); color: var(--text-2); font-size: var(--type-caption); }
+:root[data-theme] .deposit-ranking__back:hover { color: var(--primary-text); }
+.deposit-ranking__heading { display: flex; align-items: center; gap: var(--space-4); margin-bottom: var(--space-6); }
+.deposit-ranking__heading > div { min-width: 0; }
+.deposit-ranking__trophy { display: grid; place-items: center; flex: 0 0 56px; height: 56px; border: 1px solid var(--border-strong); border-radius: var(--radius-16); background: var(--primary-soft); color: var(--primary-text); }
+.deposit-ranking__eyebrow { color: var(--primary-text); font: 600 var(--type-caption)/var(--line-caption) var(--font-body); letter-spacing: .1em; text-transform: uppercase; }
+:root[data-theme] .deposit-ranking h1 { margin: var(--space-1) 0 var(--space-2); color: var(--text); font: 700 var(--type-h1)/var(--line-h1) var(--font-heading); }
+:root[data-theme] .deposit-ranking__heading p { margin: 0; color: var(--text-2); font-size: var(--type-body-sm); line-height: var(--line-body-sm); }
+:root[data-theme] .deposit-ranking__card { overflow: hidden; border-radius: var(--radius-20); }
+:root[data-theme="light"] .deposit-ranking .deposit-ranking__card, :root[data-theme="light"] .deposit-ranking .deposit-ranking__rules { background-color: var(--surface-solid); }
+.deposit-ranking table { width: 100%; border-collapse: collapse; table-layout: fixed; }
+.deposit-ranking th { padding: var(--space-4) var(--space-5); color: var(--text-2); font: 600 var(--type-caption)/var(--line-caption) var(--font-body); background: var(--surface-2); text-align: left; text-transform: uppercase; letter-spacing: .06em; }
+.deposit-ranking th:first-child { width: 80px; text-align: center; }
+.deposit-ranking th:last-child { width: 34%; text-align: right; }
+.deposit-ranking td { padding: var(--space-4) var(--space-5); border-top: 1px solid var(--border); font-size: var(--type-body-sm); line-height: var(--line-body-sm); color: var(--text); }
+.deposit-ranking td:first-child { text-align: center; }
+.deposit-ranking__player { display: flex; align-items: center; gap: var(--space-3); overflow-wrap: anywhere; }
+.deposit-ranking__player > span:last-child { min-width: 0; }
+.deposit-ranking__avatar { display: grid; place-items: center; flex: 0 0 36px; height: 36px; border-radius: var(--radius-pill); background: var(--primary-soft); color: var(--primary-text); }
+.deposit-ranking__position { color: var(--text-2); font: 500 var(--type-body-sm)/var(--line-body-sm) var(--font-mono); }
+.deposit-ranking__medal { color: var(--a-1000); }
+.deposit-ranking__podium--2 .deposit-ranking__medal { color: var(--text-2); }
+.deposit-ranking__podium--3 .deposit-ranking__medal { color: var(--a-baixos); }
+.deposit-ranking__podium { background: var(--primary-soft); }
+.deposit-ranking__amount { text-align: right; font-family: var(--font-mono); font-weight: 600; font-variant-numeric: tabular-nums; overflow-wrap: anywhere; }
+:root[data-theme] .deposit-ranking__note { margin: var(--space-4) 0 0; color: var(--text-2); font-size: var(--type-caption); line-height: var(--line-body-sm); text-align: center; }
+:root[data-theme] .deposit-ranking__rules { margin-top: var(--space-6); padding: var(--space-5); border-radius: var(--radius-16); }
+:root[data-theme] .deposit-ranking__rules h2 { margin: 0 0 var(--space-4); color: var(--text); font: 600 var(--type-h2)/var(--line-h2) var(--font-heading); }
+.deposit-ranking__rules ul { display: grid; gap: var(--space-3); margin: 0; padding: 0; list-style: none; }
+.deposit-ranking__rules li { display: flex; align-items: flex-start; gap: var(--space-3); color: var(--text-2); font-size: var(--type-body-sm); line-height: var(--line-body-sm); }
+.deposit-ranking__rules li .ds-icon { color: var(--primary-text); }
+.deposit-ranking__skeleton span { display: block; height: 28px; border-radius: var(--radius-8); background: var(--surface-3); }
+.deposit-ranking .app-empty-state__icon { border-color: var(--border-strong); background: var(--primary-soft); color: var(--primary-text); }
+:root[data-theme] .deposit-ranking .app-empty-state strong { color: var(--text); font: 600 var(--type-h2)/var(--line-h2) var(--font-heading); }
+:root[data-theme] .deposit-ranking .app-empty-state p { color: var(--text-2); font-size: var(--type-body-sm); line-height: var(--line-body-sm); }
+.deposit-ranking .app-empty-state button { min-height: var(--control-height); padding: var(--space-3) var(--space-5); border-color: var(--border-strong); border-radius: var(--radius-12); background: var(--primary-soft); color: var(--primary-text); font-size: var(--type-body-sm); }
+.deposit-ranking .app-empty-state button:hover { background: var(--primary-soft); border-color: var(--primary-text); color: var(--primary-text); }
+.deposit-ranking :is(a,button):focus-visible { outline: var(--focus-width) solid var(--focus-ring); outline-offset: var(--focus-spread); box-shadow: var(--focus-shadow); }
+@media (max-width: 600px) {
+  .deposit-ranking--public { padding: var(--space-5) var(--space-3); }
+  .deposit-ranking__heading { align-items: flex-start; gap: var(--space-3); }
+  .deposit-ranking__trophy { flex-basis: 44px; height: 44px; border-radius: var(--radius-12); }
+  :root[data-theme] .deposit-ranking h1 { font-size: var(--type-h2); line-height: var(--line-h2); }
+  .deposit-ranking th, .deposit-ranking td { padding: var(--space-3) var(--space-2); font-size: var(--type-caption); }
+  .deposit-ranking th:first-child { width: 40px; }
+  .deposit-ranking th:last-child { width: 40%; }
+  .deposit-ranking__player { gap: var(--space-2); }
+  .deposit-ranking__avatar { display: none; }
+  .deposit-ranking__position { font-size: var(--type-caption); }
+  .deposit-ranking__medal .ds-icon { width: 22px; height: 22px; }
+  :root[data-theme] .deposit-ranking__rules { padding: var(--space-4); }
+}

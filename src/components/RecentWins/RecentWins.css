@@ -1,0 +1,13 @@
+.recent-wins { display: flex; align-items: center; gap: 7px; min-width: 0; min-height: 34px; padding: 6px 9px; margin-bottom: 12px; border: 1px solid var(--border); border-radius: 9px; background: var(--surface-solid); color: var(--text-2); }
+.recent-wins__icon { display: grid; place-items: center; flex: 0 0 20px; height: 20px; border-radius: 6px; background: var(--primary-soft); color: var(--primary-text); }
+.recent-wins__message { display: flex; flex: 1; align-items: baseline; gap: 4px; min-width: 0; overflow: hidden; font-size: 10px; line-height: 1.5; white-space: nowrap; animation: recent-wins-arrive .35s ease-out; }
+.recent-wins__message > span:not(.recent-wins__game) { flex-shrink: 0; }
+.recent-wins__name { color: var(--text); font-weight: 500; }
+:root[data-theme] .recent-wins__message strong { flex-shrink: 0; color: var(--success); font: 600 10px/1.5 var(--font-mono); font-variant-numeric: tabular-nums; }
+.recent-wins__game { overflow: hidden; text-overflow: ellipsis; color: var(--text); }
+.recent-wins__demo { flex-shrink: 0; padding: 2px 4px; border: 1px solid var(--border); border-radius: 4px; color: var(--text-3); font: 500 7px/1.5 var(--font-heading); letter-spacing: .03em; }
+@keyframes recent-wins-arrive { from { opacity: 0; transform: translateY(4px); } to { opacity: 1; transform: translateY(0); } }
+@media (min-width: 768px) { .recent-wins__message { font-size: 11px; gap: 5px; } :root[data-theme] .recent-wins__message strong { font-size: 11px; } .recent-wins__demo { font-size: 8px; } }
+@media (max-width: 359px) { .recent-wins { gap: 5px; padding-inline: 6px; } .recent-wins__icon { flex-basis: 16px; } .recent-wins__message { font-size: 9px; gap: 3px; } :root[data-theme] .recent-wins__message strong { font-size: 9px; } }
+@media (prefers-reduced-motion: reduce) { :where(:root:not([data-motion="full"])) .recent-wins__message { animation: none; } }
+:root[data-motion="reduced"] .recent-wins__message { animation: none; }

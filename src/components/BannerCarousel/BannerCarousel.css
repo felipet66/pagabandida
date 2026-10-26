@@ -1,0 +1,23 @@
+/* Banner artwork stays intact; controls and frame follow the theme. */
+.banner-carousel { position: relative; margin-bottom: var(--space-6); border: 1px solid var(--border-strong); border-radius: var(--radius-20); overflow: hidden; background: var(--surface-solid); box-shadow: var(--shadow-card); }
+.banner-carousel--controls { padding-bottom: var(--control-height); }
+.banner-carousel__slide { aspect-ratio: 16 / 9; }
+.banner-carousel__slide > a { display: block; width: 100%; height: 100%; }
+.banner-carousel__slide img { display: block; width: 100%; height: 100%; object-fit: contain; }
+.banner-carousel .slick-dots { position: absolute; width: auto; bottom: calc(0px - var(--control-height)); left: 50%; transform: translateX(-50%); display: flex !important; justify-content: center; gap: 0; margin: 0; padding: 0; list-style: none; border-radius: var(--radius-pill); background: var(--surface-solid); }
+.banner-carousel .slick-dots li { display: flex; width: auto; height: auto; margin: 0; padding: 0; }
+.banner-carousel .slick-dots button { display: grid; place-items: center; width: var(--touch-target); height: var(--touch-target); padding: 0; border: 0; border-radius: var(--radius-8); font-size: 0; line-height: 0; background: transparent; cursor: pointer; }
+.banner-carousel .slick-dots button::after { content: ''; width: 8px; height: 8px; border-radius: var(--radius-pill); background: var(--text-3); }
+.banner-carousel .slick-dots .slick-active button::after { width: 22px; background: var(--primary-text); }
+.banner-carousel__arrow, .banner-carousel__pause { position: absolute; display: grid; place-items: center; width: var(--touch-target); height: var(--touch-target); padding: 0; background: var(--surface-solid); color: var(--primary-text); border: 1px solid var(--border-strong); cursor: pointer; }
+.banner-carousel__arrow { bottom: 2px; border-radius: var(--radius-pill); }
+.banner-carousel__arrow--previous { left: var(--space-2); }
+.banner-carousel__arrow--next { right: var(--space-2); }
+.banner-carousel__pause { bottom: 2px; right: calc(var(--touch-target) + var(--space-3)); border-radius: var(--radius-12); }
+.banner-carousel__arrow:hover, .banner-carousel__pause:hover { background: var(--surface-2); }
+.banner-carousel button:focus-visible, .banner-carousel a:focus-visible { outline: var(--focus-width) solid var(--focus-ring); outline-offset: -3px; box-shadow: var(--focus-shadow); }
+.banner-carousel .slick-dots button::before { display: none; }
+@media (max-width: 600px) { .banner-carousel { border-radius: var(--radius-16); } }
+@media (max-width: 360px) { .banner-carousel .slick-dots { left: calc(var(--touch-target) + var(--space-3)); transform: none; } }
+
+.banner-carousel .slick-slide > div { line-height: 0; }

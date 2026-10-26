@@ -1,0 +1,7 @@
+.app-empty-state { display: flex; flex-direction: column; align-items: center; justify-content: center; min-height: 220px; padding: 28px 20px; text-align: center; }
+.app-empty-state__icon { display: grid; place-items: center; width: 48px; height: 48px; margin-bottom: 16px; border: 1px solid #e3061333; border-radius: 14px; background: #e3061312; color: #ff606c; font-size: 20px; }
+.app-empty-state strong { color: #eee8f0; font-size: 15px; font-weight: 500; line-height: 1.5; }
+.app-empty-state p { max-width: 320px; margin: 8px 0 0; color: #a69cae; font-size: 13px; line-height: 1.6; }
+.app-empty-state button { margin-top: 20px; min-height: 42px; padding: 9px 16px; border: 1px solid #e3061355; border-radius: 8px; background: #e3061314; color: #ff8993; font-size: 13px; cursor: pointer; }
+.app-empty-state button:hover { background: #e306132a; color: #fff; }
+.app-empty-state button:focus-visible { outline: 2px solid #ff606c; outline-offset: 3px; }

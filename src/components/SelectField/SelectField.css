@@ -1,0 +1,11 @@
+.app-select { position: relative; margin-top: 8px; }
+.app-select__trigger { display: flex; align-items: center; justify-content: space-between; gap: 10px; width: 100%; min-height: 44px; padding: 8px 12px; border: 1px solid #403644; border-radius: 8px; background: #17121b; color: #eee8f0; font: inherit; font-size: 13px; text-align: left; cursor: pointer; }
+.app-select__trigger > span { overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.app-select__trigger > i { flex-shrink: 0; font-size: 10px; color: #b6a8be; }
+.app-select__trigger:disabled { opacity: .5; cursor: default; }
+.app-select__trigger[aria-expanded="true"] { border-color: #ff606c; }
+.app-select__options { position: absolute; top: calc(100% + 6px); left: 0; right: 0; z-index: 40; max-height: 240px; overflow-y: auto; padding: 5px; border: 1px solid #403644; border-radius: 10px; background: #1a141e; box-shadow: 0 12px 28px #0008; scrollbar-width: thin; }
+.app-select__options button { display: flex; align-items: center; justify-content: space-between; gap: 8px; width: 100%; min-height: 40px; padding: 10px; border: 0; border-radius: 6px; background: transparent; color: #d7cfdb; font: inherit; font-size: 13px; text-align: left; cursor: pointer; }
+.app-select__options button:hover, .app-select__options button:focus-visible { background: #ffffff08; color: #fff; }
+.app-select__options button.is-selected { background: #e3061326; color: #ff8995; }
+.app-select button:focus-visible { outline: 2px solid #ff606c; outline-offset: -2px; }

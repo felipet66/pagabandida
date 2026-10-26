@@ -1,0 +1,44 @@
+CADASTRO — ADAPTAÇÃO AO PADRÃO DO LOGIN
+
+Commit das alterações anteriores: 269bbd4
+Add violet design system, updated branding and login layout
+
+Revisão desta etapa: http://localhost:3000/auth/register
+
+O cadastro agora usa os mesmos tokens, card de vidro, borda, tipografia, ícones,
+botão primário, foco e temas do login. Celular/CPF e senha/confirmação compartilham
+uma linha no desktop; os campos ficam em uma coluna até 600 px.
+Mensagens de erro têm ícone e texto. A consulta de CPF mantém o resultado mascarado
+e seu anúncio acessível. O envio tem um anúncio de carregamento para leitor de tela.
+Máscaras, validações, chamadas de cadastro, atribuição e sessão não foram alteradas.
+Nenhum token ou dependência nova.
+
+Arquivos
+- src/views/LoginDesign.css foi movido para src/components/AuthForm/AuthDesign.css;
+  os estilos comuns agora atendem login e cadastro, com ajustes específicos do cadastro.
+- src/components/AuthForm/AuthForm.js: camada compartilhada e ícones de cadastro/erro.
+- src/layouts/Auth/Auth.js: habilita o mesmo cabeçalho e fundo no cadastro, com rótulo Cadastro.
+- src/views/Login.js: remove import do CSS antigo, agora carregado pelo componente compartilhado.
+- src/views/Register.js: ícones, botão, anúncio de envio e organização dos campos.
+- src/views/Register.test.js: sete testes de regressão do formulário.
+- docs/design/revisao-cadastro/: capturas desktop/celular, claro/escuro.
+
+Verificação realizada
+- Testes direcionados: Login.test.js, Register.test.js e registration.test.js.
+  3 suítes e 20 testes passaram, exit 0.
+- Cobertura nova: senhas divergentes, exibição independente das senhas, envio duplicado,
+  conta existente com navegação ao login preservando e-mail, cancelamento da consulta de CPF,
+  resultado mascarado, CPF inválido, sessão/navegação após sucesso.
+- git diff --check sem erros.
+- Navegador na porta 3000: cadastro em 1440x1000 e 390x844 nos dois temas;
+  largura 320x740 no claro. Sem rolagem horizontal nas larguras conferidas.
+- Campos e botão de 48 px; o input interno de CPF tem 46 px mais 2 px de borda no contêiner.
+- Foco do CPF roxo; exibição de confirmação de senha independente da senha.
+- Movimento reduzido remove .fx; tema claro persiste após recarregar.
+- Link Entrar funciona, e o login continua com banner e card lado a lado no desktop.
+- Preferências de revisão restauradas para seguir o tema do sistema e movimento manual desligado.
+
+Não rodei npm run build, conforme orientação do usuário.
+Não criei conta real nem consultei CPF real; as respostas foram simuladas nos testes.
+Não foi feita validação em aparelho físico, teclado virtual ou leitor de tela real.
+As alterações novas do cadastro ficam sem commit para revisão.

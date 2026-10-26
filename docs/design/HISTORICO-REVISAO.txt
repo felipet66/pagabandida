@@ -1,0 +1,80 @@
+HISTÓRICO AVIATOR — DESIGN SYSTEM
+
+Commit anterior da página de jogos: 15b2bb3
+Revisão: http://localhost:3000/admin/dashboard
+
+Resultado
+Cards glass/edge, títulos Chakra Petch, texto Sora, odds/horários/estatísticas em
+JetBrains Mono. Filtros, abas Original/VIP, foco, carregamento e estados vazios
+acompanham os dois temas. Campos têm 48 px, opções têm área mínima de 44 px.
+As faixas continuam azul (<2x), roxo (2x–9,99x) e rosa (>=10x), usando tokens.
+Seleção e padrão têm ícones próprios, mantendo aria-pressed e a descrição do padrão.
+Os cálculos, filtros, agrupamentos, limite e chamadas existentes não foram alterados.
+O player mantém suas ações e sua interface externa; só o contêiner foi adaptado.
+Nenhum token novo ou dependência adicional.
+
+Arquivos desta etapa
+- src/views/Home.js e Home.css
+- src/components/Home/AviatorGameSelector.js e AviatorPlayer.js
+- src/components/HistoryOdds/HistoryOdds.js e HistoryOdds.test.js
+- src/components/SelectField/SelectField.js
+- src/components/EmptyState/EmptyState.js
+- src/layouts/Admin/Admin.js
+- src/views/GameCatalog.css
+- src/assets/css/app-design.css (novo)
+- docs/design/HISTORICO-REVISAO.txt (novo)
+- docs/design/revisao-historico/: desktop/celular, claro/escuro (novos)
+
+A camada de cores de navegação já criada para Jogos foi extraída para app-design.css
+e habilitada também em /admin/dashboard. As outras telas mantêm seu comportamento.
+SelectField e EmptyState recebem uma opção visual, ativada apenas pelo Histórico/player.
+Alterações de ícones PWA e artes presentes no workspace, feitas em paralelo, foram preservadas.
+
+Verificação
+5 suítes e 36 testes passaram: HistoryOdds, AviatorPlayer, aviatorRecords,
+designContrast e GameCatalog. Inclui teste novo dos indicadores independentes de
+padrão/seleção, além dos testes de filtros, estatísticas, dados e ampliação do player.
+git diff --check sem erros. Não rodei npm run build.
+
+Navegador na porta 3000: desktop 1440x1000 e celular 390x844 nos dois temas;
+320x740 no claro. Sem rolagem horizontal nas larguras verificadas. Conferidos:
+- família Mono nas odds e controles de filtro com 48 px;
+- seleção/deseleção de vela e seu indicador;
+- padrão Espelhamento de rosas com marcadores;
+- filtro ODD > 10 bloqueando padrão visual e exibindo a explicação;
+- tema claro, movimento reduzido e remoção do fundo .fx;
+- capturas do Histórico, excluindo barra de saldo e conteúdo do iframe.
+Preferências de tema/movimento restauradas ao final. Filtros retornaram ao estado inicial.
+
+Limites
+Não houve interação com apostas nem ações financeiras no iframe.
+Ampliação do player, erros e estados vazios foram conferidos com testes simulados.
+Não foi feita validação em aparelho físico ou leitor de tela real.
+O conteúdo do iframe é fornecido pela Spribe e mantém a aparência do provedor.
+As alterações novas do Histórico ficam sem commit para revisão.
+
+Atualização — Aviator Premium em breve
+- Opção Premium no seletor de versões, com ícone de ampulheta e texto Em breve.
+- Botão nativamente desabilitado; não seleciona versão, não abre player e não consulta resultados do Premium. Nenhum chartNumber novo foi inventado.
+- Original e VIP continuam usando seus mesmos slugs e históricos. Há teste de integração das três opções em src/views/Home.test.js.
+- Ajuste do seletor para três opções em telas pequenas, usando tokens e ícones já existentes.
+- Home, GameCatalog e GameCard: 3 suítes, 10 testes aprovados. Build e verificações estáticas aprovados, com os avisos anteriores do build.
+- Conferido no navegador em localhost:3001: opção desabilitada e sem overflow horizontal em 390 px e 320 px. Viewport restaurado e navegador devolvido ao Histórico.
+- Captura do seletor: docs/design/revisao-aviator-premium/historico-mobile.jpg, sem dados da conta ou conteúdo do iframe.
+
+Atualização — histórico compacto e números das rodadas
+- Cards fixos de 50 x 50 px em todas as larguras, com colunas e linhas alinhadas; sem esticar os últimos cards. Espaçamento do título, filtros, nota, grade e legenda unificado.
+- Toggle Exibir rodadas nos controles existentes. Ligado mostra o roundId real recebido pela API abaixo do horário; desligado remove somente essa linha e mantém os cards em 50 x 50 px.
+- Fonte das odds se adapta ao comprimento para preservar o valor completo dentro do card; horário mantém segundos. Rodadas longas têm identificação completa no título e no rótulo acessível.
+- Seleção, padrões visuais, filtros, estatísticas, horários e chamadas à API preservados. Não há número de rodada inventado a partir da posição da vela.
+- HistoryOdds e Home: 2 suítes, 7 testes aprovados. ESLint e git diff --check aprovados. npm run build não executado, conforme pedido do usuário.
+- Conferido na interface: todas as medidas dos cards em 50 x 50 px com e sem rodadas; toggle nos dois sentidos; identificadores atuais cabem em 390 px; sem overflow horizontal em 390 e 320 px.
+- A instância do frontend em 3001 foi reiniciada para destravar a atualização automática. Quantidade e seleção usadas na revisão restauradas; viewport e toggle temporários restaurados.
+- Captura: docs/design/revisao-historico-compacto/rodadas-50px.jpg, restrita ao painel do histórico, sem dados da conta nem iframe.
+
+Atualização — caixas de 60 px e horário abaixo
+- Multiplicadores em caixas fixas de 60 x 60 px, centralizados horizontal e verticalmente.
+- Horário fora da caixa, centralizado logo abaixo; toggle de rodadas preservado.
+- Conferência no navegador: dimensões 60 x 60, multiplicador centralizado e horário abaixo/alinhado. Quantidade de 50 velas e rodadas ocultas restauradas.
+- HistoryOdds e Home: 2 suítes, 7 testes aprovados. ESLint do componente e git diff --check aprovados. npm run build não executado conforme solicitado.
+- Captura: docs/design/revisao-historico-compacto/rodadas-60px.jpg.

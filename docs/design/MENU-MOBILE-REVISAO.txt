@@ -1,0 +1,22 @@
+Menu inferior mobile — revisão do design system
+
+Alterações:
+- Histórico, Banca, Jogos, Depositar e Menu usam ícones Lucide.
+- Tokens compartilhados em todas as rotas administrativas, com superfície clara/escura, borda e sombra do design system.
+- Tipografia Sora com mínimo de 12px, estado ativo violeta, ponto de seleção e foco visível.
+- Botão central de Jogos preservado, com gradiente violeta e contorno de seleção.
+- Controles de 56px de altura e espaçamento ajustado abaixo de 360px.
+- Estilos do menu consolidados no componente; removidas duplicatas condicionadas à tela no app-design.css.
+- Rotas e comportamento da conta preservados.
+
+Validação:
+- ESLint de BottomNavigation.js aprovado; git diff --check aprovado.
+- Conferência no npm start: escuro em 390x844 e 320x740; claro em 390x844.
+- 320px sem overflow: documento 309px clientWidth/scrollWidth, menu 291px clientWidth/scrollWidth.
+- Fonte de rótulos 12px; rótulos completos em 320px.
+- Menu abre painel da conta e reflete aria-expanded; fechamento conferido.
+- Atalho Depositar navega para /admin/deposit e destaca a rota ativa.
+- Menu oculto no desktop em 1024px.
+- Tema e viewport restaurados, sem build ou transações.
+
+Alterações permanecem sem commit para revisão.

@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="pt-BR"><head>
+<meta charset="utf-8">
+<title>Notas para desenvolvimento</title>
+<script src="ac4cef66-c86c-441c-b772-20d734b5369b"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<style></style>
+<style>
+body{margin:0;background:#050309}
+*{box-sizing:border-box}
+.t-dark{--bg:#07050D;--surface:rgba(22,15,42,.66);--surface-solid:#140E26;--surface-2:#1C1535;--border:rgba(167,139,250,.16);--border-strong:rgba(167,139,250,.36);--text:#F4F1FF;--text-2:#BDB4DA;--text-3:#8F86B2;--primary:#7C3AED;--primary-text:#B79BFF;--primary-soft:rgba(124,58,237,.18);--glow-soft:rgba(139,92,246,.22);--pink:#FF5FD2;--success:#34D399;--warning:#FBBF24;--danger:#F87171;--shadow-card:0 1px 0 rgba(255,255,255,.04) inset,0 12px 40px rgba(0,0,0,.55);--grid-line:rgba(167,139,250,.07);--edge-a:rgba(183,155,255,.75);--edge-b:rgba(255,95,210,.45)}
+.app{font-family:'Sora',system-ui,sans-serif;color:var(--text);background-color:var(--bg);-webkit-font-smoothing:antialiased}
+.fx{background-image:radial-gradient(640px 360px at 90% -8%,var(--glow-soft),transparent 70%),linear-gradient(var(--grid-line) 1px,transparent 1px),linear-gradient(90deg,var(--grid-line) 1px,transparent 1px);background-size:auto,28px 28px,28px 28px}
+.glass{background:var(--surface);-webkit-backdrop-filter:blur(16px);backdrop-filter:blur(16px);border:1px solid var(--border);box-shadow:var(--shadow-card)}
+.edge{position:relative}
+.edge::after{content:"";position:absolute;inset:0;border-radius:inherit;padding:1px;background:linear-gradient(140deg,var(--edge-a),transparent 38%,transparent 62%,var(--edge-b));-webkit-mask:linear-gradient(#000 0 0) content-box,linear-gradient(#000 0 0);-webkit-mask-composite:xor;mask-composite:exclude;pointer-events:none}
+.disp{font-family:'Chakra Petch',sans-serif;letter-spacing:.01em}
+.mono{font-family:'JetBrains Mono',ui-monospace,monospace;font-variant-numeric:tabular-nums}
+.lbl{font-size:12px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--text-3)}
+.th{font-size:11.5px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:var(--text-3);padding:10px 12px;border-bottom:1px solid var(--border-strong)}
+.td{font-size:13px;line-height:1.5;color:var(--text-2);padding:12px;border-bottom:1px solid var(--border)}
+.tech{display:inline-flex;align-items:center;height:24px;padding:0 9px;border-radius:999px;font-size:11.5px;font-weight:700;white-space:nowrap}
+.k-css{color:#B79BFF;background:rgba(124,58,237,.18)}
+.k-three{color:#38BDF8;background:rgba(56,189,248,.14)}
+.k-rem{color:#FF5FD2;background:rgba(255,95,210,.14)}
+.k-js{color:#FDE047;background:rgba(253,224,71,.12)}
+.k-api{color:#4ADE80;background:rgba(74,222,128,.12)}
+.cost{display:inline-flex;align-items:center;gap:6px;font-size:12px;font-weight:600;white-space:nowrap}
+.cost i{display:inline-block;width:8px;height:8px;border-radius:2px}
+a{color:var(--primary-text)}a:hover{color:var(--text)}
+</style>
+</helmet>
+<div class="app t-dark fx" style="width: 1440px; min-height: 3000px; padding: 64px; display: flex; flex-direction: column; gap: 48px">
+
+  <header style="display: flex; flex-direction: column; gap: 12px; max-width: 980px">
+    <span class="lbl">03 · Notas para desenvolvimento</span>
+    <h1 class="disp" style="margin: 0; font-size: 52px; line-height: 1.05; font-weight: 700">O que mexe, o que é 3D e o que vem dos dados</h1>
+    <p style="margin: 0; font-size: 17px; line-height: 1.55; color: var(--text-2)">“Celular comum” aqui é um Android intermediário de 2022–2023 (4 GB de RAM, GPU Adreno 610 ou Mali-G57, tela 1080p). Custo: <b style="color: var(--text)">Baixo</b> &lt; 2 ms por quadro e sem download extra · <b style="color: var(--text)">Médio</b> 2–8 ms ou &gt; 50 KB · <b style="color: var(--text)">Alto</b> &gt; 8 ms ou &gt; 200 KB.</p>
+    <div style="display: flex; gap: 8px; flex-wrap: wrap; margin-top: 4px">
+      <span class="tech k-css">CSS</span><span class="tech k-js">JS / React</span><span class="tech k-three">Three.js</span><span class="tech k-rem">Remotion</span><span class="tech k-api">Dados / API</span>
+    </div>
+  </header>
+
+  <section style="display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 20px">
+    <div class="glass edge" style="border-radius: 20px; padding: 22px; display: flex; flex-direction: column; gap: 10px">
+      <span class="mono" style="font-size: 13px; color: var(--primary-text)">NÍVEL A · completo</span>
+      <span class="disp" style="font-size: 20px; font-weight: 700">3D, vídeo e animação</span>
+      <span style="font-size: 13.5px; line-height: 1.55; color: var(--text-2)">WebGL2 disponível, deviceMemory ≥ 4, hardwareConcurrency ≥ 6, sem Save-Data e média ≥ 45 fps nos 2 primeiros segundos da cena.</span>
+    </div>
+    <div class="glass edge" style="border-radius: 20px; padding: 22px; display: flex; flex-direction: column; gap: 10px">
+      <span class="mono" style="font-size: 13px; color: var(--warning)">NÍVEL B · aparelho fraco</span>
+      <span class="disp" style="font-size: 20px; font-weight: 700">Imagem no lugar do 3D</span>
+      <span style="font-size: 13.5px; line-height: 1.55; color: var(--text-2)">Falhou qualquer critério do nível A. A cena vira WebP pré-renderizada com gradiente CSS; Remotion vira badge estático com brilho. Transições CSS continuam.</span>
+    </div>
+    <div class="glass edge" style="border-radius: 20px; padding: 22px; display: flex; flex-direction: column; gap: 10px">
+      <span class="mono" style="font-size: 13px; color: var(--success)">NÍVEL C · reduzir movimento</span>
+      <span class="disp" style="font-size: 20px; font-weight: 700">Nada se move sozinho</span>
+      <span style="font-size: 13.5px; line-height: 1.55; color: var(--text-2)">prefers-reduced-motion ou o switch do app. Sem 3D, sem vídeo, sem embaralhar, sem shimmer. Entradas viram troca de opacidade de 120 ms; números aparecem já no valor final.</span>
+    </div>
+  </section>
+
+  <section style="display: flex; flex-direction: column; gap: 16px">
+    <h2 class="disp" style="margin: 0; font-size: 30px">Efeitos, técnica e custo</h2>
+    <div class="glass" style="border-radius: 20px; padding: 8px 8px 0; overflow: hidden">
+      <div style="display: grid; grid-template-columns: 200px 120px 1fr 120px 1fr">
+        <span class="th">Efeito</span><span class="th">Técnica</span><span class="th">Como fazer</span><span class="th">Custo</span><span class="th">Alternativa (B / C)</span>
+        <sc-for list="{{rows}}" as="r" hint-placeholder-count="20">
+          <span class="td" style="color: var(--text)"><span class="lbl" style="display: block; font-size: 10.5px; margin-bottom: 2px">{{r.screen}}</span><b style="font-weight: 600">{{r.name}}</b></span>
+          <span class="td"><span class="tech {{r.k}}">{{r.tech}}</span></span>
+          <span class="td">{{r.how}}</span>
+          <span class="td"><span class="cost" style="color: {{r.costColor}}"><i style="background: {{r.costColor}}"></i>{{r.cost}}</span><span class="mono" style="display: block; font-size: 11px; color: var(--text-3); margin-top: 3px">{{r.costNote}}</span></span>
+          <span class="td">{{r.fallback}}</span>
+        </sc-for>
+      </div>
+    </div>
+  </section>
+
+  <section style="display: grid; grid-template-columns: 1fr 1fr; gap: 24px">
+    <div class="glass edge" style="border-radius: 24px; padding: 26px; display: flex; flex-direction: column; gap: 14px">
+      <h2 class="disp" style="margin: 0; font-size: 26px">Dados que cada tela precisa</h2>
+      <sc-for list="{{apis}}" as="a" hint-placeholder-count="6">
+        <div style="display: flex; flex-direction: column; gap: 6px; padding-bottom: 12px; border-bottom: 1px solid var(--border)">
+          <span class="mono" style="font-size: 12.5px; color: #4ADE80">{{a.route}}</span>
+          <span class="mono" style="font-size: 12px; line-height: 1.6; color: var(--text-2); white-space: pre-wrap">{{a.shape}}</span>
+          <span style="font-size: 12.5px; line-height: 1.5; color: var(--text-3)">{{a.note}}</span>
+        </div>
+      </sc-for>
+    </div>
+    <div style="display: flex; flex-direction: column; gap: 24px">
+      <div class="glass edge" style="border-radius: 24px; padding: 26px; display: flex; flex-direction: column; gap: 12px">
+        <h2 class="disp" style="margin: 0; font-size: 26px">Base reactstrap + camada visual</h2>
+        <div style="display: grid; grid-template-columns: 170px 1fr; row-gap: 10px; column-gap: 14px; font-size: 13px; line-height: 1.5">
+          <sc-for list="{{maps}}" as="m" hint-placeholder-count="9">
+            <span class="mono" style="color: var(--primary-text)">{{m.rs}}</span><span style="color: var(--text-2)">{{m.use}}</span>
+          </sc-for>
+        </div>
+      </div>
+      <div class="glass edge" style="border-radius: 24px; padding: 26px; display: flex; flex-direction: column; gap: 12px">
+        <h2 class="disp" style="margin: 0; font-size: 26px">Componentes React sugeridos</h2>
+        <span class="mono" style="font-size: 12.5px; line-height: 1.75; color: var(--text-2); white-space: pre">&lt;ThemeProvider&gt; · data-theme no &lt;html&gt;, transição 320 ms
+&lt;MotionProvider&gt; · reduce = OS || switch do app; tier = A | B | C
+useCountdown(alvo, offsetServidor) · 1 timer por tela
+useServerClock() · “Agora” em America/Sao_Paulo
+&lt;ProbabilidadesPage&gt;
+  &lt;ResponsibleNotice fixed /&gt;
+  &lt;AviatorHero&gt; lazy(&lt;AviatorScene3D/&gt;) | &lt;SceneStill/&gt;
+  &lt;CalcButton lockedUntil /&gt;
+  &lt;ReadingTerminal rodadas=ultimas20 /&gt;
+  &lt;WindowCard tier="3x" | "10x" /&gt;
+&lt;GamificacaoPage&gt; &lt;LevelCard/&gt; &lt;StreakCard/&gt;
+  &lt;AchievementGrid/&gt; &lt;XpFeed/&gt; &lt;Leaderboard/&gt;
+&lt;CelebrationQueue&gt; · 1 por vez, toast | modal
+&lt;NotificacoesPage&gt; &lt;AlertCard ×6/&gt; &lt;PushBlock/&gt; &lt;IosInstall/&gt;
+&lt;AnnouncementsBell&gt; Popover (≥ 992 px) | BottomSheet</span>
+      </div>
+    </div>
+  </section>
+
+  <section class="glass edge" style="border-radius: 24px; padding: 26px; display: flex; flex-direction: column; gap: 14px">
+    <h2 class="disp" style="margin: 0; font-size: 26px">Decisões tomadas no design · para confirmar</h2>
+    <div style="display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); column-gap: 32px; row-gap: 12px">
+      <sc-for list="{{decisions}}" as="d" hint-placeholder-count="8">
+        <div style="display: flex; gap: 12px; font-size: 13.5px; line-height: 1.55; color: var(--text-2)"><span class="mono" style="color: var(--primary-text); flex-shrink: 0">{{d.n}}</span><span><b style="color: var(--text); font-weight: 600">{{d.t}}</b> {{d.d}}</span></div>
+      </sc-for>
+    </div>
+  </section>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script="" data-props="{&quot;$preview&quot;:{&quot;width&quot;:1440,&quot;height&quot;:3000}}">
+class Component extends DCLogic {
+  renderVals() {
+    var low = '#34D399', mid = '#FBBF24', high = '#F87171';
+    var rows = [
+      { screen: 'Global', name: 'Entrada de tela', tech: 'CSS', k: 'k-css', how: 'Opacidade 0→1 e translateY 12→0 px, 500 ms, cards em sequência de 40 ms. react-transition-group ou classes .in.', cost: 'Baixo', costColor: low, costNote: 'só transform/opacity', fallback: 'C: opacidade 120 ms, sem sequência.' },
+      { screen: 'Global', name: 'Troca de tema', tech: 'CSS', k: 'k-css', how: 'Tokens em CSS custom properties sob [data-theme]. Transição de background-color, color e border-color em 320 ms; View Transitions API (círculo saindo do interruptor) onde existir.', cost: 'Baixo', costColor: low, costNote: '1 repaint completo', fallback: 'C: troca direta, sem círculo.' },
+      { screen: 'Global', name: 'Vidro fosco', tech: 'CSS', k: 'k-css', how: 'backdrop-filter: blur(16px) em no máximo 6 superfícies visíveis por vez. Nunca em listas longas (ranking, feed).', cost: 'Médio', costColor: mid, costNote: '2–4 ms em Mali', fallback: 'B: fundo sólido --surface-solid; também se @supports falhar.' },
+      { screen: 'Global', name: 'Grade, brilho e partículas', tech: 'CSS', k: 'k-css', how: 'Fundo estático (gradientes). Partículas: 8–12 pontos com transform em loop lento, só nos cartões de destaque.', cost: 'Baixo', costColor: low, costNote: 'compositor', fallback: 'B/C: pontos parados.' },
+      { screen: 'Probabilidades', name: 'Cena 3D do Aviator', tech: 'Three.js', k: 'k-three', how: 'Avião low-poly (< 2 mil triângulos, glTF + Draco ≈ 60 KB), trajetória com TubeGeometry, 300 Points de partículas, grade no chão por shader. Brilho com sprite aditivo, sem post-processing. pixelRatio ≤ 1,5, 30 fps no mobile, pausa fora da tela (IntersectionObserver) e com aba oculta. Carregar com import() depois do conteúdo.', cost: 'Médio', costColor: mid, costNote: '≈ 150 KB gz + 60 KB · 4–8 ms', fallback: 'B/C: WebP 780×360 (≈ 35 KB) renderizada da mesma cena + gradiente CSS. Placeholder sempre visível até o 1º quadro.' },
+      { screen: 'Probabilidades', name: 'Leitura de ~3 s', tech: 'JS / React', k: 'k-js', how: 'Dígitos embaralhando (6 spans, textContent a cada 60 ms), linha de varredura (transform), feed com as últimas 20 rodadas reais rolando (translateY), barra de progresso (scaleX). Requisição dispara junto; se demorar mais de 3 s, a barra segura em 92%.', cost: 'Baixo', costColor: low, costNote: '< 1 ms por quadro', fallback: 'C: só barra e texto “Lendo histórico… 64%”, 1 s mínimo.' },
+      { screen: 'Probabilidades', name: 'Revelar resultado', tech: 'CSS', k: 'k-css', how: 'Cartões entram com scale .96→1 e blur 8→0 em 700 ms; dígitos do horário rolam como odômetro (cada dígito é uma coluna com translateY). O hero 3D encolhe para 96 px de altura.', cost: 'Baixo', costColor: low, costNote: 'blur só na entrada', fallback: 'C: aparece pronto.' },
+      { screen: 'Probabilidades', name: 'Contagem regressiva', tech: 'Dados / API', k: 'k-api', how: 'Alvo vem do servidor; “agora” = relógio do servidor + offset medido no carregamento. Um setInterval alinhado ao segundo. Anel SVG com stroke-dashoffset. Ao zerar: “Janela agora” por 60 s e depois “Janela encerrada”.', cost: 'Baixo', costColor: low, costNote: '1 render/s', fallback: 'C: sem anel animado; número muda a cada segundo normalmente.' },
+      { screen: 'Probabilidades', name: 'Botão bloqueado', tech: 'Dados / API', k: 'k-api', how: 'lockedUntil salvo no servidor por usuário (não só em localStorage), para valer em outro aparelho. Botão disabled + aria-describedby na mensagem.', cost: 'Baixo', costColor: low, costNote: '—', fallback: '—' },
+      { screen: 'Probabilidades', name: 'Em breve', tech: 'Dados / API', k: 'k-api', how: 'Feature flag probabilidades_enabled. “Me avise” grava interesse e dispara push no lançamento.', cost: 'Baixo', costColor: low, costNote: '—', fallback: 'Cena estática esmaecida.' },
+      { screen: 'Gamificação', name: 'Barra de XP e contadores', tech: 'CSS', k: 'k-css', how: 'Width 0→valor em 800 ms ao entrar na tela; número sobe com requestAnimationFrame em 600 ms (tabular-nums para não pular).', cost: 'Baixo', costColor: low, costNote: '—', fallback: 'C: valor final direto.' },
+      { screen: 'Gamificação', name: 'Subir de nível', tech: 'Remotion', k: 'k-rem', how: 'Composição Remotion pré-renderizada: 2,4 s, 720×720, anéis e partículas roxas, SEM texto. Exportar WebM VP9 com alfa + MOV HEVC com alfa (Safari). Número e nome do nível ficam em DOM por cima, então um único arquivo serve para todos os níveis.', cost: 'Médio', costColor: mid, costNote: '≈ 350 KB, sob demanda', fallback: 'B/C: badge estático com halo CSS e o mesmo texto.' },
+      { screen: 'Gamificação', name: 'Conquista desbloqueada', tech: 'Remotion', k: 'k-rem', how: 'Mesma técnica: 1,6 s, 480×480, hexágono se abrindo; ícone da conquista em DOM por cima. Pré-carregar quando o progresso passar de 80%.', cost: 'Médio', costColor: mid, costNote: '≈ 180 KB', fallback: 'B/C: cartão estático com o ícone.' },
+      { screen: 'Gamificação', name: 'Toast de XP', tech: 'CSS', k: 'k-css', how: 'Entra do topo (translateY −16→0, 240 ms), fica 4 s, sai. Fila: nunca dois toasts ou um toast em cima de modal. role="status".', cost: 'Baixo', costColor: low, costNote: '—', fallback: 'C: aparece e some sem deslizar.' },
+      { screen: 'Gamificação', name: 'Skeleton', tech: 'CSS', k: 'k-css', how: 'Gradiente com background-position animado, 1,4 s. Mesmas dimensões do conteúdo final para não pular layout.', cost: 'Baixo', costColor: low, costNote: '—', fallback: 'C: blocos parados.' },
+      { screen: 'Gamificação', name: 'Dados de XP, ranking', tech: 'Dados / API', k: 'k-api', how: 'Ranking semanal fecha domingo 23:59 (Brasília). Mostrar só apelido; usuário pode sair do ranking nas configurações.', cost: 'Baixo', costColor: low, costNote: '—', fallback: '—' },
+      { screen: 'Notificações', name: 'Switches e cartões', tech: 'CSS', k: 'k-css', how: 'reactstrap CustomInput type="switch" com o visual do guia; linha inteira clicável (44 px). Salvar com debounce de 600 ms e toast “Preferências salvas”.', cost: 'Baixo', costColor: low, costNote: '—', fallback: '—' },
+      { screen: 'Notificações', name: 'Testar som', tech: 'JS / React', k: 'k-js', how: 'Web Audio, 6 sons ≤ 1 s (OGG/MP3 ≤ 20 KB cada), carregados depois do 1º toque (política de autoplay). Botão vira “Tocando…” por 1 s.', cost: 'Baixo', costColor: low, costNote: '≈ 100 KB no total', fallback: '—' },
+      { screen: 'Notificações', name: 'Push e instalação', tech: 'Dados / API', k: 'k-api', how: 'Service Worker + Web Push (VAPID). Estados por Notification.permission e “PushManager” in window. No iPhone, push só com o app instalado na Tela de Início (iOS 16.4+): mostrar o bloco de instalação quando standalone = false.', cost: 'Baixo', costColor: low, costNote: '—', fallback: '—' },
+      { screen: 'Notificações', name: 'Alertas em tempo real', tech: 'Dados / API', k: 'k-api', how: 'Feed de rodadas por WebSocket/SSE. Regras avaliadas no servidor (push) e no cliente (som e aviso na tela). Limite: no máximo 1 alerta do mesmo tipo a cada 2 min.', cost: 'Baixo', costColor: low, costNote: '—', fallback: '—' },
+      { screen: 'Notificações', name: 'Sininho de avisos', tech: 'CSS', k: 'k-css', how: 'Desktop: Popover de 380 px ancorado no sino (fade + 4 px, 240 ms). Mobile: folha inferior (translateY 100%→0, 240 ms), arrastar para fechar, foco preso dentro.', cost: 'Baixo', costColor: low, costNote: '—', fallback: 'C: aparece sem deslizar.' }
+    ];
+    var apis = [
+      { route: 'POST /probabilidades/leitura', shape: '{ rodadasHoje: 2976, calculadoEm, agora,\n  janelas: [ { faixa: "3x", min: 2, max: 3, horario: "20:47:32" },\n             { faixa: "10x", min: 5, max: 10, horario: "21:03:10" } ],\n  bloqueadoAte: "20:47:32" }', note: 'Erros: 422 AMOSTRA_INSUFICIENTE { tem: 86, precisa: 200 } · 503 → estado de erro com código.' },
+      { route: 'GET /rodadas/recentes?limite=20', shape: '[ { id: 2976, multiplicador: 1.42, horario: "20:41:07" }, … ]', note: 'Alimenta o feed da animação de leitura (dados reais, não inventados).' },
+      { route: 'GET /flags', shape: '{ probabilidades: false }', note: 'false → estado “Em breve”.' },
+      { route: 'GET /gamificacao/perfil', shape: '{ nivel: 7, nome: "Piloto Sênior", xp: 2340, xpInicioNivel: 1800, xpProximo: 3000,\n  sequencia: { dias: 12, recorde: 19, semana: [1,1,1,1,1,1,0] },\n  conquistas: [ { id, nome, descricao, desbloqueadaEm, progresso } ],\n  historico: [ { acao, xp, em } ], ranking: { top: [...], eu: { pos: 23, xp: 1180 } } }', note: 'Eventos xp_ganho, nivel_subiu, conquista_desbloqueada chegam pelo mesmo socket e entram na fila de celebração.' },
+      { route: 'GET · PUT /notificacoes/preferencias', shape: '{ somGeral: true, alertas: { rosas: { som: true, tela: true, push: false }, … } }', note: 'Chaves: rosas, baixos, dist30, dist100, mil, minutoQuente.' },
+      { route: 'GET /avisos · POST /avisos/:id/lido', shape: '[ { id, titulo, texto, publicadoEm, lido } ]', note: 'Contador do sino = não lidos (máx. “9+”).' }
+    ];
+    var maps = [
+      { rs: '<Card>', use: '.glass + .edge por cima; .card-body com padding 16/20/24' },
+      { rs: '<Badge pill>', use: 'Selos 3x/10x, “NOVO”, contador do sino' },
+      { rs: '<Button color="primary">', use: 'Gradiente roxo + --shadow-glow; outline = secundário' },
+      { rs: '<CustomInput type="switch">', use: 'Switch de 46×28, linha inteira clicável' },
+      { rs: '<Progress>', use: 'XP, leitura, amostra insuficiente; altura 10 px' },
+      { rs: '<Nav tabs> <TabContent>', use: 'Ranking Semana | Mês; fade de 240 ms entre abas' },
+      { rs: '<Popover>', use: 'Painel do sino no desktop' },
+      { rs: '<Modal>', use: 'Subir de nível, conquista; folha inferior no mobile' },
+      { rs: '<Toast>', use: 'XP ganho, preferências salvas' }
+    ];
+    var decisions = [
+      { n: '01', t: 'Bloqueio do botão:', d: 'vai até o horário provável de 3x (o mais próximo). Se o produto quiser até o de 10x, só muda bloqueadoAte.' },
+      { n: '02', t: 'Amostra mínima:', d: '200 rodadas do dia (o dia começa 00:00 de Brasília). Valor de exemplo, ajustar com o time de dados.' },
+      { n: '03', t: 'Linguagem:', d: 'sempre “provável”, “estimativa”, “janela”. Nunca “certeiro”, “sinal”, “garantido” ou valores em reais.' },
+      { n: '04', t: 'Barra inferior:', d: 'Início, Jogos, Probabilidades (centro), Conquistas, Mais. Banca e Aulas saem para “Mais”; confirmar com o uso atual.' },
+      { n: '05', t: 'Conquistas:', d: 'premiam hábito e aprendizado (sequência, aulas, configurar alertas, usar pausa), não volume de aposta.' },
+      { n: '06', t: 'XP por depósito:', d: 'mantido como pedido no histórico; sugiro limitar a 1 vez por dia ou trocar por XP de aula, alinhado ao jogo responsável.' },
+      { n: '07', t: 'Ranking:', d: 'por XP da semana, só apelido, com opção de não aparecer.' },
+      { n: '08', t: 'Horários:', d: 'sempre do relógio do servidor em America/Sao_Paulo, com “(Brasília)” visível perto do “Agora”.' }
+    ];
+    return { rows: rows, apis: apis, maps: maps, decisions: decisions };
+  }
+}
+</script>
+
+
+</body></html>

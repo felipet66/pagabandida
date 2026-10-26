@@ -1,0 +1,44 @@
+TELECO I.A. PRO — DESIGN SYSTEM
+
+Commit anterior da Gestão de Banca: 00cb33b
+Revisão: http://localhost:3000/admin/horarios
+
+Resultado
+Painel glass/edge, botão primário roxo, ícones Lucide, textos e superfícies dos dois
+temas. Horários, intervalos, ocorrências e atualização usam JetBrains Mono.
+As faixas ODD > 3x e ODD > 10x mantêm seus nomes, com roxo e o token de rosas.
+Estados inicial, carregando, erro, vazio e dados insuficientes acompanham o tema.
+O texto inicial agora corresponde à amostra fixa de 100 velas, sem mencionar
+um seletor de quantidade inexistente. Dados insuficientes têm texto de corpo,
+para evitar uma frase longa no tamanho reservado ao horário.
+O botão usa o gradiente dos tokens também em foco/clique, vencendo a regra
+vermelha remanescente do Black Dashboard. Botão de análise tem 48 px.
+As abas e o player reutilizam os componentes já adaptados. A camada de navegação
+compartilhada foi habilitada nesta rota. Nenhum token ou dependência nova.
+
+Arquivos desta etapa
+Alterados: src/views/AviatorPRO.js, src/views/AviatorPRO.css, src/layouts/Admin/Admin.js.
+Criados: src/views/AviatorPRO.test.js, docs/design/TELECO-IA-REVISAO.txt e capturas
+em docs/design/revisao-teleco-ia/ (desktop/celular, claro/escuro).
+As alterações de artes/PWA existentes em paralelo no workspace foram preservadas.
+
+Verificação
+5 suítes e 35 testes passaram: AviatorPRO, useAviatorProAnalysis, aviatorProAnalysis,
+AviatorPlayer e designContrast. Incluem amostra fixa, análise manual, troca Original/VIP,
+carregamento, recuperação de erro, amostra vazia, dados insuficientes e valores da análise.
+As fórmulas, limiares, cancelamento de consulta e chamadas existentes não foram alterados.
+git diff --check sem erros. Não rodei npm run build.
+
+Navegador na porta 3000: 1440x1300 e 390x844 nos dois temas, 320x740 no claro.
+Sem rolagem horizontal nas larguras conferidas. Análise real carregou 100 velas
+e os dois cartões de intervalo. Conferidos família Mono, botão de 48 px, gradiente
+roxo após o clique, tema claro e movimento reduzido sem o fundo .fx.
+Capturas desktop mostram somente o painel de análise, excluindo o iframe do jogo;
+capturas mobile excluem a barra de saldo. Preferências restauradas ao final.
+
+Limites
+Troca de versão, erros e dados insuficientes foram conferidos por testes simulados.
+Não houve teste em aparelho físico ou leitor de tela real, nem interação com apostas.
+A interface interna do iframe continua sendo fornecida pela Spribe.
+O aviso existente de que a estimativa não prevê próximas rodadas foi preservado.
+Novas alterações da Teleco I.A. PRO ficam sem commit para revisão.

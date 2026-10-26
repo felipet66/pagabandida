@@ -1,0 +1,20 @@
+Saque — revisão do design system
+
+Depósito commitado em 5c0a8a2, incluindo sugestões de R$ 5, 10, 20 e 50 e mínimo de R$ 5 destacado/validado.
+
+Saque:
+- Chrome compartilhado, cartão glass/edge, ícones Lucide e tokens para os temas claro e escuro.
+- Valor em JetBrains Mono, campos e botões com foco visível e controles de 48px.
+- Solicitar saque permanece a ação principal; acesso à Betuxo e suporte são secundários.
+- Confirmação distingue solicitação enviada de pagamento concluído.
+- API, tipos de chave, cancelamento, erro de sessão e bloqueio de duplicidade preservados.
+
+Validação:
+- 2 suites e 6 testes aprovados (Withdraw e withdrawApi).
+- Revisão visual em localhost:3000: claro/escuro, 1440x1000 e 390x844.
+- Campo de chave alternativa conferido via seleção de E-mail, sem preencher dados ou enviar saque.
+- Sem rolagem horizontal em 320px (scrollWidth/clientWidth = 309px).
+- Nenhum saque real, mensagem ao suporte ou build executado.
+- Preferência de tema e viewport restauradas.
+
+Alterações do Saque sem commit para revisão.

@@ -1,0 +1,17 @@
+Generated with built-in image_gen; transparent_background: false.
+
+Use case: compositing / identity-preserve.
+Asset type: ONE finished square 1:1 app card cover, ANÁLISES COM I.A. for TELECO PRO.
+Input 1: original AI-analysis cover, EDIT TARGET and composition reference.
+Input 2: photograph IMG_4751.jpg, exact adult man's facial identity reference.
+Input 3: photograph IMG_4752.jpg, same man's supporting identity reference.
+Input 4: current violet TELECO PRO logo, branding reference.
+Update the target cover by replacing the woman entirely with a photoreal cutout of the man from inputs 2/3. His precise recognizable face must be retained: short cropped black hair, dark defined eyebrows, trimmed moustache and beard with pointed goatee, natural skin tone, rectangular slightly tinted rimless glasses with gold bridge. Keep actual burgundy crewneck shirt with thin white shoulder piping. Natural confident expression based on image 2, face undistorted. Cut out room and chair completely, no hand or microphone. Large upper-torso portrait occupies upper left, face fully visible and never covered with text.
+Coordinate with the violet history cover and TELECO PRO banners: Replace ALL red graphic accents with saturated violet #7C3AED, lavender #B79BFF, restrained pink #FF5FD2 highlights; dark #07050D / #140E26 background; silver-white #F4F1FF metallic lettering with violet rim lighting. Gentle violet portrait edge light, keep natural skin color.
+Replace MUSA AVIATOR brand in upper right with compact actual TELECO PRO logo inspired faithfully by image 4. Keep the distinct analysis theme: abstract glowing neural-network head outline, linked data nodes, understated globe/grid and chart lines behind the portrait at upper right, small violet/lavender propeller airplane and clean flight arc as in brand. Secondary illustration details must never clutter the face or text.
+Keep EXACT text, all accents correct and all words fully inside 7% safe margins:
+"ANÁLISES" very large silver-white metallic serif lettering across lower half
+"COM I.A." very large silver-white metallic serif line directly below
+"AVIATOR PRO" smaller spaced uppercase, with PRO in violet/lavender
+"Explore os padrões. Amplie sua visão." small elegant white final line.
+Maintain original composition and typographic hierarchy for an easy-to-read mobile card, premium polished finish. Full-bleed square opaque artwork, no borders or rounded canvas corners. No woman, no old MUSA branding, no money/win promises, no browser UI, no watermark or extra text. Exactly ONE finished cover.

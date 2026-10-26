@@ -1,0 +1,153 @@
+Fundação visual Teleco Pro — pedido 1 de 4 — 12/10/2026
+
+Revisão
+Acesse http://localhost:3035/styleguide com o servidor npm start ativo.
+A porta 3000 já estava ocupada. O servidor de revisão foi iniciado com BROWSER=none PORT=3035 npm start.
+A rota só é criada em desenvolvimento. O build de produção não contém /styleguide, a página ou seu chunk de revisão.
+Nenhum commit foi feito. Nenhum arquivo do BFF ou de outro projeto foi alterado.
+Nenhuma tela existente, arquivo de sidebar/navbar/barra inferior, logo, ícone de PWA ou arte existente foi editado.
+
+Implementação
+Os blocos dos dois temas de tokens-referencia.css foram copiados literalmente e preservados em tokens.css, inclusive comentários, transparências, cores dos seis alertas e color-scheme. Tokens entram antes do SCSS Black Dashboard; design-system.css entra como camada visual posterior. O seletor :root[data-theme] impede que o :root do Bootstrap substitua a paleta.
+Chakra Petch: 600 e 700. Sora: 400, 500 e 600. JetBrains Mono: 400, 600 e 700. Apenas os arquivos Latin desses pesos são importados. Pacotes @fontsource fixados em 5.3.0 e lucide-react em 1.55.0. O link externo do Google Fonts foi removido. As fontes são servidas pelo próprio app; não foi implementado um novo cache/PWA offline.
+ThemeContext agora usa dark/light, expõe changeTheme e followSystemTheme e mantém as preferências de movimento. BackgroundColorContext mantém a API de cor existente e expõe theme, reduceMotion e accent=var(--primary). A cor inicial do contexto passa a primary.
+O atributo data-theme no html é a autoridade visual. A preferência salva vence o sistema; sem preferência válida, acompanha prefers-color-scheme, com escuro como alternativa. Não usa white-content. Leituras, escrita e remoção no armazenamento são protegidas por try/catch.
+O script no head escolhe o tema e o movimento antes de recursos e da montagem do React. O fundo inicial usa os valores exatos de --bg dos dois temas. data-theme-ready limita transições ao período posterior à inicialização.
+Movimento reduzido é sistema OU preferência do app. A preferência do sistema não é anulada pelo interruptor; nesse caso ele aparece ativado e bloqueado. data-motion=reduced remove animações, limita transições a opacidade de 120 ms e desliga .fx. As trocas de cores usam 320 ms no modo completo. Não foi necessária a View Transitions API.
+Os componentes reutilizáveis ThemeToggle, MotionToggle, Switch e Icon estão prontos. O Icon recebe um componente Lucide importado estaticamente por as, usa currentColor, traço 1,75 e aceita label para ícones informativos; por padrão é decorativo.
+A camada CSS cobre botões, cards, badges/selos, switches nativos do reactstrap e os interruptores novos, progresso, formulários, modais, abas, dropdowns, tabelas, scrollbars, alertas, toasts e SweetAlert2. A marcação das telas existentes permanece intacta.
+/styleguide fica antes dos wrappers com efeitos do catálogo, sessão e carteira. Os exemplos só alteram estado local ou abrem popups de demonstração; não montam os hooks que consultam o BFF.
+
+Tokens adicionais e motivo
+Foram adicionados 55 primitivos comuns fora dos blocos dos temas. Nenhum token da referência foi alterado.
+--space-* (9): espaçamento solicitado em rem, de 4 a 56 px, com nomes baseados em unidades de 4.
+--radius-* (7): raios solicitados, incluindo 14 px de botão e pílula.
+--font-* (3): famílias tipográficas locais e alternativas do sistema.
+--type-* e --line-* (14): sete níveis da escala tipográfica em rem, com tamanho e entrelinha separados.
+--on-primary: branco para conteúdo sobre roxo profundo e botão.
+--gradient-primary e --gradient-progress: gradientes extraídos do guia HTML.
+--button-scrim: 14% de preto por cima do gradiente original. O topo #9466FF sozinho oferece aproximadamente 3,75:1 com branco; a composição supera 4,5:1 em todos os stops sem mudar os tokens ou o gradiente de referência.
+--focus-width, --focus-spread, --focus-ring e --focus-shadow: anel de 2 px, afastamento/brilho de 3 px e cor temática de foco.
+--motion-theme, --motion-reduced e --motion-ease: tempos de 320/120 ms e curva de transição.
+--control-height e --touch-target: botões/campos de 48 px e área de toque de 44 px.
+--switch-width, --switch-height, --switch-thumb, --switch-travel e --shadow-switch: geometria 46x28, thumb de 22 px, deslocamento de 18 px e sombra do controle conforme o guia.
+--progress-height: barra de 10 px.
+--blur-glass: limite de 16 px para vidro; @supports fornece superfície sólida quando não há suporte.
+--grid-size: grade estática de 28 px conforme o guia.
+--backdrop: escurecimento do fundo de modais sem depender da paleta antiga do Bootstrap.
+
+Valores completos dos primitivos
+--space-1: .25rem
+--space-2: .5rem
+--space-3: .75rem
+--space-4: 1rem
+--space-5: 1.25rem
+--space-6: 1.5rem
+--space-8: 2rem
+--space-10: 2.5rem
+--space-14: 3.5rem
+--radius-8: .5rem
+--radius-12: .75rem
+--radius-14: .875rem
+--radius-16: 1rem
+--radius-20: 1.25rem
+--radius-24: 1.5rem
+--radius-pill: 999px
+--font-body: "Sora", system-ui, sans-serif
+--font-heading: "Chakra Petch", system-ui, sans-serif
+--font-mono: "JetBrains Mono", ui-monospace, monospace
+--type-display-xl: 2.75rem
+--line-display-xl: 3rem
+--type-display: 2.25rem
+--line-display: 2.5rem
+--type-h1: 1.75rem
+--line-h1: 2.125rem
+--type-h2: 1.25rem
+--line-h2: 1.625rem
+--type-body: .9375rem
+--line-body: 1.375rem
+--type-body-sm: .84375rem
+--line-body-sm: 1.25rem
+--type-caption: .75rem
+--line-caption: 1rem
+--on-primary: #FFFFFF
+--gradient-primary: linear-gradient(180deg,#9466FF 0%,#7C3AED 55%,#6D28D9 100%)
+--gradient-progress: linear-gradient(90deg,#7C3AED,#B79BFF)
+--button-scrim: rgba(0,0,0,.14)
+--focus-width: 2px
+--focus-spread: 3px
+--focus-ring: var(--primary-text)
+--focus-shadow: 0 0 0 var(--focus-spread) var(--glow-soft)
+--motion-theme: 320ms
+--motion-reduced: 120ms
+--motion-ease: ease
+--control-height: 3rem
+--touch-target: 2.75rem
+--switch-width: 2.875rem
+--switch-height: 1.75rem
+--switch-thumb: 1.375rem
+--switch-travel: 1.125rem
+--shadow-switch: 0 1px 3px rgba(0,0,0,.35)
+--progress-height: .625rem
+--blur-glass: 16px
+--grid-size: 28px
+--backdrop: rgba(7,5,13,.72)
+
+Verificações reais
+CI=true npm test -- --watchAll=false: exit 0; 33 suítes, 160 testes passaram. São 31 testes novos além dos 129 existentes.
+Os testes novos cobrem tema inicial pelo sistema, preferência salva, valores inválidos, falhas de localStorage, acompanhamento do sistema, retorno ao tema automático, movimento pelo sistema e pelo interruptor, remontagem, limpeza de listeners, bootstrap antes do React e contraste WCAG.
+O teste de contraste lê tokens.css e tokens-referencia.css, compara todos os valores dos dois temas, verifica os pares documentados nos comentários (incluindo as seis cores de alerta e hero/branco), texto e semânticas, alertas sobre soft composto e texto branco em todos os stops do gradiente do botão com a camada de contraste.
+React Testing Library não estava instalada no projeto: foi adicionada como dependência de desenvolvimento, com @testing-library/dom. Os testes existentes permanecem e passaram.
+npm run build: exit 0, compilado com avisos preexistentes de lint e depreciação. Nenhum aviso novo dos arquivos da fundação. A produção não inclui a rota nem conteúdo da revisão; as fontes locais estão nos arquivos de mídia.
+git diff --check: sem erros. .env, .env.local e .env.production continuam ignorados.
+
+Verificação manual no navegador do Codex
+Abri /styleguide por npm start e alternei claro/escuro e movimento reduzido. Recarreguei e confirmei persistência do tema e do movimento. Não observei troca visível para o tema errado nas recargas; o bootstrap também foi verificado automaticamente antes da montagem do React.
+Conferi breakpoints de 1440x900 e 390x844: sem overflow horizontal da página; mínimo de 12 px nos textos inspecionados. Medi botão de 48 px com raio de 14 px, switch de 46x28 px com toque de 44 px, progresso de 10 px e blur de 16 px.
+No modo reduzido confirmei data-motion=reduced, background-image:none de .fx e transition-property:opacity com 0.12s. As famílias computadas são Sora e Chakra Petch nos papéis corretos.
+Abri o modal reactstrap no claro e no escuro; confirmei superfície e campo do tema, centralização e fechamento por teclado no exemplo claro. Abri o SweetAlert2 claro e confirmei o fechamento também no modo reduzido.
+Problemas encontrados e corrigidos na camada CSS: translação de 30% herdada do modal; texto branco !important herdado da tabela; cores fixas importantes de estados de botão; toast sem espaçamento; ring de foco nativo em vez do roxo; fechamento do SweetAlert2 aguardando uma transição que não ocorria no modo reduzido.
+Capturas salvas em docs/design/revisao-fundacao-01/ (escuro-desktop, claro-desktop e claro-mobile).
+A inspeção de rede não estava disponível nessa API do navegador. O isolamento do BFF foi confirmado pela separação da rota e dos componentes com efeitos; não foi feito teste com conta real nem chamada ao BFF.
+
+O que não foi verificado
+Aparelhos físicos, Android/iOS reais, leitores de tela reais, Safari/Firefox externos ao navegador do Codex, renderização de blur em GPU fraca e desempenho/consumo de bateria em aparelhos.
+Não foi gravado um filme quadro a quadro da primeira pintura. A prevenção de troca de tema se baseia no script anterior aos recursos, nos testes automáticos e nas recargas observadas.
+O fallback de vidro sem backdrop-filter foi implementado, mas o navegador usado oferece suporte; não foi testado num navegador sem suporte real.
+Não foi garantido carregamento offline completo do app. Os arquivos de fonte são locais, mas a estratégia anterior de desregistro da PWA foi preservada.
+
+Riscos e decisões para pedidos 2 a 4
+Layouts ainda têm cores próprias em app-layout.css, Home.css, GameCatalog.css, AuthForm.css, Deposit.css e Withdraw.css, além de estilos inline e componentes react-switch antigos. Não foram convertidos neste pedido. A camada cobre as classes Bootstrap; componentes locais com nomes próprios ou cores inline precisam ser adotados nos pedidos 2 e 3.
+As regras globais antigas com !important exigiram overrides pontuais em botões e tabelas; ao converter telas, usar os tokens e evitar aumentar a especificidade.
+O tipo de destaque --hero existe somente no tema claro por definição da referência. Consumidores futuros no escuro devem escolher um fallback temático.
+Os níveis A/B da referência são contexto de performance. Esta fundação não adiciona detector de hardware, WebGL, Three.js ou Remotion; medir o custo de múltiplas superfícies com blur em aparelhos reais antes de adotar efeitos pesados.
+Todo movimento novo deve consumir reduceMotion do contexto e/ou data-motion. CSS bloqueia animações; timers que animem valores, mídia e canvas em futuras telas precisarão respeitar a mesma preferência em JS.
+Chaves públicas de preferência: teleco-pro:theme e teleco-pro:reduce-motion. Não limpar essas chaves em logout; a migração existente já preserva o namespace.
+
+Arquivos existentes alterados
+/Users/felipeteles/projects/teleco-pro/package.json
+/Users/felipeteles/projects/teleco-pro/public/index.html
+/Users/felipeteles/projects/teleco-pro/src/components/BackgroundColorWrapper/BackgroundColorWrapper.js
+/Users/felipeteles/projects/teleco-pro/src/components/ThemeWrapper/ThemeWrapper.js
+/Users/felipeteles/projects/teleco-pro/src/contexts/BackgroundColorContext.js
+/Users/felipeteles/projects/teleco-pro/src/contexts/ThemeContext.js
+/Users/felipeteles/projects/teleco-pro/src/index.js
+
+Arquivos criados
+/Users/felipeteles/projects/teleco-pro/docs/design/FUNDACAO-01-REVISAO.txt
+/Users/felipeteles/projects/teleco-pro/docs/design/revisao-fundacao-01/claro-desktop.jpg
+/Users/felipeteles/projects/teleco-pro/docs/design/revisao-fundacao-01/claro-mobile.jpg
+/Users/felipeteles/projects/teleco-pro/docs/design/revisao-fundacao-01/escuro-desktop.jpg
+/Users/felipeteles/projects/teleco-pro/src/assets/css/design-system.css
+/Users/felipeteles/projects/teleco-pro/src/assets/css/tokens.css
+/Users/felipeteles/projects/teleco-pro/src/components/DesignSystem/Icon.js
+/Users/felipeteles/projects/teleco-pro/src/components/DesignSystem/MotionToggle.js
+/Users/felipeteles/projects/teleco-pro/src/components/DesignSystem/Switch.js
+/Users/felipeteles/projects/teleco-pro/src/components/DesignSystem/ThemeToggle.js
+/Users/felipeteles/projects/teleco-pro/src/components/ThemeWrapper/ThemeWrapper.test.js
+/Users/felipeteles/projects/teleco-pro/src/services/designContrast.js
+/Users/felipeteles/projects/teleco-pro/src/services/designContrast.test.js
+/Users/felipeteles/projects/teleco-pro/src/services/themeBootstrap.test.js
+/Users/felipeteles/projects/teleco-pro/src/services/themePreferences.js
+/Users/felipeteles/projects/teleco-pro/src/views/StyleGuide.css
+/Users/felipeteles/projects/teleco-pro/src/views/StyleGuide.js

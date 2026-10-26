@@ -1,0 +1,7 @@
+.floating-clock { position: fixed; z-index: 1070; display: flex; flex-direction: column; gap: 4px; min-width: 130px; padding: 9px 12px; border: 1px solid #ff526645; border-radius: 12px; background: #181218f5; box-shadow: 0 5px 22px #0005; color: #fff; cursor: grab; touch-action: none; user-select: none; }
+.floating-clock:active { cursor: grabbing; }
+.floating-clock > span { display: flex; align-items: center; gap: 6px; color: #c4b6cb; font-size: 9px; }
+.floating-clock > span i:first-child { color: #ff606c; }
+.floating-clock > span i:last-child { margin-left: auto; }
+.floating-clock time { font-size: 19px; font-weight: 600; line-height: 1.2; font-variant-numeric: tabular-nums; }
+.floating-clock:focus-visible { outline: 2px solid #ff606c; outline-offset: 3px; }

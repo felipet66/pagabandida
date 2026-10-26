@@ -1,0 +1,163 @@
+Revisão Teleco Pro / Betuxo — 12/10/2026
+
+Estado para revisão
+Existe somente um commit: 0d62427 (Initial project snapshot).
+As mudanças funcionais posteriores estão sem commit. Nenhum deploy, push ou operação com conta real foi feito.
+O commit inicial foi saneado antes de finalizar: não inclui a chave embutida do BFF, a credencial antiga do arquivo de ambientes, credenciais de bots Telegram, node_modules, build ou arquivos .env.
+.env.example foi criado com REACT_APP_APP_KEY= e REACT_APP_BFF_URL= vazios. .env* é ignorado; .env.example é a única exceção.
+Nenhuma imagem binária foi alterada nesta etapa. O banner do login já atualizado na etapa anterior pertence ao snapshot inicial.
+
+Mudanças
+Casa: Betuxo, site e cadastro com os links solicitados. Metadados, manifestos, sidebar, cadastro, rodapé e prompts usam Teleco Pro/Betuxo. Busca textual em src/ e public/ não encontrou as marcas anteriores.
+Pré-visualizações: PUBLIC_URL é preenchida no build do Netlify a partir de PUBLIC_URL, DEPLOY_PRIME_URL ou URL, nessa ordem, sem inventar domínio.
+BFF: somente variáveis de ambiente; sem chave ou túnel temporário como fallback. Configuração ausente rejeita chamadas antes do adapter e informa os nomes das variáveis no console, sem valores.
+Aviator: Original, VIP e Premium, chartNumber=1, chartNumber=2 e chartNumber=3. Premium habilitado no seletor compartilhado do histórico (Home) e da análise I.A. PRO (AviatorPRO), usando spribe/aviator-premium no player. A imagem aviator.png continua compartilhada entre as versões.
+Abertura: platform WEB ou MOBILE é detectado pelo navegador, incluindo iPad com identificação de desktop.
+Catálogo: usa data.games, launchSlug, imageFile, total e hasMore. Filtros vazios não são enviados. imageFile tem prioridade para resolver as capas.
+Histórico: função pública Supabase da Betuxo, GET com chartNumber e limit conforme a quantidade selecionada (mínimo 100, máximo 1000), sem credenciais do BFF. roundId/multiplier/timestamp são adaptados para id/odd/dataTime/hour/date/time. Filtros são locais, horários em São Paulo. A interface oferece 10, 50, 100, 200, 500 ou 1000 rodadas; não inventa páginas além da janela consultada. O componente legado de velas rosas também reutiliza esse serviço.
+Cadastro: validate-document obrigatório antes de register-simplified; telefone e CPF apenas dígitos, CPF com 11 dígitos, countryCode BR, axioAffId RDLBE, axioClickId opcional da URL ou da atribuição capturada. Erros do envelope permanecem identificados por code.
+Saldo: sempre o item BRL, available em reais, com bonus separado. Não usa totalAvailable nem divisão por 100.
+Depósito: amount em texto com duas casas, currency BRL e methodCode PIX. DOCUMENT_REQUIRED preserva a mensagem e oferece link ao site Betuxo. Já paguei reutiliza deposits/sync; não existe consulta de depósito por id.
+Saque: formulário POST wallet/withdraw, amount em texto, currency BRL, methodCode PIX, pixKey { type, key? }. CPF permite omitir key, conforme o validador. EMAIL, PHONE, CNPJ e RANDOM requerem key. Chave Pix fica apenas em memória. Sem prefill, sem repetição automática, com proteção contra cliques duplicados e cancelamento ao desmontar. O arquivo Withdraw-old.js, sem consumidores e com contrato antigo, foi removido.
+Ranking: continua na rota ranking/deposits.
+PWA: public/sw.js limpa todos os caches, assume os clientes e se desregistra. Não possui handler de fetch. public/_headers impede cache HTTP do worker. O bootstrap limpa caches e faz a migração do localStorage uma única vez. Chaves genéricas da sessão anterior não comprovam pertencer ao novo app e são removidas; será necessário entrar novamente na primeira visita. O logout preserva o marcador de migração e a atribuição.
+Logs: erros não registram os objetos de requisição/resposta. A inicialização do projeto antigo de gravação LogRocket foi removida. Credenciais e URLs de sessão dos testes foram substituídas por valores sintéticos gerados em execução.
+Os módulos legados de sinais não consultam Telegram com credenciais embutidas. Se voltarem a ser utilizados, precisam de um proxy público de sinais configurado em REACT_APP_SIGNALS_URL; não colocar token de bot nessa variável.
+
+Contrato da seção 5
+Divergências corrigidas: afiliado fixo antigo; CPF/telefone com máscara; countryCode ausente; cadastro podia ocorrer sem validate-document; saldo lia totalAvailable e podia selecionar outra moeda; DOCUMENT_REQUIRED não oferecia link; faltava Já paguei; saque ativo apenas encaminhava ao site e o arquivo legado usava outra API/centavos.
+Payload do saque foi conferido em:
+/Users/felipeteles/Downloads/bff-apostatudo/src/clients/hydra.client.js
+/Users/felipeteles/Downloads/bff-apostatudo/src/validators/wallet.validator.js
+Nenhuma divergência conhecida permanece nos payloads implementados da seção 5. A validação real de login/cadastro/saldo/Pix/saque depende de ambiente e conta de teste. Não foi realizada com conta real.
+O BFF não foi modificado. Observação fora da seção 5: HydraClient ainda aceita internamente o slug da versão adicional na normalização, embora a curadoria Betuxo só publique 54 jogos e o front não o utilize mais.
+
+Verificação executada
+CI=true npm test -- --watchAll=false: exit 0; 30 suítes, 129 testes passaram. Testes cobrem configuração obrigatória, cabeçalhos públicos/autenticados, cadastro e validação em ordem, duas versões, WEB/MOBILE, adaptação e filtros do histórico, saldo, depósitos/sync, DOCUMENT_REQUIRED, saque e cliques duplicados, localStorage e registro do worker. Chamadas do BFF foram mockadas.
+npm run build: exit 0. Build concluído com avisos de lint/depreciação nos módulos existentes. sw.js e _headers estão presentes no build.
+Node com vm e assert: executou build/sw.js com install/activate simulados; confirmou exclusão de todos os caches, clients.claim, unregister e ausência de handler fetch.
+GET público aviator-history para chartNumber 1 e 2, betHouse betuxo e limit 100: HTTP 200 em ambas; 100 registros em cada resposta, com roundId, multiplier e timestamp; Access-Control-Allow-Origin=*.
+Curadoria local do BFF comparada ao mapping do front: os mesmos 54 slugs e imageFile. Todas as capas existem e estão no mapa de importações. Não foi consultado o GET do catálogo em um BFF real autenticado por chave.
+git diff --check: sem erros. Apenas um commit no repositório; nenhum arquivo .env, node_modules ou build rastreado.
+Worker ainda precisa ser validado no domínio publicado com uma instalação da PWA anterior: as verificações locais simulam as APIs, não a atualização de uma instalação real.
+
+Imagens pendentes de substituição
+Marca Musa em artes (identificada por inspeção visual/OCR, sem alterações):
+/Users/felipeteles/projects/teleco-pro/src/assets/img/teleco-pro-logo-metallic.png
+/Users/felipeteles/projects/teleco-pro/src/assets/img/teleco-pro.png
+/Users/felipeteles/projects/teleco-pro/src/assets/img/teleco-login-hero.jpg
+/Users/felipeteles/projects/teleco-pro/src/assets/banners/teleco-pro-canal.png
+/Users/felipeteles/projects/teleco-pro/src/assets/banners/teleco-pro-whatsapp-vip.png
+/Users/felipeteles/projects/teleco-pro/src/assets/banners/teleco-pro-ranking.png
+/Users/felipeteles/projects/teleco-pro/src/assets/aviator-tools/historico-completo.png
+/Users/felipeteles/projects/teleco-pro/src/assets/aviator-tools/analises-ia.png
+A arte historico-completo.png também ainda contém a versão removida no texto da imagem.
+
+Ícones herdados da PWA anterior (letra B vermelha):
+/Users/felipeteles/projects/teleco-pro/src/assets/img/teleco-pro-app-icon.png
+/Users/felipeteles/projects/teleco-pro/public/favicon.png
+/Users/felipeteles/projects/teleco-pro/public/favicon.ico
+/Users/felipeteles/projects/teleco-pro/public/favicon-16x16.png
+/Users/felipeteles/projects/teleco-pro/public/favicon-32x32.png
+/Users/felipeteles/projects/teleco-pro/public/apple-touch-icon.png
+/Users/felipeteles/projects/teleco-pro/public/android-chrome-192x192.png
+/Users/felipeteles/projects/teleco-pro/public/android-chrome-512x512.png
+
+Arquivos faltantes do catálogo: nenhum dos 54 jogos curados tem imageFile ausente.
+
+Dependências para publicação e teste real
+Configurar REACT_APP_APP_KEY e REACT_APP_BFF_URL no Netlify com escopo de build e executar novo deploy após revisão.
+Definir uma URL pública estável do BFF e incluir o domínio final do app em ALLOWED_ORIGINS no BFF.
+Disponibilizar uma conta de teste e executar a validação real de cadastro/login/carteira/jogos.
+Depois de criar um .env local com as variáveis, o comando para abrir o app e testar pela interface é: npm start.
+Substituir as artes e ícones listados acima; a publicação do worker ficará pronta no mesmo deploy.
+REACT_APP_APP_KEY é incorporada ao bundle pelo Create React App. Remover o valor embutido evita o fallback e seu registro no código-fonte; essa variável não passa a ser um segredo inacessível no navegador.
+
+Arquivos alterados/criados/removidos após o snapshot inicial
+/Users/felipeteles/projects/teleco-pro/.env.example
+/Users/felipeteles/projects/teleco-pro/REVISAO-BETUXO.txt
+/Users/felipeteles/projects/teleco-pro/netlify.toml
+/Users/felipeteles/projects/teleco-pro/public/_headers
+/Users/felipeteles/projects/teleco-pro/public/index.html
+/Users/felipeteles/projects/teleco-pro/public/manifest.json
+/Users/felipeteles/projects/teleco-pro/public/site.webmanifest
+/Users/felipeteles/projects/teleco-pro/public/sw.js
+/Users/felipeteles/projects/teleco-pro/src/assets/aviator-tools/analises-ia.prompt.txt
+/Users/felipeteles/projects/teleco-pro/src/assets/aviator-tools/historico-completo.prompt.txt
+/Users/felipeteles/projects/teleco-pro/src/assets/banners/teleco-pro-boas-vindas.prompt.txt
+/Users/felipeteles/projects/teleco-pro/src/assets/banners/teleco-pro-canal.prompt.txt
+/Users/felipeteles/projects/teleco-pro/src/assets/banners/teleco-pro-ranking.prompt.txt
+/Users/felipeteles/projects/teleco-pro/src/assets/banners/teleco-pro-whatsapp-vip.prompt.txt
+/Users/felipeteles/projects/teleco-pro/src/assets/games/bff-mapping.json
+/Users/felipeteles/projects/teleco-pro/src/assets/games/images.js
+/Users/felipeteles/projects/teleco-pro/src/assets/img/teleco-pro-logo-metallic.prompt.txt
+/Users/felipeteles/projects/teleco-pro/src/backedComponents/BarChart/BarChart.js
+/Users/felipeteles/projects/teleco-pro/src/backedComponents/LineChart/LineChart.js
+/Users/felipeteles/projects/teleco-pro/src/backedComponents/SimpleTable/SimpleTable.js
+/Users/felipeteles/projects/teleco-pro/src/components/Catalog/AviatorTools.js
+/Users/felipeteles/projects/teleco-pro/src/components/Catalog/GameCard.js
+/Users/felipeteles/projects/teleco-pro/src/components/Catalog/GameCard.test.js
+/Users/felipeteles/projects/teleco-pro/src/components/Footer/Footer.js
+/Users/felipeteles/projects/teleco-pro/src/components/GraphModal/GraphModal.js
+/Users/felipeteles/projects/teleco-pro/src/components/HistoryOdds/HistoryOdds.js
+/Users/felipeteles/projects/teleco-pro/src/components/HistoryOddsPinksMin/HistoryOddsPinksMin.js
+/Users/felipeteles/projects/teleco-pro/src/components/Home/AviatorGameSelector.js
+/Users/felipeteles/projects/teleco-pro/src/components/MaximosMultiplicadores/MaximosMultiplicadores.js
+/Users/felipeteles/projects/teleco-pro/src/components/Navbars/AdminNavbar.js
+/Users/felipeteles/projects/teleco-pro/src/components/PredictNext/PredictNext.js
+/Users/felipeteles/projects/teleco-pro/src/components/Sidebar/Sidebar.js
+/Users/felipeteles/projects/teleco-pro/src/config/betHouse.js
+/Users/felipeteles/projects/teleco-pro/src/enviroments/enviroments.js
+/Users/felipeteles/projects/teleco-pro/src/hooks/catalog.test.js
+/Users/felipeteles/projects/teleco-pro/src/hooks/useAviatorProAnalysis.js
+/Users/felipeteles/projects/teleco-pro/src/hooks/useAviatorProAnalysis.test.js
+/Users/felipeteles/projects/teleco-pro/src/hooks/useAviatorRecords.js
+/Users/felipeteles/projects/teleco-pro/src/hooks/useAviatorRecords.test.js
+/Users/felipeteles/projects/teleco-pro/src/hooks/useCatalog.js
+/Users/felipeteles/projects/teleco-pro/src/hooks/useDepositSync.js
+/Users/felipeteles/projects/teleco-pro/src/hooks/useDepositSync.test.js
+/Users/felipeteles/projects/teleco-pro/src/hooks/usePixPayment.test.js
+/Users/felipeteles/projects/teleco-pro/src/hooks/useStartGame.js
+/Users/felipeteles/projects/teleco-pro/src/hooks/useUpdateBalance.js
+/Users/felipeteles/projects/teleco-pro/src/hooks/useWalletBalances.js
+/Users/felipeteles/projects/teleco-pro/src/hooks/useWalletBalances.test.js
+/Users/felipeteles/projects/teleco-pro/src/index.js
+/Users/felipeteles/projects/teleco-pro/src/services/appStorage.js
+/Users/felipeteles/projects/teleco-pro/src/services/appStorage.test.js
+/Users/felipeteles/projects/teleco-pro/src/services/aviatorRecords.js
+/Users/felipeteles/projects/teleco-pro/src/services/aviatorRecords.test.js
+/Users/felipeteles/projects/teleco-pro/src/services/bffApi.js
+/Users/felipeteles/projects/teleco-pro/src/services/bffApi.test.js
+/Users/felipeteles/projects/teleco-pro/src/services/catalogSession.test.js
+/Users/felipeteles/projects/teleco-pro/src/services/depositApi.js
+/Users/felipeteles/projects/teleco-pro/src/services/depositApi.test.js
+/Users/felipeteles/projects/teleco-pro/src/services/pendingGame.js
+/Users/felipeteles/projects/teleco-pro/src/services/registration.js
+/Users/felipeteles/projects/teleco-pro/src/services/registration.test.js
+/Users/felipeteles/projects/teleco-pro/src/services/walletAmount.js
+/Users/felipeteles/projects/teleco-pro/src/services/withdrawApi.js
+/Users/felipeteles/projects/teleco-pro/src/services/withdrawApi.test.js
+/Users/felipeteles/projects/teleco-pro/src/setupTests.js
+/Users/felipeteles/projects/teleco-pro/src/testSupport/fixtures.js
+/Users/felipeteles/projects/teleco-pro/src/views/Automapro.js
+/Users/felipeteles/projects/teleco-pro/src/views/Aviator10.js
+/Users/felipeteles/projects/teleco-pro/src/views/Aviator2.js
+/Users/felipeteles/projects/teleco-pro/src/views/AviatorPRO.js
+/Users/felipeteles/projects/teleco-pro/src/views/Dashboard.js
+/Users/felipeteles/projects/teleco-pro/src/views/Deposit.js
+/Users/felipeteles/projects/teleco-pro/src/views/Deposit.test.js
+/Users/felipeteles/projects/teleco-pro/src/views/GameCatalog.js
+/Users/felipeteles/projects/teleco-pro/src/views/GamesSignal.js
+/Users/felipeteles/projects/teleco-pro/src/views/GoalsTracker.js
+/Users/felipeteles/projects/teleco-pro/src/views/Home.js
+/Users/felipeteles/projects/teleco-pro/src/views/IAvip.js
+/Users/felipeteles/projects/teleco-pro/src/views/Login.js
+/Users/felipeteles/projects/teleco-pro/src/views/Login.test.js
+/Users/felipeteles/projects/teleco-pro/src/views/Maintenance.js
+/Users/felipeteles/projects/teleco-pro/src/views/Register.js
+/Users/felipeteles/projects/teleco-pro/src/views/Withdraw-old.js (removido)
+/Users/felipeteles/projects/teleco-pro/src/views/Withdraw.css
+/Users/felipeteles/projects/teleco-pro/src/views/Withdraw.js
+/Users/felipeteles/projects/teleco-pro/src/views/Withdraw.test.js
+
+Saneamento incluído no próprio snapshot inicial: .gitignore, src/services/bffApi.js, src/enviroments/enviroments.js e os quatro módulos de sinais (Aviator2, Aviator10, SignalBot, SignalBotTwo).

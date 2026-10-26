@@ -1,0 +1,81 @@
+/* Bankroll presentation only: calculation rates and state remain in the component. */
+.bankroll-page > .row { margin-left: 0; margin-right: 0; }
+.bankroll-page > .row > [class*="col-"] { padding-left: 0; padding-right: 0; }
+:root[data-theme] .bankroll-page .bankroll-card { border-radius: var(--radius-24); }
+:root[data-theme] .bankroll-page .bankroll-card .card-body { padding: var(--space-8); }
+:root[data-theme] .bankroll-back-link { display: inline-flex; align-items: center; gap: var(--space-2); min-height: var(--touch-target); color: var(--text-2); font-size: var(--type-body-sm); }
+:root[data-theme] .bankroll-back-link:hover { color: var(--primary-text); }
+:root[data-theme] .bankroll-manager { max-width: 1120px; margin: 0 auto; color: var(--text); }
+.bankroll-manager .bankroll-manager__header { display: flex; align-items: center; justify-content: space-between; gap: var(--space-5); margin-bottom: var(--space-6); }
+:root[data-theme] .bankroll-manager h1 { font: 700 var(--type-h1)/var(--line-h1) var(--font-heading); margin: var(--space-2) 0; color: var(--text); }
+:root[data-theme] .bankroll-manager__header p { max-width: 620px; margin: 0; color: var(--text-2); font-size: var(--type-body-sm); line-height: var(--line-body-sm); }
+:root[data-theme] .bankroll-manager__eyebrow { color: var(--primary-text); font: 600 var(--type-caption)/var(--line-caption) var(--font-body); text-transform: uppercase; letter-spacing: .1em; }
+:root[data-theme] .bankroll-manager .bankroll-manager__rate { align-items: center; flex-shrink: 0; min-width: 96px; width: auto; padding: var(--space-3) var(--space-4); gap: var(--space-2); background: var(--primary-soft); border: 1px solid var(--border-strong); border-radius: var(--radius-16); }
+:root[data-theme] .bankroll-manager__rate span { color: var(--text-2); font-size: var(--type-caption); }
+:root[data-theme] .bankroll-manager__rate strong { color: var(--primary-text); font: 700 var(--type-h1)/var(--line-h1) var(--font-mono); }
+.bankroll-manager .bankroll-manager__controls { display: grid; align-items: start; grid-template-columns: minmax(160px, .65fr) minmax(0, 1.35fr); gap: var(--space-4) var(--space-6); }
+:root[data-theme] .bankroll-manager .bankroll-field label, :root[data-theme] .bankroll-profile__label { display: block; color: var(--text-2); font-size: var(--type-body-sm); margin-bottom: var(--space-2); }
+:root[data-theme] .bankroll-manager .bankroll-field__input { min-height: var(--control-height); border: 1px solid var(--border-strong); border-radius: var(--radius-12); background: var(--bg-2); }
+:root[data-theme] .bankroll-manager .bankroll-field__input > span { color: var(--text-2); font-family: var(--font-mono); font-size: var(--type-body); }
+:root[data-theme] .bankroll-manager .bankroll-field__input .form-control { min-width: 0; min-height: 0; height: calc(var(--control-height) - 2px); border: 0; border-radius: 0; background: transparent; box-shadow: none; color: var(--text); font-size: 1rem; font-family: var(--font-mono); padding: 0 var(--space-3) 0 0; }
+:root[data-theme] .bankroll-manager .bankroll-field__input:focus-within { border-color: var(--primary-text); outline: var(--focus-width) solid var(--focus-ring); outline-offset: 2px; box-shadow: var(--focus-shadow); }
+:root[data-theme] .bankroll-manager .bankroll-field__input input:focus { outline: none; }
+.bankroll-manager .bankroll-strategies { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: var(--space-2); }
+:root[data-theme] .bankroll-manager .bankroll-strategy { display: flex; flex-direction: column; align-items: center; justify-content: center; gap: var(--space-1); min-height: 64px; padding: var(--space-3) var(--space-2); text-align: center; background: var(--surface-solid); border: 1px solid var(--border-strong); border-radius: var(--radius-14); color: var(--text-2); }
+:root[data-theme] .bankroll-manager .bankroll-strategy span { color: inherit; margin: 0; font-size: var(--type-caption); font-weight: 600; }
+:root[data-theme] .bankroll-manager .bankroll-strategy strong { color: var(--primary-text); margin: 0; font: 600 var(--type-body)/var(--line-body) var(--font-mono); }
+:root[data-theme] .bankroll-manager .bankroll-strategy:hover { background: var(--primary-soft); border-color: var(--primary-text); }
+:root[data-theme] .bankroll-manager .bankroll-strategy.is-active { background: linear-gradient(var(--button-scrim),var(--button-scrim)),var(--gradient-primary); color: var(--on-primary); box-shadow: var(--shadow-glow); }
+:root[data-theme] .bankroll-manager .bankroll-strategy.is-active strong { color: var(--on-primary); }
+:root[data-theme] .bankroll-profile__description { margin: var(--space-2) 0 0; font-size: var(--type-caption); line-height: var(--line-body-sm); color: var(--text-2); }
+.bankroll-manager .bankroll-actions { display: flex; grid-column: 1 / -1; justify-content: flex-start; flex-direction: row; flex-wrap: wrap; min-width: 0; gap: var(--space-3); }
+:root[data-theme] .bankroll-manager .bankroll-actions .btn { min-height: var(--control-height); margin: 0; padding: var(--space-3) var(--space-5); border-radius: var(--radius-14); font-size: var(--type-body); line-height: var(--line-body); flex: 0 0 auto; width: auto; }
+:root[data-theme] .bankroll-manager .bankroll-entry-suggestion { padding: var(--space-5); margin: var(--space-6) 0 0; border: 1px solid var(--border); border-radius: var(--radius-20); background: var(--bg-2); }
+.bankroll-manager .bankroll-entry-suggestion__heading { display: flex; flex-wrap: wrap; align-items: baseline; flex-direction: row; gap: var(--space-2) var(--space-3); margin-bottom: var(--space-4); }
+:root[data-theme] .bankroll-entry-suggestion__heading > span { color: var(--text); font: 600 var(--type-h2)/var(--line-h2) var(--font-heading); }
+:root[data-theme] .bankroll-entry-suggestion__heading strong { color: var(--primary-text); font-size: var(--type-body-sm); }
+:root[data-theme] .bankroll-entry-suggestion__heading small { color: var(--text-2); font-size: var(--type-caption); }
+.bankroll-entry-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: var(--space-3); }
+:root[data-theme] .bankroll-entry { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: var(--space-3); padding: var(--space-4); background: var(--surface-solid); border: 1px solid var(--border); border-radius: var(--radius-12); }
+.bankroll-entry span, .bankroll-entry small { display: block; }
+:root[data-theme] .bankroll-entry span { color: var(--text); font-size: var(--type-body-sm); }
+:root[data-theme] .bankroll-entry small { color: var(--text-2); font-size: var(--type-caption); margin-top: var(--space-1); }
+:root[data-theme] .bankroll-entry strong { color: var(--primary-text); font: 600 var(--type-h2)/var(--line-h2) var(--font-mono); overflow-wrap: anywhere; }
+.bankroll-manager .bankroll-summary { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: var(--space-3); margin-top: var(--space-6); }
+:root[data-theme] .bankroll-manager .bankroll-summary > div { display: flex; flex-direction: column; align-items: flex-start; gap: var(--space-2); min-width: 0; padding: var(--space-4); background: var(--surface-solid); border: 1px solid var(--border); border-radius: var(--radius-16); }
+.bankroll-summary .ds-icon { color: var(--primary-text); }
+:root[data-theme] .bankroll-summary span { color: var(--text-2); font-size: var(--type-caption); }
+:root[data-theme] .bankroll-manager .bankroll-summary strong { color: var(--text); font: 600 var(--type-h2)/var(--line-h2) var(--font-mono); overflow-wrap: anywhere; max-width: 100%; }
+:root[data-theme] .bankroll-projection-note { margin: var(--space-4) 0 0; font-size: var(--type-caption); line-height: var(--line-body-sm); color: var(--text-2); }
+:root[data-theme] .bankroll-table-wrap { overflow: auto; max-height: 480px; margin-top: var(--space-5); border: 1px solid var(--border); border-radius: var(--radius-16); background: var(--surface-solid); scrollbar-color: var(--border-strong) transparent; }
+:root[data-theme] .bankroll-manager .bankroll-table { white-space: nowrap; margin: 0; font-size: var(--type-body-sm); }
+:root[data-theme] .bankroll-manager .bankroll-table :is(td,th) { padding: var(--space-3) var(--space-4); border-color: var(--border); }
+:root[data-theme] .bankroll-manager .bankroll-table thead th { position: sticky; top: 0; z-index: 1; background: var(--surface-solid); color: var(--text-2); font: 600 var(--type-caption)/var(--line-caption) var(--font-body); }
+:root[data-theme] .bankroll-manager .bankroll-table td { font-family: var(--font-mono); font-variant-numeric: tabular-nums; }
+:root[data-theme] .bankroll-day { display: inline-flex; align-items: center; justify-content: center; min-width: 28px; min-height: 28px; margin-right: var(--space-2); background: var(--primary-soft); color: var(--primary-text); border-radius: var(--radius-8); font-size: var(--type-caption); }
+:root[data-theme] .bankroll-empty { display: flex; align-items: center; gap: var(--space-4); padding: var(--space-6); margin-top: var(--space-6); background: var(--bg-2); border: 1px dashed var(--border-strong); border-radius: var(--radius-16); color: var(--primary-text); }
+:root[data-theme] .bankroll-empty strong { display: block; color: var(--text); font-size: var(--type-body); }
+:root[data-theme] .bankroll-empty span { display: block; color: var(--text-2); font-size: var(--type-body-sm); margin-top: var(--space-1); }
+:root[data-theme] .bankroll-page :is(a,button,.bankroll-table-wrap):focus-visible { outline: var(--focus-width) solid var(--focus-ring); outline-offset: 3px; box-shadow: var(--focus-shadow); }
+:root[data-theme] .bankroll-popup.swal2-popup { border: 1px solid var(--border-strong); border-radius: var(--radius-24); background: var(--surface-solid); color: var(--text); box-shadow: var(--shadow-card); }
+:root[data-theme] .bankroll-popup--details.swal2-popup { width: min(920px, calc(100vw - 32px)); padding: var(--space-6); }
+:root[data-theme] .bankroll-popup__content { margin: var(--space-5) 0 0; padding: 0; overflow: visible; }
+.bankroll-details-scroll { max-height: 60vh; overflow: auto; border: 1px solid var(--border); border-radius: var(--radius-12); scrollbar-color: var(--border-strong) transparent; }
+:root[data-theme] .bankroll-details-table { margin: 0; white-space: nowrap; font-size: var(--type-body-sm); }
+:root[data-theme] .bankroll-details-table :is(td,th) { padding: var(--space-3); }
+:root[data-theme] .bankroll-details-table td { font-family: var(--font-mono); font-variant-numeric: tabular-nums; }
+:root[data-theme] .bankroll-details-table th { position: sticky; top: 0; background: var(--surface-solid); font-size: var(--type-caption); }
+:root[data-theme] .bankroll-details-scroll:focus-visible { outline: var(--focus-width) solid var(--focus-ring); outline-offset: -3px; box-shadow: var(--focus-shadow); }
+@media (max-width: 767px) {
+  :root[data-theme] .bankroll-page .bankroll-card .card-body { padding: var(--space-5); }
+  .bankroll-manager .bankroll-manager__header { align-items: flex-start; flex-wrap: wrap; }
+  :root[data-theme] .bankroll-manager .bankroll-manager__rate { flex-direction: row; min-width: 0; padding: var(--space-2) var(--space-3); gap: var(--space-3); }
+  :root[data-theme] .bankroll-manager .bankroll-manager__rate strong { font-size: var(--type-h2); line-height: var(--line-h2); }
+  .bankroll-manager .bankroll-manager__controls { grid-template-columns: minmax(0, 1fr); }
+  .bankroll-manager .bankroll-summary { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  :root[data-theme] .bankroll-manager .bankroll-entry-suggestion { padding: var(--space-4); }
+  .bankroll-entry-grid { grid-template-columns: minmax(0, 1fr); }
+  :root[data-theme] .bankroll-manager .bankroll-strategy { padding: var(--space-3) var(--space-1); }
+  :root[data-theme] .bankroll-manager .bankroll-actions .btn { flex: 1 1 auto; }
+}
+@media (max-width: 360px) { .bankroll-manager .bankroll-strategies { grid-template-columns: minmax(0, 1fr); } }

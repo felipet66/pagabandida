@@ -1,0 +1,20 @@
+Aulas gerenciadas pelo painel
+
+A tela Aulas consulta GET /api/lessons do BFF com a sessão e a chave do app existentes, com paginação, carregamento, lista vazia e nova tentativa em caso de erro. Somente aulas publicadas do próprio app são retornadas. O cadastro, edição, exclusão, capa, ordem e publicação são feitos em bff-admin → Aulas.
+
+Os três vídeos fixos anteriores devem ser cadastrados no painel caso sejam mantidos; não há fallback para conteúdo fixo.
+Links anteriores:
+- Primeiros passos: https://www.youtube.com/watch?v=QsVpb6cxnCU
+- Como funciona o Teleco Pro: https://www.youtube.com/watch?v=VRPWPHB44vQ
+- Minutagem do Teleco Pro: https://www.youtube.com/watch?v=xJn9-997xug
+
+YouTube e Vimeo conhecidos usam embed, arquivos MP4/WebM/OGV usam player e outros links HTTPS abrem em nova página. A marcação explícita de assistida mantém o gancho de gamificação com UUID estável; editar o título não muda o ID. Não há upload nem módulos/cursos nesta entrega.
+
+Para ativar, aplicar docs/sql/lessons.sql do repositório do BFF no banco compartilhado do BFF e bff-admin, publicar BFF/painel/app e cadastrar/publicar as aulas. Nenhuma alteração de manutenção, login ou configuração de segredos é necessária.
+
+Teste do recurso: CI=true npm test -- --watchAll=false --runInBand src/views/Aulas.test.js src/services/lessonsApi.test.js
+Build: npm run build
+
+Apresentação: destaque cinematográfico da primeira aula e catálogo responsivo (uma coluna no celular, duas no tablet e quatro no desktop). O menu existente mantém sua estrutura, com a adição de Aulas na seção Ferramentas. Capas cadastradas no painel têm prioridade; a arte local lessons-cinema-hero.webp é usada quando a capa está ausente ou falha. A descrição completa pode ser expandida. O player só é montado após a seleção da aula e fechar desmonta o vídeo. A janela permite fechar por botão/Escape, devolve o foco e fica acima da navegação do app. O link original continua disponível para vídeos com restrições de reprodução no provedor. A marcação de assistida continua explícita e vale apenas durante a sessão atual da tela; não há novo progresso persistido.
+
+Acesso: Aulas aparece na seção Ferramentas do menu lateral, com ícone de livro e indicação de rota ativa. A tela Jogos e ferramentas após login inclui um card “Aula disponível — Como usar o aplicativo”, com acesso a /admin/aulas. O catálogo público mantém sua apresentação anterior. O card se adapta ao celular e o menu lateral é recolhido ao selecionar a aula.

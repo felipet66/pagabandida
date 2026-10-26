@@ -1,0 +1,20 @@
+import React from "react";
+import { createRoot } from "react-dom/client";
+import { act, Simulate } from "react-dom/test-utils";
+import FloatingClock from "./FloatingClock";
+let root;
+beforeEach(() => { global.IS_REACT_ACT_ENVIRONMENT = true; jest.useFakeTimers(); root = createRoot(document.createElement("div")); });
+afterEach(() => { act(() => root.unmount()); jest.useRealTimers(); delete global.IS_REACT_ACT_ENVIRONMENT; });
+test("atualiza segundos e limita arraste à janela sem camada sobre o jogo", () => {
+  jest.setSystemTime(new Date("2026-10-10T22:45:00Z"));
+  act(() => root.render(<FloatingClock />));
+  const button = document.querySelector('.floating-clock'); button.setPointerCapture = jest.fn();
+  expect(button.textContent).toContain("19:45:00");
+  act(() => jest.advanceTimersByTime(1000)); expect(button.textContent).toContain("19:45:01");
+  act(() => Simulate.pointerDown(button, { button: 0, pointerId: 1, clientX: 900, clientY: 650 }));
+  act(() => Simulate.pointerMove(button, { pointerId: 1, clientX: -2000, clientY: -2000 }));
+  expect(button.style.left).toBe("8px"); expect(button.style.top).toBe("8px");
+  act(() => Simulate.pointerUp(button));
+  act(() => Simulate.keyDown(button, { key: "ArrowRight", preventDefault: jest.fn() }));
+  expect(button.style.left).toBe("18px");
+});

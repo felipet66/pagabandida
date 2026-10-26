@@ -1,0 +1,73 @@
+PÁGINA INICIAL DE JOGOS — DESIGN SYSTEM
+
+Cadastro commitado antes desta etapa: c9a0e8e
+Revisão local: http://localhost:3000/jogos
+Com sessão, a aplicação redireciona para /admin/jogos, que usa o mesmo catálogo.
+
+Resultado
+- Cabeçalho da página, hierarquia de títulos e ícones Lucide.
+- Desktop: banner e ferramentas lado a lado; telas menores: conteúdo empilhado.
+- Cards, filtros, abas de categoria e estados usam tokens dos dois temas.
+- Campos de 48 px; controles dos banners com área de toque de 44 px.
+- Controles dos banners em uma faixa própria, sem cobrir o conteúdo da arte.
+- Reduzir movimento do app também interrompe autoplay e transições do carrossel.
+  A preferência do sistema e a pausa manual continuam respeitadas.
+- Na versão conectada, cores de cabeçalho, sidebar, barra inferior, rodapé e relógio
+  acompanham o tema apenas enquanto /admin/jogos está montada.
+- Busca, categorias, provedores, paginação, links e fluxo do player foram preservados.
+- Sem tokens novos, novas dependências, alterações no BFF ou edição de imagens.
+
+Arquivos alterados
+src/views/GameCatalog.js
+src/views/GameCatalog.css
+src/components/Catalog/GameCard.js
+src/components/Catalog/AviatorTools.js
+src/components/Catalog/AviatorTools.css
+src/components/BannerCarousel/BannerCarousel.js
+src/components/BannerCarousel/BannerCarousel.css
+src/components/FloatingClock/FloatingClock.js
+src/layouts/Admin/Admin.js
+
+Criados
+src/views/GameCatalog.test.js
+src/components/BannerCarousel/BannerCarousel.test.js
+docs/design/JOGOS-REVISAO.txt
+docs/design/revisao-jogos/escuro-desktop.jpg
+docs/design/revisao-jogos/claro-desktop.jpg
+docs/design/revisao-jogos/escuro-mobile.jpg
+docs/design/revisao-jogos/claro-mobile.jpg
+docs/design/revisao-jogos/claro-filtros-mobile.jpg
+
+Verificação
+4 suítes e 11 testes passaram: GameCatalog, BannerCarousel, GameCard e gameLoginPrompt.
+Os testes cobrem filtros/atalhos, login antes de jogar, player com API simulada e
+retorno de foco, erro/vazio do catálogo, capas e movimento reduzido/pausa manual.
+git diff --check sem erros.
+
+Navegador na porta 3000: versão conectada em 1440x1000 e 390x844 nos dois temas;
+320x740 no claro. Sem rolagem horizontal nas larguras conferidas. Campos de filtro
+com 48 px e texto dos cards mobile de 12 px. Foco visível na busca.
+Busca real por Aviator retornou duas versões; o catálogo exibiu 54 jogos.
+No movimento reduzido, .fx é removido e o controle de rotação desaparece.
+Capturas desktop mostram o conteúdo abaixo da barra de saldo; capturas mobile
+da página principal também excluem essa barra. Preferências restauradas ao fim.
+
+Não rodei build. Não iniciei jogos reais, nem fiz depósitos, saques ou logout.
+A versão pública sem sessão e o player foram conferidos pelos testes simulados;
+o navegador tinha uma sessão ativa. Não houve teste em aparelho físico.
+
+Pendências e limites
+As imagens dos banners e das ferramentas ainda têm a identidade antiga; precisam
+das novas artes. A estrutura geral da navegação e a folha Minha conta continuam
+com seus fluxos existentes, para etapas posteriores. O Histórico Aviator não foi
+alterado nesta etapa, conforme a escolha do usuário pela página inicial de jogos.
+Novas alterações ficam sem commit para revisão.
+
+Atualização — Aviator Premium
+- Terceiro card nos destaques Aviator, junto de Original e VIP, tanto no catálogo público quanto no administrativo.
+- Slug spribe/aviator-premium, a partir do identificador informado pelo usuário; preserva o pedido de login e o fluxo existente de abertura/fechamento do player.
+- Reutiliza a capa local de Aviator. Nenhuma arte, dependência ou BFF foi alterado.
+- Home, GameCatalog e GameCard: 3 suítes e 10 testes aprovados. Incluem o login e a abertura simulada do Premium com o slug correto.
+- npm run build aprovado com os avisos existentes; ESLint dos arquivos alterados e git diff --check aprovados.
+- Conferido na interface localhost:3001/admin/jogos: três cards e Premium habilitado. Não foi executada abertura real do Premium nem qualquer aposta.
+- O catálogo local retornou somente Original e VIP na consulta; o card Premium usa o slug fornecido diretamente pelo usuário.

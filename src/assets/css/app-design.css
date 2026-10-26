@@ -1,0 +1,10 @@
+/* Scoped chrome for screens already migrated to the design system. */
+:root[data-theme] #root .app-design-layout { background-color: var(--bg); }
+:root[data-theme] #root .app-design-layout .footer { border-color: var(--border); }
+:root[data-theme] #root .app-design-layout .footer :is(.nav-link,.copyright) { color: var(--text-2); font-size: var(--type-caption); }
+:root[data-theme] .floating-clock--catalog { background: var(--surface-solid); border-color: var(--border-strong); box-shadow: var(--shadow-card); color: var(--text); }
+:root[data-theme] .floating-clock--catalog > span { color: var(--text-2); font-size: var(--type-caption); }
+:root[data-theme] .floating-clock--catalog > span i:first-child { color: var(--primary-text); }
+:root[data-theme] .floating-clock--catalog:focus-visible { outline: var(--focus-width) solid var(--focus-ring); outline-offset: 3px; box-shadow: var(--focus-shadow); }
+
+:root[data-theme] #root .app-design-layout :is(a,button):focus-visible { outline: var(--focus-width) solid var(--focus-ring); outline-offset: 3px; box-shadow: var(--focus-shadow); }

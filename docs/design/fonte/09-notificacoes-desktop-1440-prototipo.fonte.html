@@ -1,0 +1,400 @@
+<!DOCTYPE html>
+<html lang="pt-BR"><head>
+<meta charset="utf-8">
+<title>Notificações · desktop</title>
+<script src="f73f8ade-a263-446f-86aa-7c6e72d13c05"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<style></style>
+<style>
+body{margin:0;background:#050309}
+*{box-sizing:border-box}
+.t-dark{--bg:#07050D;--surface:rgba(22,15,42,.66);--surface-solid:#140E26;--surface-2:#1C1535;--surface-3:#261C47;--border:rgba(167,139,250,.16);--border-strong:rgba(167,139,250,.36);--text:#F4F1FF;--text-2:#BDB4DA;--text-3:#8F86B2;--primary:#7C3AED;--primary-text:#B79BFF;--primary-soft:rgba(124,58,237,.18);--glow:rgba(139,92,246,.55);--glow-soft:rgba(139,92,246,.22);--success:#34D399;--success-soft:rgba(52,211,153,.14);--warning:#FBBF24;--warning-soft:rgba(251,191,36,.14);--info:#60A5FA;--info-soft:rgba(96,165,250,.14);--shadow-card:0 1px 0 rgba(255,255,255,.04) inset,0 12px 40px rgba(0,0,0,.55);--shadow-glow:0 0 0 1px rgba(167,139,250,.35),0 0 28px -6px rgba(139,92,246,.6);--grid-line:rgba(167,139,250,.07);--track-off:#2B2247;--edge-a:rgba(183,155,255,.75);--edge-b:rgba(255,95,210,.45);--bar-bg:rgba(13,9,25,.82);--a-rosas:#FF5FD2;--a-rosas-s:rgba(255,95,210,.14);--a-baixos:#FF8A3D;--a-baixos-s:rgba(255,138,61,.14);--a-d30:#FDE047;--a-d30-s:rgba(253,224,71,.12);--a-d100:#38BDF8;--a-d100-s:rgba(56,189,248,.14);--a-mil:#F2B84B;--a-mil-s:rgba(242,184,75,.14);--a-quente:#4ADE80;--a-quente-s:rgba(74,222,128,.14);color-scheme:dark}
+.t-light{--bg:#F7F5FF;--surface:rgba(255,255,255,.80);--surface-solid:#FFFFFF;--surface-2:#F3EFFF;--surface-3:#E9E2FF;--border:rgba(76,29,149,.12);--border-strong:rgba(76,29,149,.28);--text:#120B24;--text-2:#463D63;--text-3:#615880;--primary:#7C3AED;--primary-text:#6D28D9;--primary-soft:rgba(124,58,237,.10);--glow:rgba(124,58,237,.28);--glow-soft:rgba(124,58,237,.12);--success:#047857;--success-soft:rgba(4,120,87,.10);--warning:#B45309;--warning-soft:rgba(180,83,9,.10);--info:#1D4ED8;--info-soft:rgba(29,78,216,.10);--shadow-card:0 1px 2px rgba(18,11,36,.06),0 10px 30px rgba(91,33,182,.10);--shadow-glow:0 0 0 1px rgba(124,58,237,.35),0 8px 24px -6px rgba(124,58,237,.35);--grid-line:rgba(91,33,182,.06);--track-off:#D9D1F2;--edge-a:rgba(124,58,237,.45);--edge-b:rgba(192,23,142,.25);--bar-bg:rgba(255,255,255,.86);--a-rosas:#BE1A8A;--a-rosas-s:rgba(190,26,138,.10);--a-baixos:#B84A00;--a-baixos-s:rgba(184,74,0,.10);--a-d30:#7F6500;--a-d30-s:rgba(127,101,0,.10);--a-d100:#0369A1;--a-d100-s:rgba(3,105,161,.10);--a-mil:#9A6206;--a-mil-s:rgba(154,98,6,.10);--a-quente:#15803D;--a-quente-s:rgba(21,128,61,.10);color-scheme:light}
+.al-rosas{--ac:var(--a-rosas);--acs:var(--a-rosas-s)}
+.al-baixos{--ac:var(--a-baixos);--acs:var(--a-baixos-s)}
+.al-d30{--ac:var(--a-d30);--acs:var(--a-d30-s)}
+.al-d100{--ac:var(--a-d100);--acs:var(--a-d100-s)}
+.al-mil{--ac:var(--a-mil);--acs:var(--a-mil-s)}
+.al-quente{--ac:var(--a-quente);--acs:var(--a-quente-s)}
+.app{font-family:'Sora',system-ui,sans-serif;color:var(--text);background-color:var(--bg);-webkit-font-smoothing:antialiased}
+.fx{background-image:radial-gradient(700px 420px at 95% -10%,var(--glow-soft),transparent 70%),radial-gradient(600px 380px at 10% 50%,var(--primary-soft),transparent 70%),linear-gradient(var(--grid-line) 1px,transparent 1px),linear-gradient(90deg,var(--grid-line) 1px,transparent 1px);background-size:auto,auto,28px 28px,28px 28px}
+.glass{background:var(--surface);-webkit-backdrop-filter:blur(16px) saturate(140%);backdrop-filter:blur(16px) saturate(140%);border:1px solid var(--border);box-shadow:var(--shadow-card)}
+.edge{position:relative}
+.edge::after{content:"";position:absolute;inset:0;border-radius:inherit;padding:1px;background:linear-gradient(140deg,var(--edge-a),transparent 38%,transparent 62%,var(--edge-b));-webkit-mask:linear-gradient(#000 0 0) content-box,linear-gradient(#000 0 0);-webkit-mask-composite:xor;mask-composite:exclude;pointer-events:none}
+.disp{font-family:'Chakra Petch',sans-serif;letter-spacing:.01em}
+.mono{font-family:'JetBrains Mono',ui-monospace,monospace;font-variant-numeric:tabular-nums}
+.ic{fill:none;stroke:currentColor;stroke-width:1.75;stroke-linecap:round;stroke-linejoin:round;flex-shrink:0}
+.lbl{font-size:11.5px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--text-3)}
+.frame{width:1440px;height:1200px;border-radius:20px;overflow:hidden;border:1px solid var(--border);display:flex;position:relative;box-shadow:0 40px 100px -40px rgba(0,0,0,.7)}
+.side{width:256px;flex-shrink:0;padding:16px 12px;display:flex;flex-direction:column;border-right:1px solid var(--border);background:var(--bar-bg)}
+.nav-i{display:flex;align-items:center;gap:12px;min-height:44px;padding:0 12px;border-radius:12px;color:var(--text-2);text-decoration:none;font-size:14px;font-weight:500}
+.nav-i.on{color:var(--text);background:var(--primary-soft);box-shadow:inset 0 0 0 1px var(--border-strong)}
+.nav-i.on .ic{color:var(--primary-text)}
+.nav-sec{font-size:11px;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:var(--text-3);padding:14px 12px 6px}
+.new{margin-left:auto;font-size:10px;font-weight:700;letter-spacing:.08em;padding:3px 7px;border-radius:999px;color:var(--primary-text);background:var(--primary-soft);border:1px solid var(--border-strong)}
+.topbar{height:72px;flex-shrink:0;display:flex;align-items:center;justify-content:space-between;padding:0 16px 0 40px;border-bottom:1px solid var(--border);background:var(--bar-bg)}
+.icon-btn{appearance:none;border:0;background:transparent;color:var(--text-2);width:44px;height:44px;border-radius:12px;display:inline-flex;align-items:center;justify-content:center;position:relative;cursor:pointer;transition:background .2s,color .2s}
+.icon-btn.on{color:var(--primary-text);background:var(--primary-soft)}
+.count{position:absolute;top:6px;right:5px;min-width:18px;height:18px;padding:0 5px;border-radius:999px;background:#FF5FD2;color:#1A0614;font-size:11px;font-weight:700;display:flex;align-items:center;justify-content:center;box-shadow:0 0 0 2px var(--bg)}
+.t-light .count{background:#C0178E;color:#fff}
+.btn{appearance:none;border:0;cursor:pointer;font:inherit;display:inline-flex;align-items:center;justify-content:center;gap:10px;min-height:46px;padding:0 18px;border-radius:14px;font-weight:600;font-size:14.5px;text-decoration:none}
+.btn-primary{color:#fff;background:linear-gradient(180deg,#9466FF 0%,#7C3AED 55%,#6D28D9 100%);box-shadow:var(--shadow-glow)}
+.btn-ghost{color:var(--text);background:transparent;border:1px solid var(--border-strong)}
+.sw{position:relative;display:inline-block;width:46px;height:28px;border-radius:999px;background:var(--track-off);box-shadow:inset 0 0 0 1px var(--border-strong);flex-shrink:0;transition:background .22s}
+.sw::after{content:"";position:absolute;top:3px;left:3px;width:22px;height:22px;border-radius:50%;background:#fff;box-shadow:0 1px 3px rgba(0,0,0,.35);transition:transform .22s cubic-bezier(.2,.8,.2,1)}
+.sw.on{background:var(--primary);box-shadow:0 0 12px -2px var(--glow)}
+.sw.on::after{transform:translateX(18px)}
+.swbtn{appearance:none;border:0;background:transparent;padding:8px;min-height:44px;display:flex;align-items:center;cursor:pointer}
+.alert{border-radius:20px;padding:16px;display:flex;flex-direction:column;gap:12px;background-image:radial-gradient(260px 140px at 0 0,var(--acs),transparent 75%)}
+.a-ic{width:44px;height:44px;border-radius:13px;display:flex;align-items:center;justify-content:center;color:var(--ac);background:var(--acs);box-shadow:inset 0 0 0 1px var(--ac);flex-shrink:0}
+.a-chip{display:inline-flex;align-items:center;height:22px;padding:0 8px;border-radius:999px;font-size:11.5px;font-weight:700;color:var(--ac);background:var(--acs)}
+.test{appearance:none;cursor:pointer;font:inherit;display:inline-flex;align-items:center;gap:6px;min-height:44px;padding:0 12px;border-radius:12px;font-size:13px;font-weight:600;color:var(--text-2);background:var(--surface-2);border:1px solid var(--border);transition:color .2s,border-color .2s}
+.test.on{color:var(--ac);border-color:var(--ac)}
+.eq{display:inline-flex;align-items:flex-end;gap:2px;height:14px}
+.eq i{display:block;width:3px;height:8px;border-radius:2px;background:currentColor;animation:eq .7s ease-in-out infinite alternate}
+.eq i:nth-child(2){animation-delay:.15s}.eq i:nth-child(3){animation-delay:.3s}
+@keyframes eq{from{height:3px}to{height:14px}}
+.tgs{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:8px}
+.tg{appearance:none;font:inherit;cursor:pointer;text-align:left;display:grid;grid-template-columns:1fr auto;align-items:center;gap:2px 8px;padding:10px 10px 10px 12px;border-radius:14px;background:var(--surface-2);border:1px solid var(--border);color:var(--text);min-height:60px}
+.tg.dis{cursor:not-allowed}
+.tg.dis .sw{opacity:.45}
+.tg-top{display:flex;align-items:center;gap:6px;font-size:13px;font-weight:600}
+.tg-sub{grid-column:1;font-size:11.5px;color:var(--text-3)}
+.tg .sw{grid-column:2;grid-row:1 / span 2}
+.tile{width:44px;height:44px;border-radius:13px;display:flex;align-items:center;justify-content:center;flex-shrink:0}
+.step{display:flex;align-items:center;gap:12px;min-height:48px}
+.step-n{width:26px;height:26px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-family:'JetBrains Mono',monospace;font-size:12px;font-weight:700;color:var(--primary-text);background:var(--primary-soft);flex-shrink:0}
+.pop{animation:popin .22s cubic-bezier(.2,.8,.2,1) both;transform-origin:calc(100% - 70px) 0}
+.toast{animation:drop .26s cubic-bezier(.2,.8,.2,1) both}
+@keyframes popin{from{opacity:0;transform:translateY(-6px) scale(.97)}to{opacity:1;transform:none}}
+@keyframes drop{from{opacity:0;transform:translateY(-14px)}to{opacity:1;transform:none}}
+@keyframes shrink{from{transform:scaleX(1)}to{transform:scaleX(0)}}
+.timer{transform-origin:0 50%;animation:shrink 4s linear both}
+.still .pop,.still .toast,.still .timer,.still .eq i{animation:none}
+.still .sw,.still .sw::after,.still .icon-btn,.still .test{transition:none}
+.ann{display:flex;gap:12px;padding:14px 8px;border-bottom:1px solid var(--border)}
+.dot{width:10px;height:10px;border-radius:50%;margin-top:6px;flex-shrink:0}
+.tsw{appearance:none;border:0;padding:0;cursor:pointer;width:46px;height:28px;border-radius:999px;background:#2B2247;box-shadow:inset 0 0 0 1px rgba(167,139,250,.36);position:relative;flex-shrink:0}
+.tsw::after{content:"";position:absolute;top:3px;left:3px;width:22px;height:22px;border-radius:50%;background:#fff;transition:transform .22s}
+.tsw.on{background:#7C3AED;box-shadow:none}
+.tsw.on::after{transform:translateX(18px)}
+.tool{appearance:none;cursor:pointer;font:inherit;min-height:40px;padding:0 14px;border-radius:12px;font-size:13px;font-weight:600;color:#BDB4DA;background:#140E26;border:1px solid rgba(167,139,250,.22)}
+.tool.on{color:#fff;background:#7C3AED;border-color:#7C3AED}
+a{color:var(--primary-text)}a:hover{color:var(--text)}
+</style>
+</helmet>
+<div class="app t-dark {{motionCls}}" style="width: 3040px; height: 1340px; padding: 40px; display: flex; flex-direction: column; gap: 24px; background-color: #050309">
+  <div style="display: flex; align-items: center; justify-content: space-between; gap: 24px; flex-wrap: wrap">
+    <div style="display: flex; align-items: center; gap: 16px">
+      <span class="lbl" style="color: #BDB4DA">09 · Notificações · desktop 1440 · protótipo</span>
+      <span style="font-size: 13px; color: #8F86B2">Ligue e desligue canais, toque em “Testar” para ver a prévia do aviso na tela e abra o sininho.</span>
+    </div>
+    <div style="display: flex; align-items: center; gap: 8px; flex-wrap: wrap">
+      <span style="font-size: 13px; color: #8F86B2; margin-right: 4px">Push:</span>
+      <sc-for list="{{presets}}" as="p" hint-placeholder-count="4"><button class="tool {{p.cls}}" sc-camel-on-click="{{p.go}}">{{p.label}}</button></sc-for>
+      <span style="width: 1px; height: 28px; background: rgba(167,139,250,.25); margin: 0 6px"></span>
+      <button class="tool {{bellToolCls}}" sc-camel-on-click="{{toggleBell}}">Sininho aberto</button>
+      <span style="display: flex; align-items: center; gap: 10px; margin-left: 12px; font-size: 13px; color: #BDB4DA">Reduzir movimento<button class="tsw {{reduceCls}}" role="switch" aria-checked="{{reduceAria}}" aria-label="Reduzir movimento" sc-camel-on-click="{{toggleReduce}}"></button></span>
+    </div>
+  </div>
+
+  <div style="display: flex; gap: 80px">
+    <sc-for list="{{themes}}" as="th" hint-placeholder-count="2">
+      <div class="app fx frame {{th.cls}}">
+        <aside class="side" aria-label="Menu lateral">
+          <div style="display: flex; align-items: center; gap: 10px; padding: 4px 8px 12px"><svg width="28" height="28" sc-camel-view-box="0 0 34 34" aria-hidden="true"><path d="M17 2 30 9.5v15L17 32 4 24.5v-15z" style="fill: none; stroke: #8B5CF6; stroke-width: 2"></path><path d="M12.5 10h6a4 4 0 0 1 1 7.9 4.2 4.2 0 0 1-1 8.1h-6z" style="fill: #7C3AED"></path></svg><span class="disp" style="font-size: 20px; font-weight: 700">betuxo</span></div>
+          <div class="nav-sec">Principal</div>
+          <a href="#" class="nav-i"><svg class="ic" width="20" height="20" sc-camel-view-box="0 0 24 24" aria-hidden="true"><path d="M3 10.5 12 3l9 7.5"></path><path d="M5 9.5V20h14V9.5"></path><path d="M10 20v-6h4v6"></path></svg>Início</a>
+          <a href="#" class="nav-i"><svg class="ic" width="20" height="20" sc-camel-view-box="0 0 24 24" aria-hidden="true"><rect x="2.5" y="7" width="19" height="11" rx="5.5"></rect><path d="M7 11v3M5.5 12.5h3"></path><circle cx="16" cy="11.5" r="1"></circle><circle cx="18" cy="13.5" r="1"></circle></svg>Jogos</a>
+          <a href="ProbDesktop.dc.html" class="nav-i"><svg class="ic" width="20" height="20" sc-camel-view-box="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"></circle><circle cx="12" cy="12" r="5"></circle><path d="M12 12l6-6"></path></svg>Probabilidades<span class="new">NOVO</span></a>
+          <div class="nav-sec">Evolução</div>
+          <a href="GamiDesktop.dc.html" class="nav-i"><svg class="ic" width="20" height="20" sc-camel-view-box="0 0 24 24" aria-hidden="true"><path d="M8 4h8v5a4 4 0 0 1-8 0V4z"></path><path d="M16 5h3v2a3 3 0 0 1-3 3M8 5H5v2a3 3 0 0 0 3 3"></path><path d="M12 13v4M8.5 20h7"></path></svg>Gamificação<span class="new">NOVO</span></a>
+          <a href="#" class="nav-i"><svg class="ic" width="20" height="20" sc-camel-view-box="0 0 24 24" aria-hidden="true"><path d="M5 4h11a3 3 0 0 1 3 3v13H8a3 3 0 0 1-3-3z"></path><path d="M5 17a3 3 0 0 1 3-3h11"></path></svg>Aulas</a>
+          <div class="nav-sec">Carteira</div>
+          <a href="#" class="nav-i"><svg class="ic" width="20" height="20" sc-camel-view-box="0 0 24 24" aria-hidden="true"><path d="M12 3v11M7.5 9.5 12 14l4.5-4.5"></path><path d="M4 15v3a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-3"></path></svg>Depósito</a>
+          <a href="#" class="nav-i"><svg class="ic" width="20" height="20" sc-camel-view-box="0 0 24 24" aria-hidden="true"><path d="M12 14V3M7.5 7.5 12 3l4.5 4.5"></path><path d="M4 15v3a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-3"></path></svg>Saque</a>
+          <a href="#" class="nav-i"><svg class="ic" width="20" height="20" sc-camel-view-box="0 0 24 24" aria-hidden="true"><path d="M3 7.5A2.5 2.5 0 0 1 5.5 5H18v3"></path><rect x="3" y="7.5" width="18" height="12" rx="2.5"></rect><path d="M16 13.5h2"></path></svg>Gestão de banca</a>
+          <div class="nav-sec">Conta</div>
+          <a href="#" class="nav-i on" aria-current="page"><svg class="ic" width="20" height="20" sc-camel-view-box="0 0 24 24" aria-hidden="true"><path d="M6 16V11a6 6 0 0 1 12 0v5l1.5 2h-15z"></path><path d="M10 20.5a2 2 0 0 0 4 0"></path></svg>Notificações<span class="new">NOVO</span></a>
+          <a href="#" class="nav-i"><svg class="ic" width="20" height="20" sc-camel-view-box="0 0 24 24" aria-hidden="true"><circle cx="12" cy="8" r="4"></circle><path d="M4 20.5a8 8 0 0 1 16 0"></path></svg>Perfil</a>
+          <a href="#" style="margin-top: auto; display: flex; align-items: center; gap: 8px; min-height: 44px; padding: 0 12px; font-size: 12px; color: var(--text-3); text-decoration: none"><svg class="ic" width="16" height="16" sc-camel-view-box="0 0 24 24" aria-hidden="true"><path d="M12 3 4.5 6v5.5c0 4.5 3.2 8.2 7.5 9.5 4.3-1.3 7.5-5 7.5-9.5V6z"></path></svg>Jogo responsável · 18+</a>
+        </aside>
+
+        <div style="flex: 1; min-width: 0; display: flex; flex-direction: column">
+          <div class="topbar">
+            <div style="display: flex; align-items: center; gap: 10px; font-size: 14px"><span style="color: var(--text-3)">Conta</span><svg class="ic" width="14" height="14" sc-camel-view-box="0 0 24 24" aria-hidden="true" style="color: var(--text-3)"><path d="M9 6l6 6-6 6"></path></svg><span style="font-weight: 600">Notificações</span></div>
+            <div style="display: flex; align-items: center; gap: 8px">
+              <button class="icon-btn {{bellCls}}" aria-label="{{bellLabel}}" aria-expanded="{{bellAria}}" aria-haspopup="dialog" sc-camel-on-click="{{toggleBell}}"><svg class="ic" width="22" height="22" sc-camel-view-box="0 0 24 24" aria-hidden="true"><path d="M6 16V11a6 6 0 0 1 12 0v5l1.5 2h-15z"></path><path d="M10 20.5a2 2 0 0 0 4 0"></path></svg><sc-if value="{{hasUnread}}" hint-placeholder-val="{{true}}"><span class="count">{{unread}}</span></sc-if></button>
+              <button class="icon-btn" aria-label="Perfil"><span style="width: 34px; height: 34px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 13px; font-weight: 700; color: #fff; background: linear-gradient(140deg,#8B5CF6,#C0178E)">MA</span></button>
+            </div>
+          </div>
+
+          <div style="flex: 1; padding: 32px 40px; display: flex; flex-direction: column; gap: 24px">
+            <div style="display: flex; justify-content: space-between; align-items: flex-end; gap: 24px">
+              <div style="display: flex; flex-direction: column; gap: 8px">
+                <h1 class="disp" style="margin: 0; font-size: 36px; line-height: 1.1; font-weight: 700">Configurações de notificações</h1>
+                <p style="margin: 0; font-size: 15px; color: var(--text-2)">Escolha quais alertas do Aviator quer receber e como: som, aviso na tela ou push.</p>
+              </div>
+              <div class="glass edge" style="width: 420px; flex-shrink: 0; border-radius: 20px; padding: 10px 10px 10px 14px; display: flex; align-items: center; gap: 12px">
+                <span class="tile" style="color: var(--primary-text); background: var(--primary-soft)"><sc-if value="{{soundOn}}" hint-placeholder-val="{{true}}"><svg class="ic" width="22" height="22" sc-camel-view-box="0 0 24 24" aria-hidden="true"><path d="M4 9.5h3.5L12 5.5v13l-4.5-4H4z"></path><path d="M15.5 9a4 4 0 0 1 0 6M18 6.5a7.5 7.5 0 0 1 0 11"></path></svg></sc-if><sc-if value="{{soundOff}}" hint-placeholder-val="{{false}}"><svg class="ic" width="22" height="22" sc-camel-view-box="0 0 24 24" aria-hidden="true"><path d="M4 9.5h3.5L12 5.5v13l-4.5-4H4z"></path><path d="M16 9.5l5 5M21 9.5l-5 5"></path></svg></sc-if></span>
+                <div style="flex: 1; display: flex; flex-direction: column; gap: 2px"><span style="font-size: 15px; font-weight: 600">Som dos alertas</span><span style="font-size: 12.5px; line-height: 1.4; color: var(--text-2)">{{soundSub}}</span></div>
+                <button class="swbtn" role="switch" aria-checked="{{soundAria}}" aria-label="Som geral dos alertas" sc-camel-on-click="{{toggleSound}}"><span class="sw {{soundCls}}"></span></button>
+              </div>
+            </div>
+
+            <div style="display: grid; grid-template-columns: minmax(0, 1fr) 380px; gap: 24px; align-items: start">
+              <div style="display: flex; flex-direction: column; gap: 14px">
+                <div style="display: flex; justify-content: space-between; align-items: baseline"><h2 class="disp" style="margin: 0; font-size: 22px; font-weight: 700">Tipos de alerta</h2><span class="mono" style="font-size: 14px; color: var(--text-2)"><b style="color: var(--text)">{{activeCount}}</b>/6 ativos</span></div>
+                <div style="display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 14px">
+                  <sc-for list="{{alerts}}" as="a" hint-placeholder-count="6">
+                    <section class="alert glass {{a.cls}}" aria-label="{{a.name}}">
+                      <div style="display: flex; gap: 12px; align-items: flex-start">
+                        <span class="a-ic"><svg class="ic" width="22" height="22" sc-camel-view-box="0 0 24 24" aria-hidden="true"><path d="{{a.icon}}"></path></svg></span>
+                        <div style="flex: 1; min-width: 0; display: flex; flex-direction: column; gap: 5px">
+                          <span style="font-size: 15.5px; font-weight: 600; line-height: 1.25">{{a.name}}</span>
+                          <div style="display: flex; gap: 6px; flex-wrap: wrap"><span class="a-chip">{{a.chip}}</span><sc-if value="{{a.isOff}}" hint-placeholder-val="{{false}}"><span style="display: inline-flex; align-items: center; height: 22px; padding: 0 8px; border-radius: 999px; font-size: 11.5px; font-weight: 600; color: var(--text-3); background: var(--surface-3)">Desligado</span></sc-if></div>
+                        </div>
+                        <button class="test {{a.testCls}}" aria-label="{{a.testAria}}" sc-camel-on-click="{{a.test}}">
+                          <sc-if value="{{a.playing}}" hint-placeholder-val="{{false}}"><span class="eq" aria-hidden="true"><i></i><i></i><i></i></span>Tocando</sc-if>
+                          <sc-if value="{{a.idle}}" hint-placeholder-val="{{true}}"><svg class="ic" width="16" height="16" sc-camel-view-box="0 0 24 24" aria-hidden="true"><path d="M4 9.5h3.5L12 5.5v13l-4.5-4H4z"></path><path d="M15.5 9a4 4 0 0 1 0 6"></path></svg>Testar som</sc-if>
+                        </button>
+                      </div>
+                      <span style="font-size: 13.5px; line-height: 1.45; color: var(--text-2); min-height: 40px">{{a.desc}}</span>
+                      <div class="tgs">
+                        <sc-for list="{{a.cells}}" as="c" hint-placeholder-count="3">
+                          <button class="tg {{c.dis}}" role="switch" aria-checked="{{c.aria}}" aria-disabled="{{c.ariaDis}}" aria-label="{{c.ariaLabel}}" sc-camel-on-click="{{c.toggle}}">
+                            <span class="tg-top"><svg class="ic" width="15" height="15" sc-camel-view-box="0 0 24 24" aria-hidden="true"><path d="{{c.icon}}"></path></svg>{{c.label}}</span>
+                            <span class="sw {{c.sw}}"></span>
+                            <span class="tg-sub">{{c.sub}}</span>
+                          </button>
+                        </sc-for>
+                      </div>
+                    </section>
+                  </sc-for>
+                </div>
+              </div>
+
+              <div style="display: flex; flex-direction: column; gap: 16px; padding-top: 40px">
+                <sc-if value="{{pAsk}}" hint-placeholder-val="{{false}}">
+                  <div class="glass" style="border-radius: 20px; padding: 18px; display: flex; flex-direction: column; gap: 12px">
+                    <div style="display: flex; gap: 12px; align-items: flex-start">
+                      <span class="tile" style="color: var(--primary-text); background: var(--primary-soft)"><svg class="ic" width="22" height="22" sc-camel-view-box="0 0 24 24" aria-hidden="true"><path d="M6 16V11a6 6 0 0 1 12 0v5l1.5 2h-15z"></path><path d="M10 20.5a2 2 0 0 0 4 0M19.5 4.5a6 6 0 0 1 2 3.5M4.5 4.5a6 6 0 0 0-2 3.5"></path></svg></span>
+                      <div style="display: flex; flex-direction: column; gap: 3px"><span style="font-size: 15.5px; font-weight: 600">Ativar notificações push</span><span style="font-size: 13px; line-height: 1.45; color: var(--text-2)">Receba os alertas mesmo com a aba fechada. Você escolhe quais tipos ao lado.</span></div>
+                    </div>
+                    <button class="btn btn-primary" sc-camel-on-click="{{grant}}">Ativar notificações push</button>
+                    <span style="font-size: 12px; color: var(--text-3); text-align: center">O navegador vai pedir sua permissão uma única vez.</span>
+                  </div>
+                </sc-if>
+                <sc-if value="{{pOk}}" hint-placeholder-val="{{true}}">
+                  <div class="glass" style="border-radius: 20px; padding: 16px; display: flex; flex-direction: column; gap: 12px">
+                    <div style="display: flex; gap: 12px; align-items: center">
+                      <span class="tile" style="color: var(--success); background: var(--success-soft)"><svg class="ic" width="22" height="22" sc-camel-view-box="0 0 24 24" aria-hidden="true" style="stroke-width: 2.2"><path d="M5 12.5l4.5 4.5L19 7.5"></path></svg></span>
+                      <div style="flex: 1; display: flex; flex-direction: column; gap: 2px"><span style="font-size: 15px; font-weight: 600">Push ativado</span><span style="font-size: 12.5px; color: var(--text-2)">Este navegador · computador</span></div>
+                      <span style="display: inline-flex; align-items: center; height: 24px; padding: 0 9px; border-radius: 999px; font-size: 11.5px; font-weight: 700; color: var(--success); background: var(--success-soft)">Permitido</span>
+                    </div>
+                    <button class="btn btn-ghost">Enviar push de teste</button>
+                  </div>
+                </sc-if>
+                <sc-if value="{{pBlocked}}" hint-placeholder-val="{{false}}">
+                  <div class="glass" role="alert" style="border-radius: 20px; padding: 18px; display: flex; flex-direction: column; gap: 10px; border-color: var(--warning)">
+                    <div style="display: flex; gap: 12px; align-items: flex-start">
+                      <span class="tile" style="color: var(--warning); background: var(--warning-soft)"><svg class="ic" width="22" height="22" sc-camel-view-box="0 0 24 24" aria-hidden="true"><path d="M6 16V11a6 6 0 0 1 9.5-4.9M18 11v5l1.5 2h-15"></path><path d="M10 20.5a2 2 0 0 0 4 0M3.5 3.5l17 17"></path></svg></span>
+                      <div style="display: flex; flex-direction: column; gap: 3px"><span style="font-size: 15.5px; font-weight: 600">Push bloqueado pelo navegador</span><span style="font-size: 13px; line-height: 1.45; color: var(--text-2)">A permissão foi recusada antes. Para liberar:</span></div>
+                    </div>
+                    <ol style="margin: 0; padding: 0; list-style: none; display: flex; flex-direction: column">
+                      <li class="step" style="min-height: 38px"><span class="step-n">1</span><span style="font-size: 13.5px">Clique no cadeado ao lado do endereço</span></li>
+                      <li class="step" style="min-height: 38px"><span class="step-n">2</span><span style="font-size: 13.5px">Em <b>Notificações</b>, escolha <b>Permitir</b></span></li>
+                      <li class="step" style="min-height: 38px"><span class="step-n">3</span><span style="font-size: 13.5px">Recarregue a página</span></li>
+                    </ol>
+                    <button class="btn btn-ghost" sc-camel-on-click="{{grant}}">Já liberei, verificar de novo</button>
+                  </div>
+                </sc-if>
+                <sc-if value="{{pNo}}" hint-placeholder-val="{{false}}">
+                  <div class="glass" style="border-radius: 20px; padding: 18px; display: flex; flex-direction: column; gap: 10px">
+                    <div style="display: flex; gap: 12px; align-items: flex-start">
+                      <span class="tile" style="color: var(--info); background: var(--info-soft)"><svg class="ic" width="22" height="22" sc-camel-view-box="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"></circle><path d="M12 11v5.5M12 7.8v.2"></path></svg></span>
+                      <div style="display: flex; flex-direction: column; gap: 3px"><span style="font-size: 15.5px; font-weight: 600">Push não suportado aqui</span><span style="font-size: 13px; line-height: 1.45; color: var(--text-2)">Este navegador não recebe push. Som e aviso na tela funcionam com a aba aberta.</span></div>
+                    </div>
+                    <span style="font-size: 12.5px; line-height: 1.45; color: var(--text-3)">Use um navegador atualizado no computador ou instale o app no celular.</span>
+                  </div>
+                </sc-if>
+
+                <section class="glass edge" aria-labelledby="ios-d" style="border-radius: 20px; padding: 18px; display: flex; flex-direction: column; gap: 4px">
+                  <div style="display: flex; gap: 12px; align-items: center; margin-bottom: 4px">
+                    <span class="tile" style="color: var(--primary-text); background: var(--primary-soft)"><svg class="ic" width="22" height="22" sc-camel-view-box="0 0 24 24" aria-hidden="true"><rect x="6.5" y="2.5" width="11" height="19" rx="2.5"></rect><path d="M10.5 18.5h3"></path></svg></span>
+                    <div style="display: flex; flex-direction: column; gap: 2px"><h2 id="ios-d" class="disp" style="margin: 0; font-size: 18px; font-weight: 700">Como instalar no iPhone</h2><span style="font-size: 12.5px; color: var(--text-2)">No iPhone, o push só chega com o app instalado (iOS 16.4+).</span></div>
+                  </div>
+                  <ol style="margin: 0; padding: 0; list-style: none; display: flex; flex-direction: column">
+                    <li class="step"><span class="step-n">1</span><span style="flex: 1; font-size: 13.5px; line-height: 1.4">Abra este endereço no navegador do iPhone</span><svg class="ic" width="22" height="22" sc-camel-view-box="0 0 24 24" aria-hidden="true" style="color: var(--text-3)"><circle cx="12" cy="12" r="9"></circle><path d="M15.5 8.5l-2 5-5 2 2-5z"></path></svg></li>
+                    <li class="step"><span class="step-n">2</span><span style="flex: 1; font-size: 13.5px; line-height: 1.4">Toque em <b>Compartilhar</b></span><svg class="ic" width="22" height="22" sc-camel-view-box="0 0 24 24" aria-hidden="true" style="color: var(--primary-text)"><path d="M12 3v12M8 7l4-4 4 4"></path><path d="M7 10H6a2 2 0 0 0-2 2v7a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-7a2 2 0 0 0-2-2h-1"></path></svg></li>
+                    <li class="step"><span class="step-n">3</span><span style="flex: 1; font-size: 13.5px; line-height: 1.4">Toque em <b>Adicionar à Tela de Início</b></span><svg class="ic" width="22" height="22" sc-camel-view-box="0 0 24 24" aria-hidden="true" style="color: var(--primary-text)"><rect x="4" y="4" width="16" height="16" rx="4"></rect><path d="M12 8.5v7M8.5 12h7"></path></svg></li>
+                    <li class="step"><span class="step-n">4</span><span style="flex: 1; font-size: 13.5px; line-height: 1.4">Abra pelo ícone e ative o push</span><svg class="ic" width="22" height="22" sc-camel-view-box="0 0 24 24" aria-hidden="true" style="color: var(--text-3)"><path d="M6 16V11a6 6 0 0 1 12 0v5l1.5 2h-15z"></path><path d="M10 20.5a2 2 0 0 0 4 0"></path></svg></li>
+                  </ol>
+                  <div style="display: flex; align-items: center; gap: 14px; margin-top: 8px; padding: 12px; border-radius: 14px; background: var(--surface-2)">
+                    <span style="width: 64px; height: 64px; border-radius: 10px; flex-shrink: 0; display: grid; grid-template-columns: repeat(5, 1fr); gap: 2px; padding: 6px; background: #fff" role="img" aria-label="QR code para abrir no celular"><span style="background: #120B24"></span><span style="background: #120B24"></span><span></span><span style="background: #120B24"></span><span style="background: #120B24"></span><span style="background: #120B24"></span><span></span><span style="background: #120B24"></span><span></span><span style="background: #120B24"></span><span></span><span style="background: #120B24"></span><span style="background: #120B24"></span><span></span><span></span><span style="background: #120B24"></span><span></span><span></span><span style="background: #120B24"></span><span style="background: #120B24"></span><span style="background: #120B24"></span><span style="background: #120B24"></span><span></span><span style="background: #120B24"></span><span style="background: #120B24"></span></span>
+                    <span style="font-size: 13px; line-height: 1.45; color: var(--text-2)">Aponte a câmera do iPhone para abrir o app direto no celular.</span>
+                  </div>
+                </section>
+
+                <div style="display: flex; gap: 10px; align-items: flex-start; padding: 4px 6px; font-size: 12.5px; line-height: 1.5; color: var(--text-3)"><svg class="ic" width="16" height="16" sc-camel-view-box="0 0 24 24" aria-hidden="true" style="margin-top: 2px"><path d="M12 3 4.5 6v5.5c0 4.5 3.2 8.2 7.5 9.5 4.3-1.3 7.5-5 7.5-9.5V6z"></path></svg><span>Alertas descrevem o que já aconteceu ou uma estimativa do histórico. Não são garantia de resultado. Jogue com responsabilidade · 18+</span></div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <sc-if value="{{showToast}}" hint-placeholder-val="{{false}}">
+          <div class="toast {{toastCls}}" role="status" style="position: absolute; right: 24px; top: 88px; width: 400px; overflow: hidden; display: flex; align-items: center; gap: 12px; padding: 14px 14px 16px; border-radius: 18px; background: var(--surface-solid); box-shadow: 0 0 0 1px var(--ac), 0 0 30px -8px var(--ac), 0 20px 40px -12px rgba(0,0,0,.5)">
+            <span class="a-ic"><svg class="ic" width="22" height="22" sc-camel-view-box="0 0 24 24" aria-hidden="true"><path d="{{toastIcon}}"></path></svg></span>
+            <div style="flex: 1; display: flex; flex-direction: column; gap: 3px"><div style="display: flex; align-items: center; gap: 8px"><span style="font-size: 14.5px; font-weight: 700">{{toastName}}</span><span style="font-size: 10.5px; font-weight: 700; letter-spacing: .06em; padding: 2px 7px; border-radius: 999px; color: var(--text-2); background: var(--surface-3)">TESTE</span></div><span style="font-size: 12.5px; line-height: 1.4; color: var(--text-2)">{{toastText}}</span></div>
+            <button class="icon-btn" aria-label="Fechar aviso" sc-camel-on-click="{{closeToast}}" style="width: 40px; height: 40px"><svg class="ic" width="18" height="18" sc-camel-view-box="0 0 24 24" aria-hidden="true"><path d="M6 6l12 12M18 6 6 18"></path></svg></button>
+            <span class="timer" style="position: absolute; left: 0; right: 0; bottom: 0; height: 3px; background: var(--ac)"></span>
+          </div>
+        </sc-if>
+
+        <sc-if value="{{bellOpen}}" hint-placeholder-val="{{false}}">
+          <div class="pop" role="dialog" aria-labelledby="pop-t" style="position: absolute; right: 64px; top: 66px; width: 420px; border-radius: 22px; padding: 16px 12px 12px; background: var(--surface-solid); box-shadow: var(--shadow-glow), 0 30px 60px -20px rgba(0,0,0,.55)">
+            <span style="position: absolute; right: 54px; top: -7px; width: 14px; height: 14px; transform: rotate(45deg); background: var(--surface-solid); border-left: 1px solid var(--border-strong); border-top: 1px solid var(--border-strong)" aria-hidden="true"></span>
+            <div style="display: flex; justify-content: space-between; align-items: center; gap: 8px; padding: 0 8px 8px">
+              <div style="display: flex; flex-direction: column; gap: 2px"><h2 id="pop-t" class="disp" style="margin: 0; font-size: 19px; font-weight: 700">Avisos da equipe</h2><span style="font-size: 12.5px; color: var(--text-3)">{{unreadTxt}}</span></div>
+              <button class="test" style="color: var(--primary-text)" sc-camel-on-click="{{markRead}}">Marcar como lidos</button>
+            </div>
+            <div style="display: flex; flex-direction: column">
+              <sc-for list="{{ann}}" as="n" hint-placeholder-count="4">
+                <article class="ann" style="border-bottom-color: {{n.line}}">
+                  <span class="dot" style="{{n.dot}}" aria-hidden="true"></span>
+                  <div style="flex: 1; display: flex; flex-direction: column; gap: 4px">
+                    <div style="display: flex; align-items: center; gap: 8px; flex-wrap: wrap"><span style="font-size: 14.5px; font-weight: {{n.weight}}">{{n.title}}</span><sc-if value="{{n.unread}}" hint-placeholder-val="{{true}}"><span style="font-size: 10.5px; font-weight: 700; letter-spacing: .06em; padding: 2px 7px; border-radius: 999px; color: var(--primary-text); background: var(--primary-soft)">NOVO</span></sc-if></div>
+                    <span style="font-size: 13px; line-height: 1.45; color: var(--text-2)">{{n.text}}</span>
+                    <span class="mono" style="font-size: 11.5px; color: var(--text-3)">{{n.date}}</span>
+                  </div>
+                </article>
+              </sc-for>
+            </div>
+            <a href="#" style="display: flex; align-items: center; justify-content: center; min-height: 44px; margin-top: 4px; font-size: 13.5px; font-weight: 600; text-decoration: none">Ver todos os avisos</a>
+          </div>
+        </sc-if>
+      </div>
+    </sc-for>
+  </div>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script="" data-props="{&quot;$preview&quot;:{&quot;width&quot;:3040,&quot;height&quot;:1340}}">
+class Component extends DCLogic {
+  constructor(props) {
+    super(props);
+    this.state = {
+      push: 'ok', sound: true, testing: null, toast: null, bell: false, read: false, reduce: false,
+      prefs: {
+        rosas: { som: true, tela: true, push: true },
+        baixos: { som: true, tela: true, push: false },
+        d30: { som: false, tela: true, push: false },
+        d100: { som: true, tela: true, push: true },
+        mil: { som: true, tela: true, push: true },
+        quente: { som: false, tela: false, push: false }
+      }
+    };
+  }
+  componentWillUnmount() { clearTimeout(this.t1); clearTimeout(this.t2); }
+  renderVals() {
+    var self = this, s = this.state;
+    var I = {
+      rosas: 'M12 3l7.5 9L12 21l-7.5-9zM12 3v18M4.5 12h15',
+      baixos: 'M3 6.5l6 6 4-4 8 8M21 11v5.5h-5.5',
+      d30: 'M3 12h18M7 8l-4 4 4 4M17 8l4 4-4 4',
+      d100: 'M7 3h10M7 21h10M8 3c0 5 8 5.5 8 9s-8 4-8 9M16 3c0 5-8 5.5-8 9s8 4 8 9',
+      mil: 'M12 2.5l2.4 6.1 6.6.4-5.1 4.2 1.7 6.4L12 16l-5.6 3.6 1.7-6.4L3 9l6.6-.4z',
+      quente: 'M12 21a7.5 7.5 0 1 0 0-15 7.5 7.5 0 0 0 0 15zM12 9.5v4l2.5 1.5M9.5 2.5h5',
+      som: 'M4 9.5h3.5L12 5.5v13l-4.5-4H4zM15.5 9a4 4 0 0 1 0 6',
+      tela: 'M3.5 5h17v11h-17zM8.5 20h7M12 16v4',
+      push: 'M6 16V11a6 6 0 0 1 12 0v5l1.5 2h-15zM10 20.5a2 2 0 0 0 4 0'
+    };
+    var defs = [
+      { id: 'rosas', name: 'Alertas de Rosas', chip: '◆ acima de 10x', desc: 'Quando sair um multiplicador acima de 10x.', sample: 'Rodada das 21:14:08 fechou em 12,40x.' },
+      { id: 'baixos', name: 'Alerta de Baixos', chip: '▼ 10 seguidos abaixo de 3x', desc: '10 multiplicadores seguidos abaixo de 3x.', sample: '10 rodadas seguidas abaixo de 3x até 21:14:08.' },
+      { id: 'd30', name: 'Distanciamento 30x', chip: '↔ 4 rodadas', desc: '4 rodadas entre 10x e 30x sem nenhuma de 30x ou mais.', sample: '4 rodadas entre 10x e 30x desde a última de 30x.' },
+      { id: 'd100', name: 'Distanciamento 100x', chip: '↔ 10 rodadas', desc: '10 rodadas entre 10x e 100x sem nenhuma de 100x ou mais.', sample: '10 rodadas entre 10x e 100x desde a última de 100x.' },
+      { id: 'mil', name: 'Saiu 1000x', chip: '★ 1000x ou mais', desc: 'Multiplicador de 1000x ou mais.', sample: 'Rodada das 21:14:08 passou de 1000x.' },
+      { id: 'quente', name: 'Minuto quente', chip: '◷ faixa 5x a 10x', desc: 'Estimativa de 5x a 10x no minuto atual, a partir do histórico.', sample: 'Estimativa para 21:15 (Brasília). Não é garantia.' }
+    ];
+    var chans = [['som', 'Som'], ['tela', 'Na tela'], ['push', 'Push']];
+    var pushOk = s.push === 'ok';
+    function setPref(id, ch) {
+      var p = Object.assign({}, s.prefs[id]); p[ch] = !p[ch];
+      var np = Object.assign({}, s.prefs); np[id] = p;
+      self.setState({ prefs: np });
+    }
+    var alerts = defs.map(function (d) {
+      var p = s.prefs[d.id];
+      var cells = chans.map(function (c) {
+        var key = c[0];
+        var dis = (key === 'push' && !pushOk) || (key === 'som' && !s.sound);
+        var on = !!p[key] && !dis;
+        var sub = on ? 'Ligado' : 'Desligado';
+        if (key === 'push' && !pushOk) sub = 'Indisponível';
+        if (key === 'som' && !s.sound) sub = 'Som geral desligado';
+        return {
+          label: c[1], icon: I[key], sw: on ? 'on' : '', aria: on ? 'true' : 'false',
+          dis: dis ? 'dis' : '', ariaDis: dis ? 'true' : 'false', sub: sub, ariaLabel: c[1] + ' para ' + d.name,
+          toggle: function () { if (!dis) setPref(d.id, key); }
+        };
+      });
+      var allOff = !((p.som && s.sound) || p.tela || (p.push && pushOk));
+      var playing = s.testing === d.id;
+      return {
+        cls: 'al-' + d.id, name: d.name, chip: d.chip, desc: d.desc, icon: I[d.id], cells: cells,
+        isOff: allOff, playing: playing, idle: !playing, testCls: playing ? 'on' : '', testAria: 'Testar som: ' + d.name,
+        test: function () {
+          clearTimeout(self.t1); clearTimeout(self.t2);
+          self.setState({ testing: d.id, toast: d.id, bell: false });
+          self.t1 = setTimeout(function () { self.setState({ testing: null }); }, 1600);
+          self.t2 = setTimeout(function () { self.setState({ toast: null }); }, 4000);
+        }
+      };
+    });
+    var activeCount = defs.filter(function (d) { var p = s.prefs[d.id]; return (p.som && s.sound) || p.tela || (p.push && pushOk); }).length;
+    var td = null;
+    defs.forEach(function (d) { if (d.id === s.toast) td = d; });
+    var annBase = [
+      { title: 'Probabilidades liberada', text: 'A leitura de horários está aberta para todos. Lembre: é estimativa do histórico, não garantia.', date: 'Hoje, 18:00', unread: true },
+      { title: 'Manutenção do feed de rodadas', text: 'Quarta, das 04:00 às 04:30 (Brasília), os alertas ficam pausados.', date: 'Ontem, 21:30', unread: true },
+      { title: 'Aula nova: Pausas e limites', text: 'O módulo 3 da trilha de gestão de banca já está disponível.', date: '10/10, 14:12', unread: false },
+      { title: 'Ajuste no Alerta de Baixos', text: 'Agora o alerta dispara após 10 rodadas seguidas abaixo de 3x.', date: '08/10, 09:00', unread: false }
+    ];
+    var ann = annBase.map(function (n, i, arr) {
+      var u = n.unread && !s.read;
+      return Object.assign({}, n, {
+        unread: u, weight: u ? 700 : 500,
+        dot: u ? 'background:var(--primary);box-shadow:0 0 10px var(--glow)' : 'background:transparent;box-shadow:inset 0 0 0 1.5px var(--border-strong)',
+        line: i === arr.length - 1 ? 'transparent' : 'var(--border)'
+      });
+    });
+    var unread = s.read ? 0 : 2;
+    var presets = [['ask', 'Não pedido'], ['ok', 'Permitido'], ['blocked', 'Bloqueado'], ['no', 'Não suportado']].map(function (p) {
+      return { label: p[1], cls: s.push === p[0] ? 'on' : '', go: function () { self.setState({ push: p[0] }); } };
+    });
+    return {
+      presets: presets, themes: [{ cls: 't-dark' }, { cls: 't-light' }], alerts: alerts, activeCount: activeCount, ann: ann,
+      motionCls: s.reduce ? 'still' : '', reduceCls: s.reduce ? 'on' : '', reduceAria: s.reduce ? 'true' : 'false',
+      toggleReduce: function () { self.setState({ reduce: !s.reduce }); },
+      pAsk: s.push === 'ask', pOk: pushOk, pBlocked: s.push === 'blocked', pNo: s.push === 'no',
+      grant: function () { self.setState({ push: 'ok' }); },
+      soundOn: s.sound, soundOff: !s.sound, soundCls: s.sound ? 'on' : '', soundAria: s.sound ? 'true' : 'false',
+      soundSub: s.sound ? 'Ligado. Cada alerta usa a própria escolha.' : 'Desligado. Nenhum alerta toca som agora.',
+      toggleSound: function () { self.setState({ sound: !s.sound }); },
+      bellOpen: s.bell, bellCls: s.bell ? 'on' : '', bellAria: s.bell ? 'true' : 'false', bellToolCls: s.bell ? 'on' : '',
+      bellLabel: unread ? 'Avisos da equipe, ' + unread + ' não lidos' : 'Avisos da equipe',
+      toggleBell: function () { self.setState({ bell: !s.bell, toast: null }); },
+      hasUnread: unread > 0, unread: unread, unreadTxt: unread ? unread + ' não lidos' : 'Tudo lido',
+      markRead: function () { self.setState({ read: true }); },
+      showToast: !!td && !s.bell, toastCls: td ? 'al-' + td.id : '', toastIcon: td ? I[td.id] : '', toastName: td ? td.name : '', toastText: td ? td.sample : '',
+      closeToast: function () { clearTimeout(self.t2); self.setState({ toast: null }); }
+    };
+  }
+}
+</script>
+
+
+</body></html>

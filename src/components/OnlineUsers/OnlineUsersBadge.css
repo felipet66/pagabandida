@@ -1,0 +1,4 @@
+.online-users-badge { display: inline-flex; align-items: center; gap: 4px; flex-shrink: 0; min-height: 24px; padding: 3px 7px; border: 1px solid var(--border); border-radius: 20px; color: var(--text-2); background: var(--surface-solid); font-size: 10px; white-space: nowrap; }
+.online-users-badge > span { width: 4px; height: 4px; margin-right: 1px; border-radius: 50%; background: var(--success); }
+.online-users-badge svg { color: var(--success); }
+:root[data-theme] .online-users-badge strong { color: var(--text); font-size: 10px; font-weight: 600; font-variant-numeric: tabular-nums; }

@@ -1,0 +1,22 @@
+Depósito — revisão do design system
+
+Teleco I.A. PRO commitada em 09fbce6 antes desta etapa.
+
+Alterações:
+- Depósito utiliza a navegação e o fundo compartilhados das telas migradas.
+- Cartão com superfície/contorno do design system, tipografia Sora/Chakra Petch e valores em JetBrains Mono.
+- Ícones Lucide, campos com foco visível, valores sugeridos e botão primário violeta.
+- Etapa Pix também recebe tokens, estados de pagamento e controles responsivos.
+- QR Code mantém fundo branco para leitura; hooks, API, validações e sincronização não foram alterados.
+
+Validação:
+- 4 suites, 29 testes aprovados: Deposit, useDeposit, useDepositSync e depositApi.
+- Testes existentes cobrem geração simulada, QR, cópia, expiração, erros e pedidos duplicados.
+- Revisão visual em localhost:3000 nos temas claro/escuro em 1440x1000 e 390x844.
+- Largura de 320px sem rolagem horizontal (scrollWidth e clientWidth = 309px).
+- Capturas excluem o saldo da conta; nenhuma geração de Pix real ou transação foi executada.
+- npm run build não foi executado, conforme solicitado.
+
+Ajustes finais: sugestões de R$ 5, R$ 10, R$ 20 e R$ 50; mínimo de R$ 5,00 destacado e validado antes do envio.
+Após os ajustes: 16 testes da tela aprovados, incluindo limite de R$ 4,99 e envio simulado de R$ 5.
+Capturas atualizadas antes do commit solicitado.

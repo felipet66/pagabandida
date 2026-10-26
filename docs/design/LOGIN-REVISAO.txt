@@ -1,0 +1,56 @@
+LOGIN — PRIMEIRA TELA ADAPTADA AO DESIGN SYSTEM
+
+Revisão local: http://localhost:3035/auth/login
+
+Resultado
+O login usa a paleta dos dois temas, Chakra Petch nos títulos, Sora no formulário,
+card .glass/.edge, fundo .fx, botão Bootstrap primário e ícones Lucide.
+No desktop, banner e formulário ficam lado a lado. Até 820 px, ficam empilhados.
+Os campos e o botão têm 48 px; mostrar senha e os links têm área mínima de 44 px.
+O alerta mantém role=alert e inclui ícone. O carregamento é anunciado por role=status.
+O aviso e o popup de instalação acompanham o tema e preservam os passos existentes.
+Os controles de tema/movimento continuam na styleguide, conforme a fundação.
+
+Arquivos desta etapa
+Criados:
+- src/views/LoginDesign.css
+- docs/design/LOGIN-REVISAO.txt
+- docs/design/revisao-login/escuro-desktop.jpg
+- docs/design/revisao-login/claro-desktop.jpg
+- docs/design/revisao-login/escuro-mobile.jpg
+- docs/design/revisao-login/claro-mobile.jpg
+Alterados:
+- src/views/Login.js
+- src/views/Login.test.js
+- src/components/AuthForm/AuthForm.js
+- src/components/Navbars/AuthNavbar.js
+- src/components/InstallAppBanner/InstallAppBanner.js
+- src/layouts/Auth/Auth.js
+
+Nenhum token novo ou dependência adicional. O banner existente foi reutilizado.
+A nova logo roxa já presente no workspace foi preservada, sem editar a imagem.
+A lógica de autenticação, persistência de sessão e cooldown não foi alterada.
+Os estilos novos estão limitados ao login e ao seu popup; o cadastro mantém seus estilos.
+As mudanças da fundação e de arte já existentes no workspace também foram preservadas.
+
+Verificação realizada
+- CI=true npm test -- --watchAll=false: 33 suítes, 162 testes, todos passaram (exit 0).
+- Dois testes de regressão adicionados: mostrar/ocultar senha sem enviar nem perder valor;
+  carregamento anunciado, controles bloqueados, envio duplicado impedido e recuperação após 401.
+- npm run build: exit 0; warnings já existentes em outros arquivos, nenhum nos arquivos desta etapa.
+- git diff --check: sem erros.
+- Navegador: desktop 1440x900; celular 390x844 nos dois temas; largura 320 no claro.
+- Sem rolagem horizontal nas larguras conferidas. Foco por teclado roxo e tipografia computada correta.
+- Popup de instalação: abrir, alternar Android/iPhone, fechar e devolver foco ao botão.
+  Fechamento também conferido no tema claro com movimento reduzido.
+- Movimento reduzido remove o fundo .fx; tema persistiu após recarregar.
+- Link Criar conta chega ao cadastro, sem as classes de layout/vidro do login.
+- Capturas salvas em docs/design/revisao-login/. Preferências restauradas para seguir o sistema,
+  com movimento manual desligado, ao concluir a revisão.
+
+Limites
+Não foi feita autenticação com conta real nem submissão manual ao BFF.
+Erros e carregamento foram verificados pelos testes com API simulada.
+Não houve teste em aparelho físico, teclado virtual ou leitor de tela real.
+As outras telas ainda precisam de suas adaptações; em especial o cadastro continua com CSS legado.
+Sem commit nesta etapa.

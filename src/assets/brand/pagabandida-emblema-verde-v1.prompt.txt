@@ -1,0 +1,13 @@
+Mode: built-in image_gen
+
+Use case: logo-brand, reference-based redesign.
+Asset type: one final production logo emblem for the Brazilian app Paga Bandida.
+Input image 1 is a visual identity and composition reference: circular shield, crossed baseball bats, small front-facing propeller airplane, crown motifs, bold expressive brush lettering and dimensional metallic craftsmanship.
+Primary request: Create a NEW polished green version of this identity, preserving its recognizable emblem concept and names while improving hierarchy and reducing unnecessary tiny ornamentation. Replace the red-and-gold identity with the exact green palette of the Paga Bandida app.
+Color palette: dominant electric lime #B6FF00 and highlights #C4FF36; deep forest #14220D, near-black #080D06, mid-green #397000; restrained white/silver #F4FAEA. No red, orange, purple or gold. Letter faces can be lime metallic with bright restrained silver highlights and dark forest depth. Crowns, bats and rim use green metallic and dark graphite rather than gold. Rich yet controlled green edge illumination.
+Composition: one compact centered square emblem, crossed bats behind a broad shield banner, a small clearly recognizable propeller airplane above the lettering, a small crown at bottom. Keep full silhouette visible with generous transparent padding, no cropped edges. Keep all fine detail subordinate to readable brand lettering.
+Text verbatim: main banner "PAGA BANDIDA", clearly separated into TWO words, largest dominant text, hand-painted bold energetic brush typography inspired by reference, impeccable spelling P-A-G-A B-A-N-D-I-D-A. Secondary upper banner "COMUNIDADE", smaller readable silver lettering. Retain bat inscriptions "RIVORIL" on the left bat and "CARDENAL" on the right bat, secondary and unobtrusive, in the same natural alignment as the reference. No extra words.
+Style: finished premium 3D badge logo with crisp silhouette, clean bevels, refined metal and lacquer, high contrast, suited to the app and community avatar. Balance the emblem so PAGA BANDIDA remains unmistakable when downscaled.
+Background: real transparent alpha outside the emblem. The shield interior may remain solid near-black/forest for contrast on both light and dark screens. No rectangular backdrop, no checkerboard painted into artwork, no mockup, no presentation board, no watermark.
+Deliver one isolated green logo only.
+

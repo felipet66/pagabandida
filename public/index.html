@@ -1,0 +1,104 @@
+<!--
+/*!
+
+=========================================================
+* Black Dashboard React v1.2.1
+=========================================================
+
+* Product Page: https://www.creative-tim.com/product/black-dashboard-react
+* Copyright 2022 Creative Tim (https://www.creative-tim.com)
+* Licensed under MIT (https://github.com/creativetimofficial/black-dashboard-react/blob/master/LICENSE.md)
+
+* Coded by Creative Tim
+
+=========================================================
+
+* The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
+
+*/
+-->
+<!DOCTYPE html>
+<html lang="pt-br" class="perfect-scrollbar-off">
+  <head>
+    <meta charset="utf-8" />
+    <script id="pagabandida-theme-bootstrap">
+      (function () {
+        var root = document.documentElement;
+        var savedTheme = null;
+        var savedMotion = null;
+        try { savedTheme = localStorage.getItem("pagabandida:theme"); } catch (error) {}
+        try { savedMotion = localStorage.getItem("pagabandida:reduce-motion"); } catch (error) {}
+        var matches = function (query) {
+          return typeof window.matchMedia === "function" && window.matchMedia(query).matches;
+        };
+        root.setAttribute("data-theme", savedTheme === "dark" || savedTheme === "light" ? savedTheme : "dark");
+        var reduceMotion = savedMotion === "true" ? true : savedMotion === "false" ? false : matches("(prefers-reduced-motion: reduce)");
+        root.setAttribute("data-motion", reduceMotion ? "reduced" : "full");
+      })();
+    </script>
+    <style id="pagabandida-initial-paint">
+      html[data-theme="dark"] { background-color: #080D06; color-scheme: dark; }
+      html[data-theme="light"] { background-color: #F7FAF2; color-scheme: light; }
+      body { background-color: inherit; }
+    </style>
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no, viewport-fit=cover"
+    />
+    <meta name="theme-color" content="#397000" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-title" content="Paga Bandida" />
+    <!--
+      manifest.json provides metadata used when your web app is added to the
+      homescreen on Android. See https://developers.google.com/web/fundamentals/engage-and-retain/web-app-manifest/
+    -->
+    <link rel="manifest" href="/manifest.json" />
+    <link rel="apple-touch-icon" sizes="180x180" href="%PUBLIC_URL%/apple-touch-icon.png?v=pagabandida-emblema-v2" />
+    <link rel="icon" type="image/png" sizes="32x32" href="%PUBLIC_URL%/favicon-32x32.png?v=pagabandida-emblema-v2" />
+    <link rel="icon" type="image/png" sizes="16x16" href="%PUBLIC_URL%/favicon-16x16.png?v=pagabandida-emblema-v2" />
+    <link rel="shortcut icon" href="%PUBLIC_URL%/favicon.ico?v=pagabandida-emblema-v2" />
+    <meta name="msapplication-TileColor" content="#397000">
+
+    <!--
+      Notice the use of %PUBLIC_URL% in the tags above.
+      It will be replaced with the URL of the `public` folder during the build.
+      Only files inside the `public` folder can be referenced from the HTML.
+
+      Unlike "/favicon.ico" or "favicon.ico", "%PUBLIC_URL%/favicon.ico" will
+      work correctly both with client-side routing and a non-root public URL.
+      Learn how to configure a non-root public URL by running `npm run build`.
+    -->
+    <!-- Fontsource fonts are bundled locally by the application. -->
+    <title>Paga Bandida</title>
+    <meta name="description" content="Paga Bandida: jogos, histórico Aviator e ferramentas de análise em um só lugar." />
+    <meta property="og:type" content="website" />
+    <meta property="og:locale" content="pt_BR" />
+    <meta property="og:site_name" content="Paga Bandida" />
+    <meta property="og:title" content="Paga Bandida" />
+    <meta property="og:description" content="Jogos, histórico Aviator e ferramentas de análise em um só lugar." />
+    <meta property="og:url" content="%PUBLIC_URL%/" />
+    <meta property="og:image" content="%PUBLIC_URL%/android-chrome-512x512.png?v=pagabandida-emblema-v2" />
+    <meta property="og:image:width" content="512" />
+    <meta property="og:image:height" content="512" />
+    <meta property="og:image:alt" content="Paga Bandida — identidade visual do aplicativo" />
+    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:title" content="Paga Bandida" />
+    <meta name="twitter:description" content="Jogos, histórico Aviator e ferramentas de análise em um só lugar." />
+    <meta name="twitter:image" content="%PUBLIC_URL%/android-chrome-512x512.png?v=pagabandida-emblema-v2" />
+
+  </head>
+  <body>
+    <noscript> You need to enable JavaScript to run this app. </noscript>
+    <div id="root"></div>
+    <!--
+      This HTML file is a template.
+      If you open it directly in the browser, you will see an empty page.
+
+      You can add webfonts, meta tags, or analytics to this file.
+      The build step will place the bundled scripts into the <body> tag.
+
+      To begin the development, run `npm start` or `yarn start`.
+      To create a production bundle, use `npm run build` or `yarn build`.
+    -->
+  </body>
+</html>

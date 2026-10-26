@@ -1,0 +1,44 @@
+/* Mobile navigation shares tokens on every administrative route. */
+@media (max-width: 991px) {
+  :root[data-theme] #root .bottom-navigation.bottom-navigation--games {
+    display: grid; grid-template-columns: repeat(5, minmax(0, 1fr)); gap: 0;
+    min-height: calc(var(--app-bottom-nav-height) + var(--app-safe-bottom));
+    overflow: visible; padding: var(--space-2) var(--space-1) calc(var(--space-2) + var(--app-safe-bottom));
+    border: 1px solid var(--border-strong); border-bottom: 0;
+    border-radius: var(--radius-20) var(--radius-20) 0 0;
+    background: var(--surface-solid); box-shadow: var(--shadow-card);
+  }
+  :root[data-theme] #root .bottom-navigation--games .bottom-nav-item {
+    position: relative; gap: var(--space-1); padding: var(--space-2) 0;
+    min-height: 56px; color: var(--text-2); border-radius: var(--radius-12);
+    font: 500 var(--type-caption)/var(--line-caption) var(--font-body);
+  }
+  :root[data-theme] #root .bottom-navigation--games .bottom-nav-item.active { color: var(--primary-text); background: var(--primary-soft); font-weight: 600; }
+  :root[data-theme] #root .bottom-navigation--games .bottom-nav-item:hover { color: var(--primary-text); background: var(--primary-soft); }
+  :root[data-theme] #root .bottom-navigation--games .bottom-nav-active-dot {
+    position: absolute; top: 2px; left: calc(50% - 2px); width: 4px; height: 4px;
+    border-radius: var(--radius-pill); background: var(--primary-text);
+  }
+  :root[data-theme] #root .bottom-navigation--games .bottom-nav-item--games,
+  :root[data-theme] #root .bottom-navigation--games .bottom-nav-item--games.active,
+  :root[data-theme] #root .bottom-navigation--games .bottom-nav-item--games:hover {
+    justify-content: flex-end; overflow: visible; background: transparent;
+    color: var(--primary-text); padding-bottom: var(--space-2); font-weight: 600;
+  }
+  :root[data-theme] #root .bottom-navigation--games .bottom-nav-games-icon {
+    display: grid; place-items: center; position: absolute; top: -24px;
+    width: 58px; height: 58px; max-width: none; overflow: visible;
+    border: 5px solid var(--surface-solid); border-radius: var(--radius-pill);
+    background: linear-gradient(var(--button-scrim),var(--button-scrim)),var(--gradient-primary);
+    box-shadow: var(--shadow-glow);
+  }
+  :root[data-theme] #root .bottom-navigation--games .bottom-nav-games-icon .ds-icon { width: 26px; height: 26px; color: var(--on-primary); }
+  :root[data-theme] #root .bottom-navigation--games .bottom-nav-item--games.active .bottom-nav-games-icon { outline: 2px solid var(--primary-text); outline-offset: -2px; }
+  :root[data-theme] #root .bottom-navigation--games .bottom-nav-item--games .bottom-nav-active-dot { display: none; }
+  :root[data-theme] #root .bottom-navigation--games .bottom-nav-label { max-width: none; overflow: visible; text-overflow: clip; white-space: nowrap; }
+  :root[data-theme] #root .bottom-navigation.bottom-navigation--games .bottom-nav-item:focus-visible { outline: var(--focus-width) solid var(--focus-ring); outline-offset: -2px; box-shadow: var(--focus-shadow); }
+}
+@media (max-width: 359px) {
+  :root[data-theme] #root .bottom-navigation.bottom-navigation--games { left: var(--space-2); right: var(--space-2); }
+  :root[data-theme] #root .bottom-navigation--games .bottom-nav-games-icon { width: 54px; height: 54px; top: -20px; }
+}
