@@ -5,3 +5,5 @@
 
 [build.environment]
   NODE_VERSION = "20"
+  # Public widget key; ganhebetBR must authorize the app hostnames.
+  REACT_APP_TURNSTILE_SITE_KEY = "0x4AAAAAAFhQ7YEK-Od8bdd1"

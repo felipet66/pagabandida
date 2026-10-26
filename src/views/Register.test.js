@@ -2,9 +2,11 @@ import React from "react";
 import { act, fireEvent, render, screen } from "@testing-library/react";
 import { MemoryRouter, Route, Switch, useLocation } from "react-router-dom";
 import Register from "./Register";
+import useTurnstile from "../hooks/useTurnstile";
 import { registerAccount, validateRegistrationDocument, saveRegistrationSession } from "../services/registration";
 import { testCpf, testEmail, testPassword, testPhone } from "../testSupport/fixtures";
 
+jest.mock("../hooks/useTurnstile", () => jest.fn());
 jest.mock("../hooks/useTrackingParams", () => jest.fn());
 jest.mock("../services/registration", () => ({
   ...jest.requireActual("../services/registration"),
@@ -18,6 +20,7 @@ function LoginDestination() {
 
 beforeEach(() => {
   jest.resetAllMocks();
+  useTurnstile.mockReturnValue({ getToken: jest.fn(), checking: false, containerRef: { current: null } });
   render(<MemoryRouter initialEntries={["/auth/register"]}>
     <Switch>
       <Route path="/auth/register"><Register /></Route>
@@ -84,8 +87,8 @@ test("cancelamento da consulta de CPF impede resultado antigo de aparecer", asyn
   const cpfInput = screen.getByLabelText("CPF");
   fireEvent.change(cpfInput, { target: { value: testCpf } });
   fireEvent.blur(cpfInput);
-  const signal = validateRegistrationDocument.mock.calls[0][1];
-  expect(validateRegistrationDocument).toHaveBeenCalledWith(testCpf, signal);
+  const signal = validateRegistrationDocument.mock.calls[0][1].signal;
+  expect(validateRegistrationDocument).toHaveBeenCalledWith(testCpf, { signal, getToken: expect.any(Function) });
   expect(screen.getAllByRole("status").some(item => item.textContent === "Conferindo CPF...")).toBe(true);
   fireEvent.change(cpfInput, { target: { value: "" } });
   expect(signal.aborted).toBe(true);

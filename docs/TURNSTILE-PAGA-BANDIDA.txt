@@ -1,0 +1,61 @@
+TURNSTILE — PAGA BANDIDA / ganhebetBR
+
+Configuração pública (Create React App):
+REACT_APP_TURNSTILE_SITE_KEY=0x4AAAAAAFhQ7YEK-Od8bdd1
+Definida no .env.example, .env.local ignorado pelo Git e em [build.environment]
+do netlify.toml. A variável é incorporada durante o build; alterar exige republicar.
+A X-App-Key continua no mecanismo atual de autenticação do BFF.
+Nenhuma chave secreta Turnstile é usada ou deve ser adicionada no frontend.
+
+Implementação:
+- src/services/turnstile.js: único script explícito servido pelo Cloudflare,
+  espera API, widget novo por operação, appearance interaction-only, retry auto,
+  limite total de 120 segundos por obtenção, callbacks de erro/expiração/timeout,
+  remoção do widget e timers em sucesso, falha ou cancelamento. Sem logs/storage
+  de tokens e sem campo oculto automático.
+- src/hooks/useTurnstile.js: estado de segurança, container visível e cancelamento
+  das operações pendentes ao desmontar.
+- src/services/registration.js: POST pelo cliente BFF existente com captcha_token.
+  cpf_lookup para validate-document; register para register-simplified. Não existe
+  consulta adicional escondida no cadastro nem reutilização de token de CPF.
+  Só BOT_CHECK_FAILED permite um segundo POST e exige novo token da mesma action.
+  Erros genéricos, rede e demais códigos não são repetidos automaticamente.
+- src/views/Register.js: consulta no blur do CPF normalizado com 11 dígitos,
+  bloqueio de consultas e cadastros duplicados, cancelamento ao alterar CPF,
+  proteção contra resposta obsoleta, dados mascarados e campos mantidos após erro.
+  Exibe Verificando segurança… e oferece repetição manual. Widget fora do fieldset
+  desabilitado para permitir interação durante a verificação.
+- Login, BFF base/rotas, afiliação (NLNYO e clickId fornecido), prioridade do
+  tracking atual, parâmetros UTM/GA/landingUrl e persistência da sessão preservados.
+
+Validação automatizada em 26/10/2026:
+64 suítes / 452 testes passaram. Build de produção aprovado com avisos de lint
+preexistentes. Cadastro e consulta de CPF foram simulados nos testes; nenhuma
+conta real foi criada. Casos incluem script único e API atrasada, actions/tokens
+separados, payload/tracking/sessão, repetição exata de BOT_CHECK_FAILED (envelope
+2xx ou rejeição HTTP), limite de duas chamadas, falha de rede/token vazio, atraso,
+expiração, erro de domínio, cancelamento e desmontagem/limpeza de timers/widgets.
+
+Homologação real:
+- localhost: script e API carregaram, mas o widget retornou código Cloudflare
+  110200 (Domain not authorized). A ganhebetBR, responsável pela sitekey, precisa
+  incluir localhost nos hostnames autorizados. Incluir também 127.0.0.1 caso esse
+  endereço seja usado no ambiente local.
+- https://pagabandida.netlify.app/auth/register: HTTP 200; o bundle publicado
+  main.75ef831e.js ainda não contém a integração nem a sitekey. Portanto a
+  autorização deste hostname e a aceitação do token pela casa ainda não estão
+  homologadas. Aguardar publicação desta versão e testar novamente.
+- A casa precisa confirmar a mesma sitekey no BFF/integração e autorizar
+  pagabandida.netlify.app, além dos domínios locais necessários. Não é suficiente
+  o script carregar: deve haver callback de sucesso para cada action e aceitação
+  do token pelo BFF/casa. O teste de criação de conta permanece simulado.
+
+Evidência local (ignorada pelo Git):
+artifacts/turnstile-check/localhost-110200.png
+Página de diagnóstico local utiliza o mesmo serviço e descarta tokens sem mostrar
+ou persistir; não chama BFF nem envia CPF. Não integra o build público do app.
+
+Documentação oficial consultada:
+https://developers.cloudflare.com/turnstile/get-started/client-side-rendering/
+https://developers.cloudflare.com/turnstile/get-started/client-side-rendering/widget-configurations/
+https://developers.cloudflare.com/turnstile/troubleshooting/client-side-errors/error-codes/

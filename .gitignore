@@ -5,3 +5,4 @@ build/
 !.env.example
 .DS_Store
 artifacts/
+.netlify/

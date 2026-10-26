@@ -162,3 +162,10 @@
 }
 
 .auth-access-logo { display: block; width: 80px; height: 80px; object-fit: contain; margin-bottom: var(--space-4); }
+
+/* Keep the challenge in normal document flow so an interactive check stays usable. */
+.auth-security { width: 100%; min-width: 0; }
+.auth-security--active { margin: 12px 0; }
+.auth-security p { margin: 0 0 8px; color: var(--text-2); font-size: var(--type-body-sm); }
+.auth-security--active .auth-security-widget { min-height: 65px; }
+.auth-security-widget { max-width: 100%; }
