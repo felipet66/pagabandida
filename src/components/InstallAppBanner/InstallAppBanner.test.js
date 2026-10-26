@@ -14,6 +14,7 @@ let standalone = false;
 const originalMatchMedia = window.matchMedia;
 const originalAgent = navigator.userAgent;
 beforeEach(() => {
+  localStorage.clear();
   global.IS_REACT_ACT_ENVIRONMENT = true;
   standalone = false;
   Object.defineProperty(navigator, "userAgent", { configurable: true, value: "Desktop fixture browser" });
@@ -75,6 +76,9 @@ test("oculta o aviso e fecha as instruções quando o navegador confirma instala
   act(() => window.dispatchEvent(new Event("appinstalled")));
   expect(host.querySelector(".install-app-bar")).toBeNull();
   expect(document.querySelector('[role="dialog"]')).toBeNull();
+  expect(localStorage.getItem("pagabandida:pwa-installed")).toBe("1");
+  act(() => root.unmount()); root = createRoot(host); mount();
+  expect(host.querySelector(".install-app-bar")).toBeNull();
 });
 
 test("oferece Baixar app também no desktop, preservando o conteúdo e instruções para computador", () => {
@@ -150,4 +154,42 @@ test("navegar entre conteúdos mantém uma única faixa e o evento de instalaç�
   await act(async () => host.querySelector("button").click());
   expect(event.prompt).toHaveBeenCalledTimes(1); expect(Swal.fire).not.toHaveBeenCalled();
   expect(host.querySelector("main").textContent).toBe("Cadastro");
+});
+
+test("fechar oculta a faixa sem gravar dispensa; uma nova visita volta a oferecer instalação", () => {
+  mount();
+  const close = host.querySelector('button[aria-label="Fechar aviso de instalação"]');
+  expect(close).not.toBeNull();
+  act(() => close.click());
+  expect(host.querySelector(".install-app-bar")).toBeNull();
+  expect(host.querySelector(".has-install-banner")).toBeNull();
+  expect(localStorage.length).toBe(0);
+  act(() => root.render(<InstallAppBanner><main>Outra tela</main></InstallAppBanner>));
+  expect(host.querySelector(".install-app-bar")).toBeNull();
+  expect(host.textContent).toContain("Outra tela");
+  act(() => root.unmount()); root = createRoot(host); mount();
+  expect(host.querySelector(".install-app-bar")).not.toBeNull();
+});
+
+test("aceitar o prompt sem confirmação appinstalled não registra instalação", async () => {
+  mount();
+  const event = new Event("beforeinstallprompt", { cancelable: true });
+  event.prompt = jest.fn().mockResolvedValue(undefined);
+  event.userChoice = Promise.resolve({ outcome: "accepted" });
+  act(() => window.dispatchEvent(event));
+  await act(async () => host.querySelector(".install-app-bar__action").click());
+  expect(localStorage.getItem("pagabandida:pwa-installed")).toBeNull();
+  expect(host.querySelector(".install-app-bar")).not.toBeNull();
+});
+
+test("modo instalado é lembrado ao voltar pelo navegador e nova oferta nativa permite reinstalar", () => {
+  standalone = true; mount();
+  expect(localStorage.getItem("pagabandida:pwa-installed")).toBe("1");
+  act(() => root.unmount()); root = createRoot(host);
+  standalone = false; mount();
+  expect(host.querySelector(".install-app-bar")).toBeNull();
+  const event = new Event("beforeinstallprompt", { cancelable: true });
+  act(() => window.dispatchEvent(event));
+  expect(localStorage.getItem("pagabandida:pwa-installed")).toBeNull();
+  expect(host.querySelector(".install-app-bar")).not.toBeNull();
 });

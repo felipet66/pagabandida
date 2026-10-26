@@ -10,6 +10,9 @@ body.swal2-shown .install-app-bar, body.modal-open .install-app-bar { z-index: 1
 .install-app-bar__action { display: inline-flex; align-items: center; justify-content: center; gap: 7px; flex-shrink: 0; min-height: 44px; padding: 8px 14px; border: 1px solid transparent; border-radius: var(--radius-12, 12px); background: linear-gradient(var(--button-scrim),var(--button-scrim)),var(--gradient-primary); color: var(--on-primary, #fff); font-size: 12px; font-weight: 600; cursor: pointer; }
 .install-app-bar__action:hover:not(:disabled), .install-app-popup__done:hover { border-color: var(--edge-a); box-shadow: var(--shadow-glow); }
 .install-app-bar__action:disabled { opacity: .65; cursor: wait; }
+.install-app-bar__close { display: inline-flex; align-items: center; justify-content: center; flex-shrink: 0; width: 44px; min-height: 44px; padding: 0; border: 1px solid transparent; border-radius: var(--radius-8, 8px); background: transparent; color: var(--text-2); cursor: pointer; }
+.install-app-bar__close:hover:not(:disabled) { background: var(--primary-soft); color: var(--text); border-color: var(--border); }
+.install-app-bar__close:disabled { opacity: .65; cursor: wait; }
 #root .install-app-layout .wrapper, #root .install-app-layout .main-panel,
 :root[data-theme] #root .install-app-layout > .game-catalog { min-height: calc(100vh - var(--install-app-height)); min-height: calc(100dvh - var(--install-app-height)); }
 .install-app-layout [id] { scroll-margin-top: calc(var(--install-app-height) + 16px); }
