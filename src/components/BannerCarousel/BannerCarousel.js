@@ -37,6 +37,7 @@ export default function BannerCarousel({ banners = DEFAULT_BANNERS }) {
     infinite: multiple,
     slidesToShow: 1,
     slidesToScroll: 1,
+    lazyLoad: "ondemand",
     speed: motionReduced ? 0 : 450,
     autoplay: multiple && !paused && !motionReduced,
     autoplaySpeed: 6000,
@@ -50,7 +51,7 @@ export default function BannerCarousel({ banners = DEFAULT_BANNERS }) {
     <section className={`banner-carousel${multiple ? " banner-carousel--controls" : ""}`} aria-label="Destaques Paga Bandida" aria-roledescription="carrossel">
       <Slider ref={slider} {...settings}>
         {banners.map((banner, index) => {
-          const artwork = <ResponsiveImage image={banner.image} alt={banner.alt} sizes={BANNER_SIZES} loading={index === 0 ? "eager" : "lazy"} />;
+          const artwork = <ResponsiveImage image={banner.image} alt={banner.alt} sizes={BANNER_SIZES} loading={index === 0 ? "eager" : "lazy"} fetchPriority={index === 0 ? "high" : "low"} />;
           return <div key={banner.id || banner.image.src || banner.image}>
             <div className="banner-carousel__slide" role="group" aria-roledescription="slide" aria-label={`${index + 1} de ${banners.length}`}>
               {banner.href?.startsWith("/") ? <Link to={banner.href}>{artwork}</Link> : banner.href ? <a href={banner.href} target="_blank" rel="noopener noreferrer">{artwork}</a> : artwork}

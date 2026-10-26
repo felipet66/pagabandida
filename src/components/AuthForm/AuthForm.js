@@ -15,7 +15,7 @@ export function AuthFormLayout({ title, description, banner, children, footer, m
     <main className={`auth-form-page auth-form-page--${mode}${usesDesignSystem ? " auth-form-page--design-system" : ""}`}>
       <div className="auth-form-shell">
         <Link className="auth-form-back" to="/jogos">{usesDesignSystem ? <Icon as={ArrowLeft} size={16} /> : <FaArrowLeft aria-hidden="true" />} Explorar jogos</Link>
-        {banner && <ResponsiveImage className="auth-form-banner" image={banner} loading="eager" sizes="(max-width: 512px) calc(100vw - 32px), (max-width: 820px) 480px, (max-width: 1104px) calc((100vw - 104px) * 0.5556), 556px" alt="Bem-vindo ao Paga Bandida. Entre usando seu login e senha da ganhebetBR. Caso não tenha, crie uma conta abaixo." />}
+        {banner && <ResponsiveImage className="auth-form-banner" image={banner} loading="eager" fetchPriority="high" sizes="(max-width: 512px) calc(100vw - 32px), (max-width: 820px) 480px, (max-width: 1104px) calc((100vw - 104px) * 0.5556), 556px" alt="Bem-vindo ao Paga Bandida. Entre usando seu login e senha da ganhebetBR. Caso não tenha, crie uma conta abaixo." />}
         <section className={`auth-form-card${usesDesignSystem ? " glass edge" : ""}`} aria-labelledby="auth-form-title">
           <header className="auth-form-heading">
             <img src={logo} alt="Paga Bandida" className={usesDesignSystem ? "auth-access-logo" : "auth-form-logo"} width={80} height={80} />

@@ -1,3 +1,7 @@
 /sw.js
   Cache-Control: no-store, max-age=0
   Service-Worker-Allowed: /
+
+# CRA media filenames include a content hash; changing artwork creates a new URL.
+/static/media/*
+  Cache-Control: public, max-age=31536000, immutable

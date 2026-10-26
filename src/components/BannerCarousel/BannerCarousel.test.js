@@ -27,6 +27,7 @@ const scene = reduced => <MemoryRouter><ThemeContext.Provider value={{ reduceMot
 test("reduzir movimento do app interrompe rotação e remove transição do carrossel", () => {
   const view = render(scene(false));
   expect(mockSettings.autoplay).toBe(true);
+  expect(mockSettings.lazyLoad).toBe("ondemand");
   view.rerender(scene(true));
   expect(mockSettings.autoplay).toBe(false);
   expect(mockSettings.speed).toBe(0);
@@ -60,6 +61,8 @@ test("destaques mantêm depósito e ranking sem anunciar campanha herdada", () =
   render(<MemoryRouter><BannerCarousel /></MemoryRouter>);
   const banner = screen.getByRole("img", { name: /acesse sua carteira/ });
   expect(banner.closest("a").getAttribute("href")).toBe("/admin/deposit");
+  expect(banner.getAttribute("loading")).toBe("eager");
+  expect(banner.getAttribute("fetchpriority")).toBe("high");
   expect(screen.getByRole("img", { name: /confira o ranking/ }).closest("a").getAttribute("href")).toBe("/ranking");
   expect(screen.queryByRole("img", { name: /rodadas|R\$3.000|DJ4APRI/ })).toBeNull();
 });
