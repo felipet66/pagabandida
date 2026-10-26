@@ -41,10 +41,15 @@ Homologação real:
   110200 (Domain not authorized). A ganhebetBR, responsável pela sitekey, precisa
   incluir localhost nos hostnames autorizados. Incluir também 127.0.0.1 caso esse
   endereço seja usado no ambiente local.
-- https://pagabandida.netlify.app/auth/register: HTTP 200; o bundle publicado
-  main.75ef831e.js ainda não contém a integração nem a sitekey. Portanto a
-  autorização deste hostname e a aceitação do token pela casa ainda não estão
-  homologadas. Aguardar publicação desta versão e testar novamente.
+- https://pagabandida.netlify.app: integração publicada pelo Git/Netlify a partir
+  de c7ff601 (deploy 6adef1735d3c769a2ca3e677). O bundle main.23853815.js contém
+  a integração, a sitekey informada e preserva a chave do app e a base do BFF.
+  As duas actions cpf_lookup e register foram verificadas no domínio real em
+  uma página temporária que usa o mesmo serviço; ambas retornaram Cloudflare
+  110200 (Domain not authorized). A casa precisa autorizar pagabandida.netlify.app
+  para a sitekey 0x4AAAAAAFhQ7YEK-Od8bdd1. A geração de token e a aceitação pela
+  casa NÃO estão homologadas. Nenhum CPF ou cadastro foi enviado ao BFF nesse
+  diagnóstico. A página temporária foi removida em uma segunda publicação.
 - A casa precisa confirmar a mesma sitekey no BFF/integração e autorizar
   pagabandida.netlify.app, além dos domínios locais necessários. Não é suficiente
   o script carregar: deve haver callback de sucesso para cada action e aceitação
@@ -52,6 +57,8 @@ Homologação real:
 
 Evidência local (ignorada pelo Git):
 artifacts/turnstile-check/localhost-110200.png
+artifacts/turnstile-check/producao-cpf-110200.png
+artifacts/turnstile-check/producao-register-110200.png
 Página de diagnóstico local utiliza o mesmo serviço e descarta tokens sem mostrar
 ou persistir; não chama BFF nem envia CPF. Não integra o build público do app.
 
