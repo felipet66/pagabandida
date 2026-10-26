@@ -27,20 +27,20 @@ import canalBanner1200 from "./brand/banners/optimized/pagabandida-support-v2-12
 import canalBanner1200Avif from "./brand/banners/optimized/pagabandida-support-v2-1200.avif";
 import canalBanner1600 from "./brand/banners/optimized/pagabandida-support-v2-1600.webp";
 import canalBanner1600Avif from "./brand/banners/optimized/pagabandida-support-v2-1600.avif";
-import rankingBanner320 from "./brand/banners/optimized/pagabandida-ranking-v2-320.webp";
-import rankingBanner320Avif from "./brand/banners/optimized/pagabandida-ranking-v2-320.avif";
-import rankingBanner480 from "./brand/banners/optimized/pagabandida-ranking-v2-480.webp";
-import rankingBanner480Avif from "./brand/banners/optimized/pagabandida-ranking-v2-480.avif";
-import rankingBanner640 from "./brand/banners/optimized/pagabandida-ranking-v2-640.webp";
-import rankingBanner640Avif from "./brand/banners/optimized/pagabandida-ranking-v2-640.avif";
-import rankingBanner768 from "./brand/banners/optimized/pagabandida-ranking-v2-768.webp";
-import rankingBanner768Avif from "./brand/banners/optimized/pagabandida-ranking-v2-768.avif";
-import rankingBanner960 from "./brand/banners/optimized/pagabandida-ranking-v2-960.webp";
-import rankingBanner960Avif from "./brand/banners/optimized/pagabandida-ranking-v2-960.avif";
-import rankingBanner1200 from "./brand/banners/optimized/pagabandida-ranking-v2-1200.webp";
-import rankingBanner1200Avif from "./brand/banners/optimized/pagabandida-ranking-v2-1200.avif";
-import rankingBanner1600 from "./brand/banners/optimized/pagabandida-ranking-v2-1600.webp";
-import rankingBanner1600Avif from "./brand/banners/optimized/pagabandida-ranking-v2-1600.avif";
+import tournamentsBanner320 from "./brand/banners/optimized/pagabandida-torneios-v1-320.webp";
+import tournamentsBanner320Avif from "./brand/banners/optimized/pagabandida-torneios-v1-320.avif";
+import tournamentsBanner480 from "./brand/banners/optimized/pagabandida-torneios-v1-480.webp";
+import tournamentsBanner480Avif from "./brand/banners/optimized/pagabandida-torneios-v1-480.avif";
+import tournamentsBanner640 from "./brand/banners/optimized/pagabandida-torneios-v1-640.webp";
+import tournamentsBanner640Avif from "./brand/banners/optimized/pagabandida-torneios-v1-640.avif";
+import tournamentsBanner768 from "./brand/banners/optimized/pagabandida-torneios-v1-768.webp";
+import tournamentsBanner768Avif from "./brand/banners/optimized/pagabandida-torneios-v1-768.avif";
+import tournamentsBanner960 from "./brand/banners/optimized/pagabandida-torneios-v1-960.webp";
+import tournamentsBanner960Avif from "./brand/banners/optimized/pagabandida-torneios-v1-960.avif";
+import tournamentsBanner1200 from "./brand/banners/optimized/pagabandida-torneios-v1-1200.webp";
+import tournamentsBanner1200Avif from "./brand/banners/optimized/pagabandida-torneios-v1-1200.avif";
+import tournamentsBanner1600 from "./brand/banners/optimized/pagabandida-torneios-v1-1600.webp";
+import tournamentsBanner1600Avif from "./brand/banners/optimized/pagabandida-torneios-v1-1600.avif";
 import couponBanner320 from "./brand/banners/optimized/pagabandida-wallet-v1-320.webp";
 import couponBanner320Avif from "./brand/banners/optimized/pagabandida-wallet-v1-320.avif";
 import couponBanner480 from "./brand/banners/optimized/pagabandida-wallet-v1-480.webp";
@@ -102,13 +102,13 @@ export const canalBanner = {
   width: 1672,
   height: 941,
 };
-export const rankingBanner = {
-  src: rankingBanner768,
-  srcSet: `${rankingBanner320} 320w, ${rankingBanner480} 480w, ${rankingBanner640} 640w, ${rankingBanner768} 768w, ${rankingBanner960} 960w, ${rankingBanner1200} 1200w, ${rankingBanner1600} 1600w`,
+export const tournamentsBanner = {
+  src: tournamentsBanner768,
+  srcSet: `${tournamentsBanner320} 320w, ${tournamentsBanner480} 480w, ${tournamentsBanner640} 640w, ${tournamentsBanner768} 768w, ${tournamentsBanner960} 960w, ${tournamentsBanner1200} 1200w, ${tournamentsBanner1600} 1600w`,
   sources: [
-    { type: "image/avif", media: "(max-width: 600px)", srcSet: `${rankingBanner320Avif} 320w, ${rankingBanner480Avif} 480w, ${rankingBanner640Avif} 640w, ${rankingBanner768Avif} 768w, ${rankingBanner960Avif} 960w` },
-    { type: "image/avif", srcSet: `${rankingBanner320Avif} 320w, ${rankingBanner480Avif} 480w, ${rankingBanner640Avif} 640w, ${rankingBanner768Avif} 768w, ${rankingBanner960Avif} 960w, ${rankingBanner1200Avif} 1200w, ${rankingBanner1600Avif} 1600w` },
-    { type: "image/webp", media: "(max-width: 600px)", srcSet: `${rankingBanner320} 320w, ${rankingBanner480} 480w, ${rankingBanner640} 640w, ${rankingBanner768} 768w, ${rankingBanner960} 960w` },
+    { type: "image/avif", media: "(max-width: 600px)", srcSet: `${tournamentsBanner320Avif} 320w, ${tournamentsBanner480Avif} 480w, ${tournamentsBanner640Avif} 640w, ${tournamentsBanner768Avif} 768w, ${tournamentsBanner960Avif} 960w` },
+    { type: "image/avif", srcSet: `${tournamentsBanner320Avif} 320w, ${tournamentsBanner480Avif} 480w, ${tournamentsBanner640Avif} 640w, ${tournamentsBanner768Avif} 768w, ${tournamentsBanner960Avif} 960w, ${tournamentsBanner1200Avif} 1200w, ${tournamentsBanner1600Avif} 1600w` },
+    { type: "image/webp", media: "(max-width: 600px)", srcSet: `${tournamentsBanner320} 320w, ${tournamentsBanner480} 480w, ${tournamentsBanner640} 640w, ${tournamentsBanner768} 768w, ${tournamentsBanner960} 960w` },
   ],
   width: 1672,
   height: 941,
@@ -148,5 +148,6 @@ export const analysisArt = {
 };
 
 export const legacyCanalBanner = canalBanner;
-export const legacyRankingBanner = rankingBanner;
+export const rankingBanner = tournamentsBanner;
+export const legacyRankingBanner = tournamentsBanner;
 export const whatsappBanner = canalBanner;

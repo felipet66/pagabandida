@@ -10,12 +10,14 @@ Referência de composição: /Users/felipeteles/projects/teleco-pro/src/assets/b
 Arte: pagabandida-welcome-v1.png
 Prompt completo: pagabandida-welcome-v1.prompt.txt
 
-Ranking — carrossel Jogos
+Torneios — carrossel Jogos
 Foto escolhida: /Users/felipeteles/Downloads/IMG_6704.jpg
 Referência de composição: /Users/felipeteles/projects/teleco-pro/src/assets/banners/teleco-pro-ranking-violet.png
-Arte atual: pagabandida-ranking-v2.png
-Prompt completo: pagabandida-ranking-v2.prompt.txt
-Versão anterior preservada: pagabandida-ranking-v1.png
+Arte atual: pagabandida-torneios-v1.png
+Prompt completo: pagabandida-torneios-v1.prompt.txt
+Edição da composição ranking-v2 para "Conheça os torneios", com CTA "Ver torneios".
+Link: /admin/torneios. Sem valores ou promessas de prêmios na arte atual.
+Artes anteriores preservadas: pagabandida-ranking-v1.png e pagabandida-ranking-v2.png.
 
 Carteira — carrossel Jogos
 Foto escolhida: /Users/felipeteles/Downloads/IMG_6924.png
@@ -52,7 +54,8 @@ Nenhum cupom ou oferta herdados foram publicados. O usuário confirmou depois
 a inclusão de R$10.000,00 em prêmios no banner ranking-v2.
 Suporte Paga Bandida: https://wa.me/5571987591913?text=Lugo%20eu%20vim%20do%20Pagabandida.
 O contato está centralizado em src/config/support.js.
-Links e navegação de carteira, ranking, suporte e ferramentas permanecem os existentes.
+Ranking ocultado no sidebar e no menu da conta, incluindo o bloco Top 5.
+A rota direta de ranking continua preservada. Carteira, suporte e ferramentas mantidos.
 Compilação aprovada; 66 suítes e 459 testes passaram na otimização mobile.
 
 

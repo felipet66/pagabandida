@@ -2,7 +2,7 @@ import { SUPPORT_URL } from "config/support";
 import React, { useContext, useEffect, useRef, useState } from "react";
 import Slider from "react-slick";
 import { Link } from "react-router-dom";
-import { canalBanner, couponBanner, rankingBanner } from "assets/responsiveImages";
+import { canalBanner, couponBanner, tournamentsBanner } from "assets/responsiveImages";
 import ResponsiveImage from "components/ResponsiveImage/ResponsiveImage";
 import "slick-carousel/slick/slick.css";
 import "./BannerCarousel.css";
@@ -12,7 +12,7 @@ import { ThemeContext } from "contexts/ThemeContext";
 
 const DEFAULT_BANNERS = [
   { id: "carteira", href: "/admin/deposit", image: couponBanner, alt: "Paga Bandida — acesse sua carteira na ganhebetBR." },
-  { id: "ranking", href: "/ranking", image: rankingBanner, alt: "Paga Bandida — confira o ranking de players. R$10.000,00 em prêmios para os top depositantes do mês." },
+  { id: "torneios", href: "/admin/torneios", image: tournamentsBanner, alt: "Paga Bandida — conheça os torneios. Explore os torneios da comunidade." },
   { id: "suporte", href: SUPPORT_URL, image: canalBanner, alt: "Paga Bandida — suporte do Paga Bandida." },
 ];
 

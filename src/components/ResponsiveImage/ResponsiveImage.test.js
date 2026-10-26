@@ -1,7 +1,7 @@
 import React from "react";
 import { render, screen } from "@testing-library/react";
 import ResponsiveImage from "./ResponsiveImage";
-import { welcomeBanner, canalBanner, rankingBanner, couponBanner, historyArt, analysisArt } from "assets/responsiveImages";
+import { welcomeBanner, canalBanner, tournamentsBanner, couponBanner, historyArt, analysisArt } from "assets/responsiveImages";
 
 const image = {
   src: "banner-768.webp", srcSet: "banner-480.webp 480w, banner-768.webp 768w", width: 1672, height: 941,
@@ -37,7 +37,7 @@ test("URL simples continua sendo uma imagem comum sem picture ou srcset", () => 
 });
 
 test("artes geradas limitam resolução móvel e mantêm versões maiores para desktop", () => {
-  for (const asset of [welcomeBanner, canalBanner, rankingBanner, couponBanner, historyArt, analysisArt]) {
+  for (const asset of [welcomeBanner, canalBanner, tournamentsBanner, couponBanner, historyArt, analysisArt]) {
     const widths = srcSet => srcSet.split(", ").map(entry => Number(entry.match(/ (\d+)w$/)[1]));
     const limit = asset.width === asset.height ? 640 : 960;
     expect(Math.max(...widths(asset.sources[0].srcSet))).toBe(limit);

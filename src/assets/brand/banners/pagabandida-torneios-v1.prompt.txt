@@ -1,0 +1,10 @@
+Modo: image_gen, edição da arte pagabandida-ranking-v2.png, fundo opaco.
+Use case: text-localization / identity-preserve.
+Asset type: existing Paga Bandida app promotional banner, wide landscape.
+Edit target: the attached existing green ranking banner.
+Primary request: replace the ranking/prize promotion with a clear invitation to discover tournaments.
+Preserve the exact original left portrait (same person's identity, face, cap, sunglasses, ochre shirt, tattoos, crossed arms, expression and proportions). Preserve the green-lime #B6FF00, forest-green and near-black palette, glowing light trails, plane, silver trophy at right, PAGA BANDIDA logo at upper right, polished metallic typography and wide composition.
+Replace the entire old right-side copy block. Remove ALL references to ranking, deposits, R$10.000,00, prizes and monthly depositors.
+New main headline, large and easy to read on a mobile banner, verbatim: "CONHEÇA OS" on the first line and "TORNEIOS" on the second line. Below it, a smaller supporting line, verbatim: "Explore os torneios da comunidade".
+Keep a clearly outlined lime glowing CTA at bottom right, text verbatim: "VER TORNEIOS", with a right arrow.
+Use the freed space to make the new headline prominent, balanced, with generous spacing and the same visual polish as the original. No new amounts, bonus claims, dates, or guarantees. Keep all new text within the existing right text region and preserve margins; no cropping of portrait, logo or trophy. Output opaque banner with same landscape aspect ratio as the input.

@@ -7,7 +7,6 @@ import ThemeToggle from "../DesignSystem/ThemeToggle";
 import MotionToggle from "../DesignSystem/MotionToggle";
 import { ThemeContext } from "../../contexts/ThemeContext";
 import "./AccountDrawer.css";
-import DepositRankingPreview from "./DepositRankingPreview";
 import { useTournaments } from "../../contexts/TournamentsContext";
 
 export default function AccountDrawer({ balance, wallet, currency, loading, error, onRefresh, onClose, onLogout }) {
@@ -100,7 +99,6 @@ export default function AccountDrawer({ balance, wallet, currency, loading, erro
           {wallet?.locked != null && <p className="account-drawer__locked">Bloqueado <span>{format(wallet.locked)}</span></p>}
           <Link className="account-drawer__deposit btn btn-primary" to="/admin/deposit" onClick={onClose}><Icon as={Wallet} size={20} /> Depositar</Link>
         </div>
-        <DepositRankingPreview onClose={onClose} />
         {!unsupported && <nav className="account-drawer__shortcuts" aria-label="Atalhos da conta">
           <Link className="account-ranking__link account-drawer__tournaments" to="/admin/torneios" onClick={onClose}><Icon as={Trophy} size={18} /> Torneios</Link>
         </nav>}

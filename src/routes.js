@@ -47,7 +47,7 @@ var routes = [
     icon: "fa fa-trophy", component: Tournaments, layout: "/admin",
   },
   {
-    path: "/ranking", sidebarSection: "Comunidade", name: "Ranking de Players",
+    path: "/ranking", hideInSidebar: true, sidebarSection: "Comunidade", name: "Ranking de Players",
     icon: "fa fa-trophy", component: AdminDepositRanking, layout: "/admin",
   },
   {

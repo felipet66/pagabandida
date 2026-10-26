@@ -26,15 +26,11 @@ beforeEach(() => {
 afterEach(() => { act(() => root.unmount()); host.remove(); delete global.IS_REACT_ACT_ENVIRONMENT; });
 const mount = props => act(() => root.render(<MemoryRouter><AccountDrawer balance={12.34} currency="BRL" wallet={{ available: "10", bonus: "2.34", locked: "0" }} {...props} /></MemoryRouter>));
 
-test("painel exibe somente top 5 e fecha ao acessar ranking completo", () => {
-  useDepositRanking.mockReturnValue({ players: Array.from({ length: 10 }, (_, i) => ({ rank: i + 1, name: `Player ${i + 1}`, total: 1000 - i })), loading: false, error: null });
-  const onClose = jest.fn(); mount({ onClose });
-  expect(document.querySelectorAll('.account-ranking__list li')).toHaveLength(5);
-  expect(document.querySelector('.account-ranking').textContent).not.toContain("Player 6");
-  expect(document.querySelector('.account-ranking').textContent).toContain("1.000,00");
-  const link = document.querySelector('.account-ranking__link');
-  expect(link.getAttribute('href')).toBe("/ranking");
-  act(() => link.click()); expect(onClose).toHaveBeenCalledTimes(1);
+test("menu oculta ranking e top depositantes sem consultar a API de ranking", () => {
+  mount({ onClose: jest.fn() });
+  expect(document.querySelector('.account-ranking')).toBeNull();
+  expect(document.querySelector('a[href="/ranking"]')).toBeNull();
+  expect(useDepositRanking).not.toHaveBeenCalled();
 });
 
 test("menu mobile não exibe o item de Gamificação", () => {

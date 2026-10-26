@@ -57,12 +57,12 @@ test("pausa manual continua após ligar e desligar movimento reduzido", () => {
   expect(mockSettings.autoplay).toBe(true);
 });
 
-test("destaques mantêm depósito e ranking sem anunciar campanha herdada", () => {
+test("destaques mantêm depósito e direcionam o novo banner aos torneios", () => {
   render(<MemoryRouter><BannerCarousel /></MemoryRouter>);
   const banner = screen.getByRole("img", { name: /acesse sua carteira/ });
   expect(banner.closest("a").getAttribute("href")).toBe("/admin/deposit");
   expect(banner.getAttribute("loading")).toBe("eager");
   expect(banner.getAttribute("fetchpriority")).toBe("high");
-  expect(screen.getByRole("img", { name: /confira o ranking/ }).closest("a").getAttribute("href")).toBe("/ranking");
-  expect(screen.queryByRole("img", { name: /rodadas|R\$3.000|DJ4APRI/ })).toBeNull();
+  expect(screen.getByRole("img", { name: /conheça os torneios/ }).closest("a").getAttribute("href")).toBe("/admin/torneios");
+  expect(screen.queryByRole("img", { name: /ranking|R\$10.000|R\$3.000|DJ4APRI/ })).toBeNull();
 });
