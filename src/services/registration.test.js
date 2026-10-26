@@ -33,7 +33,7 @@ test("afiliação padrão e tracking atual têm prioridade sobre valores salvos"
   bffApi.post.mockResolvedValue(ok({}));
   await registerAccount(fields(), { getToken });
   expect(bffApi.post.mock.calls[0][1]).toMatchObject({ axioAffId: "NLNYO", axioClickId: "e5050517-3f86-4335-9fc7-5d0adaf550f4" });
-  expect(BET_HOUSE.registrationUrl).toBe("https://www.ganhebetbr.com/?modal=register&axioClickId=e5050517-3f86-4335-9fc7-5d0adaf550f4&axioAffId=NLNYO");
+  expect(BET_HOUSE.registrationUrl).toBe("https://go.ganhebetbr.com/c/7ul");
   localStorage.setItem("axioClickId", "saved-fixture");
   localStorage.setItem("axioAffId", "saved-affiliate");
   localStorage.setItem("utm_source", "current-campaign");
@@ -43,9 +43,7 @@ test("afiliação padrão e tracking atual têm prioridade sobre valores salvos"
   await registerAccount(fields(), { getToken });
   expect(bffApi.post.mock.calls[1][1]).toMatchObject({ axioAffId: "current-affiliate", axioClickId: "current-click", utm_source: "current-campaign", ga_client_id: "analytics-fixture", landingUrl: "https://app.example.invalid/lp" });
   const target = new URL(BET_HOUSE.registrationUrl);
-  expect(target.origin).toBe("https://www.ganhebetbr.com");
-  expect(target.searchParams.get("axioClickId")).toBe("current-click");
-  expect(target.searchParams.get("modal")).toBe("register");
+  expect(target.toString()).toBe("https://go.ganhebetbr.com/c/7ul");
 });
 
 test("CPF usa token cpf_lookup novo, rota pública, máscara retornada e cancelamento", async () => {

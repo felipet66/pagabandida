@@ -1,3 +1,15 @@
+ESTADO ATUAL — CADASTRO EXTERNO (26/10/2026)
+Por orientação do usuário, os CTAs de cadastro abrem exatamente
+https://go.ganhebetbr.com/c/7ul em outra aba. O link está centralizado em
+BET_HOUSE.registrationUrl; não recebe os antigos parâmetros de afiliação.
+As rotas /auth/register e /auth/register/:role exibem ExternalRegistration,
+com o mesmo visual e retorno ao login. O cadastro nativo com Turnstile foi
+preservado no código e nos testes, mas não é montado pelas rotas do aplicativo.
+A captura de tracking, os links de recuperação/casa e o login BFF permanecem.
+A pendência de domínio abaixo continua relevante para reativar cadastro nativo.
+Validação do fluxo externo: 65 suítes / 453 testes passaram.
+
+RELATÓRIO DA IMPLEMENTAÇÃO NATIVA ANTERIOR
 TURNSTILE — PAGA BANDIDA / ganhebetBR
 
 Configuração pública (Create React App):

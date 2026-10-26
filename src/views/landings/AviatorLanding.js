@@ -1,4 +1,5 @@
 import { SUPPORT_URL } from "config/support";
+import { BET_HOUSE } from "config/betHouse";
 import React, { useEffect, useMemo, useRef, useState } from 'react';
 import { Link, useParams } from 'react-router-dom';
 import { Badge, Button, Card, CardBody, Nav, NavItem, NavLink, Progress } from 'reactstrap';
@@ -47,7 +48,7 @@ const content = {
     cta: 'Criar minha conta',
     finalTitle: 'Junte-se à comunidade de jogadores do Paga Bandida.',
     finalDescription: 'Compartilhe suas análises e consulte o histórico para comparar as ideias com os resultados das rodadas.',
-    finalCta: 'Criar conta no Paga Bandida',
+    finalCta: 'Criar conta na ganhebetBR',
   },
 };
 const questions = [
@@ -62,7 +63,7 @@ const profiles = [
 ];
 
 function CTA({ children = 'Criar minha conta', outline = false }) {
-  return <Button tag={Link} to="/auth/register" color="primary" outline={outline}>
+  return <Button tag="a" href={BET_HOUSE.registrationUrl} target="_blank" rel="noopener noreferrer" color="primary" outline={outline}>
     {children}<Icon as={ArrowRight} size={20} />
   </Button>;
 }

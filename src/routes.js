@@ -20,7 +20,7 @@ import Home from "views/Home.js";
 import TableList from "views/TableList.js";
 import Typography from "views/Typography.js";
 import Login from "views/Login";
-import Register from "views/Register";
+import Register from "views/ExternalRegistration";
 import AviatorGame from "views/AviatorGame";
 import GoalsTracker from "views/GoalsTracker";
 import Dashboard from "views/Dashboard";

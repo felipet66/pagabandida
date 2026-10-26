@@ -29,7 +29,7 @@ test('quiz completes, uses preferences, supports back and restart', () => {
   fireEvent.click(screen.getByRole('button', { name: /Falta gente/ }));
   fireEvent.click(screen.getByRole('button', { name: /Comunidade para comparar/ }));
   expect(screen.getByRole('heading', { name: 'Conheça a comunidade.' })).toBeTruthy();
-  expect(screen.getByRole('link', { name: /Criar conta e explorar/ }).getAttribute('href')).toBe('/auth/register');
+  expect(screen.getByRole('link', { name: /Criar conta e explorar/ }).getAttribute('href')).toBe('https://go.ganhebetbr.com/c/7ul');
   fireEvent.click(screen.getByRole('button', { name: 'Refazer quiz' }));
   expect(screen.getByText('1 de 3')).toBeTruthy();
 });
@@ -38,7 +38,7 @@ test.each(['analise', 'comunidade'])('%s uses product components and a real regi
   open(variant);
   expect(screen.getByRole('heading', { level: 1 })).toBeTruthy();
   expect(screen.getByRole('region', { name: 'Histórico de velas' })).toBeTruthy();
-  expect(screen.getByRole('link', { name: variant === 'analise' ? 'Criar conta e acessar o app' : 'Criar conta no Paga Bandida' }).getAttribute('href')).toBe('/auth/register');
+  expect(screen.getByRole('link', { name: variant === 'analise' ? 'Criar conta e acessar o app' : 'Criar conta na ganhebetBR' }).getAttribute('href')).toBe('https://go.ganhebetbr.com/c/7ul');
   expect(screen.getByText('Amostra demonstrativa')).toBeTruthy();
 });
 

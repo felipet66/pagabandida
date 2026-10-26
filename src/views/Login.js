@@ -1,5 +1,5 @@
 import React from "react";
-import { Link, useHistory, useLocation } from "react-router-dom";
+import { useHistory, useLocation } from "react-router-dom";
 import { useState, useRef } from "react";
 import useTrackingParams from "../hooks/useTrackingParams";
 import { BET_HOUSE } from "config/betHouse";
@@ -106,7 +106,7 @@ function Login() {
   return (
     <>
       <AuthFormLayout mode="login" title="Entre na sua conta" description="Use seu e-mail e senha da ganhebetBR para acessar." banner={welcomeBanner}
-        footer={<>Ainda não tem conta? <Link to="/auth/register">Criar conta</Link></>}>
+        footer={<>Ainda não tem conta? <a href={BET_HOUSE.registrationUrl} target="_blank" rel="noopener noreferrer">Criar conta</a></>}>
         <form onSubmit={handleSubmit} aria-busy={isSubmitting}>
           {error && <div className="auth-form-alert" role="alert"><Icon as={AlertCircle} size={20} /><span>{error}</span></div>}
           <fieldset disabled={isSubmitting}>

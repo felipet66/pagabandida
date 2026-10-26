@@ -19,10 +19,5 @@ export const BET_HOUSE = {
   supportUrl: SUPPORT_URL,
   recoveryUrl: null, // Await a confirmed deep link; never guess an auth route.
   get registrationTracking() { return { ...DEFAULT_AFFILIATION, ...getTrackingParams() }; },
-  get registrationUrl() {
-    const url = new URL(this.baseUrl);
-    url.searchParams.set("modal", "register");
-    Object.entries(this.registrationTracking).forEach(([key, value]) => url.searchParams.set(key, value));
-    return url.toString();
-  },
+  registrationUrl: "https://go.ganhebetbr.com/c/7ul",
 };
