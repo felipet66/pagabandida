@@ -13,6 +13,33 @@ beforeEach(() => {
 afterEach(() => { act(() => root.unmount()); host.remove(); delete global.IS_REACT_ACT_ENVIRONMENT; });
 const render = props => act(() => root.render(<HistoryOdds numberVelas={10} {...props} />));
 
+test.each([
+  ["Azul · ODD < 2", "blue"],
+  ["Roxo · 2 ≤ ODD < 10", "purple"],
+  ["Rosa · ODD ≥ 10", "pink"],
+  ["ODD > 20", 20],
+  ["Todas as odds", undefined],
+])("selecionar %s comunica o filtro correto ao histórico", (label, value) => {
+  const onOddFilterChange = jest.fn();
+  render({ onOddFilterChange });
+  act(() => host.querySelector('#history-odd-filter').click());
+  act(() => [...host.querySelectorAll('[role="option"]')].find(option => option.textContent === label).click());
+  expect(onOddFilterChange).toHaveBeenCalledWith(value);
+});
+
+test.each([
+  ["blue", "azuis (abaixo de 2x)"],
+  ["purple", "roxas (de 2x até abaixo de 10x)"],
+  ["pink", "rosas (10x ou mais)"],
+])("filtro %s vazio informa a faixa correta e permite limpar", (filter, description) => {
+  const onOddFilterChange = jest.fn();
+  render({ candleGreaterThan: filter, onOddFilterChange });
+  expect(host.textContent).toContain(description);
+  expect(host.querySelector('#history-pattern').disabled).toBe(true);
+  act(() => host.querySelector('.app-empty-state button').click());
+  expect(onOddFilterChange).toHaveBeenCalledWith(undefined);
+});
+
 test.each([50, 200, 500, 1000])("controles continuam disponíveis durante a busca e comunicam %s velas para o pai", quantity => {
   const onQuantityChange = jest.fn();
   render({ loading: true, onQuantityChange });

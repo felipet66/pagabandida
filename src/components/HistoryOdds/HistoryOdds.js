@@ -5,6 +5,7 @@ import SelectField from "components/SelectField/SelectField";
 import { Check, CircleDot, RefreshCw, ScanLine } from "lucide-react";
 import Icon from "components/DesignSystem/Icon";
 import Switch from "components/DesignSystem/Switch";
+import { HISTORY_ODD_FILTER_OPTIONS, emptyHistoryOddFilterMessage } from "helpers/historyOddFilter";
 
 export default function HistoryOdds({ records = [], loading, error, onRefresh, numberVelas, onQuantityChange, candleGreaterThan, onOddFilterChange,
   autoRefresh = false, onAutoRefreshChange, refreshing, refreshError, lastUpdated, retryDelay = 30000, autoRefreshPaused }) {
@@ -116,7 +117,7 @@ export default function HistoryOdds({ records = [], loading, error, onRefresh, n
         </label>
         <label htmlFor="history-odd-filter">Filtrar odds
           <SelectField designSystem id="history-odd-filter" label="Filtrar odds" value={candleGreaterThan ?? ""}
-            onChange={value => onOddFilterChange(value === "" ? undefined : value)} options={[{ value: "", label: "Todas as odds" }, ...[10, 20, 30, 50, 100].map(value => ({ value, label: `ODD > ${value}` }))]} />
+            onChange={value => onOddFilterChange(value === "" ? undefined : value)} options={HISTORY_ODD_FILTER_OPTIONS} />
         </label>
         <label htmlFor="history-pattern">Padrão visual
           <SelectField designSystem id="history-pattern" label="Padrão visual" value={selectedPattern} disabled={filtered} onChange={setSelectedPattern}
@@ -134,7 +135,7 @@ export default function HistoryOdds({ records = [], loading, error, onRefresh, n
       <div className="aviator-history-results" aria-busy={loading}>
         {loading ? <div className="aviator-loading-state" role="status"><span className="aviator-loading-spinner" aria-hidden="true" /> Carregando resultados...</div> : error ?
           <EmptyState designSystem title="Histórico indisponível" description={error} actionLabel="Tentar novamente" onAction={onRefresh} /> : records.length === 0 ?
-          <EmptyState designSystem title="Nenhuma vela encontrada" description={filtered ? `Não há velas acima de ${candleGreaterThan}x para esta seleção. Remova o filtro ou tente atualizar.` : "Ainda não há resultados para este Aviator. Tente atualizar o histórico."}
+          <EmptyState designSystem title="Nenhuma vela encontrada" description={filtered ? emptyHistoryOddFilterMessage(candleGreaterThan) : "Ainda não há resultados para este Aviator. Tente atualizar o histórico."}
             actionLabel={filtered ? "Limpar filtro de odd" : "Atualizar histórico"} onAction={filtered ? () => onOddFilterChange(undefined) : onRefresh} /> : <>
           <div className="aviator-candle-grid" id="aviator-candle-grid">
             {records.map((record, index) => {

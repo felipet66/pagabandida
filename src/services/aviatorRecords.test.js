@@ -52,6 +52,25 @@ test("filtra ODD > 10 localmente em uma janela mínima de 100 rodadas", async ()
   expect(axios.get.mock.calls[0][1].params).toEqual({ betHouse: "ganhebetbr", chartNumber: 2, limit: 100 });
 });
 
+test.each([
+  ["blue", ["1", "1.99"]],
+  ["purple", ["2", "2.01", "9.99"]],
+  ["pink", ["10", "10.01", "100"]],
+  [10, ["10.01", "100"]],
+  [undefined, ["1", "1.99", "2", "2.01", "9.99", "10", "10.01", "100"]],
+])("filtro %s respeita os limites de cor e preserva a amostra completa", async (filter, expected) => {
+  const values = [1, 1.99, 2, 2.01, 9.99, 10, 10.01, 100];
+  axios.get.mockResolvedValue({ data: { data: values.map((multiplier, index) => ({
+    roundId: `boundary-${index}`, multiplier,
+    timestamp: new Date(Date.UTC(2026, 9, 10) - index * 20000).toISOString(),
+  })) } });
+  const result = await fetchAviatorRecords(3, undefined, 1, 10, filter);
+  expect(result.records.map(record => record.odd)).toEqual(expected);
+  expect(result.sampleRecords.map(record => record.odd)).toEqual(values.map(String));
+  expect(axios.get).toHaveBeenCalledTimes(1);
+  expect(axios.get.mock.calls[0][1].params).toEqual({ betHouse: "ganhebetbr", chartNumber: 3, limit: 100 });
+});
+
 test("amostra sem filtro preserva pelo menos 50 rodadas mesmo com só 10 velas visíveis", async () => {
   axios.get.mockResolvedValue({ data: { data: Array.from({ length: 100 }, (_, index) => ({
     roundId: String(500 - index), multiplier: index % 10 === 0 ? 15 : 1.5,

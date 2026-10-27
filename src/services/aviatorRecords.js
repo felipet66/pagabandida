@@ -1,4 +1,5 @@
 import axios from "axios";
+import { matchesHistoryOddFilter } from "../helpers/historyOddFilter";
 
 const HISTORY_URL = "https://wxjldojdscizbemlpyib.supabase.co/functions/v1/aviator-history";
 
@@ -28,7 +29,7 @@ export async function fetchAviatorRecords(chartNumber = 1, signal, page = 1, lim
       data: date, time: hour, hour, date, formattedDate: `${date} ${hour}`, betHouse: "ganhebetbr", chartNumber };
   });
   const records = sampleRecords
-    .filter(record => candleGreaterThan == null || Number(record.odd) > Number(candleGreaterThan))
+    .filter(record => matchesHistoryOddFilter(record.odd, candleGreaterThan))
     .slice(0, sampleLimit);
   return {
     records,
